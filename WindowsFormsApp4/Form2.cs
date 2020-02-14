@@ -18,7 +18,7 @@ namespace WindowsFormsApp4
         private string gFCode = "101Q3";
         private string TimeSelected = "1";
         private string TimeDistance = "Day";
-        private int RowNum = 40;
+        private int RowNum = 200;
         private int AccControl = 0;
 
         //messagebox auto closing
@@ -41,7 +41,7 @@ namespace WindowsFormsApp4
             TimeDistance_Changed(TimeDistance);
             Load_Data(gFCode, TimeSelected, TimeDistance);
             Delay(100);
-            
+            //WMA_prov();
             getAccount();
             FCode_comboBox.Text = FCode.Text;
             FCode_comboBox.Items.Add(FCode.Text);
@@ -102,6 +102,7 @@ namespace WindowsFormsApp4
             dt.Columns.Add("종가");
             dt.Columns.Add("WMA");
             dt.Columns.Add("기울기");
+            dt.Columns.Add("매수/매도");
 
 
             short nRowSize = Convert.ToInt16(Comm_Obj_DATA.GetMultiRowCount());
@@ -174,25 +175,33 @@ namespace WindowsFormsApp4
         
         private void Proc_FC()
         {
-
             FCGrid.DataSource = Proc_TR_FCHART();
             Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode);
         }
 
-        private double[] prov_WMA(double[] endPirce, int day)
+        private double[] prov_WMA(double[] endPirce, int day, int startIndex)
         {
             double[] outputarray = new double[RowNum];
+            double[] realOutputArray = new double[RowNum];
             int out1, out2;
 
-            TicTacTec.TA.Library.Core.Wma(0, RowNum - 1, endPirce, day, out out1, out out2, outputarray);
+            TicTacTec.TA.Library.Core.Wma(startIndex, RowNum - 1, endPirce, day, out out1, out out2, outputarray);
 
-            return outputarray;
+            Array.Copy(outputarray, 0, realOutputArray, 0, RowNum - day + 1);
+            for(int i=0; i<day-1; i++)
+            {
+                realOutputArray[RowNum - day + 1+i] = 0;
+            }
 
+            return realOutputArray;
         }
 
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
-            WMA_prov();
+            if (!string.IsNullOrEmpty(startWma.Text) && !string.IsNullOrEmpty(endWma.Text) && !string.IsNullOrEmpty(intervalWma.Text))
+                WMA_prov();
+            else
+                MessageBox.Show("cex");
         }
 
         private void WMA_prov()
@@ -211,11 +220,10 @@ namespace WindowsFormsApp4
 
                 for (int i = 0; i <= RowNum - 1; i++)
                 {
-                    endPrice[i] = Convert.ToDouble(FCGrid.Rows[i].Cells[4].Value);
-
+                    endPrice[RowNum-1-i] = Convert.ToDouble(FCGrid.Rows[i].Cells[4].Value);
                 }
 
-                WMA = prov_WMA(endPrice, day);
+                WMA = prov_WMA(endPrice, day,0);
 
                 for (int j = 0; j <= RowNum - 1; j++)
                 {
@@ -242,24 +250,27 @@ namespace WindowsFormsApp4
                     }
 
                 }
-                for (int j = 0; j <= RowNum; j++)
+                for (int j = 0; j < RowNum; j++)
                 {
                     FCGrid.Rows[j].Cells[7].Value = Convert.ToInt32(angle[j]);
                 }
                 int index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text)).Length;
-                double[] aaa = new double[index];
-
-                for (int i = 0; i < index; i++)
+                
+                for(int j=0; j<RowNum-index; j++)
                 {
-                    aaa[i] = prov_WMA(endPrice, getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i])[0];
+                    double[] aaa = new double[index];
+
+                    for (int i = 0; i < index; i++)
+                    {
+                        aaa[i] = prov_WMA(endPrice, getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i],j)[0];
+                    }
+                    Mecro(aaa,j);
                 }
-                Mecro(aaa);
             }
             else
             {
                 MessageBox.Show("cex");
             }
-
         }
 
         private int[] getWMA_Index(int WMA_Start, int WMA_End, int WMA_Interval)
@@ -273,7 +284,7 @@ namespace WindowsFormsApp4
             return WMA;
         }
 
-        private void Mecro(double[] WMA)
+        private void Mecro(double[] WMA,int index)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
             aa = (double[])WMA.Clone(); // WMA 복사
@@ -287,13 +298,16 @@ namespace WindowsFormsApp4
 
             if (checkSameArray(aa, bb) == true)
             {
-                AutoClosingMessageBox("매수", "알림", 1000);
+                FCGrid.Rows[index].Cells[8].Value = "매도";
+                //AutoClosingMessageBox("매수", "알림", 1000);
             }
             else if (checkSameArray(aa, cc) == true)
             {
-                AutoClosingMessageBox("매도", "알림", 1000);
+                FCGrid.Rows[index].Cells[8].Value = "매수";
+                //AutoClosingMessageBox("매도", "알림", 1000);
             }
         }
+
 
         public bool checkSameArray(double[] arr1, double[] arr2)
         {
@@ -320,7 +334,6 @@ namespace WindowsFormsApp4
         }
 
         //주기
-
         private void TimeDistance_Changed(string distance)
         {
             TimeDistance = distance;
@@ -593,11 +606,9 @@ namespace WindowsFormsApp4
 
         private void Refresh_Data(object sender, EventArgs e)
         {
-            
             Load_Data(gFCode, TimeSelected, TimeDistance);
             Delay(100);
             WMA_prov();
-            
         }
 
         private static DateTime Delay(int MS)
@@ -679,11 +690,10 @@ namespace WindowsFormsApp4
         private void getPrice()
         {
             Comm_Obj_Price.SetQueryName("SABC820Q1");
-            Comm_Obj_Price.SetSingleData(0, "20200210");
+            Comm_Obj_Price.SetSingleData(0, "20200213");
             Comm_Obj_Price.SetSingleData(1, Account_Num2.Text); //00311155910
             Comm_Obj_Price.SetSingleData(2, "0000");
             Comm_Obj_Price.RequestData();
-            
         }
 
         private void Proc_SABC820Q1()
@@ -704,6 +714,52 @@ namespace WindowsFormsApp4
         private void Price_Lookup_btn_Click(object sender, EventArgs e)
         {
             getPrice();
+        }
+
+        private void Comm_Obj_Deal_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_SABC100U1();
+        }
+
+        private void Proc_SABC100U1()
+        {
+            string aa = (string)axGiExpertControl2.GetSingleData(0); //0.주문번호
+            string bb = (string)axGiExpertControl2.GetSingleData(1); //1.ORC주문번호
+
+            MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
+            MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
+            MessageBox.Show(aa);
+            MessageBox.Show(bb);
+        }
+        private void getDeal(string count, string control)
+        {
+            axGiExpertControl2.SetQueryName("SABC100U1");
+            axGiExpertControl2.SetSingleData(0, "00311155910"); // 계좌번호
+            axGiExpertControl2.SetSingleData(1, "0000"); //비밀번호
+            axGiExpertControl2.SetSingleData(2, "101Q3"); //종목코드
+            axGiExpertControl2.SetSingleData(3, count); // 주문수량 
+            axGiExpertControl2.SetSingleData(4, "0"); //주문단가 -999.99 ~ 999.99
+            axGiExpertControl2.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
+            axGiExpertControl2.SetSingleData(6, control); // 매매구분 01:매도 02:매수
+            axGiExpertControl2.SetSingleData(7, "M"); //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
+            axGiExpertControl2.SetSingleData(8, "1"); //차익거래구분 1:차익 2:헷지 3:기타
+            axGiExpertControl2.SetSingleData(9, "1"); //처리구분 1:신규 2:정정 3:취소
+            axGiExpertControl2.SetSingleData(10,"0"); //정정취소수량구분 0:신규 2:정정 3:취소
+            axGiExpertControl2.SetSingleData(11,""); //원주문번호 (신규매도/매수시 생략)
+            axGiExpertControl2.SetSingleData(12,""); //예약주문여부 1:예약 (예약주문 어닌경우생략)
+            axGiExpertControl2.RequestData();
+        }
+
+        private void Sell_btn_Click(object sender, EventArgs e)
+        {
+           string count = Convert.ToString(Stock_Count.Value);
+           getDeal(count,"01");
+        }
+
+        private void Buy_btn_Click(object sender, EventArgs e)
+        {
+            string count = Convert.ToString(Stock_Count.Value);
+            getDeal(count,"02");
         }
     }
 }
