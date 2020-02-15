@@ -119,8 +119,6 @@ namespace WindowsFormsApp4
 
             return dt;
         }
-
-       
         
         private void Login()
         {
@@ -179,32 +177,15 @@ namespace WindowsFormsApp4
             Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode);
         }
 
-        private double[] prov_WMA(double[] endPirce, int day, int startIndex)
-        {
-            double[] outputarray = new double[RowNum];
-            double[] realOutputArray = new double[RowNum];
-            int out1, out2;
-
-            TicTacTec.TA.Library.Core.Wma(startIndex, RowNum - 1, endPirce, day, out out1, out out2, outputarray);
-
-            Array.Copy(outputarray, 0, realOutputArray, 0, RowNum - day + 1);
-            for(int i=0; i<day-1; i++)
-            {
-                realOutputArray[RowNum - day + 1+i] = 0;
-            }
-
-            return realOutputArray;
-        }
-
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(startWma.Text) && !string.IsNullOrEmpty(endWma.Text) && !string.IsNullOrEmpty(intervalWma.Text))
-                WMA_prov();
+                Get_GridData();
             else
                 MessageBox.Show("cex");
         }
 
-        private void WMA_prov()
+        /*private void WMA_prov()
         {
             double[] WMA = new double[RowNum];
             double[] endPrice = new double[RowNum];
@@ -220,10 +201,10 @@ namespace WindowsFormsApp4
 
                 for (int i = 0; i <= RowNum - 1; i++)
                 {
-                    endPrice[RowNum-1-i] = Convert.ToDouble(FCGrid.Rows[i].Cells[4].Value);
+                    endPrice[i] = Convert.ToDouble(FCGrid.Rows[i].Cells[5].Value);
                 }
 
-                WMA = prov_WMA(endPrice, day,0);
+                WMA = Prov_WMA(endPrice, day,0);
 
                 for (int j = 0; j <= RowNum - 1; j++)
                 {
@@ -262,7 +243,8 @@ namespace WindowsFormsApp4
 
                     for (int i = 0; i < index; i++)
                     {
-                        aaa[i] = prov_WMA(endPrice, getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i],j)[0];
+                        aaa[i] = Prov_WMA(endPrice, getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], j)[0];
+                        
                     }
                     Mecro(aaa,j);
                 }
@@ -271,6 +253,101 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("cex");
             }
+        }*/
+
+        private void Get_GridData()
+        {
+            int day = Convert.ToInt32(WMA_input.Text);
+            int index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text)).Length;
+
+            for (int i=0; i<RowNum; i++)
+            {
+                FCGrid.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
+                FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
+            }
+            for (int j = 0; j < RowNum - index; j++)
+            {
+                double[] aaa = new double[index];
+
+                for (int i = 0; i < index; i++)
+                {
+                    aaa[i] = Prov_WMA(Get_EndPrice(), getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], j)[0];
+
+                }
+                Mecro(aaa, j);
+            }
+
+        }
+
+        private int[] Get_Angle(double[] WMA)
+        {
+            int[] angle = new int[RowNum];
+
+            int day = Convert.ToInt32(WMA_input.Text);
+            int time = Convert.ToInt32(TimeSelected);
+            int where = Convert.ToInt32(whereText.Text);
+
+            double radians;
+
+            for (int k = 1; k <= RowNum - 1; k++)
+            {
+                if (WMA[k] == 0 || WMA[k - 1] == 0)
+                {
+                    FCGrid.Rows[k - 1].Cells[6].Value = 0;
+                }
+                else
+                {
+                    if (WMA[k + where - 1] == 0)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        radians = Math.Atan((WMA[k + where - 1] - WMA[k - 1]) / time);
+                        angle[k - 1] = Convert.ToInt32(radians * 57.3);
+                    }
+                }
+            }
+            return angle;
+        }
+
+        private double[] Get_EndPrice()
+        {
+            double[] EndPrice = new double[RowNum];
+            for (int i = 0; i < RowNum; i++)
+            {
+                EndPrice[i] = Convert.ToDouble(FCGrid.Rows[i].Cells[5].Value);
+            }
+
+            return EndPrice;
+        }
+
+        private double[] Prov_WMA(double[] inputarray, int day, int startidx)
+        {
+            int arr_length = inputarray.Length;
+            double[] outputarray = new double[RowNum];
+
+            for (int i = startidx; i < arr_length; i++)
+            {
+                if (i > arr_length - day)
+                {
+                    outputarray[i] = 0;
+                    continue;
+                }
+                else
+                {
+                    double arr_sum = 0.0;
+                    int day_sum = 0;
+
+                    for (int j = 0; j < day; j++)
+                    {
+                        arr_sum += inputarray[i + j] * (day - j);
+                        day_sum += j + 1;
+                    }
+                    outputarray[i] = arr_sum / day_sum;
+                }
+            }
+            return outputarray;
         }
 
         private int[] getWMA_Index(int WMA_Start, int WMA_End, int WMA_Interval)
@@ -287,7 +364,7 @@ namespace WindowsFormsApp4
         private void Mecro(double[] WMA,int index)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
-            aa = (double[])WMA.Clone(); // WMA 복사
+            Array.Copy(WMA,aa,WMA.Length); // WMA 복사
             //bb  // WMA sort
             //cc  // WMA reverse sort
             Array.Sort(WMA);
@@ -608,7 +685,7 @@ namespace WindowsFormsApp4
         {
             Load_Data(gFCode, TimeSelected, TimeDistance);
             Delay(100);
-            WMA_prov();
+            Get_GridData();
         }
 
         private static DateTime Delay(int MS)
@@ -761,5 +838,6 @@ namespace WindowsFormsApp4
             string count = Convert.ToString(Stock_Count.Value);
             getDeal(count,"02");
         }
+
     }
 }
