@@ -136,6 +136,8 @@
             this.endWma = new System.Windows.Forms.TextBox();
             this.intervalWma = new System.Windows.Forms.TextBox();
             this.axGiExpertControl2 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.Angle_input = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid)).BeginInit();
@@ -154,7 +156,7 @@
             // Comm_Obj_DATA
             // 
             this.Comm_Obj_DATA.Enabled = true;
-            this.Comm_Obj_DATA.Location = new System.Drawing.Point(7360, 6108);
+            this.Comm_Obj_DATA.Location = new System.Drawing.Point(7383, 6154);
             this.Comm_Obj_DATA.Name = "Comm_Obj_DATA";
             this.Comm_Obj_DATA.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA.OcxState")));
             this.Comm_Obj_DATA.Size = new System.Drawing.Size(136, 50);
@@ -165,7 +167,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(6744, 5460);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(6767, 5506);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -796,7 +798,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(4992, 1972);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(5015, 2018);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -1060,7 +1062,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(3459, 2061);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(3482, 2107);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -1092,18 +1094,36 @@
             // axGiExpertControl2
             // 
             this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(1383, 370);
+            this.axGiExpertControl2.Location = new System.Drawing.Point(1406, 416);
             this.axGiExpertControl2.Name = "axGiExpertControl2";
             this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
             this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
             this.axGiExpertControl2.TabIndex = 82;
             this.axGiExpertControl2.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Deal_ReceiveData);
             // 
+            // Angle_input
+            // 
+            this.Angle_input.Location = new System.Drawing.Point(293, 44);
+            this.Angle_input.Name = "Angle_input";
+            this.Angle_input.Size = new System.Drawing.Size(62, 21);
+            this.Angle_input.TabIndex = 83;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(245, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(29, 12);
+            this.label9.TabIndex = 84;
+            this.label9.Text = "각도";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1744, 735);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.Angle_input);
             this.Controls.Add(this.axGiExpertControl2);
             this.Controls.Add(this.intervalWma);
             this.Controls.Add(this.endWma);
@@ -1291,5 +1311,7 @@
         private System.Windows.Forms.TextBox startWma;
         private System.Windows.Forms.TextBox endWma;
         private System.Windows.Forms.TextBox intervalWma;
+        private System.Windows.Forms.TextBox Angle_input;
+        private System.Windows.Forms.Label label9;
     }
 }
