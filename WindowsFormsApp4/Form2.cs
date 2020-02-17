@@ -16,10 +16,12 @@ namespace WindowsFormsApp4
     {
 
         private string gFCode = "101Q3";
-        private string TimeSelected = "1";
-        private string TimeDistance = "Day";
+        private string TimeSelected = "3";
+        private string TimeDistance = "Min";
         private int RowNum = 200;
         private int AccControl = 0;
+
+        private int control_buy_sell = 0;
 
         //messagebox auto closing
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
@@ -60,25 +62,13 @@ namespace WindowsFormsApp4
                     Comm_Obj_DATA.SetSingleData(1, "D");
                     Comm_Obj_DATA.SetSingleData(2, time);
                     break;
-                case "Week":
-                    Comm_Obj_DATA.SetSingleData(1, "W");
-                    Comm_Obj_DATA.SetSingleData(2, time);
-                    break;
-                case "Month":
-                    Comm_Obj_DATA.SetSingleData(1, "M");
-                    Comm_Obj_DATA.SetSingleData(2, time);
-                    break;
-                case "Year":
-                    Comm_Obj_DATA.SetSingleData(1, "Y");
-                    Comm_Obj_DATA.SetSingleData(2, time);
-                    break;
                 case "Min":
                     Comm_Obj_DATA.SetSingleData(1, "1");
-                    Comm_Obj_DATA.SetSingleData(2, TimeSelected);
+                    Comm_Obj_DATA.SetSingleData(2, time);
                     break;
                 case "Tick":
                     Comm_Obj_DATA.SetSingleData(1, "T");
-                    Comm_Obj_DATA.SetSingleData(2, TimeSelected);
+                    Comm_Obj_DATA.SetSingleData(2, time);
                     break;
 
 
@@ -185,92 +175,26 @@ namespace WindowsFormsApp4
                 MessageBox.Show("cex");
         }
 
-        private void WMA_prov()
-        {
-            double[] WMA = new double[RowNum];
-            double[] endPrice = new double[RowNum];
-            double[] angle = new double[RowNum];
-            angle.Initialize();
-            double radians;
-
-            if (!string.IsNullOrEmpty(WMA_input.Text) && !string.IsNullOrEmpty(whereText.Text))
-            {
-                int day = Convert.ToInt32(WMA_input.Text);
-                int time = Convert.ToInt32(TimeSelected);
-                int where = Convert.ToInt32(whereText.Text);
-
-                for (int i = 0; i <= RowNum - 1; i++)
-                {
-                    endPrice[i] = Convert.ToDouble(FCGrid.Rows[i].Cells[5].Value);
-                }
-
-                WMA = Prov_WMA(endPrice, day,0);
-
-                for (int j = 0; j <= RowNum - 1; j++)
-                {
-                    FCGrid.Rows[j].Cells[6].Value = WMA[j];
-                }
-                for (int k = 1; k <= RowNum - 1; k++)
-                {
-                    if (WMA[k] == 0 || WMA[k - 1] == 0)
-                    {
-                        FCGrid.Rows[k - 1].Cells[6].Value = 0;
-                    }
-                    else
-                    {
-                        if (WMA[k + where - 1] == 0)
-                        {
-                            break;
-                        }
-                        else
-                        {
-                            radians = Math.Atan((WMA[k - 1]) - WMA[k + where - 1] / time);
-                            angle[k - 1] = radians * 57.3;
-                        }
-                    }
-                }
-                for (int j = 0; j < RowNum; j++)
-                {
-                    FCGrid.Rows[j].Cells[7].Value = Convert.ToInt32(angle[j]);
-                }
-                int index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text)).Length;
-                
-                for(int j=0; j<RowNum-index; j++)
-                {
-                    double[] aaa = new double[index];
-
-                    for (int i = 0; i < index; i++)
-                    {
-                        aaa[i] = Prov_WMA(endPrice, getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], j)[0];
-                        
-                    }
-                    Mecro(aaa,j);
-                }
-            }
-            else
-            {
-                MessageBox.Show("cex");
-            }
-        }
-
         private void Get_GridData()
         {
             int day = Convert.ToInt32(WMA_input.Text);
-            int index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text)).Length;
+            int[] index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text));
+            int index_length = index.Length;
 
             for (int i=0; i<RowNum; i++)
             {
                 FCGrid.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
                 FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
+                FCGrid.Rows[i].Cells[8].Value = "";
             }
 
-            for (int j = 0; j < RowNum - index; j++)
+            for (int j = RowNum - index[index_length - 1] ; j >= 0; j--)
             {
-                double[] aaa = new double[index];
+                double[] aaa = new double[index_length];
 
-                for (int i = 0; i < index; i++)
+                for (int i = 0; i < index_length; i++)
                 {
-                    aaa[i] = Prov_WMA(Get_EndPrice(), getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], 0)[j];
+                    aaa[i] = Prov_WMA(Get_EndPrice(), index[i], 0)[j];
                 }
                 Mecro(aaa, j);
             }
@@ -358,12 +282,12 @@ namespace WindowsFormsApp4
             return WMA;
         }
 
-        private void Mecro(double[] WMA,int index)
+        private void Mecro(double[] WMA, int index)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
             int angle = Convert.ToInt32(Angle_input.Text);
 
-            Array.Copy(WMA,aa,WMA.Length); // WMA 복사
+            Array.Copy(WMA, aa, WMA.Length); // WMA 복사
             //bb  // WMA sort
             //cc  // WMA reverse sort
             Array.Sort(WMA);
@@ -372,15 +296,52 @@ namespace WindowsFormsApp4
             Array.Reverse(WMA);
             Array.Copy(WMA, cc, WMA.Length);
 
-            if (checkSameArray(aa, bb) == true && Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+            //control_buy_sell // 0: 일반 1:역배 2: 정배
+
+            if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
             {
                 FCGrid.Rows[index].Cells[8].Value = "매도";
+                control_buy_sell = 1;
                 //AutoClosingMessageBox("매수", "알림", 1000);
             }
-            else if (checkSameArray(aa, cc) == true && Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+            else if (checkSameArray(aa, bb) == true && control_buy_sell != 2)
+            {
+                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 1)
+                        FCGrid.Rows[index].Cells[8].Value = "매도";
+                    control_buy_sell = 1;
+                    //AutoClosingMessageBox("매수", "알림", 1000);
+                }
+                else
+                {
+                    FCGrid.Rows[index].Cells[8].Value = "";
+                    control_buy_sell = 0;
+                }
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
             {
                 FCGrid.Rows[index].Cells[8].Value = "매수";
+                control_buy_sell = 2;
                 //AutoClosingMessageBox("매도", "알림", 1000);
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell != 1)
+            {
+                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 2)
+                        FCGrid.Rows[index].Cells[8].Value = "매수";
+                    control_buy_sell = 2;
+                    //AutoClosingMessageBox("매도", "알림", 1000);
+                }
+                else
+                {
+                    control_buy_sell = 0;
+                }
+            }
+            else
+            {
+                control_buy_sell = 0;
             }
         }
 
@@ -410,6 +371,7 @@ namespace WindowsFormsApp4
         }
 
         //주기
+
         private void TimeDistance_Changed(string distance)
         {
             TimeDistance = distance;
@@ -418,12 +380,6 @@ namespace WindowsFormsApp4
             
             Day_btn.BackColor = SystemColors.Control;
             Day_btn.ForeColor = SystemColors.ControlText;
-            Week_btn.BackColor = SystemColors.Control;
-            Week_btn.ForeColor = SystemColors.ControlText;
-            Month_btn.BackColor = SystemColors.Control;
-            Month_btn.ForeColor = SystemColors.ControlText;
-            Year_btn.BackColor = SystemColors.Control;
-            Year_btn.ForeColor = SystemColors.ControlText;
             Min_btn.BackColor = SystemColors.Control;
             Min_btn.ForeColor = SystemColors.ControlText;
             Tick_btn.BackColor = SystemColors.Control;
@@ -434,26 +390,9 @@ namespace WindowsFormsApp4
                 case "Day":
                     Day_btn.BackColor = SystemColors.Highlight;
                     Day_btn.ForeColor = SystemColors.Control;
-                    set_time = "1";
-                    Time_btn_Disabled();
-                    break;
-                case "Week":
-                    Week_btn.BackColor = SystemColors.Highlight;
-                    Week_btn.ForeColor = SystemColors.Control;
-                    set_time = "7";
-                    Time_btn_Disabled();
-                    break;
-                case "Month":
-                    Month_btn.BackColor = SystemColors.Highlight;
-                    Month_btn.ForeColor = SystemColors.Control;
-                    set_time = "30";
-                    Time_btn_Disabled();
-                    break;
-                case "Year":
-                    Year_btn.BackColor = SystemColors.Highlight;
-                    Year_btn.ForeColor = SystemColors.Control;
-                    set_time = "365";
-                    Time_btn_Disabled();
+                    set_time = TimeSelected;
+                    Time_btn_Enabled();
+                    Time_Changed(TimeSelected);
                     break;
                 case "Min":
                     Min_btn.BackColor = SystemColors.Highlight;
@@ -478,21 +417,6 @@ namespace WindowsFormsApp4
         private void Day_btn_Click(object sender, EventArgs e)
         {
             TimeDistance_Changed("Day");
-        }
-
-        private void Week_btn_Click(object sender, EventArgs e)
-        {
-            TimeDistance_Changed("Week");
-        }
-
-        private void Month_btn_Click(object sender, EventArgs e)
-        {
-            TimeDistance_Changed("Month");
-        }
-
-        private void Year_btn_Click(object sender, EventArgs e)
-        {
-            TimeDistance_Changed("Year");
         }
 
         private void Min_btn_Click(object sender, EventArgs e)
@@ -608,36 +532,6 @@ namespace WindowsFormsApp4
             Time_Changed("60");
         }
 
-        private void Time_btn_Disabled()
-        {
-            Time_btn_1.Enabled = false;
-            Time_btn_3.Enabled = false;
-            Time_btn_5.Enabled = false;
-            Time_btn_10.Enabled = false;
-            Time_btn_15.Enabled = false;
-            Time_btn_30.Enabled = false;
-            Time_btn_45.Enabled = false;
-            Time_btn_60.Enabled = false;
-            Time_btn_1.BackColor = SystemColors.ControlLight;
-            Time_btn_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_3.BackColor = SystemColors.ControlLight;
-            Time_btn_3.ForeColor = SystemColors.ControlDark;
-            Time_btn_5.BackColor = SystemColors.ControlLight;
-            Time_btn_5.ForeColor = SystemColors.ControlDark;
-            Time_btn_10.BackColor = SystemColors.ControlLight;
-            Time_btn_10.ForeColor = SystemColors.ControlDark;
-            Time_btn_15.BackColor = SystemColors.ControlLight;
-            Time_btn_15.ForeColor = SystemColors.ControlDark;
-            Time_btn_30.BackColor = SystemColors.ControlLight;
-            Time_btn_30.ForeColor = SystemColors.ControlDark;
-            Time_btn_45.BackColor = SystemColors.ControlLight;
-            Time_btn_45.ForeColor = SystemColors.ControlDark;
-            Time_btn_60.BackColor = SystemColors.ControlLight;
-            Time_btn_60.ForeColor = SystemColors.ControlDark;
-            Time_ComboBox.Enabled = false;
-            Time_ComboBox.ForeColor = SystemColors.ControlDark;
-
-        }
         private void Time_btn_Enabled()
         {
             Time_btn_1.Enabled = true;

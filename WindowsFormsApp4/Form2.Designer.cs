@@ -30,17 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.FCode = new System.Windows.Forms.TextBox();
@@ -103,34 +94,7 @@
             this.Account_Num = new System.Windows.Forms.ComboBox();
             this.Account_GridView = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Year_btn = new System.Windows.Forms.Button();
-            this.Month_btn = new System.Windows.Forms.Button();
-            this.Week_btn = new System.Windows.Forms.Button();
             this.Comm_Obj_Account = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.Column22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Comm_Obj_Price = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.startWma = new System.Windows.Forms.TextBox();
             this.endWma = new System.Windows.Forms.TextBox();
@@ -146,9 +110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).BeginInit();
             this.SuspendLayout();
@@ -156,7 +117,7 @@
             // Comm_Obj_DATA
             // 
             this.Comm_Obj_DATA.Enabled = true;
-            this.Comm_Obj_DATA.Location = new System.Drawing.Point(7383, 6154);
+            this.Comm_Obj_DATA.Location = new System.Drawing.Point(7639, 6339);
             this.Comm_Obj_DATA.Name = "Comm_Obj_DATA";
             this.Comm_Obj_DATA.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA.OcxState")));
             this.Comm_Obj_DATA.Size = new System.Drawing.Size(136, 50);
@@ -167,7 +128,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(6767, 5506);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(7023, 5691);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -189,14 +150,14 @@
             this.FCGrid.AllowUserToAddRows = false;
             this.FCGrid.AllowUserToDeleteRows = false;
             this.FCGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FCGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid.Location = new System.Drawing.Point(12, 71);
             this.FCGrid.Name = "FCGrid";
@@ -239,7 +200,7 @@
             // 
             // Min_btn
             // 
-            this.Min_btn.Location = new System.Drawing.Point(185, 11);
+            this.Min_btn.Location = new System.Drawing.Point(112, 11);
             this.Min_btn.Name = "Min_btn";
             this.Min_btn.Size = new System.Drawing.Size(25, 23);
             this.Min_btn.TabIndex = 15;
@@ -249,7 +210,7 @@
             // 
             // Tick_btn
             // 
-            this.Tick_btn.Location = new System.Drawing.Point(209, 11);
+            this.Tick_btn.Location = new System.Drawing.Point(136, 11);
             this.Tick_btn.Name = "Tick_btn";
             this.Tick_btn.Size = new System.Drawing.Size(25, 23);
             this.Tick_btn.TabIndex = 16;
@@ -261,7 +222,7 @@
             // 
             this.Time_btn_1.BackColor = System.Drawing.SystemColors.Control;
             this.Time_btn_1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_1.Location = new System.Drawing.Point(234, 11);
+            this.Time_btn_1.Location = new System.Drawing.Point(161, 11);
             this.Time_btn_1.Name = "Time_btn_1";
             this.Time_btn_1.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_1.TabIndex = 21;
@@ -272,7 +233,7 @@
             // Time_btn_3
             // 
             this.Time_btn_3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_3.Location = new System.Drawing.Point(258, 11);
+            this.Time_btn_3.Location = new System.Drawing.Point(185, 11);
             this.Time_btn_3.Name = "Time_btn_3";
             this.Time_btn_3.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_3.TabIndex = 25;
@@ -282,7 +243,7 @@
             // 
             // Time_btn_10
             // 
-            this.Time_btn_10.Location = new System.Drawing.Point(306, 11);
+            this.Time_btn_10.Location = new System.Drawing.Point(233, 11);
             this.Time_btn_10.Name = "Time_btn_10";
             this.Time_btn_10.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_10.TabIndex = 27;
@@ -292,7 +253,7 @@
             // 
             // Time_btn_5
             // 
-            this.Time_btn_5.Location = new System.Drawing.Point(282, 11);
+            this.Time_btn_5.Location = new System.Drawing.Point(209, 11);
             this.Time_btn_5.Name = "Time_btn_5";
             this.Time_btn_5.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_5.TabIndex = 26;
@@ -302,7 +263,7 @@
             // 
             // Time_btn_60
             // 
-            this.Time_btn_60.Location = new System.Drawing.Point(402, 11);
+            this.Time_btn_60.Location = new System.Drawing.Point(329, 11);
             this.Time_btn_60.Name = "Time_btn_60";
             this.Time_btn_60.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_60.TabIndex = 31;
@@ -312,7 +273,7 @@
             // 
             // Time_btn_45
             // 
-            this.Time_btn_45.Location = new System.Drawing.Point(378, 11);
+            this.Time_btn_45.Location = new System.Drawing.Point(305, 11);
             this.Time_btn_45.Name = "Time_btn_45";
             this.Time_btn_45.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_45.TabIndex = 30;
@@ -324,7 +285,7 @@
             // 
             this.Time_btn_30.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Time_btn_30.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_30.Location = new System.Drawing.Point(354, 11);
+            this.Time_btn_30.Location = new System.Drawing.Point(281, 11);
             this.Time_btn_30.Name = "Time_btn_30";
             this.Time_btn_30.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_30.TabIndex = 29;
@@ -334,7 +295,7 @@
             // 
             // Time_btn_15
             // 
-            this.Time_btn_15.Location = new System.Drawing.Point(330, 11);
+            this.Time_btn_15.Location = new System.Drawing.Point(257, 11);
             this.Time_btn_15.Name = "Time_btn_15";
             this.Time_btn_15.Size = new System.Drawing.Size(25, 23);
             this.Time_btn_15.TabIndex = 28;
@@ -360,7 +321,7 @@
             "50",
             "60",
             "120"});
-            this.Time_ComboBox.Location = new System.Drawing.Point(428, 12);
+            this.Time_ComboBox.Location = new System.Drawing.Point(355, 12);
             this.Time_ComboBox.Name = "Time_ComboBox";
             this.Time_ComboBox.Size = new System.Drawing.Size(45, 20);
             this.Time_ComboBox.TabIndex = 32;
@@ -393,7 +354,7 @@
             // Buy_btn
             // 
             this.Buy_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buy_btn.Location = new System.Drawing.Point(1018, 489);
+            this.Buy_btn.Location = new System.Drawing.Point(1028, 131);
             this.Buy_btn.Name = "Buy_btn";
             this.Buy_btn.Size = new System.Drawing.Size(50, 23);
             this.Buy_btn.TabIndex = 63;
@@ -404,7 +365,7 @@
             // Sell_btn
             // 
             this.Sell_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sell_btn.Location = new System.Drawing.Point(963, 488);
+            this.Sell_btn.Location = new System.Drawing.Point(973, 131);
             this.Sell_btn.Name = "Sell_btn";
             this.Sell_btn.Size = new System.Drawing.Size(50, 23);
             this.Sell_btn.TabIndex = 62;
@@ -415,7 +376,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(939, 495);
+            this.label5.Location = new System.Drawing.Point(949, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(21, 12);
             this.label5.TabIndex = 61;
@@ -423,7 +384,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(866, 490);
+            this.numericUpDown2.Location = new System.Drawing.Point(876, 133);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(64, 21);
             this.numericUpDown2.TabIndex = 60;
@@ -431,7 +392,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(827, 495);
+            this.label4.Location = new System.Drawing.Point(837, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 59;
@@ -439,14 +400,14 @@
             // 
             // Stock_Count
             // 
-            this.Stock_Count.Location = new System.Drawing.Point(757, 490);
+            this.Stock_Count.Location = new System.Drawing.Point(767, 133);
             this.Stock_Count.Name = "Stock_Count";
             this.Stock_Count.Size = new System.Drawing.Size(64, 21);
             this.Stock_Count.TabIndex = 58;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(1034, 463);
+            this.textBox5.Location = new System.Drawing.Point(1044, 106);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(51, 21);
             this.textBox5.TabIndex = 57;
@@ -454,7 +415,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(978, 470);
+            this.label3.Location = new System.Drawing.Point(988, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 56;
@@ -462,7 +423,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(910, 463);
+            this.textBox4.Location = new System.Drawing.Point(920, 106);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(51, 21);
             this.textBox4.TabIndex = 55;
@@ -470,7 +431,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(875, 470);
+            this.label2.Location = new System.Drawing.Point(885, 113);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 54;
@@ -478,7 +439,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(809, 463);
+            this.textBox1.Location = new System.Drawing.Point(819, 106);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(55, 21);
             this.textBox1.TabIndex = 53;
@@ -486,7 +447,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(755, 470);
+            this.label6.Location = new System.Drawing.Point(765, 113);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 52;
@@ -509,14 +470,14 @@
             // 
             // Price_GridView
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 7F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -661,7 +622,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(1264, 44);
+            this.label8.Location = new System.Drawing.Point(819, 451);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(61, 12);
             this.label8.TabIndex = 73;
@@ -671,7 +632,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(1181, 44);
+            this.label7.Location = new System.Drawing.Point(736, 451);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 12);
             this.label7.TabIndex = 72;
@@ -680,7 +641,7 @@
             // button12
             // 
             this.button12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button12.Location = new System.Drawing.Point(1664, 14);
+            this.button12.Location = new System.Drawing.Point(1107, 446);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(39, 23);
             this.button12.TabIndex = 71;
@@ -690,7 +651,7 @@
             // button11
             // 
             this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button11.Location = new System.Drawing.Point(1626, 14);
+            this.button11.Location = new System.Drawing.Point(1069, 446);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(39, 23);
             this.button11.TabIndex = 70;
@@ -700,7 +661,7 @@
             // Lookup_btn
             // 
             this.Lookup_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lookup_btn.Location = new System.Drawing.Point(1588, 14);
+            this.Lookup_btn.Location = new System.Drawing.Point(1031, 446);
             this.Lookup_btn.Name = "Lookup_btn";
             this.Lookup_btn.Size = new System.Drawing.Size(39, 23);
             this.Lookup_btn.TabIndex = 69;
@@ -710,14 +671,14 @@
             // 
             // textBox8
             // 
-            this.textBox8.Location = new System.Drawing.Point(1524, 15);
+            this.textBox8.Location = new System.Drawing.Point(1079, 422);
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(48, 21);
             this.textBox8.TabIndex = 68;
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(1447, 15);
+            this.textBox7.Location = new System.Drawing.Point(1002, 422);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(74, 21);
             this.textBox7.TabIndex = 67;
@@ -725,7 +686,7 @@
             // Account_Name
             // 
             this.Account_Name.Enabled = false;
-            this.Account_Name.Location = new System.Drawing.Point(1318, 15);
+            this.Account_Name.Location = new System.Drawing.Point(873, 422);
             this.Account_Name.Name = "Account_Name";
             this.Account_Name.Size = new System.Drawing.Size(121, 21);
             this.Account_Name.TabIndex = 66;
@@ -733,7 +694,7 @@
             // Account_Num
             // 
             this.Account_Num.FormattingEnabled = true;
-            this.Account_Num.Location = new System.Drawing.Point(1174, 16);
+            this.Account_Num.Location = new System.Drawing.Point(729, 423);
             this.Account_Num.Name = "Account_Num";
             this.Account_Num.Size = new System.Drawing.Size(138, 20);
             this.Account_Num.TabIndex = 65;
@@ -747,14 +708,14 @@
             this.Account_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13});
             this.Account_GridView.EnableHeadersVisualStyles = false;
-            this.Account_GridView.Location = new System.Drawing.Point(1174, 60);
+            this.Account_GridView.Location = new System.Drawing.Point(729, 467);
             this.Account_GridView.Margin = new System.Windows.Forms.Padding(0);
             this.Account_GridView.Name = "Account_GridView";
             this.Account_GridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.Account_GridView.RowTemplate.Height = 23;
             this.Account_GridView.RowTemplate.ReadOnly = true;
             this.Account_GridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Account_GridView.Size = new System.Drawing.Size(543, 259);
+            this.Account_GridView.Size = new System.Drawing.Size(419, 259);
             this.Account_GridView.TabIndex = 75;
             // 
             // Column13
@@ -762,43 +723,10 @@
             this.Column13.HeaderText = "총액";
             this.Column13.Name = "Column13";
             // 
-            // Year_btn
-            // 
-            this.Year_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Year_btn.Location = new System.Drawing.Point(160, 11);
-            this.Year_btn.Name = "Year_btn";
-            this.Year_btn.Size = new System.Drawing.Size(25, 23);
-            this.Year_btn.TabIndex = 14;
-            this.Year_btn.Text = "년";
-            this.Year_btn.UseVisualStyleBackColor = true;
-            this.Year_btn.Click += new System.EventHandler(this.Year_btn_Click);
-            // 
-            // Month_btn
-            // 
-            this.Month_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Month_btn.Location = new System.Drawing.Point(136, 11);
-            this.Month_btn.Name = "Month_btn";
-            this.Month_btn.Size = new System.Drawing.Size(25, 23);
-            this.Month_btn.TabIndex = 13;
-            this.Month_btn.Text = "월";
-            this.Month_btn.UseVisualStyleBackColor = true;
-            this.Month_btn.Click += new System.EventHandler(this.Month_btn_Click);
-            // 
-            // Week_btn
-            // 
-            this.Week_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Week_btn.Location = new System.Drawing.Point(112, 11);
-            this.Week_btn.Name = "Week_btn";
-            this.Week_btn.Size = new System.Drawing.Size(25, 23);
-            this.Week_btn.TabIndex = 12;
-            this.Week_btn.Text = "주";
-            this.Week_btn.UseVisualStyleBackColor = true;
-            this.Week_btn.Click += new System.EventHandler(this.Week_btn_Click);
-            // 
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(5015, 2018);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(5271, 2203);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -807,262 +735,10 @@
             this.Comm_Obj_Account.Visible = false;
             this.Comm_Obj_Account.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Account_ReceiveData);
             // 
-            // Column22
-            // 
-            this.Column22.HeaderText = "";
-            this.Column22.Name = "Column22";
-            this.Column22.Width = 45;
-            // 
-            // Column21
-            // 
-            this.Column21.HeaderText = "";
-            this.Column21.Name = "Column21";
-            this.Column21.Width = 65;
-            // 
-            // Column20
-            // 
-            this.Column20.HeaderText = "";
-            this.Column20.Name = "Column20";
-            this.Column20.Width = 65;
-            // 
-            // Column19
-            // 
-            this.Column19.HeaderText = "시장가";
-            this.Column19.Name = "Column19";
-            this.Column19.Width = 70;
-            // 
-            // Column18
-            // 
-            this.Column18.HeaderText = "";
-            this.Column18.Name = "Column18";
-            this.Column18.Width = 65;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "";
-            this.Column17.Name = "Column17";
-            this.Column17.Width = 65;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "";
-            this.Column16.Name = "Column16";
-            this.Column16.Width = 45;
-            // 
-            // dataGridView4
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column16,
-            this.Column17,
-            this.Column18,
-            this.Column19,
-            this.Column20,
-            this.Column21,
-            this.Column22});
-            this.dataGridView4.Location = new System.Drawing.Point(729, 413);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView4.Size = new System.Drawing.Size(419, 44);
-            this.dataGridView4.TabIndex = 51;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "STOP";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 45;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "미체결";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "매수";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "현재가";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 70;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "매도";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "미체결";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "STOP";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 45;
-            // 
-            // dataGridView3
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView3.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView3.Location = new System.Drawing.Point(729, 143);
-            this.dataGridView3.Name = "dataGridView3";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView3.RowHeadersVisible = false;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dataGridView3.RowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView3.Size = new System.Drawing.Size(419, 269);
-            this.dataGridView3.TabIndex = 49;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "STOP";
-            this.Column12.Name = "Column12";
-            this.Column12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column12.Width = 45;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "미체결";
-            this.Column11.Name = "Column11";
-            this.Column11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column11.Width = 65;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "매수";
-            this.Column10.Name = "Column10";
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column10.Width = 65;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "평균가";
-            this.Column9.MinimumWidth = 30;
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column9.Width = 70;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "매도";
-            this.Column8.Name = "Column8";
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column8.Width = 65;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "미체결";
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column7.Width = 65;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 10F;
-            this.Column6.HeaderText = "STOP";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.Width = 45;
-            // 
-            // dataGridView2
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridView2.Location = new System.Drawing.Point(729, 101);
-            this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("굴림", 7F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView2.RowHeadersVisible = false;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView2.Size = new System.Drawing.Size(419, 41);
-            this.dataGridView2.TabIndex = 48;
-            // 
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(3482, 2107);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(3738, 2292);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -1076,6 +752,7 @@
             this.startWma.Name = "startWma";
             this.startWma.Size = new System.Drawing.Size(34, 21);
             this.startWma.TabIndex = 78;
+            this.startWma.Text = "2";
             // 
             // endWma
             // 
@@ -1083,6 +760,7 @@
             this.endWma.Name = "endWma";
             this.endWma.Size = new System.Drawing.Size(34, 21);
             this.endWma.TabIndex = 79;
+            this.endWma.Text = "10";
             // 
             // intervalWma
             // 
@@ -1090,11 +768,12 @@
             this.intervalWma.Name = "intervalWma";
             this.intervalWma.Size = new System.Drawing.Size(34, 21);
             this.intervalWma.TabIndex = 80;
+            this.intervalWma.Text = "2";
             // 
             // axGiExpertControl2
             // 
             this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(1406, 416);
+            this.axGiExpertControl2.Location = new System.Drawing.Point(1662, 601);
             this.axGiExpertControl2.Name = "axGiExpertControl2";
             this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
             this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
@@ -1107,11 +786,12 @@
             this.Angle_input.Name = "Angle_input";
             this.Angle_input.Size = new System.Drawing.Size(62, 21);
             this.Angle_input.TabIndex = 83;
+            this.Angle_input.Text = "10";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 47);
+            this.label9.Location = new System.Drawing.Point(257, 48);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 84;
@@ -1121,7 +801,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1744, 735);
+            this.ClientSize = new System.Drawing.Size(1178, 735);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Angle_input);
             this.Controls.Add(this.axGiExpertControl2);
@@ -1152,9 +832,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView4);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.FCode_comboBox);
             this.Controls.Add(this.Account_Num2);
             this.Controls.Add(this.Price_GridView);
@@ -1181,9 +858,6 @@
             this.Controls.Add(this.Time_btn_1);
             this.Controls.Add(this.Tick_btn);
             this.Controls.Add(this.Min_btn);
-            this.Controls.Add(this.Year_btn);
-            this.Controls.Add(this.Month_btn);
-            this.Controls.Add(this.Week_btn);
             this.Controls.Add(this.Day_btn);
             this.Controls.Add(this.WMA_input_btn);
             this.Controls.Add(this.WMA_input);
@@ -1202,9 +876,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).EndInit();
             this.ResumeLayout(false);
@@ -1280,34 +951,7 @@
         private System.Windows.Forms.TextBox Account_Name;
         private System.Windows.Forms.ComboBox Account_Num;
         private System.Windows.Forms.DataGridView Account_GridView;
-        private System.Windows.Forms.Button Year_btn;
-        private System.Windows.Forms.Button Month_btn;
-        private System.Windows.Forms.Button Week_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column21;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column19;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox startWma;
         private System.Windows.Forms.TextBox endWma;
         private System.Windows.Forms.TextBox intervalWma;
