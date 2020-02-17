@@ -21,6 +21,8 @@ namespace WindowsFormsApp4
         private int RowNum = 200;
         private int AccControl = 0;
 
+        int control_buy_sell = 0;
+
         //messagebox auto closing
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
         static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -143,7 +145,6 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("실패");
             }
-
         }
 
 
@@ -264,7 +265,7 @@ namespace WindowsFormsApp4
                 FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
             }
 
-            for (int j = 0; j < RowNum - index; j++)
+            for (int j = RowNum - index -1; j >= 0; j--)
             {
                 double[] aaa = new double[index];
 
@@ -273,6 +274,79 @@ namespace WindowsFormsApp4
                     aaa[i] = Prov_WMA(Get_EndPrice(), getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], 0)[j];
                 }
                 Mecro(aaa, j);
+            }
+
+            /*for (int j = 0; j < RowNum - index; j++)
+            {
+                double[] aaa = new double[index];
+
+                for (int i = 0; i < index; i++)
+                {
+                    aaa[i] = Prov_WMA(Get_EndPrice(), getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text))[i], 0)[j];
+                }
+                Mecro(aaa, j);
+            }*/
+        }
+
+        private void Mecro(double[] WMA, int index)
+        {
+            double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
+            int angle = Convert.ToInt32(Angle_input.Text);
+
+            Array.Copy(WMA, aa, WMA.Length); // WMA 복사
+            //bb  // WMA sort
+            //cc  // WMA reverse sort
+            Array.Sort(WMA);
+            Array.Copy(WMA, bb, WMA.Length);
+
+            Array.Reverse(WMA);
+            Array.Copy(WMA, cc, WMA.Length);
+            
+            //control_buy_sell // 0: 일반 1:역배 2: 정배
+
+            if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "매도";
+                control_buy_sell = 1;
+                //AutoClosingMessageBox("매수", "알림", 1000);
+            }
+            else if(checkSameArray(aa,bb) == true && control_buy_sell != 2)
+            {
+                if(Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 1)
+                        FCGrid.Rows[index].Cells[8].Value = "매도";
+                    control_buy_sell = 1;
+                    //AutoClosingMessageBox("매수", "알림", 1000);
+                }
+                else
+                {
+                    control_buy_sell = 0;
+                }
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "매수";
+                control_buy_sell = 2;
+                //AutoClosingMessageBox("매도", "알림", 1000);
+            }
+            else if(checkSameArray(aa,cc) == true && control_buy_sell != 1)
+            {
+                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 2)
+                        FCGrid.Rows[index].Cells[8].Value = "매수";
+                    control_buy_sell = 2;
+                    //AutoClosingMessageBox("매도", "알림", 1000);
+                }
+                else
+                {
+                    control_buy_sell = 0;
+                }
+            }
+            else
+            {
+                control_buy_sell = 0;
             }
         }
 
@@ -358,31 +432,7 @@ namespace WindowsFormsApp4
             return WMA;
         }
 
-        private void Mecro(double[] WMA,int index)
-        {
-            double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
-            int angle = Convert.ToInt32(Angle_input.Text);
-
-            Array.Copy(WMA,aa,WMA.Length); // WMA 복사
-            //bb  // WMA sort
-            //cc  // WMA reverse sort
-            Array.Sort(WMA);
-            Array.Copy(WMA, bb, WMA.Length);
-
-            Array.Reverse(WMA);
-            Array.Copy(WMA, cc, WMA.Length);
-
-            if (checkSameArray(aa, bb) == true && Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
-            {
-                FCGrid.Rows[index].Cells[8].Value = "매도";
-                //AutoClosingMessageBox("매수", "알림", 1000);
-            }
-            else if (checkSameArray(aa, cc) == true && Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
-            {
-                FCGrid.Rows[index].Cells[8].Value = "매수";
-                //AutoClosingMessageBox("매도", "알림", 1000);
-            }
-        }
+       
 
 
         public bool checkSameArray(double[] arr1, double[] arr2)
