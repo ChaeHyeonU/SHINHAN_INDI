@@ -133,6 +133,7 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("실패");
             }
+
         }
 
 
@@ -197,69 +198,6 @@ namespace WindowsFormsApp4
                 }
                 Mecro(aaa, j);
             }
-
-        }
-
-        private void Mecro(double[] WMA, int index)
-        {
-            double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
-            int angle = Convert.ToInt32(Angle_input.Text);
-
-            Array.Copy(WMA, aa, WMA.Length); // WMA 복사
-            //bb  // WMA sort
-            //cc  // WMA reverse sort
-            Array.Sort(WMA);
-            Array.Copy(WMA, bb, WMA.Length);
-
-            Array.Reverse(WMA);
-            Array.Copy(WMA, cc, WMA.Length);
-            
-            //control_buy_sell // 0: 일반 1:역배 2: 정배
-
-            if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
-            {
-                FCGrid.Rows[index].Cells[8].Value = "매도";
-                control_buy_sell = 1;
-                //AutoClosingMessageBox("매수", "알림", 1000);
-            }
-            else if(checkSameArray(aa,bb) == true && control_buy_sell != 2)
-            {
-                if(Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
-                {
-                    if (control_buy_sell != 1)
-                        FCGrid.Rows[index].Cells[8].Value = "매도";
-                    control_buy_sell = 1;
-                    //AutoClosingMessageBox("매수", "알림", 1000);
-                }
-                else
-                {
-                    control_buy_sell = 0;
-                }
-            }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
-            {
-                FCGrid.Rows[index].Cells[8].Value = "매수";
-                control_buy_sell = 2;
-                //AutoClosingMessageBox("매도", "알림", 1000);
-            }
-            else if(checkSameArray(aa,cc) == true && control_buy_sell != 1)
-            {
-                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
-                {
-                    if (control_buy_sell != 2)
-                        FCGrid.Rows[index].Cells[8].Value = "매수";
-                    control_buy_sell = 2;
-                    //AutoClosingMessageBox("매도", "알림", 1000);
-                }
-                else
-                {
-                    control_buy_sell = 0;
-                }
-            }
-            else
-            {
-                control_buy_sell = 0;
-            }
         }
 
         private int[] Get_Angle(double[] WMA)
@@ -308,7 +246,7 @@ namespace WindowsFormsApp4
         private double[] Prov_WMA(double[] inputarray, int day, int startidx)
         {
             int arr_length = inputarray.Length;
-            double[] outputarray = new double[RowNum];
+            double[] outputarray = new double[arr_length];
 
             for (int i = startidx; i < arr_length; i++)
             {
@@ -342,6 +280,69 @@ namespace WindowsFormsApp4
                 WMA[i] = WMA_Start + WMA_Interval * i;
             }
             return WMA;
+        }
+
+        private void Mecro(double[] WMA, int index)
+        {
+            double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
+            int angle = Convert.ToInt32(Angle_input.Text);
+
+            Array.Copy(WMA, aa, WMA.Length); // WMA 복사
+            //bb  // WMA sort
+            //cc  // WMA reverse sort
+            Array.Sort(WMA);
+            Array.Copy(WMA, bb, WMA.Length);
+
+            Array.Reverse(WMA);
+            Array.Copy(WMA, cc, WMA.Length);
+
+            //control_buy_sell // 0: 일반 1:역배 2: 정배
+
+            if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "매도";
+                control_buy_sell = 1;
+                //AutoClosingMessageBox("매수", "알림", 1000);
+            }
+            else if (checkSameArray(aa, bb) == true && control_buy_sell != 2)
+            {
+                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 1)
+                        FCGrid.Rows[index].Cells[8].Value = "매도";
+                    control_buy_sell = 1;
+                    //AutoClosingMessageBox("매수", "알림", 1000);
+                }
+                else
+                {
+                    FCGrid.Rows[index].Cells[8].Value = "";
+                    control_buy_sell = 0;
+                }
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "매수";
+                control_buy_sell = 2;
+                //AutoClosingMessageBox("매도", "알림", 1000);
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell != 1)
+            {
+                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                {
+                    if (control_buy_sell != 2)
+                        FCGrid.Rows[index].Cells[8].Value = "매수";
+                    control_buy_sell = 2;
+                    //AutoClosingMessageBox("매도", "알림", 1000);
+                }
+                else
+                {
+                    control_buy_sell = 0;
+                }
+            }
+            else
+            {
+                control_buy_sell = 0;
+            }
         }
 
 
@@ -389,9 +390,8 @@ namespace WindowsFormsApp4
                 case "Day":
                     Day_btn.BackColor = SystemColors.Highlight;
                     Day_btn.ForeColor = SystemColors.Control;
-                    set_time = TimeSelected;
-                    Time_btn_Enabled();
-                    Time_Changed(TimeSelected);
+                    set_time = "1";
+                    Time_btn_Disabled();
                     break;
                 case "Min":
                     Min_btn.BackColor = SystemColors.Highlight;
@@ -529,6 +529,36 @@ namespace WindowsFormsApp4
         private void Time_btn_60_Click(object sender, EventArgs e)
         {
             Time_Changed("60");
+        }
+        private void Time_btn_Disabled()
+        {
+            Time_btn_1.Enabled = false;
+            Time_btn_3.Enabled = false;
+            Time_btn_5.Enabled = false;
+            Time_btn_10.Enabled = false;
+            Time_btn_15.Enabled = false;
+            Time_btn_30.Enabled = false;
+            Time_btn_45.Enabled = false;
+            Time_btn_60.Enabled = false;
+            Time_btn_1.BackColor = SystemColors.ControlLight;
+            Time_btn_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_3.BackColor = SystemColors.ControlLight;
+            Time_btn_3.ForeColor = SystemColors.ControlDark;
+            Time_btn_5.BackColor = SystemColors.ControlLight;
+            Time_btn_5.ForeColor = SystemColors.ControlDark;
+            Time_btn_10.BackColor = SystemColors.ControlLight;
+            Time_btn_10.ForeColor = SystemColors.ControlDark;
+            Time_btn_15.BackColor = SystemColors.ControlLight;
+            Time_btn_15.ForeColor = SystemColors.ControlDark;
+            Time_btn_30.BackColor = SystemColors.ControlLight;
+            Time_btn_30.ForeColor = SystemColors.ControlDark;
+            Time_btn_45.BackColor = SystemColors.ControlLight;
+            Time_btn_45.ForeColor = SystemColors.ControlDark;
+            Time_btn_60.BackColor = SystemColors.ControlLight;
+            Time_btn_60.ForeColor = SystemColors.ControlDark;
+            Time_ComboBox.Enabled = false;
+            Time_ComboBox.ForeColor = SystemColors.ControlDark;
+
         }
 
         private void Time_btn_Enabled()
