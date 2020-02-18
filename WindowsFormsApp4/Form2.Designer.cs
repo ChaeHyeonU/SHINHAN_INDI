@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.FCode = new System.Windows.Forms.TextBox();
@@ -85,7 +85,7 @@
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.Lookup_btn = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.AccountPW = new System.Windows.Forms.TextBox();
             this.Account_Name = new System.Windows.Forms.TextBox();
             this.Account_Num = new System.Windows.Forms.ComboBox();
             this.Account_GridView = new System.Windows.Forms.DataGridView();
@@ -100,6 +100,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.axGiExpertControl1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid)).BeginInit();
@@ -110,12 +111,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // Comm_Obj_DATA
             // 
             this.Comm_Obj_DATA.Enabled = true;
-            this.Comm_Obj_DATA.Location = new System.Drawing.Point(8105, 6617);
+            this.Comm_Obj_DATA.Location = new System.Drawing.Point(8617, 6895);
             this.Comm_Obj_DATA.Name = "Comm_Obj_DATA";
             this.Comm_Obj_DATA.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA.OcxState")));
             this.Comm_Obj_DATA.Size = new System.Drawing.Size(136, 50);
@@ -126,7 +128,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(7489, 5969);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8001, 6247);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -149,14 +151,14 @@
             this.FCGrid.AllowUserToAddRows = false;
             this.FCGrid.AllowUserToDeleteRows = false;
             this.FCGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle43.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FCGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid.Location = new System.Drawing.Point(12, 60);
             this.FCGrid.Name = "FCGrid";
@@ -174,6 +176,7 @@
             this.WMA_input.Size = new System.Drawing.Size(37, 22);
             this.WMA_input.TabIndex = 6;
             this.WMA_input.Text = "10";
+            this.WMA_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // WMA_input_btn
             // 
@@ -354,6 +357,7 @@
             this.whereText.Size = new System.Drawing.Size(37, 22);
             this.whereText.TabIndex = 7;
             this.whereText.Text = "5";
+            this.whereText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // timer1
             // 
@@ -477,17 +481,18 @@
             this.Account_Num2.Name = "Account_Num2";
             this.Account_Num2.Size = new System.Drawing.Size(139, 21);
             this.Account_Num2.TabIndex = 46;
+            this.Account_Num2.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange2);
             // 
             // Price_GridView
             // 
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle44.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle44.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle44.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle44.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle44.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -654,15 +659,15 @@
             this.Lookup_btn.UseVisualStyleBackColor = true;
             this.Lookup_btn.Click += new System.EventHandler(this.Lookup_btn_Click);
             // 
-            // textBox8
+            // AccountPW
             // 
-            this.textBox8.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox8.Location = new System.Drawing.Point(992, 423);
-            this.textBox8.MaxLength = 4;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(48, 21);
-            this.textBox8.TabIndex = 68;
+            this.AccountPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.AccountPW.Location = new System.Drawing.Point(992, 423);
+            this.AccountPW.MaxLength = 4;
+            this.AccountPW.Name = "AccountPW";
+            this.AccountPW.PasswordChar = '*';
+            this.AccountPW.Size = new System.Drawing.Size(48, 21);
+            this.AccountPW.TabIndex = 68;
             // 
             // Account_Name
             // 
@@ -679,6 +684,7 @@
             this.Account_Num.Name = "Account_Num";
             this.Account_Num.Size = new System.Drawing.Size(138, 21);
             this.Account_Num.TabIndex = 65;
+            this.Account_Num.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange);
             // 
             // Account_GridView
             // 
@@ -708,7 +714,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(5737, 2481);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(6249, 2759);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -720,7 +726,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(4204, 2570);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(4716, 2848);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -735,6 +741,7 @@
             this.startWma.Size = new System.Drawing.Size(29, 22);
             this.startWma.TabIndex = 2;
             this.startWma.Text = "2";
+            this.startWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // endWma
             // 
@@ -743,6 +750,7 @@
             this.endWma.Size = new System.Drawing.Size(29, 22);
             this.endWma.TabIndex = 3;
             this.endWma.Text = "10";
+            this.endWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // intervalWma
             // 
@@ -751,11 +759,12 @@
             this.intervalWma.Size = new System.Drawing.Size(29, 22);
             this.intervalWma.TabIndex = 4;
             this.intervalWma.Text = "2";
+            this.intervalWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // axGiExpertControl2
             // 
             this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(2128, 879);
+            this.axGiExpertControl2.Location = new System.Drawing.Point(2640, 1157);
             this.axGiExpertControl2.Name = "axGiExpertControl2";
             this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
             this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
@@ -769,6 +778,7 @@
             this.Angle_input.Size = new System.Drawing.Size(59, 22);
             this.Angle_input.TabIndex = 5;
             this.Angle_input.Text = "10";
+            this.Angle_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label9
             // 
@@ -799,11 +809,22 @@
             this.label11.TabIndex = 86;
             this.label11.Text = "기울기 간격";
             // 
+            // axGiExpertControl1
+            // 
+            this.axGiExpertControl1.Enabled = true;
+            this.axGiExpertControl1.Location = new System.Drawing.Point(1448, 793);
+            this.axGiExpertControl1.Name = "axGiExpertControl1";
+            this.axGiExpertControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl1.OcxState")));
+            this.axGiExpertControl1.Size = new System.Drawing.Size(136, 50);
+            this.axGiExpertControl1.TabIndex = 1000;
+            this.axGiExpertControl1.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_AccountList_ReceivedData);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1166, 735);
+            this.Controls.Add(this.axGiExpertControl1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -820,7 +841,7 @@
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.Lookup_btn);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.AccountPW);
             this.Controls.Add(this.Account_Name);
             this.Controls.Add(this.Account_Num);
             this.Controls.Add(this.Buy_btn);
@@ -879,6 +900,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -944,7 +966,7 @@
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button Lookup_btn;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox AccountPW;
         private System.Windows.Forms.TextBox Account_Name;
         private System.Windows.Forms.ComboBox Account_Num;
         private System.Windows.Forms.DataGridView Account_GridView;
@@ -956,5 +978,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl1;
     }
 }
