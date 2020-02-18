@@ -42,42 +42,46 @@
             // 
             // id_box
             // 
-            this.id_box.Location = new System.Drawing.Point(107, 36);
+            this.id_box.Location = new System.Drawing.Point(107, 45);
+            this.id_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.id_box.Name = "id_box";
-            this.id_box.Size = new System.Drawing.Size(100, 21);
+            this.id_box.Size = new System.Drawing.Size(100, 23);
             this.id_box.TabIndex = 0;
             // 
             // pw_box
             // 
-            this.pw_box.Location = new System.Drawing.Point(107, 72);
+            this.pw_box.Location = new System.Drawing.Point(107, 90);
+            this.pw_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pw_box.Name = "pw_box";
-            this.pw_box.Size = new System.Drawing.Size(100, 21);
+            this.pw_box.PasswordChar = '*';
+            this.pw_box.Size = new System.Drawing.Size(100, 23);
             this.pw_box.TabIndex = 1;
             // 
             // id_label
             // 
             this.id_label.AutoSize = true;
-            this.id_label.Location = new System.Drawing.Point(51, 41);
+            this.id_label.Location = new System.Drawing.Point(51, 51);
             this.id_label.Name = "id_label";
-            this.id_label.Size = new System.Drawing.Size(41, 12);
+            this.id_label.Size = new System.Drawing.Size(43, 15);
             this.id_label.TabIndex = 2;
             this.id_label.Text = "아이디";
             // 
             // pw_label
             // 
             this.pw_label.AutoSize = true;
-            this.pw_label.Location = new System.Drawing.Point(51, 77);
+            this.pw_label.Location = new System.Drawing.Point(51, 96);
             this.pw_label.Name = "pw_label";
-            this.pw_label.Size = new System.Drawing.Size(53, 12);
+            this.pw_label.Size = new System.Drawing.Size(55, 15);
             this.pw_label.TabIndex = 3;
             this.pw_label.Text = "비밀번호";
             // 
             // login_button
             // 
             this.login_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.login_button.Location = new System.Drawing.Point(232, 36);
+            this.login_button.Location = new System.Drawing.Point(232, 45);
+            this.login_button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(75, 23);
+            this.login_button.Size = new System.Drawing.Size(75, 29);
             this.login_button.TabIndex = 4;
             this.login_button.Text = "로그인";
             this.login_button.UseVisualStyleBackColor = true;
@@ -86,23 +90,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 112);
+            this.label1.Location = new System.Drawing.Point(3, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 12);
+            this.label1.Size = new System.Drawing.Size(103, 15);
             this.label1.TabIndex = 6;
             this.label1.Text = "공인인증비밀번호";
             // 
             // account_box
             // 
-            this.account_box.Location = new System.Drawing.Point(107, 108);
+            this.account_box.Location = new System.Drawing.Point(107, 135);
+            this.account_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.account_box.Name = "account_box";
-            this.account_box.Size = new System.Drawing.Size(100, 21);
+            this.account_box.PasswordChar = '*';
+            this.account_box.Size = new System.Drawing.Size(100, 23);
             this.account_box.TabIndex = 5;
             // 
             // axGiExpertControl1
             // 
             this.axGiExpertControl1.Enabled = true;
-            this.axGiExpertControl1.Location = new System.Drawing.Point(1587, 736);
+            this.axGiExpertControl1.Location = new System.Drawing.Point(2053, 1014);
+            this.axGiExpertControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.axGiExpertControl1.Name = "axGiExpertControl1";
             this.axGiExpertControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl1.OcxState")));
             this.axGiExpertControl1.Size = new System.Drawing.Size(136, 50);
@@ -110,9 +117,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 200);
+            this.ClientSize = new System.Drawing.Size(361, 209);
             this.Controls.Add(this.axGiExpertControl1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.account_box);
@@ -121,8 +128,9 @@
             this.Controls.Add(this.id_label);
             this.Controls.Add(this.pw_box);
             this.Controls.Add(this.id_box);
+            this.Font = new System.Drawing.Font("맑은 고딕", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "x";
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

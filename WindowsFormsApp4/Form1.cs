@@ -46,23 +46,6 @@ namespace WindowsFormsApp4
             axGiExpertControl1.CloseIndi();
 
         }
-        private void Request_Fut_Cprice()
-        {
-            string gFCode = "101Q3000";
-            axGiExpertControl1.UnRequestRTReg("FC", gFCode);
-            axGiExpertControl1.SetQueryName("FC");
-            axGiExpertControl1.SetSingleData(0, gFCode);
-
-            axGiExpertControl1.RequestData();
-        }
-
-        private void ReceiveData()
-        {
-            string Cprice;
-            Cprice = (String)axGiExpertControl1.GetSingleData(0);
-
-            MessageBox.Show(Cprice);
-        }
 
     }
 }
