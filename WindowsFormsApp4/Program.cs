@@ -16,7 +16,10 @@ namespace WindowsFormsApp4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form2());
+            Application.Run(new Form1());
+
+            Form2 fr = new Form2();
+            Application.Run(fr);
         }
     }
 }

@@ -20,7 +20,6 @@ namespace WindowsFormsApp4
         private string TimeDistance = "Min";
         private int RowNum = 200;
         private int AccControl = 0;
-
         private int control_buy_sell = 0;
 
         //messagebox auto closing
@@ -39,7 +38,7 @@ namespace WindowsFormsApp4
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            Login();
+            //Login();
             TimeDistance_Changed(TimeDistance);
             Load_Data(gFCode, TimeSelected, TimeDistance);
             Delay(100);
@@ -172,7 +171,7 @@ namespace WindowsFormsApp4
             if (!string.IsNullOrEmpty(startWma.Text) && !string.IsNullOrEmpty(endWma.Text) && !string.IsNullOrEmpty(intervalWma.Text))
                 Get_GridData();
             else
-                MessageBox.Show("cex");
+                MessageBox.Show("입력값 오류");
         }
 
         private void Get_GridData()
@@ -186,6 +185,8 @@ namespace WindowsFormsApp4
                 FCGrid.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
                 FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
                 FCGrid.Rows[i].Cells[8].Value = "";
+                FCGrid.Rows[i].Cells[8].Style.BackColor = SystemColors.Window;
+                FCGrid.Rows[i].Cells[8].Style.ForeColor = SystemColors.WindowText;
             }
 
             for (int j = RowNum - index[index_length - 1] ; j >= 0; j--)
@@ -301,6 +302,8 @@ namespace WindowsFormsApp4
             if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
             {
                 FCGrid.Rows[index].Cells[8].Value = "매도";
+                FCGrid.Rows[index].Cells[8].Style.BackColor = Color.Tomato;
+                FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
                 control_buy_sell = 1;
                 //AutoClosingMessageBox("매수", "알림", 1000);
             }
@@ -309,19 +312,26 @@ namespace WindowsFormsApp4
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
                     if (control_buy_sell != 1)
+                    {
                         FCGrid.Rows[index].Cells[8].Value = "매도";
+                        FCGrid.Rows[index].Cells[8].Style.BackColor = Color.Tomato;
+                        FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
+                    }
                     control_buy_sell = 1;
                     //AutoClosingMessageBox("매수", "알림", 1000);
                 }
                 else
                 {
-                    FCGrid.Rows[index].Cells[8].Value = "";
+
+                    FCGrid.Rows[index].Cells[8].Value = "";                    
                     control_buy_sell = 0;
                 }
             }
             else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
             {
                 FCGrid.Rows[index].Cells[8].Value = "매수";
+                FCGrid.Rows[index].Cells[8].Style.BackColor = SystemColors.Highlight;
+                FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
                 control_buy_sell = 2;
                 //AutoClosingMessageBox("매도", "알림", 1000);
             }
@@ -330,7 +340,11 @@ namespace WindowsFormsApp4
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
                     if (control_buy_sell != 2)
+                    {
                         FCGrid.Rows[index].Cells[8].Value = "매수";
+                        FCGrid.Rows[index].Cells[8].Style.BackColor = SystemColors.Highlight;
+                        FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
+                    }
                     control_buy_sell = 2;
                     //AutoClosingMessageBox("매도", "알림", 1000);
                 }
@@ -341,7 +355,7 @@ namespace WindowsFormsApp4
             }
             else
             {
-                control_buy_sell = 0;
+                control_buy_sell = 0;                
             }
         }
 
@@ -590,17 +604,19 @@ namespace WindowsFormsApp4
             Time_ComboBox.Enabled = true;
             Time_ComboBox.ForeColor = SystemColors.ControlText;
         }
+
         private void Time_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Time_ComboBox.SelectedIndex >= 0)
             {
-                this.TimeSelected = Time_ComboBox.SelectedItem as string;
+                this.TimeSelected = Time_ComboBox.SelectedItem as string;               
             }
         }
 
         private void Time_ComboBox_TextChanged(object sender, EventArgs e)
         {
-
+            TimeSelected = Time_ComboBox.Text;
+            Time_Changed(TimeSelected);
         }
 
         private void Refresh_Data(object sender, EventArgs e)
@@ -684,8 +700,8 @@ namespace WindowsFormsApp4
         {
             AccControl = 1;
             AccountInfo();
-        }
-
+        }      
+        
         private void getPrice()
         {
             Comm_Obj_Price.SetQueryName("SABC820Q1");
@@ -727,9 +743,8 @@ namespace WindowsFormsApp4
 
             MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
             MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
-            MessageBox.Show(aa);
-            MessageBox.Show(bb);
         }
+
         private void getDeal(string count, string control)
         {
             axGiExpertControl2.SetQueryName("SABC100U1");

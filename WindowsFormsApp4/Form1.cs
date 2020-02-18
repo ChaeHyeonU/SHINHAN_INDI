@@ -24,11 +24,11 @@ namespace WindowsFormsApp4
             bool login;
 
             string idname = id_box.Text;
-            idname = "yooncs";
+            //idname = "yooncs";
             string password = pw_box.Text;
-            password = "Thisis12#$";
+            //password = "Thisis12#$";
             string AccountPassword = account_box.Text;
-            AccountPassword = "";
+            //AccountPassword = "";
             string path = "C:\\SHINHAN-ii\\indi\\giexpertstarter.exe";
 
             login = axGiExpertControl1.StartIndi(idname, password, AccountPassword, path);
@@ -36,14 +36,15 @@ namespace WindowsFormsApp4
 
             if (login)
             {
-                MessageBox.Show("로그인 성공");
+                MessageBox.Show("연결 성공");
+                Form2 fr = new Form2();
+                fr.Show();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("실패");
+                MessageBox.Show("연결 실패");
             }
-
-            axGiExpertControl1.CloseIndi();
 
         }
 
