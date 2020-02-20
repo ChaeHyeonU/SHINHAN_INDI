@@ -19,7 +19,6 @@ namespace WindowsFormsApp4
         private string TimeSelected = "3";
         private string TimeDistance = "Min";
         private int RowNum = 200;
-        private int AccControl = 0;
         private int control_buy_sell = 0;
 
         //messagebox auto closing
@@ -91,6 +90,7 @@ namespace WindowsFormsApp4
             dt.Columns.Add("종가");
             dt.Columns.Add("WMA");
             dt.Columns.Add("기울기");
+            dt.Columns.Add("상태");
             dt.Columns.Add("매수/매도");
 
 
@@ -132,10 +132,7 @@ namespace WindowsFormsApp4
             {
                 MessageBox.Show("실패");
             }
-
         }
-
-
 
         private void FCode_TextChanged(object sender, EventArgs e)
         {
@@ -197,29 +194,36 @@ namespace WindowsFormsApp4
                 int day = Convert.ToInt32(WMA_input.Text);
                 int[] index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text));
                 int index_length = index.Length;
+                double[] aaa = new double[index_length];
 
                 for (int i = 0; i < RowNum; i++)
                 {
                     FCGrid.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
                     FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
-                    FCGrid.Rows[i].Cells[8].Value = "";
-                    FCGrid.Rows[i].Cells[8].Style.BackColor = SystemColors.Window;
-                    FCGrid.Rows[i].Cells[8].Style.ForeColor = SystemColors.WindowText;
+                    FCGrid.Rows[i].Cells[9].Value = "";
+                    FCGrid.Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
+                    FCGrid.Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
                 }
 
                 for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
                 {
-                    double[] aaa = new double[index_length];
-
                     for (int i = 0; i < index_length; i++)
                     {
                         aaa[i] = Prov_WMA(Get_EndPrice(), index[i], 0)[j];
                     }
                     Mecro(aaa, j);
                 }
+                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                {
+                    for (int i = 0; i < index_length; i++)
+                    {
+                        aaa[i] = Prov_WMA(Get_EndPrice(), index[i], 0)[j];
+                    }
+                    set_Condition(aaa, j);
+                }
             }
-            
         }
+
 
         private int[] Get_Angle(double[] WMA)
         {
@@ -303,6 +307,31 @@ namespace WindowsFormsApp4
             return WMA;
         }
 
+        private void set_Condition(double[] WMA, int index)
+        {
+            double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
+
+            Array.Copy(WMA, aa,WMA.Length);
+            Array.Sort(WMA);
+            Array.Copy(WMA, bb, WMA.Length);
+
+            Array.Reverse(WMA);
+            Array.Copy(WMA, cc, WMA.Length);
+
+            if(checkSameArray(aa,bb) == true)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "역배열";
+            }
+            else if(checkSameArray(aa,cc) == true)
+            {
+                FCGrid.Rows[index].Cells[8].Value = "정배열";
+            }
+            else
+            {
+                FCGrid.Rows[index].Cells[8].Value = "혼조세";
+            }
+        }
+
         private void Mecro(double[] WMA, int index)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
@@ -319,59 +348,41 @@ namespace WindowsFormsApp4
 
             //control_buy_sell // 0: 일반 1:역배 2: 정배
 
-            if (checkSameArray(aa, bb) == true && control_buy_sell == 2)
-            {
-                FCGrid.Rows[index].Cells[8].Value = "매도";
-                FCGrid.Rows[index].Cells[8].Style.BackColor = Color.Tomato;
-                FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
-                control_buy_sell = 1;
-                //AutoClosingMessageBox("매수", "알림", 1000);
-            }
-            else if (checkSameArray(aa, bb) == true && control_buy_sell != 2)
+            if (checkSameArray(aa, bb) == true && control_buy_sell != 1) //역배 && 전 상태 != 역배
             {
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
-                    if (control_buy_sell != 1)
-                    {
-                        FCGrid.Rows[index].Cells[8].Value = "매도";
-                        FCGrid.Rows[index].Cells[8].Style.BackColor = Color.Tomato;
-                        FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
-                    }
+                    FCGrid.Rows[index].Cells[9].Value = "매도";
+                    FCGrid.Rows[index].Cells[9].Style.BackColor = Color.Tomato;
+                    FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell = 1;
-                    //AutoClosingMessageBox("매수", "알림", 1000);
                 }
                 else
                 {
-
-                    FCGrid.Rows[index].Cells[8].Value = "";                    
-                    control_buy_sell = 0;
+                    control_buy_sell = 1;
                 }
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell == 1)
+            else if (checkSameArray(aa, bb) == true && control_buy_sell == 1)
             {
-                FCGrid.Rows[index].Cells[8].Value = "매수";
-                FCGrid.Rows[index].Cells[8].Style.BackColor = SystemColors.Highlight;
-                FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
-                control_buy_sell = 2;
-                //AutoClosingMessageBox("매도", "알림", 1000);
+                control_buy_sell = 1;
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell != 1)
+            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2)
             {
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
-                    if (control_buy_sell != 2)
-                    {
-                        FCGrid.Rows[index].Cells[8].Value = "매수";
-                        FCGrid.Rows[index].Cells[8].Style.BackColor = SystemColors.Highlight;
-                        FCGrid.Rows[index].Cells[8].Style.ForeColor = Color.White;
-                    }
+                    FCGrid.Rows[index].Cells[9].Value = "매수";
+                    FCGrid.Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
+                    FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell = 2;
-                    //AutoClosingMessageBox("매도", "알림", 1000);
                 }
                 else
                 {
-                    control_buy_sell = 0;
+                    control_buy_sell = 2;
                 }
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell == 2)
+            {
+                control_buy_sell = 2;
             }
             else
             {
@@ -403,7 +414,6 @@ namespace WindowsFormsApp4
             MessageBox.Show(text, caption);
 
         }
-
         //주기
 
         private void TimeDistance_Changed(string distance)
