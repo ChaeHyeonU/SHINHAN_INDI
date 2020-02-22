@@ -20,6 +20,7 @@ namespace WindowsFormsApp4
         private string TimeDistance = "Min";
         private int RowNum = 200;
         private int control_buy_sell = 0;
+        private int control_Enable_Angle = 0;
 
         //messagebox auto closing
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
@@ -346,9 +347,10 @@ namespace WindowsFormsApp4
             Array.Reverse(WMA);
             Array.Copy(WMA, cc, WMA.Length);
 
-            //control_buy_sell // 0: 일반 1:역배 2: 정배
+            //control_buy_sell // 0: 일반 1:역배 2: 정배 3:역배인데 기울기 x 4: 정배인데 기울기 x
+            //control_Enable_Angle // 0:아무것도 없는 상태 1:매도 2:매수
 
-            if (checkSameArray(aa, bb) == true && control_buy_sell != 1) //역배 && 전 상태 != 역배
+            if (checkSameArray(aa, bb) == true && control_buy_sell != 1 && control_Enable_Angle != 2) //역배 && 전 상태 != 역배 && !매수
             {
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
@@ -356,17 +358,26 @@ namespace WindowsFormsApp4
                     FCGrid.Rows[index].Cells[9].Style.BackColor = Color.Tomato;
                     FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell = 1;
+                    control_Enable_Angle = 1;
                 }
                 else
                 {
-                    control_buy_sell = 1;
+                    control_buy_sell = 3;
                 }
+            }
+            if (checkSameArray(aa, bb) == true && control_buy_sell != 1 && control_Enable_Angle == 2) //역배 && 전 상태 != 역배 && 매수
+            {
+                 FCGrid.Rows[index].Cells[9].Value = "매도(청산)";
+                 FCGrid.Rows[index].Cells[9].Style.BackColor = Color.Tomato;
+                 FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
+                 control_buy_sell = 1;
+                 control_Enable_Angle = 0;
             }
             else if (checkSameArray(aa, bb) == true && control_buy_sell == 1)
             {
                 control_buy_sell = 1;
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2)
+            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2 && control_Enable_Angle !=1)//정배 && 전 상태 != 정배 && !매도
             {
                 if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
                 {
@@ -374,11 +385,20 @@ namespace WindowsFormsApp4
                     FCGrid.Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
                     FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell = 2;
+                    control_Enable_Angle = 2;
                 }
                 else
                 {
-                    control_buy_sell = 2;
+                    control_buy_sell = 4;
                 }
+            }
+            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2 && control_Enable_Angle == 1)//정배 && 전 상태 !=정배 && 매도
+            {
+                FCGrid.Rows[index].Cells[9].Value = "매수(청산)";
+                FCGrid.Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
+                FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
+                control_buy_sell = 2;
+                control_Enable_Angle = 0;
             }
             else if (checkSameArray(aa, cc) == true && control_buy_sell == 2)
             {

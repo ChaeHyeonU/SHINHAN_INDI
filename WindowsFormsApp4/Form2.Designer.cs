@@ -117,7 +117,7 @@
             // Comm_Obj_DATA
             // 
             this.Comm_Obj_DATA.Enabled = true;
-            this.Comm_Obj_DATA.Location = new System.Drawing.Point(8617, 6895);
+            this.Comm_Obj_DATA.Location = new System.Drawing.Point(8873, 7034);
             this.Comm_Obj_DATA.Name = "Comm_Obj_DATA";
             this.Comm_Obj_DATA.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA.OcxState")));
             this.Comm_Obj_DATA.Size = new System.Drawing.Size(136, 50);
@@ -128,7 +128,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8001, 6247);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8257, 6386);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -361,7 +361,6 @@
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.Refresh_Data);
             // 
@@ -714,7 +713,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(6249, 2759);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(6505, 2898);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -726,7 +725,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(4716, 2848);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(4972, 2987);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -764,7 +763,7 @@
             // axGiExpertControl2
             // 
             this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(2640, 1157);
+            this.axGiExpertControl2.Location = new System.Drawing.Point(2896, 1296);
             this.axGiExpertControl2.Name = "axGiExpertControl2";
             this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
             this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
@@ -812,7 +811,7 @@
             // axGiExpertControl1
             // 
             this.axGiExpertControl1.Enabled = true;
-            this.axGiExpertControl1.Location = new System.Drawing.Point(1448, 793);
+            this.axGiExpertControl1.Location = new System.Drawing.Point(1704, 932);
             this.axGiExpertControl1.Name = "axGiExpertControl1";
             this.axGiExpertControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl1.OcxState")));
             this.axGiExpertControl1.Size = new System.Drawing.Size(136, 50);
