@@ -32,26 +32,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.FCode = new System.Windows.Forms.TextBox();
+            this.FCode_1 = new System.Windows.Forms.TextBox();
             this.FCGrid = new System.Windows.Forms.DataGridView();
-            this.WMA_input = new System.Windows.Forms.TextBox();
-            this.WMA_input_btn = new System.Windows.Forms.Button();
-            this.Day_btn = new System.Windows.Forms.Button();
-            this.Min_btn = new System.Windows.Forms.Button();
-            this.Tick_btn = new System.Windows.Forms.Button();
-            this.Time_btn_1 = new System.Windows.Forms.Button();
-            this.Time_btn_3 = new System.Windows.Forms.Button();
-            this.Time_btn_10 = new System.Windows.Forms.Button();
-            this.Time_btn_5 = new System.Windows.Forms.Button();
-            this.Time_btn_60 = new System.Windows.Forms.Button();
-            this.Time_btn_45 = new System.Windows.Forms.Button();
-            this.Time_btn_30 = new System.Windows.Forms.Button();
-            this.Time_btn_15 = new System.Windows.Forms.Button();
-            this.Time_ComboBox = new System.Windows.Forms.ComboBox();
+            this.WMA_input_1 = new System.Windows.Forms.TextBox();
+            this.WMA_input_btn_1 = new System.Windows.Forms.Button();
+            this.Day_btn_1 = new System.Windows.Forms.Button();
+            this.Min_btn_1 = new System.Windows.Forms.Button();
+            this.Tick_btn_1 = new System.Windows.Forms.Button();
+            this.Time_btn_1_1 = new System.Windows.Forms.Button();
+            this.Time_btn_3_1 = new System.Windows.Forms.Button();
+            this.Time_btn_10_1 = new System.Windows.Forms.Button();
+            this.Time_btn_5_1 = new System.Windows.Forms.Button();
+            this.Time_btn_60_1 = new System.Windows.Forms.Button();
+            this.Time_btn_45_1 = new System.Windows.Forms.Button();
+            this.Time_btn_30_1 = new System.Windows.Forms.Button();
+            this.Time_btn_15_1 = new System.Windows.Forms.Button();
+            this.Time_ComboBox_1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.whereText = new System.Windows.Forms.TextBox();
+            this.Distance_input_1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Buy_btn = new System.Windows.Forms.Button();
             this.Sell_btn = new System.Windows.Forms.Button();
@@ -73,17 +78,9 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Price_Lookup_btn = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.Account_Name2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.Lookup_btn = new System.Windows.Forms.Button();
             this.AccountPW = new System.Windows.Forms.TextBox();
             this.Account_Name = new System.Windows.Forms.TextBox();
@@ -92,15 +89,141 @@
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comm_Obj_Account = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_Price = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.startWma = new System.Windows.Forms.TextBox();
-            this.endWma = new System.Windows.Forms.TextBox();
-            this.intervalWma = new System.Windows.Forms.TextBox();
+            this.startWma_1 = new System.Windows.Forms.TextBox();
+            this.endWma_1 = new System.Windows.Forms.TextBox();
+            this.intervalWma_1 = new System.Windows.Forms.TextBox();
             this.axGiExpertControl2 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.Angle_input = new System.Windows.Forms.TextBox();
+            this.Angle_input_1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.axGiExpertControl1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Angle_input_4 = new System.Windows.Forms.TextBox();
+            this.intervalWma_4 = new System.Windows.Forms.TextBox();
+            this.endWma_4 = new System.Windows.Forms.TextBox();
+            this.startWma_4 = new System.Windows.Forms.TextBox();
+            this.Distance_input_4 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.Time_ComboBox_4 = new System.Windows.Forms.ComboBox();
+            this.Time_btn_60_4 = new System.Windows.Forms.Button();
+            this.Time_btn_45_4 = new System.Windows.Forms.Button();
+            this.Time_btn_30_4 = new System.Windows.Forms.Button();
+            this.Time_btn_15_4 = new System.Windows.Forms.Button();
+            this.Time_btn_10_4 = new System.Windows.Forms.Button();
+            this.Time_btn_5_4 = new System.Windows.Forms.Button();
+            this.Time_btn_3_4 = new System.Windows.Forms.Button();
+            this.Time_btn_1_4 = new System.Windows.Forms.Button();
+            this.Tick_btn_4 = new System.Windows.Forms.Button();
+            this.Min_btn_4 = new System.Windows.Forms.Button();
+            this.Day_btn_4 = new System.Windows.Forms.Button();
+            this.WMA_input_btn_4 = new System.Windows.Forms.Button();
+            this.WMA_input_4 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FCode_4 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Angle_input_2 = new System.Windows.Forms.TextBox();
+            this.intervalWma_2 = new System.Windows.Forms.TextBox();
+            this.endWma_2 = new System.Windows.Forms.TextBox();
+            this.startWma_2 = new System.Windows.Forms.TextBox();
+            this.Distance_input_2 = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.Time_ComboBox_2 = new System.Windows.Forms.ComboBox();
+            this.Time_btn_60_2 = new System.Windows.Forms.Button();
+            this.Time_btn_45_2 = new System.Windows.Forms.Button();
+            this.Time_btn_30_2 = new System.Windows.Forms.Button();
+            this.Time_btn_15_2 = new System.Windows.Forms.Button();
+            this.Time_btn_10_2 = new System.Windows.Forms.Button();
+            this.Time_btn_5_2 = new System.Windows.Forms.Button();
+            this.Time_btn_3_2 = new System.Windows.Forms.Button();
+            this.Time_btn_1_2 = new System.Windows.Forms.Button();
+            this.Tick_btn_2 = new System.Windows.Forms.Button();
+            this.Min_btn_2 = new System.Windows.Forms.Button();
+            this.button29 = new System.Windows.Forms.Button();
+            this.WMA_input_btn_2 = new System.Windows.Forms.Button();
+            this.WMA_input_2 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.FCode_2 = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.Angle_input_3 = new System.Windows.Forms.TextBox();
+            this.intervalWma_3 = new System.Windows.Forms.TextBox();
+            this.endWma_3 = new System.Windows.Forms.TextBox();
+            this.startWma_3 = new System.Windows.Forms.TextBox();
+            this.Distance_input_3 = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.Time_ComboBox_3 = new System.Windows.Forms.ComboBox();
+            this.Time_btn_60_3 = new System.Windows.Forms.Button();
+            this.Time_btn_45_3 = new System.Windows.Forms.Button();
+            this.Time_btn_30_3 = new System.Windows.Forms.Button();
+            this.Time_btn_15_3 = new System.Windows.Forms.Button();
+            this.Time_btn_10_3 = new System.Windows.Forms.Button();
+            this.Time_btn_5_3 = new System.Windows.Forms.Button();
+            this.Time_btn_3_3 = new System.Windows.Forms.Button();
+            this.Time_btn_1_3 = new System.Windows.Forms.Button();
+            this.Tick_btn_3 = new System.Windows.Forms.Button();
+            this.Min_btn_3 = new System.Windows.Forms.Button();
+            this.Day_btn_3 = new System.Windows.Forms.Button();
+            this.WMA_input_btn_3 = new System.Windows.Forms.Button();
+            this.WMA_input_3 = new System.Windows.Forms.TextBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.FCode_3 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.Angle_input_6 = new System.Windows.Forms.TextBox();
+            this.intervalWma_6 = new System.Windows.Forms.TextBox();
+            this.endWma_6 = new System.Windows.Forms.TextBox();
+            this.startWma_6 = new System.Windows.Forms.TextBox();
+            this.Distance_input_6 = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.Time_ComboBox_6 = new System.Windows.Forms.ComboBox();
+            this.Time_btn_60_6 = new System.Windows.Forms.Button();
+            this.Time_btn_45_6 = new System.Windows.Forms.Button();
+            this.Time_btn_30_6 = new System.Windows.Forms.Button();
+            this.Time_btn_15_6 = new System.Windows.Forms.Button();
+            this.Time_btn_10_6 = new System.Windows.Forms.Button();
+            this.Time_btn_5_6 = new System.Windows.Forms.Button();
+            this.Time_btn_3_6 = new System.Windows.Forms.Button();
+            this.Time_btn_1_6 = new System.Windows.Forms.Button();
+            this.Tick_btn_6 = new System.Windows.Forms.Button();
+            this.Min_btn_6 = new System.Windows.Forms.Button();
+            this.Day_btn_6 = new System.Windows.Forms.Button();
+            this.WMA_input_btn_6 = new System.Windows.Forms.Button();
+            this.WMA_input_6 = new System.Windows.Forms.TextBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.FCode_6 = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.Angle_input_5 = new System.Windows.Forms.TextBox();
+            this.intervalWma_5 = new System.Windows.Forms.TextBox();
+            this.endWma_5 = new System.Windows.Forms.TextBox();
+            this.startWma_5 = new System.Windows.Forms.TextBox();
+            this.Distance_input_5 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.Time_ComboBox_5 = new System.Windows.Forms.ComboBox();
+            this.Time_btn_60_5 = new System.Windows.Forms.Button();
+            this.Time_btn_45_5 = new System.Windows.Forms.Button();
+            this.Time_btn_30_5 = new System.Windows.Forms.Button();
+            this.Time_btn_15_5 = new System.Windows.Forms.Button();
+            this.Time_btn_10_5 = new System.Windows.Forms.Button();
+            this.Time_btn_5_5 = new System.Windows.Forms.Button();
+            this.Time_btn_3_5 = new System.Windows.Forms.Button();
+            this.Time_btn_1_5 = new System.Windows.Forms.Button();
+            this.Tick_btn_5 = new System.Windows.Forms.Button();
+            this.Min_btn_5 = new System.Windows.Forms.Button();
+            this.Day_btn_5 = new System.Windows.Forms.Button();
+            this.WMA_input_btn_5 = new System.Windows.Forms.Button();
+            this.WMA_input_5 = new System.Windows.Forms.TextBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.FCode_5 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid)).BeginInit();
@@ -112,6 +235,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // Comm_Obj_DATA
@@ -136,21 +264,24 @@
             this.Comm_Obj_DATA_Real.Visible = false;
             this.Comm_Obj_DATA_Real.ReceiveRTData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveRTDataEventHandler(this.Gi_FC_ReceiveRTData);
             // 
-            // FCode
+            // FCode_1
             // 
-            this.FCode.Location = new System.Drawing.Point(12, 12);
-            this.FCode.MaxLength = 5;
-            this.FCode.Name = "FCode";
-            this.FCode.Size = new System.Drawing.Size(76, 22);
-            this.FCode.TabIndex = 1;
-            this.FCode.Text = "101Q3";
-            this.FCode.TextChanged += new System.EventHandler(this.FCode_TextChanged);
+            this.FCode_1.Location = new System.Drawing.Point(14, 14);
+            this.FCode_1.MaxLength = 5;
+            this.FCode_1.Name = "FCode_1";
+            this.FCode_1.Size = new System.Drawing.Size(76, 22);
+            this.FCode_1.TabIndex = 1;
+            this.FCode_1.Text = "101Q3";
+            this.FCode_1.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // FCGrid
             // 
             this.FCGrid.AllowUserToAddRows = false;
             this.FCGrid.AllowUserToDeleteRows = false;
-            this.FCGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FCGrid.AllowUserToResizeColumns = false;
+            this.FCGrid.AllowUserToResizeRows = false;
+            this.FCGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
@@ -160,165 +291,166 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FCGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FCGrid.Location = new System.Drawing.Point(12, 60);
+            this.FCGrid.Location = new System.Drawing.Point(7, 60);
             this.FCGrid.Name = "FCGrid";
             this.FCGrid.ReadOnly = true;
             this.FCGrid.RowHeadersVisible = false;
             this.FCGrid.RowTemplate.Height = 23;
-            this.FCGrid.Size = new System.Drawing.Size(710, 665);
+            this.FCGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid.Size = new System.Drawing.Size(587, 275);
             this.FCGrid.TabIndex = 999;
             this.FCGrid.TabStop = false;
             // 
-            // WMA_input
+            // WMA_input_1
             // 
-            this.WMA_input.Location = new System.Drawing.Point(640, 11);
-            this.WMA_input.Name = "WMA_input";
-            this.WMA_input.Size = new System.Drawing.Size(37, 22);
-            this.WMA_input.TabIndex = 6;
-            this.WMA_input.Text = "10";
-            this.WMA_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.WMA_input_1.Location = new System.Drawing.Point(489, 13);
+            this.WMA_input_1.Name = "WMA_input_1";
+            this.WMA_input_1.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_1.TabIndex = 6;
+            this.WMA_input_1.Text = "10";
+            this.WMA_input_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
-            // WMA_input_btn
+            // WMA_input_btn_1
             // 
-            this.WMA_input_btn.Location = new System.Drawing.Point(680, 10);
-            this.WMA_input_btn.Name = "WMA_input_btn";
-            this.WMA_input_btn.Size = new System.Drawing.Size(40, 46);
-            this.WMA_input_btn.TabIndex = 8;
-            this.WMA_input_btn.Text = "설정";
-            this.WMA_input_btn.UseVisualStyleBackColor = true;
-            this.WMA_input_btn.Click += new System.EventHandler(this.WMA_input_btn_Click);
+            this.WMA_input_btn_1.Location = new System.Drawing.Point(529, 12);
+            this.WMA_input_btn_1.Name = "WMA_input_btn_1";
+            this.WMA_input_btn_1.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_1.TabIndex = 8;
+            this.WMA_input_btn_1.Text = "설정";
+            this.WMA_input_btn_1.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_1.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
-            // Day_btn
+            // Day_btn_1
             // 
-            this.Day_btn.BackColor = System.Drawing.SystemColors.Highlight;
-            this.Day_btn.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.Day_btn.ForeColor = System.Drawing.SystemColors.Control;
-            this.Day_btn.Location = new System.Drawing.Point(88, 11);
-            this.Day_btn.Name = "Day_btn";
-            this.Day_btn.Size = new System.Drawing.Size(25, 23);
-            this.Day_btn.TabIndex = 11;
-            this.Day_btn.TabStop = false;
-            this.Day_btn.Text = "일";
-            this.Day_btn.UseVisualStyleBackColor = false;
-            this.Day_btn.Click += new System.EventHandler(this.Day_btn_Click);
+            this.Day_btn_1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_1.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_1.Location = new System.Drawing.Point(90, 13);
+            this.Day_btn_1.Name = "Day_btn_1";
+            this.Day_btn_1.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_1.TabIndex = 11;
+            this.Day_btn_1.TabStop = false;
+            this.Day_btn_1.Text = "일";
+            this.Day_btn_1.UseVisualStyleBackColor = false;
+            this.Day_btn_1.Click += new System.EventHandler(this.Day_btn_Click);
             // 
-            // Min_btn
+            // Min_btn_1
             // 
-            this.Min_btn.Location = new System.Drawing.Point(112, 11);
-            this.Min_btn.Name = "Min_btn";
-            this.Min_btn.Size = new System.Drawing.Size(25, 23);
-            this.Min_btn.TabIndex = 15;
-            this.Min_btn.Text = "분";
-            this.Min_btn.UseVisualStyleBackColor = true;
-            this.Min_btn.Click += new System.EventHandler(this.Min_btn_Click);
+            this.Min_btn_1.Location = new System.Drawing.Point(114, 13);
+            this.Min_btn_1.Name = "Min_btn_1";
+            this.Min_btn_1.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_1.TabIndex = 15;
+            this.Min_btn_1.Text = "분";
+            this.Min_btn_1.UseVisualStyleBackColor = true;
+            this.Min_btn_1.Click += new System.EventHandler(this.Min_btn_Click);
             // 
-            // Tick_btn
+            // Tick_btn_1
             // 
-            this.Tick_btn.Location = new System.Drawing.Point(136, 11);
-            this.Tick_btn.Name = "Tick_btn";
-            this.Tick_btn.Size = new System.Drawing.Size(25, 23);
-            this.Tick_btn.TabIndex = 16;
-            this.Tick_btn.Text = "틱";
-            this.Tick_btn.UseVisualStyleBackColor = true;
-            this.Tick_btn.Click += new System.EventHandler(this.Tick_btn_Click);
+            this.Tick_btn_1.Location = new System.Drawing.Point(138, 13);
+            this.Tick_btn_1.Name = "Tick_btn_1";
+            this.Tick_btn_1.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_1.TabIndex = 16;
+            this.Tick_btn_1.Text = "틱";
+            this.Tick_btn_1.UseVisualStyleBackColor = true;
+            this.Tick_btn_1.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
-            // Time_btn_1
+            // Time_btn_1_1
             // 
-            this.Time_btn_1.BackColor = System.Drawing.SystemColors.Control;
-            this.Time_btn_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_1.Location = new System.Drawing.Point(161, 11);
-            this.Time_btn_1.Name = "Time_btn_1";
-            this.Time_btn_1.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_1.TabIndex = 21;
-            this.Time_btn_1.Text = "1";
-            this.Time_btn_1.UseVisualStyleBackColor = false;
-            this.Time_btn_1.Click += new System.EventHandler(this.Time_btn_1_Click);
+            this.Time_btn_1_1.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_1.Location = new System.Drawing.Point(163, 13);
+            this.Time_btn_1_1.Name = "Time_btn_1_1";
+            this.Time_btn_1_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_1.TabIndex = 21;
+            this.Time_btn_1_1.Text = "1";
+            this.Time_btn_1_1.UseVisualStyleBackColor = false;
+            this.Time_btn_1_1.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
-            // Time_btn_3
+            // Time_btn_3_1
             // 
-            this.Time_btn_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_3.Location = new System.Drawing.Point(185, 11);
-            this.Time_btn_3.Name = "Time_btn_3";
-            this.Time_btn_3.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_3.TabIndex = 25;
-            this.Time_btn_3.Text = "3";
-            this.Time_btn_3.UseVisualStyleBackColor = true;
-            this.Time_btn_3.Click += new System.EventHandler(this.Time_btn_3_Click);
+            this.Time_btn_3_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_1.Location = new System.Drawing.Point(187, 13);
+            this.Time_btn_3_1.Name = "Time_btn_3_1";
+            this.Time_btn_3_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_1.TabIndex = 25;
+            this.Time_btn_3_1.Text = "3";
+            this.Time_btn_3_1.UseVisualStyleBackColor = true;
+            this.Time_btn_3_1.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
-            // Time_btn_10
+            // Time_btn_10_1
             // 
-            this.Time_btn_10.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_10.Location = new System.Drawing.Point(233, 11);
-            this.Time_btn_10.Name = "Time_btn_10";
-            this.Time_btn_10.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_10.TabIndex = 27;
-            this.Time_btn_10.Text = "10";
-            this.Time_btn_10.UseVisualStyleBackColor = true;
-            this.Time_btn_10.Click += new System.EventHandler(this.Time_btn_10_Click);
+            this.Time_btn_10_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_1.Location = new System.Drawing.Point(235, 13);
+            this.Time_btn_10_1.Name = "Time_btn_10_1";
+            this.Time_btn_10_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_1.TabIndex = 27;
+            this.Time_btn_10_1.Text = "10";
+            this.Time_btn_10_1.UseVisualStyleBackColor = true;
+            this.Time_btn_10_1.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
-            // Time_btn_5
+            // Time_btn_5_1
             // 
-            this.Time_btn_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_5.Location = new System.Drawing.Point(209, 11);
-            this.Time_btn_5.Name = "Time_btn_5";
-            this.Time_btn_5.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_5.TabIndex = 26;
-            this.Time_btn_5.Text = "5";
-            this.Time_btn_5.UseVisualStyleBackColor = true;
-            this.Time_btn_5.Click += new System.EventHandler(this.Time_btn_5_Click);
+            this.Time_btn_5_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_1.Location = new System.Drawing.Point(211, 13);
+            this.Time_btn_5_1.Name = "Time_btn_5_1";
+            this.Time_btn_5_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_1.TabIndex = 26;
+            this.Time_btn_5_1.Text = "5";
+            this.Time_btn_5_1.UseVisualStyleBackColor = true;
+            this.Time_btn_5_1.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
-            // Time_btn_60
+            // Time_btn_60_1
             // 
-            this.Time_btn_60.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_60.Location = new System.Drawing.Point(329, 11);
-            this.Time_btn_60.Name = "Time_btn_60";
-            this.Time_btn_60.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_60.TabIndex = 31;
-            this.Time_btn_60.Text = "60";
-            this.Time_btn_60.UseVisualStyleBackColor = true;
-            this.Time_btn_60.Click += new System.EventHandler(this.Time_btn_60_Click);
+            this.Time_btn_60_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_1.Location = new System.Drawing.Point(331, 13);
+            this.Time_btn_60_1.Name = "Time_btn_60_1";
+            this.Time_btn_60_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_1.TabIndex = 31;
+            this.Time_btn_60_1.Text = "60";
+            this.Time_btn_60_1.UseVisualStyleBackColor = true;
+            this.Time_btn_60_1.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
-            // Time_btn_45
+            // Time_btn_45_1
             // 
-            this.Time_btn_45.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_45.Location = new System.Drawing.Point(305, 11);
-            this.Time_btn_45.Name = "Time_btn_45";
-            this.Time_btn_45.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_45.TabIndex = 30;
-            this.Time_btn_45.Text = "45";
-            this.Time_btn_45.UseVisualStyleBackColor = true;
-            this.Time_btn_45.Click += new System.EventHandler(this.Time_btn_45_Click);
+            this.Time_btn_45_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_1.Location = new System.Drawing.Point(307, 13);
+            this.Time_btn_45_1.Name = "Time_btn_45_1";
+            this.Time_btn_45_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_1.TabIndex = 30;
+            this.Time_btn_45_1.Text = "45";
+            this.Time_btn_45_1.UseVisualStyleBackColor = true;
+            this.Time_btn_45_1.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
-            // Time_btn_30
+            // Time_btn_30_1
             // 
-            this.Time_btn_30.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Time_btn_30.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_30.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Time_btn_30.Location = new System.Drawing.Point(281, 11);
-            this.Time_btn_30.Name = "Time_btn_30";
-            this.Time_btn_30.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_30.TabIndex = 29;
-            this.Time_btn_30.Text = "30";
-            this.Time_btn_30.UseVisualStyleBackColor = false;
-            this.Time_btn_30.Click += new System.EventHandler(this.Time_btn_30_Click);
+            this.Time_btn_30_1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_1.Location = new System.Drawing.Point(283, 13);
+            this.Time_btn_30_1.Name = "Time_btn_30_1";
+            this.Time_btn_30_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_1.TabIndex = 29;
+            this.Time_btn_30_1.Text = "30";
+            this.Time_btn_30_1.UseVisualStyleBackColor = false;
+            this.Time_btn_30_1.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
-            // Time_btn_15
+            // Time_btn_15_1
             // 
-            this.Time_btn_15.Font = new System.Drawing.Font("맑은 고딕", 7F);
-            this.Time_btn_15.Location = new System.Drawing.Point(257, 11);
-            this.Time_btn_15.Name = "Time_btn_15";
-            this.Time_btn_15.Size = new System.Drawing.Size(25, 23);
-            this.Time_btn_15.TabIndex = 28;
-            this.Time_btn_15.Text = "15";
-            this.Time_btn_15.UseVisualStyleBackColor = true;
-            this.Time_btn_15.Click += new System.EventHandler(this.Time_btn_15_Click);
+            this.Time_btn_15_1.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_1.Location = new System.Drawing.Point(259, 13);
+            this.Time_btn_15_1.Name = "Time_btn_15_1";
+            this.Time_btn_15_1.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_1.TabIndex = 28;
+            this.Time_btn_15_1.Text = "15";
+            this.Time_btn_15_1.UseVisualStyleBackColor = true;
+            this.Time_btn_15_1.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
-            // Time_ComboBox
+            // Time_ComboBox_1
             // 
-            this.Time_ComboBox.FormattingEnabled = true;
-            this.Time_ComboBox.Items.AddRange(new object[] {
+            this.Time_ComboBox_1.FormattingEnabled = true;
+            this.Time_ComboBox_1.Items.AddRange(new object[] {
             "1",
             "2",
             "3",
@@ -333,31 +465,31 @@
             "50",
             "60",
             "120"});
-            this.Time_ComboBox.Location = new System.Drawing.Point(355, 12);
-            this.Time_ComboBox.Name = "Time_ComboBox";
-            this.Time_ComboBox.Size = new System.Drawing.Size(39, 21);
-            this.Time_ComboBox.TabIndex = 32;
-            this.Time_ComboBox.Text = "1";
-            this.Time_ComboBox.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
-            this.Time_ComboBox.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
+            this.Time_ComboBox_1.Location = new System.Drawing.Point(357, 14);
+            this.Time_ComboBox_1.Name = "Time_ComboBox_1";
+            this.Time_ComboBox_1.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_1.TabIndex = 32;
+            this.Time_ComboBox_1.Text = "1";
+            this.Time_ComboBox_1.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_1.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(553, 17);
+            this.label1.Location = new System.Drawing.Point(402, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(82, 13);
             this.label1.TabIndex = 33;
             this.label1.Text = "WMA 간격설정";
             // 
-            // whereText
+            // Distance_input_1
             // 
-            this.whereText.Location = new System.Drawing.Point(640, 34);
-            this.whereText.Name = "whereText";
-            this.whereText.Size = new System.Drawing.Size(37, 22);
-            this.whereText.TabIndex = 7;
-            this.whereText.Text = "5";
-            this.whereText.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.Distance_input_1.Location = new System.Drawing.Point(489, 36);
+            this.Distance_input_1.Name = "Distance_input_1";
+            this.Distance_input_1.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_1.TabIndex = 7;
+            this.Distance_input_1.Text = "5";
+            this.Distance_input_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // timer1
             // 
@@ -367,7 +499,7 @@
             // Buy_btn
             // 
             this.Buy_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buy_btn.Location = new System.Drawing.Point(1015, 134);
+            this.Buy_btn.Location = new System.Drawing.Point(1477, 110);
             this.Buy_btn.Name = "Buy_btn";
             this.Buy_btn.Size = new System.Drawing.Size(39, 23);
             this.Buy_btn.TabIndex = 63;
@@ -378,7 +510,7 @@
             // Sell_btn
             // 
             this.Sell_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sell_btn.Location = new System.Drawing.Point(975, 134);
+            this.Sell_btn.Location = new System.Drawing.Point(1437, 110);
             this.Sell_btn.Name = "Sell_btn";
             this.Sell_btn.Size = new System.Drawing.Size(39, 23);
             this.Sell_btn.TabIndex = 62;
@@ -389,7 +521,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(946, 139);
+            this.label5.Location = new System.Drawing.Point(1408, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 61;
@@ -397,7 +529,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(879, 134);
+            this.numericUpDown2.Location = new System.Drawing.Point(1341, 110);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(64, 22);
             this.numericUpDown2.TabIndex = 60;
@@ -405,7 +537,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(840, 139);
+            this.label4.Location = new System.Drawing.Point(1302, 115);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 13);
             this.label4.TabIndex = 59;
@@ -413,14 +545,14 @@
             // 
             // Stock_Count
             // 
-            this.Stock_Count.Location = new System.Drawing.Point(770, 134);
+            this.Stock_Count.Location = new System.Drawing.Point(1232, 110);
             this.Stock_Count.Name = "Stock_Count";
             this.Stock_Count.Size = new System.Drawing.Size(64, 22);
             this.Stock_Count.TabIndex = 58;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(992, 109);
+            this.textBox5.Location = new System.Drawing.Point(1454, 85);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(51, 22);
             this.textBox5.TabIndex = 57;
@@ -428,7 +560,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(939, 114);
+            this.label3.Location = new System.Drawing.Point(1401, 90);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 56;
@@ -436,7 +568,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(882, 109);
+            this.textBox4.Location = new System.Drawing.Point(1344, 85);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(51, 22);
             this.textBox4.TabIndex = 55;
@@ -444,7 +576,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(849, 114);
+            this.label2.Location = new System.Drawing.Point(1311, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 54;
@@ -452,7 +584,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(787, 109);
+            this.textBox1.Location = new System.Drawing.Point(1249, 85);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(55, 22);
             this.textBox1.TabIndex = 53;
@@ -460,7 +592,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(733, 114);
+            this.label6.Location = new System.Drawing.Point(1195, 90);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(51, 13);
             this.label6.TabIndex = 52;
@@ -468,7 +600,7 @@
             // 
             // FCode_comboBox
             // 
-            this.FCode_comboBox.Location = new System.Drawing.Point(729, 35);
+            this.FCode_comboBox.Location = new System.Drawing.Point(1191, 11);
             this.FCode_comboBox.Name = "FCode_comboBox";
             this.FCode_comboBox.Size = new System.Drawing.Size(70, 21);
             this.FCode_comboBox.TabIndex = 47;
@@ -476,7 +608,7 @@
             // Account_Num2
             // 
             this.Account_Num2.FormattingEnabled = true;
-            this.Account_Num2.Location = new System.Drawing.Point(729, 12);
+            this.Account_Num2.Location = new System.Drawing.Point(1263, 11);
             this.Account_Num2.Name = "Account_Num2";
             this.Account_Num2.Size = new System.Drawing.Size(139, 21);
             this.Account_Num2.TabIndex = 46;
@@ -499,7 +631,7 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.Price_GridView.Location = new System.Drawing.Point(730, 60);
+            this.Price_GridView.Location = new System.Drawing.Point(1192, 36);
             this.Price_GridView.Name = "Price_GridView";
             this.Price_GridView.RowHeadersVisible = false;
             this.Price_GridView.RowHeadersWidth = 10;
@@ -539,60 +671,20 @@
             this.Column5.HeaderText = "평가금액";
             this.Column5.Name = "Column5";
             // 
-            // button7
-            // 
-            this.button7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button7.Location = new System.Drawing.Point(1111, 35);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(37, 23);
-            this.button7.TabIndex = 44;
-            this.button7.Text = "차트";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button4.Location = new System.Drawing.Point(1073, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(29, 23);
-            this.button4.TabIndex = 40;
-            this.button4.Text = "잔";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button3.Location = new System.Drawing.Point(1101, 11);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 23);
-            this.button3.TabIndex = 39;
-            this.button3.Text = "체";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button2.Location = new System.Drawing.Point(1129, 11);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(29, 23);
-            this.button2.TabIndex = 38;
-            this.button2.Text = "시";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Price_Lookup_btn
             // 
             this.Price_Lookup_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Price_Lookup_btn.Location = new System.Drawing.Point(1045, 11);
+            this.Price_Lookup_btn.Location = new System.Drawing.Point(1569, 10);
             this.Price_Lookup_btn.Name = "Price_Lookup_btn";
-            this.Price_Lookup_btn.Size = new System.Drawing.Size(29, 23);
+            this.Price_Lookup_btn.Size = new System.Drawing.Size(42, 23);
             this.Price_Lookup_btn.TabIndex = 37;
-            this.Price_Lookup_btn.Text = "조";
+            this.Price_Lookup_btn.Text = "조회";
             this.Price_Lookup_btn.UseVisualStyleBackColor = true;
             this.Price_Lookup_btn.Click += new System.EventHandler(this.Price_Lookup_btn_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(992, 12);
+            this.textBox3.Location = new System.Drawing.Point(1526, 11);
             this.textBox3.MaxLength = 4;
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
@@ -602,57 +694,17 @@
             // Account_Name2
             // 
             this.Account_Name2.Enabled = false;
-            this.Account_Name2.Location = new System.Drawing.Point(870, 12);
+            this.Account_Name2.Location = new System.Drawing.Point(1404, 11);
             this.Account_Name2.Name = "Account_Name2";
             this.Account_Name2.Size = new System.Drawing.Size(121, 22);
             this.Account_Name2.TabIndex = 35;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label8.Location = new System.Drawing.Point(819, 451);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 13);
-            this.label8.TabIndex = 73;
-            this.label8.Text = "20,000,000";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(736, 451);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 13);
-            this.label7.TabIndex = 72;
-            this.label7.Text = "기본예탁금 : ";
-            // 
-            // button12
-            // 
-            this.button12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button12.Location = new System.Drawing.Point(1108, 444);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(39, 23);
-            this.button12.TabIndex = 71;
-            this.button12.Text = "출력";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button11.Location = new System.Drawing.Point(1070, 444);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(39, 23);
-            this.button11.TabIndex = 70;
-            this.button11.Text = "체결";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
             // Lookup_btn
             // 
             this.Lookup_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lookup_btn.Location = new System.Drawing.Point(1032, 444);
+            this.Lookup_btn.Location = new System.Drawing.Point(1554, 718);
             this.Lookup_btn.Name = "Lookup_btn";
-            this.Lookup_btn.Size = new System.Drawing.Size(39, 23);
+            this.Lookup_btn.Size = new System.Drawing.Size(57, 23);
             this.Lookup_btn.TabIndex = 69;
             this.Lookup_btn.Text = "조회";
             this.Lookup_btn.UseVisualStyleBackColor = true;
@@ -661,7 +713,7 @@
             // AccountPW
             // 
             this.AccountPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.AccountPW.Location = new System.Drawing.Point(992, 423);
+            this.AccountPW.Location = new System.Drawing.Point(1456, 718);
             this.AccountPW.MaxLength = 4;
             this.AccountPW.Name = "AccountPW";
             this.AccountPW.PasswordChar = '*';
@@ -671,7 +723,7 @@
             // Account_Name
             // 
             this.Account_Name.Enabled = false;
-            this.Account_Name.Location = new System.Drawing.Point(870, 422);
+            this.Account_Name.Location = new System.Drawing.Point(1334, 717);
             this.Account_Name.Name = "Account_Name";
             this.Account_Name.Size = new System.Drawing.Size(121, 22);
             this.Account_Name.TabIndex = 66;
@@ -679,7 +731,7 @@
             // Account_Num
             // 
             this.Account_Num.FormattingEnabled = true;
-            this.Account_Num.Location = new System.Drawing.Point(730, 423);
+            this.Account_Num.Location = new System.Drawing.Point(1194, 718);
             this.Account_Num.Name = "Account_Num";
             this.Account_Num.Size = new System.Drawing.Size(138, 21);
             this.Account_Num.TabIndex = 65;
@@ -694,14 +746,14 @@
             this.Account_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column13});
             this.Account_GridView.EnableHeadersVisualStyles = false;
-            this.Account_GridView.Location = new System.Drawing.Point(729, 467);
+            this.Account_GridView.Location = new System.Drawing.Point(1193, 744);
             this.Account_GridView.Margin = new System.Windows.Forms.Padding(0);
             this.Account_GridView.Name = "Account_GridView";
             this.Account_GridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.Account_GridView.RowTemplate.Height = 23;
             this.Account_GridView.RowTemplate.ReadOnly = true;
             this.Account_GridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.Account_GridView.Size = new System.Drawing.Size(419, 259);
+            this.Account_GridView.Size = new System.Drawing.Size(419, 240);
             this.Account_GridView.TabIndex = 75;
             this.Account_GridView.TabStop = false;
             // 
@@ -733,32 +785,32 @@
             this.Comm_Obj_Price.Visible = false;
             this.Comm_Obj_Price.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Price_ReceiveData);
             // 
-            // startWma
+            // startWma_1
             // 
-            this.startWma.Location = new System.Drawing.Point(459, 11);
-            this.startWma.Name = "startWma";
-            this.startWma.Size = new System.Drawing.Size(29, 22);
-            this.startWma.TabIndex = 2;
-            this.startWma.Text = "2";
-            this.startWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.startWma_1.Location = new System.Drawing.Point(214, 37);
+            this.startWma_1.Name = "startWma_1";
+            this.startWma_1.Size = new System.Drawing.Size(29, 22);
+            this.startWma_1.TabIndex = 2;
+            this.startWma_1.Text = "2";
+            this.startWma_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
-            // endWma
+            // endWma_1
             // 
-            this.endWma.Location = new System.Drawing.Point(489, 11);
-            this.endWma.Name = "endWma";
-            this.endWma.Size = new System.Drawing.Size(29, 22);
-            this.endWma.TabIndex = 3;
-            this.endWma.Text = "10";
-            this.endWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.endWma_1.Location = new System.Drawing.Point(244, 37);
+            this.endWma_1.Name = "endWma_1";
+            this.endWma_1.Size = new System.Drawing.Size(29, 22);
+            this.endWma_1.TabIndex = 3;
+            this.endWma_1.Text = "10";
+            this.endWma_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
-            // intervalWma
+            // intervalWma_1
             // 
-            this.intervalWma.Location = new System.Drawing.Point(519, 11);
-            this.intervalWma.Name = "intervalWma";
-            this.intervalWma.Size = new System.Drawing.Size(29, 22);
-            this.intervalWma.TabIndex = 4;
-            this.intervalWma.Text = "2";
-            this.intervalWma.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.intervalWma_1.Location = new System.Drawing.Point(274, 37);
+            this.intervalWma_1.Name = "intervalWma_1";
+            this.intervalWma_1.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_1.TabIndex = 4;
+            this.intervalWma_1.Text = "2";
+            this.intervalWma_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // axGiExpertControl2
             // 
@@ -770,19 +822,19 @@
             this.axGiExpertControl2.TabIndex = 82;
             this.axGiExpertControl2.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Deal_ReceiveData);
             // 
-            // Angle_input
+            // Angle_input_1
             // 
-            this.Angle_input.Location = new System.Drawing.Point(489, 34);
-            this.Angle_input.Name = "Angle_input";
-            this.Angle_input.Size = new System.Drawing.Size(59, 22);
-            this.Angle_input.TabIndex = 5;
-            this.Angle_input.Text = "10";
-            this.Angle_input.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.Angle_input_1.Location = new System.Drawing.Point(338, 37);
+            this.Angle_input_1.Name = "Angle_input_1";
+            this.Angle_input_1.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_1.TabIndex = 5;
+            this.Angle_input_1.Text = "10";
+            this.Angle_input_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(458, 39);
+            this.label9.Location = new System.Drawing.Point(306, 42);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(29, 13);
             this.label9.TabIndex = 84;
@@ -792,17 +844,17 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.label10.Location = new System.Drawing.Point(397, 18);
+            this.label10.Location = new System.Drawing.Point(125, 41);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 30);
+            this.label10.Size = new System.Drawing.Size(88, 15);
             this.label10.TabIndex = 85;
-            this.label10.Text = "매수/매도\r\n설정";
+            this.label10.Text = "매수/매도 설정";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(559, 39);
+            this.label11.Location = new System.Drawing.Point(408, 41);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 86;
@@ -818,27 +870,1503 @@
             this.axGiExpertControl1.TabIndex = 1000;
             this.axGiExpertControl1.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_AccountList_ReceivedData);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1001, 41);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.TabIndex = 1024;
+            this.label12.Text = "기울기 간격";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.label13.Location = new System.Drawing.Point(718, 41);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(88, 15);
+            this.label13.TabIndex = 1023;
+            this.label13.Text = "매수/매도 설정";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(899, 42);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(29, 13);
+            this.label14.TabIndex = 1022;
+            this.label14.Text = "각도";
+            // 
+            // Angle_input_4
+            // 
+            this.Angle_input_4.Location = new System.Drawing.Point(931, 37);
+            this.Angle_input_4.Name = "Angle_input_4";
+            this.Angle_input_4.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_4.TabIndex = 1005;
+            this.Angle_input_4.Text = "10";
+            // 
+            // intervalWma_4
+            // 
+            this.intervalWma_4.Location = new System.Drawing.Point(867, 37);
+            this.intervalWma_4.Name = "intervalWma_4";
+            this.intervalWma_4.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_4.TabIndex = 1004;
+            this.intervalWma_4.Text = "2";
+            // 
+            // endWma_4
+            // 
+            this.endWma_4.Location = new System.Drawing.Point(837, 37);
+            this.endWma_4.Name = "endWma_4";
+            this.endWma_4.Size = new System.Drawing.Size(29, 22);
+            this.endWma_4.TabIndex = 1003;
+            this.endWma_4.Text = "10";
+            // 
+            // startWma_4
+            // 
+            this.startWma_4.Location = new System.Drawing.Point(807, 37);
+            this.startWma_4.Name = "startWma_4";
+            this.startWma_4.Size = new System.Drawing.Size(29, 22);
+            this.startWma_4.TabIndex = 1002;
+            this.startWma_4.Text = "2";
+            // 
+            // Distance_input_4
+            // 
+            this.Distance_input_4.Location = new System.Drawing.Point(1082, 36);
+            this.Distance_input_4.Name = "Distance_input_4";
+            this.Distance_input_4.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_4.TabIndex = 1007;
+            this.Distance_input_4.Text = "5";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(995, 19);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 13);
+            this.label15.TabIndex = 1021;
+            this.label15.Text = "WMA 간격설정";
+            // 
+            // Time_ComboBox_4
+            // 
+            this.Time_ComboBox_4.FormattingEnabled = true;
+            this.Time_ComboBox_4.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "40",
+            "45",
+            "50",
+            "60",
+            "120"});
+            this.Time_ComboBox_4.Location = new System.Drawing.Point(950, 14);
+            this.Time_ComboBox_4.Name = "Time_ComboBox_4";
+            this.Time_ComboBox_4.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_4.TabIndex = 1020;
+            this.Time_ComboBox_4.Text = "1";
+            // 
+            // Time_btn_60_4
+            // 
+            this.Time_btn_60_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_4.Location = new System.Drawing.Point(924, 13);
+            this.Time_btn_60_4.Name = "Time_btn_60_4";
+            this.Time_btn_60_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_4.TabIndex = 1019;
+            this.Time_btn_60_4.Text = "60";
+            this.Time_btn_60_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_45_4
+            // 
+            this.Time_btn_45_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_4.Location = new System.Drawing.Point(900, 13);
+            this.Time_btn_45_4.Name = "Time_btn_45_4";
+            this.Time_btn_45_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_4.TabIndex = 1018;
+            this.Time_btn_45_4.Text = "45";
+            this.Time_btn_45_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_30_4
+            // 
+            this.Time_btn_30_4.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_4.Location = new System.Drawing.Point(876, 13);
+            this.Time_btn_30_4.Name = "Time_btn_30_4";
+            this.Time_btn_30_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_4.TabIndex = 1017;
+            this.Time_btn_30_4.Text = "30";
+            this.Time_btn_30_4.UseVisualStyleBackColor = false;
+            // 
+            // Time_btn_15_4
+            // 
+            this.Time_btn_15_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_4.Location = new System.Drawing.Point(852, 13);
+            this.Time_btn_15_4.Name = "Time_btn_15_4";
+            this.Time_btn_15_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_4.TabIndex = 1016;
+            this.Time_btn_15_4.Text = "15";
+            this.Time_btn_15_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_10_4
+            // 
+            this.Time_btn_10_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_4.Location = new System.Drawing.Point(828, 13);
+            this.Time_btn_10_4.Name = "Time_btn_10_4";
+            this.Time_btn_10_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_4.TabIndex = 1015;
+            this.Time_btn_10_4.Text = "10";
+            this.Time_btn_10_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_5_4
+            // 
+            this.Time_btn_5_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_4.Location = new System.Drawing.Point(804, 13);
+            this.Time_btn_5_4.Name = "Time_btn_5_4";
+            this.Time_btn_5_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_4.TabIndex = 1014;
+            this.Time_btn_5_4.Text = "5";
+            this.Time_btn_5_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_3_4
+            // 
+            this.Time_btn_3_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_4.Location = new System.Drawing.Point(780, 13);
+            this.Time_btn_3_4.Name = "Time_btn_3_4";
+            this.Time_btn_3_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_4.TabIndex = 1013;
+            this.Time_btn_3_4.Text = "3";
+            this.Time_btn_3_4.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_1_4
+            // 
+            this.Time_btn_1_4.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_4.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_4.Location = new System.Drawing.Point(756, 13);
+            this.Time_btn_1_4.Name = "Time_btn_1_4";
+            this.Time_btn_1_4.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_4.TabIndex = 1012;
+            this.Time_btn_1_4.Text = "1";
+            this.Time_btn_1_4.UseVisualStyleBackColor = false;
+            // 
+            // Tick_btn_4
+            // 
+            this.Tick_btn_4.Location = new System.Drawing.Point(731, 13);
+            this.Tick_btn_4.Name = "Tick_btn_4";
+            this.Tick_btn_4.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_4.TabIndex = 1011;
+            this.Tick_btn_4.Text = "틱";
+            this.Tick_btn_4.UseVisualStyleBackColor = true;
+            // 
+            // Min_btn_4
+            // 
+            this.Min_btn_4.Location = new System.Drawing.Point(707, 13);
+            this.Min_btn_4.Name = "Min_btn_4";
+            this.Min_btn_4.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_4.TabIndex = 1010;
+            this.Min_btn_4.Text = "분";
+            this.Min_btn_4.UseVisualStyleBackColor = true;
+            // 
+            // Day_btn_4
+            // 
+            this.Day_btn_4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_4.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_4.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_4.Location = new System.Drawing.Point(683, 13);
+            this.Day_btn_4.Name = "Day_btn_4";
+            this.Day_btn_4.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_4.TabIndex = 1009;
+            this.Day_btn_4.TabStop = false;
+            this.Day_btn_4.Text = "일";
+            this.Day_btn_4.UseVisualStyleBackColor = false;
+            // 
+            // WMA_input_btn_4
+            // 
+            this.WMA_input_btn_4.Location = new System.Drawing.Point(1122, 12);
+            this.WMA_input_btn_4.Name = "WMA_input_btn_4";
+            this.WMA_input_btn_4.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_4.TabIndex = 1008;
+            this.WMA_input_btn_4.Text = "설정";
+            this.WMA_input_btn_4.UseVisualStyleBackColor = true;
+            // 
+            // WMA_input_4
+            // 
+            this.WMA_input_4.Location = new System.Drawing.Point(1082, 13);
+            this.WMA_input_4.Name = "WMA_input_4";
+            this.WMA_input_4.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_4.TabIndex = 1006;
+            this.WMA_input_4.Text = "10";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(600, 60);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowTemplate.Height = 23;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(587, 275);
+            this.dataGridView1.TabIndex = 1025;
+            this.dataGridView1.TabStop = false;
+            // 
+            // FCode_4
+            // 
+            this.FCode_4.Location = new System.Drawing.Point(607, 14);
+            this.FCode_4.MaxLength = 5;
+            this.FCode_4.Name = "FCode_4";
+            this.FCode_4.Size = new System.Drawing.Size(76, 22);
+            this.FCode_4.TabIndex = 1001;
+            this.FCode_4.Text = "101Q3";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(408, 365);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.TabIndex = 1049;
+            this.label16.Text = "기울기 간격";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.label17.Location = new System.Drawing.Point(125, 365);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(88, 15);
+            this.label17.TabIndex = 1048;
+            this.label17.Text = "매수/매도 설정";
+            this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(306, 366);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(29, 13);
+            this.label18.TabIndex = 1047;
+            this.label18.Text = "각도";
+            // 
+            // Angle_input_2
+            // 
+            this.Angle_input_2.Location = new System.Drawing.Point(338, 361);
+            this.Angle_input_2.Name = "Angle_input_2";
+            this.Angle_input_2.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_2.TabIndex = 1030;
+            this.Angle_input_2.Text = "10";
+            // 
+            // intervalWma_2
+            // 
+            this.intervalWma_2.Location = new System.Drawing.Point(274, 361);
+            this.intervalWma_2.Name = "intervalWma_2";
+            this.intervalWma_2.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_2.TabIndex = 1029;
+            this.intervalWma_2.Text = "2";
+            // 
+            // endWma_2
+            // 
+            this.endWma_2.Location = new System.Drawing.Point(244, 361);
+            this.endWma_2.Name = "endWma_2";
+            this.endWma_2.Size = new System.Drawing.Size(29, 22);
+            this.endWma_2.TabIndex = 1028;
+            this.endWma_2.Text = "10";
+            // 
+            // startWma_2
+            // 
+            this.startWma_2.Location = new System.Drawing.Point(214, 361);
+            this.startWma_2.Name = "startWma_2";
+            this.startWma_2.Size = new System.Drawing.Size(29, 22);
+            this.startWma_2.TabIndex = 1027;
+            this.startWma_2.Text = "2";
+            // 
+            // Distance_input_2
+            // 
+            this.Distance_input_2.Location = new System.Drawing.Point(489, 360);
+            this.Distance_input_2.Name = "Distance_input_2";
+            this.Distance_input_2.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_2.TabIndex = 1032;
+            this.Distance_input_2.Text = "5";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(402, 343);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.TabIndex = 1046;
+            this.label19.Text = "WMA 간격설정";
+            // 
+            // Time_ComboBox_2
+            // 
+            this.Time_ComboBox_2.FormattingEnabled = true;
+            this.Time_ComboBox_2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "40",
+            "45",
+            "50",
+            "60",
+            "120"});
+            this.Time_ComboBox_2.Location = new System.Drawing.Point(357, 338);
+            this.Time_ComboBox_2.Name = "Time_ComboBox_2";
+            this.Time_ComboBox_2.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_2.TabIndex = 1045;
+            this.Time_ComboBox_2.Text = "1";
+            // 
+            // Time_btn_60_2
+            // 
+            this.Time_btn_60_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_2.Location = new System.Drawing.Point(331, 337);
+            this.Time_btn_60_2.Name = "Time_btn_60_2";
+            this.Time_btn_60_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_2.TabIndex = 1044;
+            this.Time_btn_60_2.Text = "60";
+            this.Time_btn_60_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_45_2
+            // 
+            this.Time_btn_45_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_2.Location = new System.Drawing.Point(307, 337);
+            this.Time_btn_45_2.Name = "Time_btn_45_2";
+            this.Time_btn_45_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_2.TabIndex = 1043;
+            this.Time_btn_45_2.Text = "45";
+            this.Time_btn_45_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_30_2
+            // 
+            this.Time_btn_30_2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_2.Location = new System.Drawing.Point(283, 337);
+            this.Time_btn_30_2.Name = "Time_btn_30_2";
+            this.Time_btn_30_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_2.TabIndex = 1042;
+            this.Time_btn_30_2.Text = "30";
+            this.Time_btn_30_2.UseVisualStyleBackColor = false;
+            // 
+            // Time_btn_15_2
+            // 
+            this.Time_btn_15_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_2.Location = new System.Drawing.Point(259, 337);
+            this.Time_btn_15_2.Name = "Time_btn_15_2";
+            this.Time_btn_15_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_2.TabIndex = 1041;
+            this.Time_btn_15_2.Text = "15";
+            this.Time_btn_15_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_10_2
+            // 
+            this.Time_btn_10_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_2.Location = new System.Drawing.Point(235, 337);
+            this.Time_btn_10_2.Name = "Time_btn_10_2";
+            this.Time_btn_10_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_2.TabIndex = 1040;
+            this.Time_btn_10_2.Text = "10";
+            this.Time_btn_10_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_5_2
+            // 
+            this.Time_btn_5_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_2.Location = new System.Drawing.Point(211, 337);
+            this.Time_btn_5_2.Name = "Time_btn_5_2";
+            this.Time_btn_5_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_2.TabIndex = 1039;
+            this.Time_btn_5_2.Text = "5";
+            this.Time_btn_5_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_3_2
+            // 
+            this.Time_btn_3_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_2.Location = new System.Drawing.Point(187, 337);
+            this.Time_btn_3_2.Name = "Time_btn_3_2";
+            this.Time_btn_3_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_2.TabIndex = 1038;
+            this.Time_btn_3_2.Text = "3";
+            this.Time_btn_3_2.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_1_2
+            // 
+            this.Time_btn_1_2.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_2.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_2.Location = new System.Drawing.Point(163, 337);
+            this.Time_btn_1_2.Name = "Time_btn_1_2";
+            this.Time_btn_1_2.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_2.TabIndex = 1037;
+            this.Time_btn_1_2.Text = "1";
+            this.Time_btn_1_2.UseVisualStyleBackColor = false;
+            // 
+            // Tick_btn_2
+            // 
+            this.Tick_btn_2.Location = new System.Drawing.Point(138, 337);
+            this.Tick_btn_2.Name = "Tick_btn_2";
+            this.Tick_btn_2.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_2.TabIndex = 1036;
+            this.Tick_btn_2.Text = "틱";
+            this.Tick_btn_2.UseVisualStyleBackColor = true;
+            // 
+            // Min_btn_2
+            // 
+            this.Min_btn_2.Location = new System.Drawing.Point(114, 337);
+            this.Min_btn_2.Name = "Min_btn_2";
+            this.Min_btn_2.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_2.TabIndex = 1035;
+            this.Min_btn_2.Text = "분";
+            this.Min_btn_2.UseVisualStyleBackColor = true;
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button29.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.button29.ForeColor = System.Drawing.SystemColors.Control;
+            this.button29.Location = new System.Drawing.Point(90, 337);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(25, 23);
+            this.button29.TabIndex = 1034;
+            this.button29.TabStop = false;
+            this.button29.Text = "일";
+            this.button29.UseVisualStyleBackColor = false;
+            // 
+            // WMA_input_btn_2
+            // 
+            this.WMA_input_btn_2.Location = new System.Drawing.Point(529, 336);
+            this.WMA_input_btn_2.Name = "WMA_input_btn_2";
+            this.WMA_input_btn_2.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_2.TabIndex = 1033;
+            this.WMA_input_btn_2.Text = "설정";
+            this.WMA_input_btn_2.UseVisualStyleBackColor = true;
+            // 
+            // WMA_input_2
+            // 
+            this.WMA_input_2.Location = new System.Drawing.Point(489, 337);
+            this.WMA_input_2.Name = "WMA_input_2";
+            this.WMA_input_2.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_2.TabIndex = 1031;
+            this.WMA_input_2.Text = "10";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 384);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowTemplate.Height = 23;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.Size = new System.Drawing.Size(587, 275);
+            this.dataGridView2.TabIndex = 1050;
+            this.dataGridView2.TabStop = false;
+            // 
+            // FCode_2
+            // 
+            this.FCode_2.Location = new System.Drawing.Point(14, 338);
+            this.FCode_2.MaxLength = 5;
+            this.FCode_2.Name = "FCode_2";
+            this.FCode_2.Size = new System.Drawing.Size(76, 22);
+            this.FCode_2.TabIndex = 1026;
+            this.FCode_2.Text = "101Q3";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(408, 690);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(66, 13);
+            this.label20.TabIndex = 1074;
+            this.label20.Text = "기울기 간격";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.label21.Location = new System.Drawing.Point(125, 690);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(88, 15);
+            this.label21.TabIndex = 1073;
+            this.label21.Text = "매수/매도 설정";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(306, 691);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(29, 13);
+            this.label22.TabIndex = 1072;
+            this.label22.Text = "각도";
+            // 
+            // Angle_input_3
+            // 
+            this.Angle_input_3.Location = new System.Drawing.Point(338, 686);
+            this.Angle_input_3.Name = "Angle_input_3";
+            this.Angle_input_3.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_3.TabIndex = 1055;
+            this.Angle_input_3.Text = "10";
+            // 
+            // intervalWma_3
+            // 
+            this.intervalWma_3.Location = new System.Drawing.Point(274, 686);
+            this.intervalWma_3.Name = "intervalWma_3";
+            this.intervalWma_3.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_3.TabIndex = 1054;
+            this.intervalWma_3.Text = "2";
+            // 
+            // endWma_3
+            // 
+            this.endWma_3.Location = new System.Drawing.Point(244, 686);
+            this.endWma_3.Name = "endWma_3";
+            this.endWma_3.Size = new System.Drawing.Size(29, 22);
+            this.endWma_3.TabIndex = 1053;
+            this.endWma_3.Text = "10";
+            // 
+            // startWma_3
+            // 
+            this.startWma_3.Location = new System.Drawing.Point(214, 686);
+            this.startWma_3.Name = "startWma_3";
+            this.startWma_3.Size = new System.Drawing.Size(29, 22);
+            this.startWma_3.TabIndex = 1052;
+            this.startWma_3.Text = "2";
+            // 
+            // Distance_input_3
+            // 
+            this.Distance_input_3.Location = new System.Drawing.Point(489, 685);
+            this.Distance_input_3.Name = "Distance_input_3";
+            this.Distance_input_3.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_3.TabIndex = 1057;
+            this.Distance_input_3.Text = "5";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(402, 668);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(82, 13);
+            this.label23.TabIndex = 1071;
+            this.label23.Text = "WMA 간격설정";
+            // 
+            // Time_ComboBox_3
+            // 
+            this.Time_ComboBox_3.FormattingEnabled = true;
+            this.Time_ComboBox_3.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "40",
+            "45",
+            "50",
+            "60",
+            "120"});
+            this.Time_ComboBox_3.Location = new System.Drawing.Point(357, 663);
+            this.Time_ComboBox_3.Name = "Time_ComboBox_3";
+            this.Time_ComboBox_3.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_3.TabIndex = 1070;
+            this.Time_ComboBox_3.Text = "1";
+            // 
+            // Time_btn_60_3
+            // 
+            this.Time_btn_60_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_3.Location = new System.Drawing.Point(331, 662);
+            this.Time_btn_60_3.Name = "Time_btn_60_3";
+            this.Time_btn_60_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_3.TabIndex = 1069;
+            this.Time_btn_60_3.Text = "60";
+            this.Time_btn_60_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_45_3
+            // 
+            this.Time_btn_45_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_3.Location = new System.Drawing.Point(307, 662);
+            this.Time_btn_45_3.Name = "Time_btn_45_3";
+            this.Time_btn_45_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_3.TabIndex = 1068;
+            this.Time_btn_45_3.Text = "45";
+            this.Time_btn_45_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_30_3
+            // 
+            this.Time_btn_30_3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_3.Location = new System.Drawing.Point(283, 662);
+            this.Time_btn_30_3.Name = "Time_btn_30_3";
+            this.Time_btn_30_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_3.TabIndex = 1067;
+            this.Time_btn_30_3.Text = "30";
+            this.Time_btn_30_3.UseVisualStyleBackColor = false;
+            // 
+            // Time_btn_15_3
+            // 
+            this.Time_btn_15_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_3.Location = new System.Drawing.Point(259, 662);
+            this.Time_btn_15_3.Name = "Time_btn_15_3";
+            this.Time_btn_15_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_3.TabIndex = 1066;
+            this.Time_btn_15_3.Text = "15";
+            this.Time_btn_15_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_10_3
+            // 
+            this.Time_btn_10_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_3.Location = new System.Drawing.Point(235, 662);
+            this.Time_btn_10_3.Name = "Time_btn_10_3";
+            this.Time_btn_10_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_3.TabIndex = 1065;
+            this.Time_btn_10_3.Text = "10";
+            this.Time_btn_10_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_5_3
+            // 
+            this.Time_btn_5_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_3.Location = new System.Drawing.Point(211, 662);
+            this.Time_btn_5_3.Name = "Time_btn_5_3";
+            this.Time_btn_5_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_3.TabIndex = 1064;
+            this.Time_btn_5_3.Text = "5";
+            this.Time_btn_5_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_3_3
+            // 
+            this.Time_btn_3_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_3.Location = new System.Drawing.Point(187, 662);
+            this.Time_btn_3_3.Name = "Time_btn_3_3";
+            this.Time_btn_3_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_3.TabIndex = 1063;
+            this.Time_btn_3_3.Text = "3";
+            this.Time_btn_3_3.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_1_3
+            // 
+            this.Time_btn_1_3.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_3.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_3.Location = new System.Drawing.Point(163, 662);
+            this.Time_btn_1_3.Name = "Time_btn_1_3";
+            this.Time_btn_1_3.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_3.TabIndex = 1062;
+            this.Time_btn_1_3.Text = "1";
+            this.Time_btn_1_3.UseVisualStyleBackColor = false;
+            // 
+            // Tick_btn_3
+            // 
+            this.Tick_btn_3.Location = new System.Drawing.Point(138, 662);
+            this.Tick_btn_3.Name = "Tick_btn_3";
+            this.Tick_btn_3.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_3.TabIndex = 1061;
+            this.Tick_btn_3.Text = "틱";
+            this.Tick_btn_3.UseVisualStyleBackColor = true;
+            // 
+            // Min_btn_3
+            // 
+            this.Min_btn_3.Location = new System.Drawing.Point(114, 662);
+            this.Min_btn_3.Name = "Min_btn_3";
+            this.Min_btn_3.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_3.TabIndex = 1060;
+            this.Min_btn_3.Text = "분";
+            this.Min_btn_3.UseVisualStyleBackColor = true;
+            // 
+            // Day_btn_3
+            // 
+            this.Day_btn_3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_3.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_3.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_3.Location = new System.Drawing.Point(90, 662);
+            this.Day_btn_3.Name = "Day_btn_3";
+            this.Day_btn_3.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_3.TabIndex = 1059;
+            this.Day_btn_3.TabStop = false;
+            this.Day_btn_3.Text = "일";
+            this.Day_btn_3.UseVisualStyleBackColor = false;
+            // 
+            // WMA_input_btn_3
+            // 
+            this.WMA_input_btn_3.Location = new System.Drawing.Point(529, 661);
+            this.WMA_input_btn_3.Name = "WMA_input_btn_3";
+            this.WMA_input_btn_3.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_3.TabIndex = 1058;
+            this.WMA_input_btn_3.Text = "설정";
+            this.WMA_input_btn_3.UseVisualStyleBackColor = true;
+            // 
+            // WMA_input_3
+            // 
+            this.WMA_input_3.Location = new System.Drawing.Point(489, 662);
+            this.WMA_input_3.Name = "WMA_input_3";
+            this.WMA_input_3.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_3.TabIndex = 1056;
+            this.WMA_input_3.Text = "10";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AllowUserToResizeColumns = false;
+            this.dataGridView3.AllowUserToResizeRows = false;
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(7, 709);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView3.Size = new System.Drawing.Size(587, 275);
+            this.dataGridView3.TabIndex = 1075;
+            this.dataGridView3.TabStop = false;
+            // 
+            // FCode_3
+            // 
+            this.FCode_3.Location = new System.Drawing.Point(14, 663);
+            this.FCode_3.MaxLength = 5;
+            this.FCode_3.Name = "FCode_3";
+            this.FCode_3.Size = new System.Drawing.Size(76, 22);
+            this.FCode_3.TabIndex = 1051;
+            this.FCode_3.Text = "101Q3";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(1001, 690);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(66, 13);
+            this.label24.TabIndex = 1124;
+            this.label24.Text = "기울기 간격";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.label25.Location = new System.Drawing.Point(718, 690);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(88, 15);
+            this.label25.TabIndex = 1123;
+            this.label25.Text = "매수/매도 설정";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(899, 691);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(29, 13);
+            this.label26.TabIndex = 1122;
+            this.label26.Text = "각도";
+            // 
+            // Angle_input_6
+            // 
+            this.Angle_input_6.Location = new System.Drawing.Point(931, 686);
+            this.Angle_input_6.Name = "Angle_input_6";
+            this.Angle_input_6.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_6.TabIndex = 1105;
+            this.Angle_input_6.Text = "10";
+            // 
+            // intervalWma_6
+            // 
+            this.intervalWma_6.Location = new System.Drawing.Point(867, 686);
+            this.intervalWma_6.Name = "intervalWma_6";
+            this.intervalWma_6.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_6.TabIndex = 1104;
+            this.intervalWma_6.Text = "2";
+            // 
+            // endWma_6
+            // 
+            this.endWma_6.Location = new System.Drawing.Point(837, 686);
+            this.endWma_6.Name = "endWma_6";
+            this.endWma_6.Size = new System.Drawing.Size(29, 22);
+            this.endWma_6.TabIndex = 1103;
+            this.endWma_6.Text = "10";
+            // 
+            // startWma_6
+            // 
+            this.startWma_6.Location = new System.Drawing.Point(807, 686);
+            this.startWma_6.Name = "startWma_6";
+            this.startWma_6.Size = new System.Drawing.Size(29, 22);
+            this.startWma_6.TabIndex = 1102;
+            this.startWma_6.Text = "2";
+            // 
+            // Distance_input_6
+            // 
+            this.Distance_input_6.Location = new System.Drawing.Point(1082, 685);
+            this.Distance_input_6.Name = "Distance_input_6";
+            this.Distance_input_6.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_6.TabIndex = 1107;
+            this.Distance_input_6.Text = "5";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(995, 668);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 13);
+            this.label27.TabIndex = 1121;
+            this.label27.Text = "WMA 간격설정";
+            // 
+            // Time_ComboBox_6
+            // 
+            this.Time_ComboBox_6.FormattingEnabled = true;
+            this.Time_ComboBox_6.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "40",
+            "45",
+            "50",
+            "60",
+            "120"});
+            this.Time_ComboBox_6.Location = new System.Drawing.Point(950, 663);
+            this.Time_ComboBox_6.Name = "Time_ComboBox_6";
+            this.Time_ComboBox_6.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_6.TabIndex = 1120;
+            this.Time_ComboBox_6.Text = "1";
+            // 
+            // Time_btn_60_6
+            // 
+            this.Time_btn_60_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_6.Location = new System.Drawing.Point(924, 662);
+            this.Time_btn_60_6.Name = "Time_btn_60_6";
+            this.Time_btn_60_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_6.TabIndex = 1119;
+            this.Time_btn_60_6.Text = "60";
+            this.Time_btn_60_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_45_6
+            // 
+            this.Time_btn_45_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_6.Location = new System.Drawing.Point(900, 662);
+            this.Time_btn_45_6.Name = "Time_btn_45_6";
+            this.Time_btn_45_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_6.TabIndex = 1118;
+            this.Time_btn_45_6.Text = "45";
+            this.Time_btn_45_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_30_6
+            // 
+            this.Time_btn_30_6.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_6.Location = new System.Drawing.Point(876, 662);
+            this.Time_btn_30_6.Name = "Time_btn_30_6";
+            this.Time_btn_30_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_6.TabIndex = 1117;
+            this.Time_btn_30_6.Text = "30";
+            this.Time_btn_30_6.UseVisualStyleBackColor = false;
+            // 
+            // Time_btn_15_6
+            // 
+            this.Time_btn_15_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_6.Location = new System.Drawing.Point(852, 662);
+            this.Time_btn_15_6.Name = "Time_btn_15_6";
+            this.Time_btn_15_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_6.TabIndex = 1116;
+            this.Time_btn_15_6.Text = "15";
+            this.Time_btn_15_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_10_6
+            // 
+            this.Time_btn_10_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_6.Location = new System.Drawing.Point(828, 662);
+            this.Time_btn_10_6.Name = "Time_btn_10_6";
+            this.Time_btn_10_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_6.TabIndex = 1115;
+            this.Time_btn_10_6.Text = "10";
+            this.Time_btn_10_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_5_6
+            // 
+            this.Time_btn_5_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_6.Location = new System.Drawing.Point(804, 662);
+            this.Time_btn_5_6.Name = "Time_btn_5_6";
+            this.Time_btn_5_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_6.TabIndex = 1114;
+            this.Time_btn_5_6.Text = "5";
+            this.Time_btn_5_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_3_6
+            // 
+            this.Time_btn_3_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_6.Location = new System.Drawing.Point(780, 662);
+            this.Time_btn_3_6.Name = "Time_btn_3_6";
+            this.Time_btn_3_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_6.TabIndex = 1113;
+            this.Time_btn_3_6.Text = "3";
+            this.Time_btn_3_6.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_1_6
+            // 
+            this.Time_btn_1_6.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_6.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_6.Location = new System.Drawing.Point(756, 662);
+            this.Time_btn_1_6.Name = "Time_btn_1_6";
+            this.Time_btn_1_6.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_6.TabIndex = 1112;
+            this.Time_btn_1_6.Text = "1";
+            this.Time_btn_1_6.UseVisualStyleBackColor = false;
+            // 
+            // Tick_btn_6
+            // 
+            this.Tick_btn_6.Location = new System.Drawing.Point(731, 662);
+            this.Tick_btn_6.Name = "Tick_btn_6";
+            this.Tick_btn_6.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_6.TabIndex = 1111;
+            this.Tick_btn_6.Text = "틱";
+            this.Tick_btn_6.UseVisualStyleBackColor = true;
+            // 
+            // Min_btn_6
+            // 
+            this.Min_btn_6.Location = new System.Drawing.Point(707, 662);
+            this.Min_btn_6.Name = "Min_btn_6";
+            this.Min_btn_6.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_6.TabIndex = 1110;
+            this.Min_btn_6.Text = "분";
+            this.Min_btn_6.UseVisualStyleBackColor = true;
+            // 
+            // Day_btn_6
+            // 
+            this.Day_btn_6.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_6.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_6.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_6.Location = new System.Drawing.Point(683, 662);
+            this.Day_btn_6.Name = "Day_btn_6";
+            this.Day_btn_6.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_6.TabIndex = 1109;
+            this.Day_btn_6.TabStop = false;
+            this.Day_btn_6.Text = "일";
+            this.Day_btn_6.UseVisualStyleBackColor = false;
+            // 
+            // WMA_input_btn_6
+            // 
+            this.WMA_input_btn_6.Location = new System.Drawing.Point(1122, 661);
+            this.WMA_input_btn_6.Name = "WMA_input_btn_6";
+            this.WMA_input_btn_6.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_6.TabIndex = 1108;
+            this.WMA_input_btn_6.Text = "설정";
+            this.WMA_input_btn_6.UseVisualStyleBackColor = true;
+            // 
+            // WMA_input_6
+            // 
+            this.WMA_input_6.Location = new System.Drawing.Point(1082, 662);
+            this.WMA_input_6.Name = "WMA_input_6";
+            this.WMA_input_6.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_6.TabIndex = 1106;
+            this.WMA_input_6.Text = "10";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToAddRows = false;
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.AllowUserToResizeColumns = false;
+            this.dataGridView4.AllowUserToResizeRows = false;
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(600, 709);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowTemplate.Height = 23;
+            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView4.Size = new System.Drawing.Size(587, 275);
+            this.dataGridView4.TabIndex = 1125;
+            this.dataGridView4.TabStop = false;
+            // 
+            // FCode_6
+            // 
+            this.FCode_6.Location = new System.Drawing.Point(607, 663);
+            this.FCode_6.MaxLength = 5;
+            this.FCode_6.Name = "FCode_6";
+            this.FCode_6.Size = new System.Drawing.Size(76, 22);
+            this.FCode_6.TabIndex = 1101;
+            this.FCode_6.Text = "101Q3";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(1001, 365);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.TabIndex = 1099;
+            this.label28.Text = "기울기 간격";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("맑은 고딕", 9F);
+            this.label29.Location = new System.Drawing.Point(718, 365);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(88, 15);
+            this.label29.TabIndex = 1098;
+            this.label29.Text = "매수/매도 설정";
+            this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(899, 366);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(29, 13);
+            this.label30.TabIndex = 1097;
+            this.label30.Text = "각도";
+            // 
+            // Angle_input_5
+            // 
+            this.Angle_input_5.Location = new System.Drawing.Point(931, 361);
+            this.Angle_input_5.Name = "Angle_input_5";
+            this.Angle_input_5.Size = new System.Drawing.Size(59, 22);
+            this.Angle_input_5.TabIndex = 1080;
+            this.Angle_input_5.Text = "10";
+            // 
+            // intervalWma_5
+            // 
+            this.intervalWma_5.Location = new System.Drawing.Point(867, 361);
+            this.intervalWma_5.Name = "intervalWma_5";
+            this.intervalWma_5.Size = new System.Drawing.Size(29, 22);
+            this.intervalWma_5.TabIndex = 1079;
+            this.intervalWma_5.Text = "2";
+            // 
+            // endWma_5
+            // 
+            this.endWma_5.Location = new System.Drawing.Point(837, 361);
+            this.endWma_5.Name = "endWma_5";
+            this.endWma_5.Size = new System.Drawing.Size(29, 22);
+            this.endWma_5.TabIndex = 1078;
+            this.endWma_5.Text = "10";
+            // 
+            // startWma_5
+            // 
+            this.startWma_5.Location = new System.Drawing.Point(807, 361);
+            this.startWma_5.Name = "startWma_5";
+            this.startWma_5.Size = new System.Drawing.Size(29, 22);
+            this.startWma_5.TabIndex = 1077;
+            this.startWma_5.Text = "2";
+            // 
+            // Distance_input_5
+            // 
+            this.Distance_input_5.Location = new System.Drawing.Point(1082, 360);
+            this.Distance_input_5.Name = "Distance_input_5";
+            this.Distance_input_5.Size = new System.Drawing.Size(37, 22);
+            this.Distance_input_5.TabIndex = 1082;
+            this.Distance_input_5.Text = "5";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(995, 343);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(82, 13);
+            this.label31.TabIndex = 1096;
+            this.label31.Text = "WMA 간격설정";
+            // 
+            // Time_ComboBox_5
+            // 
+            this.Time_ComboBox_5.FormattingEnabled = true;
+            this.Time_ComboBox_5.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "10",
+            "15",
+            "20",
+            "30",
+            "40",
+            "45",
+            "50",
+            "60",
+            "120"});
+            this.Time_ComboBox_5.Location = new System.Drawing.Point(950, 338);
+            this.Time_ComboBox_5.Name = "Time_ComboBox_5";
+            this.Time_ComboBox_5.Size = new System.Drawing.Size(39, 21);
+            this.Time_ComboBox_5.TabIndex = 1095;
+            this.Time_ComboBox_5.Text = "1";
+            // 
+            // Time_btn_60_5
+            // 
+            this.Time_btn_60_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_60_5.Location = new System.Drawing.Point(924, 337);
+            this.Time_btn_60_5.Name = "Time_btn_60_5";
+            this.Time_btn_60_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_60_5.TabIndex = 1094;
+            this.Time_btn_60_5.Text = "60";
+            this.Time_btn_60_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_45_5
+            // 
+            this.Time_btn_45_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_45_5.Location = new System.Drawing.Point(900, 337);
+            this.Time_btn_45_5.Name = "Time_btn_45_5";
+            this.Time_btn_45_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_45_5.TabIndex = 1093;
+            this.Time_btn_45_5.Text = "45";
+            this.Time_btn_45_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_30_5
+            // 
+            this.Time_btn_30_5.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.Time_btn_30_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_30_5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_30_5.Location = new System.Drawing.Point(876, 337);
+            this.Time_btn_30_5.Name = "Time_btn_30_5";
+            this.Time_btn_30_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_30_5.TabIndex = 1092;
+            this.Time_btn_30_5.Text = "30";
+            this.Time_btn_30_5.UseVisualStyleBackColor = false;
+            // 
+            // Time_btn_15_5
+            // 
+            this.Time_btn_15_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_15_5.Location = new System.Drawing.Point(852, 337);
+            this.Time_btn_15_5.Name = "Time_btn_15_5";
+            this.Time_btn_15_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_15_5.TabIndex = 1091;
+            this.Time_btn_15_5.Text = "15";
+            this.Time_btn_15_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_10_5
+            // 
+            this.Time_btn_10_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_10_5.Location = new System.Drawing.Point(828, 337);
+            this.Time_btn_10_5.Name = "Time_btn_10_5";
+            this.Time_btn_10_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_10_5.TabIndex = 1090;
+            this.Time_btn_10_5.Text = "10";
+            this.Time_btn_10_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_5_5
+            // 
+            this.Time_btn_5_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_5_5.Location = new System.Drawing.Point(804, 337);
+            this.Time_btn_5_5.Name = "Time_btn_5_5";
+            this.Time_btn_5_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_5_5.TabIndex = 1089;
+            this.Time_btn_5_5.Text = "5";
+            this.Time_btn_5_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_3_5
+            // 
+            this.Time_btn_3_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_3_5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_3_5.Location = new System.Drawing.Point(780, 337);
+            this.Time_btn_3_5.Name = "Time_btn_3_5";
+            this.Time_btn_3_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_3_5.TabIndex = 1088;
+            this.Time_btn_3_5.Text = "3";
+            this.Time_btn_3_5.UseVisualStyleBackColor = true;
+            // 
+            // Time_btn_1_5
+            // 
+            this.Time_btn_1_5.BackColor = System.Drawing.SystemColors.Control;
+            this.Time_btn_1_5.Font = new System.Drawing.Font("맑은 고딕", 7F);
+            this.Time_btn_1_5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Time_btn_1_5.Location = new System.Drawing.Point(756, 337);
+            this.Time_btn_1_5.Name = "Time_btn_1_5";
+            this.Time_btn_1_5.Size = new System.Drawing.Size(25, 23);
+            this.Time_btn_1_5.TabIndex = 1087;
+            this.Time_btn_1_5.Text = "1";
+            this.Time_btn_1_5.UseVisualStyleBackColor = false;
+            // 
+            // Tick_btn_5
+            // 
+            this.Tick_btn_5.Location = new System.Drawing.Point(731, 337);
+            this.Tick_btn_5.Name = "Tick_btn_5";
+            this.Tick_btn_5.Size = new System.Drawing.Size(25, 23);
+            this.Tick_btn_5.TabIndex = 1086;
+            this.Tick_btn_5.Text = "틱";
+            this.Tick_btn_5.UseVisualStyleBackColor = true;
+            // 
+            // Min_btn_5
+            // 
+            this.Min_btn_5.Location = new System.Drawing.Point(707, 337);
+            this.Min_btn_5.Name = "Min_btn_5";
+            this.Min_btn_5.Size = new System.Drawing.Size(25, 23);
+            this.Min_btn_5.TabIndex = 1085;
+            this.Min_btn_5.Text = "분";
+            this.Min_btn_5.UseVisualStyleBackColor = true;
+            // 
+            // Day_btn_5
+            // 
+            this.Day_btn_5.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_5.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_5.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_5.Location = new System.Drawing.Point(683, 337);
+            this.Day_btn_5.Name = "Day_btn_5";
+            this.Day_btn_5.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_5.TabIndex = 1084;
+            this.Day_btn_5.TabStop = false;
+            this.Day_btn_5.Text = "일";
+            this.Day_btn_5.UseVisualStyleBackColor = false;
+            // 
+            // WMA_input_btn_5
+            // 
+            this.WMA_input_btn_5.Location = new System.Drawing.Point(1122, 336);
+            this.WMA_input_btn_5.Name = "WMA_input_btn_5";
+            this.WMA_input_btn_5.Size = new System.Drawing.Size(40, 46);
+            this.WMA_input_btn_5.TabIndex = 1083;
+            this.WMA_input_btn_5.Text = "설정";
+            this.WMA_input_btn_5.UseVisualStyleBackColor = true;
+            // 
+            // WMA_input_5
+            // 
+            this.WMA_input_5.Location = new System.Drawing.Point(1082, 337);
+            this.WMA_input_5.Name = "WMA_input_5";
+            this.WMA_input_5.Size = new System.Drawing.Size(37, 22);
+            this.WMA_input_5.TabIndex = 1081;
+            this.WMA_input_5.Text = "10";
+            // 
+            // dataGridView5
+            // 
+            this.dataGridView5.AllowUserToAddRows = false;
+            this.dataGridView5.AllowUserToDeleteRows = false;
+            this.dataGridView5.AllowUserToResizeColumns = false;
+            this.dataGridView5.AllowUserToResizeRows = false;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(600, 384);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.RowHeadersVisible = false;
+            this.dataGridView5.RowTemplate.Height = 23;
+            this.dataGridView5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView5.Size = new System.Drawing.Size(587, 275);
+            this.dataGridView5.TabIndex = 1100;
+            this.dataGridView5.TabStop = false;
+            // 
+            // FCode_5
+            // 
+            this.FCode_5.Location = new System.Drawing.Point(607, 338);
+            this.FCode_5.MaxLength = 5;
+            this.FCode_5.Name = "FCode_5";
+            this.FCode_5.Size = new System.Drawing.Size(76, 22);
+            this.FCode_5.TabIndex = 1076;
+            this.FCode_5.Text = "101Q3";
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1166, 735);
+            this.ClientSize = new System.Drawing.Size(1618, 989);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.label25);
+            this.Controls.Add(this.label26);
+            this.Controls.Add(this.Angle_input_6);
+            this.Controls.Add(this.intervalWma_6);
+            this.Controls.Add(this.endWma_6);
+            this.Controls.Add(this.startWma_6);
+            this.Controls.Add(this.Distance_input_6);
+            this.Controls.Add(this.label27);
+            this.Controls.Add(this.Time_ComboBox_6);
+            this.Controls.Add(this.Time_btn_60_6);
+            this.Controls.Add(this.Time_btn_45_6);
+            this.Controls.Add(this.Time_btn_30_6);
+            this.Controls.Add(this.Time_btn_15_6);
+            this.Controls.Add(this.Time_btn_10_6);
+            this.Controls.Add(this.Time_btn_5_6);
+            this.Controls.Add(this.Time_btn_3_6);
+            this.Controls.Add(this.Time_btn_1_6);
+            this.Controls.Add(this.Tick_btn_6);
+            this.Controls.Add(this.Min_btn_6);
+            this.Controls.Add(this.Day_btn_6);
+            this.Controls.Add(this.WMA_input_btn_6);
+            this.Controls.Add(this.WMA_input_6);
+            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.FCode_6);
+            this.Controls.Add(this.label28);
+            this.Controls.Add(this.label29);
+            this.Controls.Add(this.label30);
+            this.Controls.Add(this.Angle_input_5);
+            this.Controls.Add(this.intervalWma_5);
+            this.Controls.Add(this.endWma_5);
+            this.Controls.Add(this.startWma_5);
+            this.Controls.Add(this.Distance_input_5);
+            this.Controls.Add(this.label31);
+            this.Controls.Add(this.Time_ComboBox_5);
+            this.Controls.Add(this.Time_btn_60_5);
+            this.Controls.Add(this.Time_btn_45_5);
+            this.Controls.Add(this.Time_btn_30_5);
+            this.Controls.Add(this.Time_btn_15_5);
+            this.Controls.Add(this.Time_btn_10_5);
+            this.Controls.Add(this.Time_btn_5_5);
+            this.Controls.Add(this.Time_btn_3_5);
+            this.Controls.Add(this.Time_btn_1_5);
+            this.Controls.Add(this.Tick_btn_5);
+            this.Controls.Add(this.Min_btn_5);
+            this.Controls.Add(this.Day_btn_5);
+            this.Controls.Add(this.WMA_input_btn_5);
+            this.Controls.Add(this.WMA_input_5);
+            this.Controls.Add(this.dataGridView5);
+            this.Controls.Add(this.FCode_5);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label22);
+            this.Controls.Add(this.Angle_input_3);
+            this.Controls.Add(this.intervalWma_3);
+            this.Controls.Add(this.endWma_3);
+            this.Controls.Add(this.startWma_3);
+            this.Controls.Add(this.Distance_input_3);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.Time_ComboBox_3);
+            this.Controls.Add(this.Time_btn_60_3);
+            this.Controls.Add(this.Time_btn_45_3);
+            this.Controls.Add(this.Time_btn_30_3);
+            this.Controls.Add(this.Time_btn_15_3);
+            this.Controls.Add(this.Time_btn_10_3);
+            this.Controls.Add(this.Time_btn_5_3);
+            this.Controls.Add(this.Time_btn_3_3);
+            this.Controls.Add(this.Time_btn_1_3);
+            this.Controls.Add(this.Tick_btn_3);
+            this.Controls.Add(this.Min_btn_3);
+            this.Controls.Add(this.Day_btn_3);
+            this.Controls.Add(this.WMA_input_btn_3);
+            this.Controls.Add(this.WMA_input_3);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.FCode_3);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.Angle_input_2);
+            this.Controls.Add(this.intervalWma_2);
+            this.Controls.Add(this.endWma_2);
+            this.Controls.Add(this.startWma_2);
+            this.Controls.Add(this.Distance_input_2);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.Time_ComboBox_2);
+            this.Controls.Add(this.Time_btn_60_2);
+            this.Controls.Add(this.Time_btn_45_2);
+            this.Controls.Add(this.Time_btn_30_2);
+            this.Controls.Add(this.Time_btn_15_2);
+            this.Controls.Add(this.Time_btn_10_2);
+            this.Controls.Add(this.Time_btn_5_2);
+            this.Controls.Add(this.Time_btn_3_2);
+            this.Controls.Add(this.Time_btn_1_2);
+            this.Controls.Add(this.Tick_btn_2);
+            this.Controls.Add(this.Min_btn_2);
+            this.Controls.Add(this.button29);
+            this.Controls.Add(this.WMA_input_btn_2);
+            this.Controls.Add(this.WMA_input_2);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.FCode_2);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.Angle_input_4);
+            this.Controls.Add(this.intervalWma_4);
+            this.Controls.Add(this.endWma_4);
+            this.Controls.Add(this.startWma_4);
+            this.Controls.Add(this.Distance_input_4);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.Time_ComboBox_4);
+            this.Controls.Add(this.Time_btn_60_4);
+            this.Controls.Add(this.Time_btn_45_4);
+            this.Controls.Add(this.Time_btn_30_4);
+            this.Controls.Add(this.Time_btn_15_4);
+            this.Controls.Add(this.Time_btn_10_4);
+            this.Controls.Add(this.Time_btn_5_4);
+            this.Controls.Add(this.Time_btn_3_4);
+            this.Controls.Add(this.Time_btn_1_4);
+            this.Controls.Add(this.Tick_btn_4);
+            this.Controls.Add(this.Min_btn_4);
+            this.Controls.Add(this.Day_btn_4);
+            this.Controls.Add(this.WMA_input_btn_4);
+            this.Controls.Add(this.WMA_input_4);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.FCode_4);
             this.Controls.Add(this.axGiExpertControl1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.Angle_input);
+            this.Controls.Add(this.Angle_input_1);
             this.Controls.Add(this.axGiExpertControl2);
-            this.Controls.Add(this.intervalWma);
-            this.Controls.Add(this.endWma);
-            this.Controls.Add(this.startWma);
+            this.Controls.Add(this.intervalWma_1);
+            this.Controls.Add(this.endWma_1);
+            this.Controls.Add(this.startWma_1);
             this.Controls.Add(this.Comm_Obj_Price);
             this.Controls.Add(this.Comm_Obj_Account);
             this.Controls.Add(this.Account_GridView);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.Lookup_btn);
             this.Controls.Add(this.AccountPW);
             this.Controls.Add(this.Account_Name);
@@ -858,35 +2386,32 @@
             this.Controls.Add(this.FCode_comboBox);
             this.Controls.Add(this.Account_Num2);
             this.Controls.Add(this.Price_GridView);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.Price_Lookup_btn);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.Account_Name2);
-            this.Controls.Add(this.whereText);
+            this.Controls.Add(this.Distance_input_1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Time_ComboBox);
-            this.Controls.Add(this.Time_btn_60);
-            this.Controls.Add(this.Time_btn_45);
-            this.Controls.Add(this.Time_btn_30);
-            this.Controls.Add(this.Time_btn_15);
-            this.Controls.Add(this.Time_btn_10);
-            this.Controls.Add(this.Time_btn_5);
-            this.Controls.Add(this.Time_btn_3);
-            this.Controls.Add(this.Time_btn_1);
-            this.Controls.Add(this.Tick_btn);
-            this.Controls.Add(this.Min_btn);
-            this.Controls.Add(this.Day_btn);
-            this.Controls.Add(this.WMA_input_btn);
-            this.Controls.Add(this.WMA_input);
+            this.Controls.Add(this.Time_ComboBox_1);
+            this.Controls.Add(this.Time_btn_60_1);
+            this.Controls.Add(this.Time_btn_45_1);
+            this.Controls.Add(this.Time_btn_30_1);
+            this.Controls.Add(this.Time_btn_15_1);
+            this.Controls.Add(this.Time_btn_10_1);
+            this.Controls.Add(this.Time_btn_5_1);
+            this.Controls.Add(this.Time_btn_3_1);
+            this.Controls.Add(this.Time_btn_1_1);
+            this.Controls.Add(this.Tick_btn_1);
+            this.Controls.Add(this.Min_btn_1);
+            this.Controls.Add(this.Day_btn_1);
+            this.Controls.Add(this.WMA_input_btn_1);
+            this.Controls.Add(this.WMA_input_1);
             this.Controls.Add(this.Comm_Obj_DATA_Real);
             this.Controls.Add(this.FCGrid);
-            this.Controls.Add(this.FCode);
+            this.Controls.Add(this.FCode_1);
             this.Controls.Add(this.Comm_Obj_DATA);
             this.Font = new System.Drawing.Font("맑은 고딕", 8F);
             this.Name = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SHINHAN_HTS_HELPER";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).EndInit();
@@ -900,6 +2425,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -914,24 +2444,24 @@
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Account;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Price;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl2;
-        private System.Windows.Forms.TextBox FCode;
+        private System.Windows.Forms.TextBox FCode_1;
         private System.Windows.Forms.DataGridView FCGrid;
-        private System.Windows.Forms.TextBox WMA_input;
-        private System.Windows.Forms.Button WMA_input_btn;
-        private System.Windows.Forms.Button Day_btn;
-        private System.Windows.Forms.Button Min_btn;
-        private System.Windows.Forms.Button Tick_btn;
-        private System.Windows.Forms.Button Time_btn_1;
-        private System.Windows.Forms.Button Time_btn_3;
-        private System.Windows.Forms.Button Time_btn_10;
-        private System.Windows.Forms.Button Time_btn_5;
-        private System.Windows.Forms.Button Time_btn_60;
-        private System.Windows.Forms.Button Time_btn_45;
-        private System.Windows.Forms.Button Time_btn_30;
-        private System.Windows.Forms.Button Time_btn_15;
-        private System.Windows.Forms.ComboBox Time_ComboBox;
+        private System.Windows.Forms.TextBox WMA_input_1;
+        private System.Windows.Forms.Button WMA_input_btn_1;
+        private System.Windows.Forms.Button Day_btn_1;
+        private System.Windows.Forms.Button Min_btn_1;
+        private System.Windows.Forms.Button Tick_btn_1;
+        private System.Windows.Forms.Button Time_btn_1_1;
+        private System.Windows.Forms.Button Time_btn_3_1;
+        private System.Windows.Forms.Button Time_btn_10_1;
+        private System.Windows.Forms.Button Time_btn_5_1;
+        private System.Windows.Forms.Button Time_btn_60_1;
+        private System.Windows.Forms.Button Time_btn_45_1;
+        private System.Windows.Forms.Button Time_btn_30_1;
+        private System.Windows.Forms.Button Time_btn_15_1;
+        private System.Windows.Forms.ComboBox Time_ComboBox_1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox whereText;
+        private System.Windows.Forms.TextBox Distance_input_1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button Buy_btn;
         private System.Windows.Forms.Button Sell_btn;
@@ -948,10 +2478,6 @@
         private System.Windows.Forms.ComboBox FCode_comboBox;
         private System.Windows.Forms.ComboBox Account_Num2;
         private System.Windows.Forms.DataGridView Price_GridView;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button Price_Lookup_btn;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox Account_Name2;
@@ -960,23 +2486,145 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button Lookup_btn;
         private System.Windows.Forms.TextBox AccountPW;
         private System.Windows.Forms.TextBox Account_Name;
         private System.Windows.Forms.ComboBox Account_Num;
         private System.Windows.Forms.DataGridView Account_GridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.TextBox startWma;
-        private System.Windows.Forms.TextBox endWma;
-        private System.Windows.Forms.TextBox intervalWma;
-        private System.Windows.Forms.TextBox Angle_input;
+        private System.Windows.Forms.TextBox startWma_1;
+        private System.Windows.Forms.TextBox endWma_1;
+        private System.Windows.Forms.TextBox intervalWma_1;
+        private System.Windows.Forms.TextBox Angle_input_1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl1;
+        private System.DirectoryServices.DirectoryEntry directoryEntry1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox Angle_input_4;
+        private System.Windows.Forms.TextBox intervalWma_4;
+        private System.Windows.Forms.TextBox endWma_4;
+        private System.Windows.Forms.TextBox startWma_4;
+        private System.Windows.Forms.TextBox Distance_input_4;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox Time_ComboBox_4;
+        private System.Windows.Forms.Button Time_btn_60_4;
+        private System.Windows.Forms.Button Time_btn_45_4;
+        private System.Windows.Forms.Button Time_btn_30_4;
+        private System.Windows.Forms.Button Time_btn_15_4;
+        private System.Windows.Forms.Button Time_btn_10_4;
+        private System.Windows.Forms.Button Time_btn_5_4;
+        private System.Windows.Forms.Button Time_btn_3_4;
+        private System.Windows.Forms.Button Time_btn_1_4;
+        private System.Windows.Forms.Button Tick_btn_4;
+        private System.Windows.Forms.Button Min_btn_4;
+        private System.Windows.Forms.Button Day_btn_4;
+        private System.Windows.Forms.Button WMA_input_btn_4;
+        private System.Windows.Forms.TextBox WMA_input_4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox FCode_4;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox Angle_input_2;
+        private System.Windows.Forms.TextBox intervalWma_2;
+        private System.Windows.Forms.TextBox endWma_2;
+        private System.Windows.Forms.TextBox startWma_2;
+        private System.Windows.Forms.TextBox Distance_input_2;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox Time_ComboBox_2;
+        private System.Windows.Forms.Button Time_btn_60_2;
+        private System.Windows.Forms.Button Time_btn_45_2;
+        private System.Windows.Forms.Button Time_btn_30_2;
+        private System.Windows.Forms.Button Time_btn_15_2;
+        private System.Windows.Forms.Button Time_btn_10_2;
+        private System.Windows.Forms.Button Time_btn_5_2;
+        private System.Windows.Forms.Button Time_btn_3_2;
+        private System.Windows.Forms.Button Time_btn_1_2;
+        private System.Windows.Forms.Button Tick_btn_2;
+        private System.Windows.Forms.Button Min_btn_2;
+        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button WMA_input_btn_2;
+        private System.Windows.Forms.TextBox WMA_input_2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox FCode_2;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox Angle_input_3;
+        private System.Windows.Forms.TextBox intervalWma_3;
+        private System.Windows.Forms.TextBox endWma_3;
+        private System.Windows.Forms.TextBox startWma_3;
+        private System.Windows.Forms.TextBox Distance_input_3;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox Time_ComboBox_3;
+        private System.Windows.Forms.Button Time_btn_60_3;
+        private System.Windows.Forms.Button Time_btn_45_3;
+        private System.Windows.Forms.Button Time_btn_30_3;
+        private System.Windows.Forms.Button Time_btn_15_3;
+        private System.Windows.Forms.Button Time_btn_10_3;
+        private System.Windows.Forms.Button Time_btn_5_3;
+        private System.Windows.Forms.Button Time_btn_3_3;
+        private System.Windows.Forms.Button Time_btn_1_3;
+        private System.Windows.Forms.Button Tick_btn_3;
+        private System.Windows.Forms.Button Min_btn_3;
+        private System.Windows.Forms.Button Day_btn_3;
+        private System.Windows.Forms.Button WMA_input_btn_3;
+        private System.Windows.Forms.TextBox WMA_input_3;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TextBox FCode_3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox Angle_input_6;
+        private System.Windows.Forms.TextBox intervalWma_6;
+        private System.Windows.Forms.TextBox endWma_6;
+        private System.Windows.Forms.TextBox startWma_6;
+        private System.Windows.Forms.TextBox Distance_input_6;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.ComboBox Time_ComboBox_6;
+        private System.Windows.Forms.Button Time_btn_60_6;
+        private System.Windows.Forms.Button Time_btn_45_6;
+        private System.Windows.Forms.Button Time_btn_30_6;
+        private System.Windows.Forms.Button Time_btn_15_6;
+        private System.Windows.Forms.Button Time_btn_10_6;
+        private System.Windows.Forms.Button Time_btn_5_6;
+        private System.Windows.Forms.Button Time_btn_3_6;
+        private System.Windows.Forms.Button Time_btn_1_6;
+        private System.Windows.Forms.Button Tick_btn_6;
+        private System.Windows.Forms.Button Min_btn_6;
+        private System.Windows.Forms.Button Day_btn_6;
+        private System.Windows.Forms.Button WMA_input_btn_6;
+        private System.Windows.Forms.TextBox WMA_input_6;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TextBox FCode_6;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox Angle_input_5;
+        private System.Windows.Forms.TextBox intervalWma_5;
+        private System.Windows.Forms.TextBox endWma_5;
+        private System.Windows.Forms.TextBox startWma_5;
+        private System.Windows.Forms.TextBox Distance_input_5;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.ComboBox Time_ComboBox_5;
+        private System.Windows.Forms.Button Time_btn_60_5;
+        private System.Windows.Forms.Button Time_btn_45_5;
+        private System.Windows.Forms.Button Time_btn_30_5;
+        private System.Windows.Forms.Button Time_btn_15_5;
+        private System.Windows.Forms.Button Time_btn_10_5;
+        private System.Windows.Forms.Button Time_btn_5_5;
+        private System.Windows.Forms.Button Time_btn_3_5;
+        private System.Windows.Forms.Button Time_btn_1_5;
+        private System.Windows.Forms.Button Tick_btn_5;
+        private System.Windows.Forms.Button Min_btn_5;
+        private System.Windows.Forms.Button Day_btn_5;
+        private System.Windows.Forms.Button WMA_input_btn_5;
+        private System.Windows.Forms.TextBox WMA_input_5;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.TextBox FCode_5;
     }
 }

@@ -44,8 +44,8 @@ namespace WindowsFormsApp4
             Delay(100);
             //WMA_prov();
             getAccount();
-            FCode_comboBox.Text = FCode.Text;
-            FCode_comboBox.Items.Add(FCode.Text);
+            FCode_comboBox.Text = FCode_1.Text;
+            FCode_comboBox.Items.Add(FCode_1.Text);
         }
 
         public void Load_Data(string Fcode, string time, string distance)
@@ -83,8 +83,8 @@ namespace WindowsFormsApp4
         {
             DataTable dt = new DataTable();
 
-            dt.Columns.Add("일자");
-            dt.Columns.Add("체결시간");
+            dt.Columns.Add("일자  ");
+            dt.Columns.Add("시간");
             dt.Columns.Add("시가");
             dt.Columns.Add("고가");
             dt.Columns.Add("저가");
@@ -92,7 +92,7 @@ namespace WindowsFormsApp4
             dt.Columns.Add("WMA");
             dt.Columns.Add("기울기");
             dt.Columns.Add("상태");
-            dt.Columns.Add("매수/매도");
+            dt.Columns.Add("매수매도");
 
 
             short nRowSize = Convert.ToInt16(Comm_Obj_DATA.GetMultiRowCount());
@@ -137,7 +137,7 @@ namespace WindowsFormsApp4
 
         private void FCode_TextChanged(object sender, EventArgs e)
         {
-            string fcode = FCode.Text;
+            string fcode = FCode_1.Text;
 
             if (fcode.Length == 5)
             {
@@ -166,7 +166,7 @@ namespace WindowsFormsApp4
 
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(startWma.Text) && !string.IsNullOrEmpty(endWma.Text) && !string.IsNullOrEmpty(intervalWma.Text))
+            if (!string.IsNullOrEmpty(startWma_1.Text) && !string.IsNullOrEmpty(endWma_1.Text) && !string.IsNullOrEmpty(intervalWma_1.Text))
                 Get_GridData();
             else
                 MessageBox.Show("입력값 오류");
@@ -174,26 +174,26 @@ namespace WindowsFormsApp4
 
         private void Get_GridData()
         {
-            if (string.IsNullOrEmpty(startWma.Text) || string.IsNullOrEmpty(endWma.Text) || string.IsNullOrEmpty(intervalWma.Text))
+            if (string.IsNullOrEmpty(startWma_1.Text) || string.IsNullOrEmpty(endWma_1.Text) || string.IsNullOrEmpty(intervalWma_1.Text))
             {
                 MessageBox.Show("입력값 오류");
             }
-            else if (string.IsNullOrEmpty(WMA_input.Text))
+            else if (string.IsNullOrEmpty(WMA_input_1.Text))
             {
                 MessageBox.Show("WMA 간격설정 오류");
             }
-            else if (string.IsNullOrEmpty(Angle_input.Text))
+            else if (string.IsNullOrEmpty(Angle_input_1.Text))
             {
                 MessageBox.Show("기울기 설정 오류");
             }
-            else if (string.IsNullOrEmpty(whereText.Text))
+            else if (string.IsNullOrEmpty(Distance_input_1.Text))
             {
                 MessageBox.Show("기울기 간격설정 오류");
             }
             else
             {
-                int day = Convert.ToInt32(WMA_input.Text);
-                int[] index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma.Text), Convert.ToInt32(intervalWma.Text));
+                int day = Convert.ToInt32(WMA_input_1.Text);
+                int[] index = getWMA_Index(Convert.ToInt32(startWma_1.Text), Convert.ToInt32(endWma_1.Text), Convert.ToInt32(intervalWma_1.Text));
                 int index_length = index.Length;
                 double[] aaa = new double[index_length];
 
@@ -230,9 +230,9 @@ namespace WindowsFormsApp4
         {
             int[] angle = new int[RowNum];
 
-            int day = Convert.ToInt32(WMA_input.Text);
+            int day = Convert.ToInt32(WMA_input_1.Text);
             int time = Convert.ToInt32(TimeSelected);
-            int where = Convert.ToInt32(whereText.Text);
+            int where = Convert.ToInt32(Distance_input_1.Text);
 
             double radians;
 
@@ -336,7 +336,7 @@ namespace WindowsFormsApp4
         private void Mecro(double[] WMA, int index)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
-            int angle = Convert.ToInt32(Angle_input.Text);
+            int angle = Convert.ToInt32(Angle_input_1.Text);
 
             Array.Copy(WMA, aa, WMA.Length); // WMA 복사
             //bb  // WMA sort
@@ -442,31 +442,31 @@ namespace WindowsFormsApp4
 
             string set_time = "1";
             
-            Day_btn.BackColor = SystemColors.Control;
-            Day_btn.ForeColor = SystemColors.ControlText;
-            Min_btn.BackColor = SystemColors.Control;
-            Min_btn.ForeColor = SystemColors.ControlText;
-            Tick_btn.BackColor = SystemColors.Control;
-            Tick_btn.ForeColor = SystemColors.ControlText;
+            Day_btn_1.BackColor = SystemColors.Control;
+            Day_btn_1.ForeColor = SystemColors.ControlText;
+            Min_btn_1.BackColor = SystemColors.Control;
+            Min_btn_1.ForeColor = SystemColors.ControlText;
+            Tick_btn_1.BackColor = SystemColors.Control;
+            Tick_btn_1.ForeColor = SystemColors.ControlText;
 
             switch (TimeDistance)
             {
                 case "Day":
-                    Day_btn.BackColor = SystemColors.Highlight;
-                    Day_btn.ForeColor = SystemColors.Control;
+                    Day_btn_1.BackColor = SystemColors.Highlight;
+                    Day_btn_1.ForeColor = SystemColors.Control;
                     set_time = "1";
                     Time_btn_Disabled();
                     break;
                 case "Min":
-                    Min_btn.BackColor = SystemColors.Highlight;
-                    Min_btn.ForeColor = SystemColors.Control;
+                    Min_btn_1.BackColor = SystemColors.Highlight;
+                    Min_btn_1.ForeColor = SystemColors.Control;
                     set_time = TimeSelected;
                     Time_btn_Enabled();
                     Time_Changed(TimeSelected);
                     break;
                 case "Tick":
-                    Tick_btn.BackColor = SystemColors.Highlight;
-                    Tick_btn.ForeColor = SystemColors.Control;
+                    Tick_btn_1.BackColor = SystemColors.Highlight;
+                    Tick_btn_1.ForeColor = SystemColors.Control;
                     set_time = TimeSelected;
                     Time_btn_Enabled();
                     Time_Changed(TimeSelected);
@@ -496,59 +496,59 @@ namespace WindowsFormsApp4
 
         private void Time_Changed(string time)
         {
-            Time_btn_1.BackColor = SystemColors.Control;
-            Time_btn_1.ForeColor = SystemColors.ControlText;
-            Time_btn_3.BackColor = SystemColors.Control;
-            Time_btn_3.ForeColor = SystemColors.ControlText;
-            Time_btn_5.BackColor = SystemColors.Control;
-            Time_btn_5.ForeColor = SystemColors.ControlText;
-            Time_btn_10.BackColor = SystemColors.Control;
-            Time_btn_10.ForeColor = SystemColors.ControlText;
-            Time_btn_15.BackColor = SystemColors.Control;
-            Time_btn_15.ForeColor = SystemColors.ControlText;
-            Time_btn_30.BackColor = SystemColors.Control;
-            Time_btn_30.ForeColor = SystemColors.ControlText;
-            Time_btn_45.BackColor = SystemColors.Control;
-            Time_btn_45.ForeColor = SystemColors.ControlText;
-            Time_btn_60.BackColor = SystemColors.Control;
-            Time_btn_60.ForeColor = SystemColors.ControlText;
+            Time_btn_1_1.BackColor = SystemColors.Control;
+            Time_btn_1_1.ForeColor = SystemColors.ControlText;
+            Time_btn_3_1.BackColor = SystemColors.Control;
+            Time_btn_3_1.ForeColor = SystemColors.ControlText;
+            Time_btn_5_1.BackColor = SystemColors.Control;
+            Time_btn_5_1.ForeColor = SystemColors.ControlText;
+            Time_btn_10_1.BackColor = SystemColors.Control;
+            Time_btn_10_1.ForeColor = SystemColors.ControlText;
+            Time_btn_15_1.BackColor = SystemColors.Control;
+            Time_btn_15_1.ForeColor = SystemColors.ControlText;
+            Time_btn_30_1.BackColor = SystemColors.Control;
+            Time_btn_30_1.ForeColor = SystemColors.ControlText;
+            Time_btn_45_1.BackColor = SystemColors.Control;
+            Time_btn_45_1.ForeColor = SystemColors.ControlText;
+            Time_btn_60_1.BackColor = SystemColors.Control;
+            Time_btn_60_1.ForeColor = SystemColors.ControlText;
 
             TimeSelected = time;
-            Time_ComboBox.Text = TimeSelected;
+            Time_ComboBox_1.Text = TimeSelected;
 
             switch (time)
             {
                 case "1":
-                    Time_btn_1.BackColor = SystemColors.Highlight;
-                    Time_btn_1.ForeColor = SystemColors.Control;
+                    Time_btn_1_1.BackColor = SystemColors.Highlight;
+                    Time_btn_1_1.ForeColor = SystemColors.Control;
                     break;
                 case "3":
-                    Time_btn_3.BackColor = SystemColors.Highlight;
-                    Time_btn_3.ForeColor = SystemColors.Control;
+                    Time_btn_3_1.BackColor = SystemColors.Highlight;
+                    Time_btn_3_1.ForeColor = SystemColors.Control;
                     break;
                 case "5":
-                    Time_btn_5.BackColor = SystemColors.Highlight;
-                    Time_btn_5.ForeColor = SystemColors.Control;
+                    Time_btn_5_1.BackColor = SystemColors.Highlight;
+                    Time_btn_5_1.ForeColor = SystemColors.Control;
                     break;
                 case "10":
-                    Time_btn_10.BackColor = SystemColors.Highlight;
-                    Time_btn_10.ForeColor = SystemColors.Control;
+                    Time_btn_10_1.BackColor = SystemColors.Highlight;
+                    Time_btn_10_1.ForeColor = SystemColors.Control;
                     break;
                 case "15":
-                    Time_btn_15.BackColor = SystemColors.Highlight;
-                    Time_btn_15.ForeColor = SystemColors.Control;
+                    Time_btn_15_1.BackColor = SystemColors.Highlight;
+                    Time_btn_15_1.ForeColor = SystemColors.Control;
                     break;
                 case "30":
-                    Time_btn_30.BackColor = SystemColors.Highlight;
-                    Time_btn_30.ForeColor = SystemColors.Control;
+                    Time_btn_30_1.BackColor = SystemColors.Highlight;
+                    Time_btn_30_1.ForeColor = SystemColors.Control;
                     break;
                 case "45":
-                    Time_btn_45.BackColor = SystemColors.Highlight;
-                    Time_btn_45.ForeColor = SystemColors.Control;
+                    Time_btn_45_1.BackColor = SystemColors.Highlight;
+                    Time_btn_45_1.ForeColor = SystemColors.Control;
                     break;
                 case "60":
-                    Time_btn_60.BackColor = SystemColors.Highlight;
-                    Time_btn_60.ForeColor = SystemColors.Control;
+                    Time_btn_60_1.BackColor = SystemColors.Highlight;
+                    Time_btn_60_1.ForeColor = SystemColors.Control;
                     break;
             }
 
@@ -596,76 +596,76 @@ namespace WindowsFormsApp4
         }
         private void Time_btn_Disabled()
         {
-            Time_btn_1.Enabled = false;
-            Time_btn_3.Enabled = false;
-            Time_btn_5.Enabled = false;
-            Time_btn_10.Enabled = false;
-            Time_btn_15.Enabled = false;
-            Time_btn_30.Enabled = false;
-            Time_btn_45.Enabled = false;
-            Time_btn_60.Enabled = false;
-            Time_btn_1.BackColor = SystemColors.ControlLight;
-            Time_btn_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_3.BackColor = SystemColors.ControlLight;
-            Time_btn_3.ForeColor = SystemColors.ControlDark;
-            Time_btn_5.BackColor = SystemColors.ControlLight;
-            Time_btn_5.ForeColor = SystemColors.ControlDark;
-            Time_btn_10.BackColor = SystemColors.ControlLight;
-            Time_btn_10.ForeColor = SystemColors.ControlDark;
-            Time_btn_15.BackColor = SystemColors.ControlLight;
-            Time_btn_15.ForeColor = SystemColors.ControlDark;
-            Time_btn_30.BackColor = SystemColors.ControlLight;
-            Time_btn_30.ForeColor = SystemColors.ControlDark;
-            Time_btn_45.BackColor = SystemColors.ControlLight;
-            Time_btn_45.ForeColor = SystemColors.ControlDark;
-            Time_btn_60.BackColor = SystemColors.ControlLight;
-            Time_btn_60.ForeColor = SystemColors.ControlDark;
-            Time_ComboBox.Enabled = false;
-            Time_ComboBox.ForeColor = SystemColors.ControlDark;
+            Time_btn_1_1.Enabled = false;
+            Time_btn_3_1.Enabled = false;
+            Time_btn_5_1.Enabled = false;
+            Time_btn_10_1.Enabled = false;
+            Time_btn_15_1.Enabled = false;
+            Time_btn_30_1.Enabled = false;
+            Time_btn_45_1.Enabled = false;
+            Time_btn_60_1.Enabled = false;
+            Time_btn_1_1.BackColor = SystemColors.ControlLight;
+            Time_btn_1_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_3_1.BackColor = SystemColors.ControlLight;
+            Time_btn_3_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_5_1.BackColor = SystemColors.ControlLight;
+            Time_btn_5_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_10_1.BackColor = SystemColors.ControlLight;
+            Time_btn_10_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_15_1.BackColor = SystemColors.ControlLight;
+            Time_btn_15_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_30_1.BackColor = SystemColors.ControlLight;
+            Time_btn_30_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_45_1.BackColor = SystemColors.ControlLight;
+            Time_btn_45_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_60_1.BackColor = SystemColors.ControlLight;
+            Time_btn_60_1.ForeColor = SystemColors.ControlDark;
+            Time_ComboBox_1.Enabled = false;
+            Time_ComboBox_1.ForeColor = SystemColors.ControlDark;
 
         }
 
         private void Time_btn_Enabled()
         {
-            Time_btn_1.Enabled = true;
-            Time_btn_3.Enabled = true;
-            Time_btn_5.Enabled = true;
-            Time_btn_10.Enabled = true;
-            Time_btn_15.Enabled = true;
-            Time_btn_30.Enabled = true;
-            Time_btn_45.Enabled = true;
-            Time_btn_60.Enabled = true;
-            Time_btn_1.BackColor = SystemColors.Highlight;
-            Time_btn_1.ForeColor = SystemColors.Control;
-            Time_btn_3.BackColor = SystemColors.Control;
-            Time_btn_3.ForeColor = SystemColors.ControlText;
-            Time_btn_5.BackColor = SystemColors.Control;
-            Time_btn_5.ForeColor = SystemColors.ControlText;
-            Time_btn_10.BackColor = SystemColors.Control;
-            Time_btn_10.ForeColor = SystemColors.ControlText;
-            Time_btn_15.BackColor = SystemColors.Control;
-            Time_btn_15.ForeColor = SystemColors.ControlText;
-            Time_btn_30.BackColor = SystemColors.Control;
-            Time_btn_30.ForeColor = SystemColors.ControlText;
-            Time_btn_45.BackColor = SystemColors.Control;
-            Time_btn_45.ForeColor = SystemColors.ControlText;
-            Time_btn_60.BackColor = SystemColors.Control;
-            Time_btn_60.ForeColor = SystemColors.ControlText;
-            Time_ComboBox.Enabled = true;
-            Time_ComboBox.ForeColor = SystemColors.ControlText;
+            Time_btn_1_1.Enabled = true;
+            Time_btn_3_1.Enabled = true;
+            Time_btn_5_1.Enabled = true;
+            Time_btn_10_1.Enabled = true;
+            Time_btn_15_1.Enabled = true;
+            Time_btn_30_1.Enabled = true;
+            Time_btn_45_1.Enabled = true;
+            Time_btn_60_1.Enabled = true;
+            Time_btn_1_1.BackColor = SystemColors.Highlight;
+            Time_btn_1_1.ForeColor = SystemColors.Control;
+            Time_btn_3_1.BackColor = SystemColors.Control;
+            Time_btn_3_1.ForeColor = SystemColors.ControlText;
+            Time_btn_5_1.BackColor = SystemColors.Control;
+            Time_btn_5_1.ForeColor = SystemColors.ControlText;
+            Time_btn_10_1.BackColor = SystemColors.Control;
+            Time_btn_10_1.ForeColor = SystemColors.ControlText;
+            Time_btn_15_1.BackColor = SystemColors.Control;
+            Time_btn_15_1.ForeColor = SystemColors.ControlText;
+            Time_btn_30_1.BackColor = SystemColors.Control;
+            Time_btn_30_1.ForeColor = SystemColors.ControlText;
+            Time_btn_45_1.BackColor = SystemColors.Control;
+            Time_btn_45_1.ForeColor = SystemColors.ControlText;
+            Time_btn_60_1.BackColor = SystemColors.Control;
+            Time_btn_60_1.ForeColor = SystemColors.ControlText;
+            Time_ComboBox_1.Enabled = true;
+            Time_ComboBox_1.ForeColor = SystemColors.ControlText;
         }
 
         private void Time_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Time_ComboBox.SelectedIndex >= 0)
+            if (Time_ComboBox_1.SelectedIndex >= 0)
             {
-                this.TimeSelected = Time_ComboBox.SelectedItem as string;               
+                this.TimeSelected = Time_ComboBox_1.SelectedItem as string;               
             }
         }
 
         private void Time_ComboBox_TextChanged(object sender, EventArgs e)
         {
-            TimeSelected = Time_ComboBox.Text;
+            TimeSelected = Time_ComboBox_1.Text;
             Time_Changed(TimeSelected);
         }
 
