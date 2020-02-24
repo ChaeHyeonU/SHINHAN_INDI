@@ -7,20 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp4
 {
+
     public partial class Form2 : Form
     {
-
-        private string gFCode = "101Q3";
-        private string TimeSelected = "3";
-        private string TimeDistance = "Min";
         private int RowNum = 200;
-        private int control_buy_sell = 0;
-        private int control_Enable_Angle = 0;
+        private string[] gFCode = new string[6] { "101Q3", "22222", "101Q3", "101Q3", "101Q3", "101Q3" };
+        private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
+        private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
+        private int[] control_buy_sell = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] control_Enable_Angle = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int control_num = 0;
+        
+        DataGridView[] FCGrid_sample;
+        const int ARR_COUNT = 6;
 
         //messagebox auto closing
         [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
@@ -38,44 +40,69 @@ namespace WindowsFormsApp4
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            FCGrid_sample = new DataGridView[ARR_COUNT];
+            FCode_1.Text = gFCode[0];
+            FCode_2.Text = gFCode[1];
+            FCode_3.Text = gFCode[2];
+            FCode_4.Text = gFCode[3];
+            FCode_5.Text = gFCode[4];
+            FCode_6.Text = gFCode[5];
+            FCGrid_sample[0] = FCGrid_1;
+            FCGrid_sample[1] = FCGrid_2;
+            FCGrid_sample[2] = FCGrid_3;
+            FCGrid_sample[3] = FCGrid_4;
+            FCGrid_sample[4] = FCGrid_5;
+            FCGrid_sample[5] = FCGrid_6;
+
+            for (int i = 0; i < 6; i++)
+            {
+                TimeDistance_Changed(TimeDistance[i], i + 1);
+                //Load_Data(gFCode[i], TimeSelected[i], TimeDistance[i], i + 1);
+            }
+            
+
             //Login();
-            TimeDistance_Changed(TimeDistance);
-            Load_Data(gFCode, TimeSelected, TimeDistance);
-            Delay(100);
-            //WMA_prov();
+
             getAccount();
-            FCode_comboBox.Text = FCode_1.Text;
-            FCode_comboBox.Items.Add(FCode_1.Text);
+
+            FCode_comboBox.Text = gFCode[0];
+            FCode_comboBox.Items.Add(gFCode[0]);
+
+            setGridView();
         }
 
-        public void Load_Data(string Fcode, string time, string distance)
+        public void Load_Data(string Fcode, string time, string distance, int control)
         {
-            gFCode = Fcode;
+
+            control_num = control;
+            gFCode[control - 1] = Fcode;
             
-            Comm_Obj_DATA.SetQueryName("TR_FCHART");
-            Comm_Obj_DATA.SetSingleData(0, gFCode);
+            Comm_Obj_DATA_1.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_1.SetSingleData(0, gFCode[control - 1]);
 
             switch (distance)
             {
                 case "Day":
-                    Comm_Obj_DATA.SetSingleData(1, "D");
-                    Comm_Obj_DATA.SetSingleData(2, time);
+                    Comm_Obj_DATA_1.SetSingleData(1, "D");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
                     break;
                 case "Min":
-                    Comm_Obj_DATA.SetSingleData(1, "1");
-                    Comm_Obj_DATA.SetSingleData(2, time);
+                    Comm_Obj_DATA_1.SetSingleData(1, "1");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
                     break;
                 case "Tick":
-                    Comm_Obj_DATA.SetSingleData(1, "T");
-                    Comm_Obj_DATA.SetSingleData(2, time);
+                    Comm_Obj_DATA_1.SetSingleData(1, "T");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
                     break;
 
 
             }
-            Comm_Obj_DATA.SetSingleData(3, "00000000");
-            Comm_Obj_DATA.SetSingleData(4, "99999999");
-            Comm_Obj_DATA.SetSingleData(5, RowNum.ToString());
-            Comm_Obj_DATA.RequestData();
+            Comm_Obj_DATA_1.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_1.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_1.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_1.RequestData();
+
+            Delay(100);
 
         }
 
@@ -94,56 +121,56 @@ namespace WindowsFormsApp4
             dt.Columns.Add("상태");
             dt.Columns.Add("매수매도");
 
-
-            short nRowSize = Convert.ToInt16(Comm_Obj_DATA.GetMultiRowCount());
-            for (short i = 0; i < nRowSize; i++)
+            short nRowSize = Convert.ToInt16(Comm_Obj_DATA_1.GetMultiRowCount());
+            for (short j = 0; j < nRowSize; j++)
             {
                 DataRow dr = dt.NewRow();
-                
-                for (short j = 0; j < 6; j++)
+
+                for (short k = 0; k < 6; k++)
                 {
-                    dr[j] = (string)Comm_Obj_DATA.GetMultiData(i, j);
+                    dr[k] = (string)Comm_Obj_DATA_1.GetMultiData(j, k);
                 }
                 dt.Rows.Add(dr);
             }
 
             return dt;
         }
-        
-        private void Login()
-        {
-            bool login;
-
-            string idname;
-            idname = "yooncs";
-            string password;
-            password = "Thisis12#$";
-            string AccountPassword;
-            AccountPassword = "";
-            string path = "C:\\SHINHAN-ii\\indi\\giexpertstarter.exe";
-
-            login = Comm_Obj_DATA.StartIndi(idname, password, AccountPassword, path);
-
-
-            if (login)
-            {
-                MessageBox.Show("로그인 성공");
-            }
-            else
-            {
-                MessageBox.Show("실패");
-            }
-        }
 
         private void FCode_TextChanged(object sender, EventArgs e)
         {
-            string fcode = FCode_1.Text;
+            TextBox Tmp = sender as TextBox;
+            string fcode = Tmp.Text;
+            int control = 0;
+            if (Tmp.Name == "FCode_1")
+            {
+                control = 1;
+            }
+            else if (Tmp.Name == "FCode_2")
+            {
+                control = 2;
+            }
+            else if (Tmp.Name == "FCode_3")
+            {
+                control = 3;
+            }
+            else if (Tmp.Name == "FCode_4")
+            {
+                control = 4;
+            }
+            else if (Tmp.Name == "FCode_5")
+            {
+                control = 5;
+            }
+            else if (Tmp.Name == "FCode_6")
+            {
+                control = 6;
+            }
 
             if (fcode.Length == 5)
             {
-                gFCode = fcode;
+                gFCode[control - 1] = fcode;
 
-                Load_Data(gFCode, TimeSelected, TimeDistance);
+                Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1], control);
             }
         }
 
@@ -160,21 +187,44 @@ namespace WindowsFormsApp4
         
         private void Proc_FC()
         {
-            FCGrid.DataSource = Proc_TR_FCHART();
-            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode);
+
+            FCGrid_sample[control_num - 1].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[control_num - 1]);
+
         }
 
+        private void setGridView()
+        {
+            FCGrid_1 = FCGrid_sample[0];
+            FCGrid_2 = FCGrid_sample[1];
+            FCGrid_3 = FCGrid_sample[2];
+            FCGrid_4 = FCGrid_sample[3];
+            FCGrid_5 = FCGrid_sample[4];
+            FCGrid_6 = FCGrid_sample[5];
+        }
+
+        /*
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
+
+            Button btn = sender as Button;
             if (!string.IsNullOrEmpty(startWma_1.Text) && !string.IsNullOrEmpty(endWma_1.Text) && !string.IsNullOrEmpty(intervalWma_1.Text))
+            {
                 Get_GridData();
+                MessageBox.Show(btn.Name + "번");
+            }
+
             else
                 MessageBox.Show("입력값 오류");
         }
 
         private void Get_GridData()
         {
-            if (string.IsNullOrEmpty(startWma_1.Text) || string.IsNullOrEmpty(endWma_1.Text) || string.IsNullOrEmpty(intervalWma_1.Text))
+            int num = 1;
+            var startWma = this.Controls.Find("startWma_"+ num.ToString(), true).FirstOrDefault();
+
+            
+            if (string.IsNullOrEmpty(startWma.Text) || string.IsNullOrEmpty(endWma_1.Text) || string.IsNullOrEmpty(intervalWma_1.Text))
             {
                 MessageBox.Show("입력값 오류");
             }
@@ -193,17 +243,17 @@ namespace WindowsFormsApp4
             else
             {
                 int day = Convert.ToInt32(WMA_input_1.Text);
-                int[] index = getWMA_Index(Convert.ToInt32(startWma_1.Text), Convert.ToInt32(endWma_1.Text), Convert.ToInt32(intervalWma_1.Text));
+                int[] index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma_1.Text), Convert.ToInt32(intervalWma_1.Text));
                 int index_length = index.Length;
                 double[] aaa = new double[index_length];
 
                 for (int i = 0; i < RowNum; i++)
                 {
-                    FCGrid.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
-                    FCGrid.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
-                    FCGrid.Rows[i].Cells[9].Value = "";
-                    FCGrid.Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
-                    FCGrid.Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
+                    FCGrid_1.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
+                    FCGrid_1.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
+                    FCGrid_1.Rows[i].Cells[9].Value = "";
+                    FCGrid_1.Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
+                    FCGrid_1.Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
                 }
 
                 for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
@@ -224,14 +274,116 @@ namespace WindowsFormsApp4
                 }
             }
         }
+        */
+        private void WMA_input_btn_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "WMA_input_btn_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "WMA_input_btn_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "WMA_input_btn_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "WMA_input_btn_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "WMA_input_btn_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "WMA_input_btn_6")
+            {
+                control = 6;
+            }
+
+            Get_GridData(control);
+        }
+
+        private void Get_GridData(int control)
+        {
+            string startWma_name = "startWma_" + (control).ToString();
+            string endWma_name = "endWma_" + (control).ToString();
+            string intervalWma_name = "intervalWma_" + (control).ToString();
+            string Wma_name = "WMA_input_" + (control).ToString();
+            string Angle_name = "Angle_input_" + (control).ToString();
+            string Distance_name = "Distance_input_" + (control).ToString();
+
+            var tmpText_start = this.Controls.Find(startWma_name, true).FirstOrDefault();
+            var tmpText_end = this.Controls.Find(endWma_name, true).FirstOrDefault();
+            var tmpText_interval = this.Controls.Find(intervalWma_name, true).FirstOrDefault();
+            var tmpText_wma = this.Controls.Find(Wma_name, true).FirstOrDefault();
+            var tmpText_angle = this.Controls.Find(Angle_name, true).FirstOrDefault();
+            var tmpText_distance = this.Controls.Find(Distance_name, true).FirstOrDefault();
+
+            if (string.IsNullOrEmpty(tmpText_start.Text) || string.IsNullOrEmpty(tmpText_end.Text) || string.IsNullOrEmpty(tmpText_interval.Text))
+            {
+                MessageBox.Show("입력값 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_wma.Text))
+            {
+                MessageBox.Show("WMA 간격설정 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_angle.Text))
+            {
+                MessageBox.Show("기울기 설정 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_distance.Text))
+            {
+                MessageBox.Show("기울기 간격설정 오류");
+            }
+            else
+            {
+                int day = Convert.ToInt32(tmpText_wma.Text);
+                int[] index = getWMA_Index(Convert.ToInt32(tmpText_start.Text), Convert.ToInt32(tmpText_end.Text), Convert.ToInt32(tmpText_interval.Text));
+                int index_length = index.Length;
+                double[] aaa = new double[index_length];
+
+                for (int i = 0; i < RowNum; i++)
+                {
+                    FCGrid_sample[control - 1].Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(control), day, 0)[i];
+                    FCGrid_sample[control - 1].Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(control), day, 0), control)[i];
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Value = "";
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
+                }
+
+                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                {
+                    for (int i = 0; i < index_length; i++)
+                    {
+                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                    }
+                    Mecro(aaa, j, control);
+                }
+                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                {
+                    for (int i = 0; i < index_length; i++)
+                    {
+                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                    }
+                    set_Condition(aaa, j, control);
+                }
+
+                
+            }
+            setGridView();
+        }
 
 
-        private int[] Get_Angle(double[] WMA)
+        private int[] Get_Angle(double[] WMA, int control)
         {
             int[] angle = new int[RowNum];
 
             int day = Convert.ToInt32(WMA_input_1.Text);
-            int time = Convert.ToInt32(TimeSelected);
+            int time = Convert.ToInt32(TimeSelected[control - 1]);
             int where = Convert.ToInt32(Distance_input_1.Text);
 
             double radians;
@@ -240,7 +392,7 @@ namespace WindowsFormsApp4
             {
                 if (WMA[k] == 0 || WMA[k - 1] == 0)
                 {
-                    FCGrid.Rows[k - 1].Cells[6].Value = 0;
+                    FCGrid_sample[control - 1].Rows[k - 1].Cells[6].Value = 0;
                 }
                 else
                 {
@@ -258,12 +410,12 @@ namespace WindowsFormsApp4
             return angle;
         }
 
-        private double[] Get_EndPrice()
+        private double[] Get_EndPrice(int control)
         {
             double[] EndPrice = new double[RowNum];
             for (int i = 0; i < RowNum; i++)
             {
-                EndPrice[i] = Convert.ToDouble(FCGrid.Rows[i].Cells[5].Value);
+                EndPrice[i] = Convert.ToDouble(FCGrid_sample[control - 1].Rows[i].Cells[5].Value);
             }
 
             return EndPrice;
@@ -308,7 +460,7 @@ namespace WindowsFormsApp4
             return WMA;
         }
 
-        private void set_Condition(double[] WMA, int index)
+        private void set_Condition(double[] WMA, int index, int control)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
 
@@ -321,19 +473,19 @@ namespace WindowsFormsApp4
 
             if(checkSameArray(aa,bb) == true)
             {
-                FCGrid.Rows[index].Cells[8].Value = "역배열";
+                FCGrid_sample[control - 1].Rows[index].Cells[8].Value = "역배열";
             }
             else if(checkSameArray(aa,cc) == true)
             {
-                FCGrid.Rows[index].Cells[8].Value = "정배열";
+                FCGrid_sample[control - 1].Rows[index].Cells[8].Value = "정배열";
             }
             else
             {
-                FCGrid.Rows[index].Cells[8].Value = "혼조세";
+                FCGrid_sample[control - 1].Rows[index].Cells[8].Value = "혼조세";
             }
         }
 
-        private void Mecro(double[] WMA, int index)
+        private void Mecro(double[] WMA, int index, int control)
         {
             double[] aa = new double[WMA.Length], bb = new double[WMA.Length], cc = new double[WMA.Length];
             int angle = Convert.ToInt32(Angle_input_1.Text);
@@ -350,63 +502,63 @@ namespace WindowsFormsApp4
             //control_buy_sell // 0: 일반 1:역배 2: 정배 3:역배인데 기울기 x 4: 정배인데 기울기 x
             //control_Enable_Angle // 0:아무것도 없는 상태 1:매도 2:매수
 
-            if (checkSameArray(aa, bb) == true && control_buy_sell != 1 && control_Enable_Angle != 2) //역배 && 전 상태 != 역배 && !매수
+            if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] != 1 && control_Enable_Angle[control - 1] != 2) //역배 && 전 상태 != 역배 && !매수
             {
-                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                if (Math.Abs(Convert.ToInt32(FCGrid_sample[control - 1].Rows[index].Cells[7].Value)) > angle)
                 {
-                    FCGrid.Rows[index].Cells[9].Value = "매도";
-                    FCGrid.Rows[index].Cells[9].Style.BackColor = Color.Tomato;
-                    FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
-                    control_buy_sell = 1;
-                    control_Enable_Angle = 1;
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매도";
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = Color.Tomato;
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
+                    control_buy_sell[control - 1] = 1;
+                    control_Enable_Angle[control - 1] = 1;
                 }
                 else
                 {
-                    control_buy_sell = 3;
+                    control_buy_sell[control - 1] = 3;
                 }
             }
-            if (checkSameArray(aa, bb) == true && control_buy_sell != 1 && control_Enable_Angle == 2) //역배 && 전 상태 != 역배 && 매수
+            if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] != 1 && control_Enable_Angle[control - 1] == 2) //역배 && 전 상태 != 역배 && 매수
             {
-                 FCGrid.Rows[index].Cells[9].Value = "매도(청산)";
-                 FCGrid.Rows[index].Cells[9].Style.BackColor = Color.Tomato;
-                 FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
-                 control_buy_sell = 1;
-                 control_Enable_Angle = 0;
+                 FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매도(청산)";
+                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = Color.Tomato;
+                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
+                 control_buy_sell[control - 1] = 1;
+                 control_Enable_Angle[control - 1] = 0;
             }
-            else if (checkSameArray(aa, bb) == true && control_buy_sell == 1)
+            else if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] == 1)
             {
-                control_buy_sell = 1;
+                control_buy_sell[control - 1] = 1;
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2 && control_Enable_Angle !=1)//정배 && 전 상태 != 정배 && !매도
+            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] != 2 && control_Enable_Angle[control - 1] !=1)//정배 && 전 상태 != 정배 && !매도
             {
-                if (Math.Abs(Convert.ToInt32(FCGrid.Rows[index].Cells[7].Value)) > angle)
+                if (Math.Abs(Convert.ToInt32(FCGrid_sample[control - 1].Rows[index].Cells[7].Value)) > angle)
                 {
-                    FCGrid.Rows[index].Cells[9].Value = "매수";
-                    FCGrid.Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
-                    FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
-                    control_buy_sell = 2;
-                    control_Enable_Angle = 2;
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매수";
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
+                    FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
+                    control_buy_sell[control - 1] = 2;
+                    control_Enable_Angle[control - 1] = 2;
                 }
                 else
                 {
-                    control_buy_sell = 4;
+                    control_buy_sell[control - 1] = 4;
                 }
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell != 2 && control_Enable_Angle == 1)//정배 && 전 상태 !=정배 && 매도
+            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] != 2 && control_Enable_Angle[control - 1] == 1)//정배 && 전 상태 !=정배 && 매도
             {
-                FCGrid.Rows[index].Cells[9].Value = "매수(청산)";
-                FCGrid.Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
-                FCGrid.Rows[index].Cells[9].Style.ForeColor = Color.White;
-                control_buy_sell = 2;
-                control_Enable_Angle = 0;
+                FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매수(청산)";
+                FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
+                FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
+                control_buy_sell[control - 1] = 2;
+                control_Enable_Angle[control - 1] = 0;
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell == 2)
+            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] == 2)
             {
-                control_buy_sell = 2;
+                control_buy_sell[control - 1] = 2;
             }
             else
             {
-                control_buy_sell = 0;                
+                control_buy_sell[control - 1] = 0;                
             }
         }
 
@@ -436,244 +588,652 @@ namespace WindowsFormsApp4
         }
         //주기
 
-        private void TimeDistance_Changed(string distance)
+        private void TimeDistance_Changed(string distance, int control)
         {
-            TimeDistance = distance;
+            
+            string Day_btn_name = "Day_btn_" + (control).ToString();
+            string Min_btn_name = "Min_btn_" + (control).ToString();
+            string Tick_btn_name = "Tick_btn_" + (control).ToString();
 
+            var Day_btn = this.Controls.Find(Day_btn_name, true).FirstOrDefault();
+            var Min_btn = this.Controls.Find(Min_btn_name, true).FirstOrDefault();
+            var Tick_btn = this.Controls.Find(Tick_btn_name, true).FirstOrDefault();
+
+            TimeDistance[control - 1] = distance;
             string set_time = "1";
             
-            Day_btn_1.BackColor = SystemColors.Control;
-            Day_btn_1.ForeColor = SystemColors.ControlText;
-            Min_btn_1.BackColor = SystemColors.Control;
-            Min_btn_1.ForeColor = SystemColors.ControlText;
-            Tick_btn_1.BackColor = SystemColors.Control;
-            Tick_btn_1.ForeColor = SystemColors.ControlText;
+            Day_btn.BackColor = SystemColors.Control;
+            Day_btn.ForeColor = SystemColors.ControlText;
+            Min_btn.BackColor = SystemColors.Control;
+            Min_btn.ForeColor = SystemColors.ControlText;
+            Tick_btn.BackColor = SystemColors.Control;
+            Tick_btn.ForeColor = SystemColors.ControlText;
 
-            switch (TimeDistance)
+            switch (TimeDistance[control - 1])
             {
                 case "Day":
-                    Day_btn_1.BackColor = SystemColors.Highlight;
-                    Day_btn_1.ForeColor = SystemColors.Control;
+                    Day_btn.BackColor = SystemColors.Highlight;
+                    Day_btn.ForeColor = SystemColors.Control;
                     set_time = "1";
-                    Time_btn_Disabled();
+                    Time_btn_Disabled(control);
                     break;
                 case "Min":
-                    Min_btn_1.BackColor = SystemColors.Highlight;
-                    Min_btn_1.ForeColor = SystemColors.Control;
-                    set_time = TimeSelected;
-                    Time_btn_Enabled();
-                    Time_Changed(TimeSelected);
+                    Min_btn.BackColor = SystemColors.Highlight;
+                    Min_btn.ForeColor = SystemColors.Control;
+                    set_time = TimeSelected[control - 1];
+                    Time_btn_Enabled(control);
+                    Time_Changed(TimeSelected[control - 1], control);
                     break;
                 case "Tick":
-                    Tick_btn_1.BackColor = SystemColors.Highlight;
-                    Tick_btn_1.ForeColor = SystemColors.Control;
-                    set_time = TimeSelected;
-                    Time_btn_Enabled();
-                    Time_Changed(TimeSelected);
+                    Tick_btn.BackColor = SystemColors.Highlight;
+                    Tick_btn.ForeColor = SystemColors.Control;
+                    set_time = TimeSelected[control - 1];
+                    Time_btn_Enabled(control);
+                    Time_Changed(TimeSelected[control - 1], control);
                     break;
             }
 
-            Load_Data(gFCode, set_time, TimeDistance);
+            Load_Data(gFCode[control - 1], set_time, TimeDistance[control - 1], control);
 
         }
 
         private void Day_btn_Click(object sender, EventArgs e)
         {
-            TimeDistance_Changed("Day");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Day_btn_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Day_btn_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Day_btn_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Day_btn_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Day_btn_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Day_btn_6")
+            {
+                control = 6;
+            }
+            TimeDistance_Changed("Day", control);
         }
 
         private void Min_btn_Click(object sender, EventArgs e)
         {
-            TimeDistance_Changed("Min");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Min_btn_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Min_btn_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Min_btn_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Min_btn_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Min_btn_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Min_btn_6")
+            {
+                control = 6;
+            }
+            TimeDistance_Changed("Min", control);
         }
 
         private void Tick_btn_Click(object sender, EventArgs e)
         {
-            TimeDistance_Changed("Tick");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Tick_btn_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Tick_btn_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Tick_btn_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Tick_btn_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Tick_btn_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Tick_btn_6")
+            {
+                control = 6;
+            }
+            TimeDistance_Changed("Tick", control);
         }
 
         //시간 단위
 
-        private void Time_Changed(string time)
+        private void Time_Changed(string time, int control)
         {
-            Time_btn_1_1.BackColor = SystemColors.Control;
-            Time_btn_1_1.ForeColor = SystemColors.ControlText;
-            Time_btn_3_1.BackColor = SystemColors.Control;
-            Time_btn_3_1.ForeColor = SystemColors.ControlText;
-            Time_btn_5_1.BackColor = SystemColors.Control;
-            Time_btn_5_1.ForeColor = SystemColors.ControlText;
-            Time_btn_10_1.BackColor = SystemColors.Control;
-            Time_btn_10_1.ForeColor = SystemColors.ControlText;
-            Time_btn_15_1.BackColor = SystemColors.Control;
-            Time_btn_15_1.ForeColor = SystemColors.ControlText;
-            Time_btn_30_1.BackColor = SystemColors.Control;
-            Time_btn_30_1.ForeColor = SystemColors.ControlText;
-            Time_btn_45_1.BackColor = SystemColors.Control;
-            Time_btn_45_1.ForeColor = SystemColors.ControlText;
-            Time_btn_60_1.BackColor = SystemColors.Control;
-            Time_btn_60_1.ForeColor = SystemColors.ControlText;
+            string Time_btn_1_name = "Time_btn_1_" + (control).ToString();
+            string Time_btn_3_name = "Time_btn_3_" + (control).ToString();
+            string Time_btn_5_name = "Time_btn_5_" + (control).ToString();
+            string Time_btn_10_name = "Time_btn_10_" + (control).ToString();
+            string Time_btn_15_name = "Time_btn_15_" + (control).ToString();
+            string Time_btn_30_name = "Time_btn_30_" + (control).ToString();
+            string Time_btn_45_name = "Time_btn_45_" + (control).ToString();
+            string Time_btn_60_name = "Time_btn_60_" + (control).ToString();
+            string Time_ComboBox_name = "Time_ComboBox_" + (control).ToString();
 
-            TimeSelected = time;
-            Time_ComboBox_1.Text = TimeSelected;
+            var Time_btn_1 = this.Controls.Find(Time_btn_1_name, true).FirstOrDefault();
+            var Time_btn_3 = this.Controls.Find(Time_btn_3_name, true).FirstOrDefault();
+            var Time_btn_5 = this.Controls.Find(Time_btn_5_name, true).FirstOrDefault();
+            var Time_btn_10 = this.Controls.Find(Time_btn_10_name, true).FirstOrDefault();
+            var Time_btn_15 = this.Controls.Find(Time_btn_15_name, true).FirstOrDefault();
+            var Time_btn_30 = this.Controls.Find(Time_btn_30_name, true).FirstOrDefault();
+            var Time_btn_45 = this.Controls.Find(Time_btn_45_name, true).FirstOrDefault();
+            var Time_btn_60 = this.Controls.Find(Time_btn_60_name, true).FirstOrDefault();
+            var Time_ComboBox = this.Controls.Find(Time_ComboBox_name, true).FirstOrDefault();
+
+
+            Time_btn_1.BackColor = SystemColors.Control;
+            Time_btn_1.ForeColor = SystemColors.ControlText;
+            Time_btn_3.BackColor = SystemColors.Control;
+            Time_btn_3.ForeColor = SystemColors.ControlText;
+            Time_btn_5.BackColor = SystemColors.Control;
+            Time_btn_5.ForeColor = SystemColors.ControlText;
+            Time_btn_10.BackColor = SystemColors.Control;
+            Time_btn_10.ForeColor = SystemColors.ControlText;
+            Time_btn_15.BackColor = SystemColors.Control;
+            Time_btn_15.ForeColor = SystemColors.ControlText;
+            Time_btn_30.BackColor = SystemColors.Control;
+            Time_btn_30.ForeColor = SystemColors.ControlText;
+            Time_btn_45.BackColor = SystemColors.Control;
+            Time_btn_45.ForeColor = SystemColors.ControlText;
+            Time_btn_60.BackColor = SystemColors.Control;
+            Time_btn_60.ForeColor = SystemColors.ControlText;
+
+            TimeSelected[control - 1] = time;
+            Time_ComboBox.Text = TimeSelected[control - 1];
 
             switch (time)
             {
                 case "1":
-                    Time_btn_1_1.BackColor = SystemColors.Highlight;
-                    Time_btn_1_1.ForeColor = SystemColors.Control;
+                    Time_btn_1.BackColor = SystemColors.Highlight;
+                    Time_btn_1.ForeColor = SystemColors.Control;
                     break;
                 case "3":
-                    Time_btn_3_1.BackColor = SystemColors.Highlight;
-                    Time_btn_3_1.ForeColor = SystemColors.Control;
+                    Time_btn_3.BackColor = SystemColors.Highlight;
+                    Time_btn_3.ForeColor = SystemColors.Control;
                     break;
                 case "5":
-                    Time_btn_5_1.BackColor = SystemColors.Highlight;
-                    Time_btn_5_1.ForeColor = SystemColors.Control;
+                    Time_btn_5.BackColor = SystemColors.Highlight;
+                    Time_btn_5.ForeColor = SystemColors.Control;
                     break;
                 case "10":
-                    Time_btn_10_1.BackColor = SystemColors.Highlight;
-                    Time_btn_10_1.ForeColor = SystemColors.Control;
+                    Time_btn_10.BackColor = SystemColors.Highlight;
+                    Time_btn_10.ForeColor = SystemColors.Control;
                     break;
                 case "15":
-                    Time_btn_15_1.BackColor = SystemColors.Highlight;
-                    Time_btn_15_1.ForeColor = SystemColors.Control;
+                    Time_btn_15.BackColor = SystemColors.Highlight;
+                    Time_btn_15.ForeColor = SystemColors.Control;
                     break;
                 case "30":
-                    Time_btn_30_1.BackColor = SystemColors.Highlight;
-                    Time_btn_30_1.ForeColor = SystemColors.Control;
+                    Time_btn_30.BackColor = SystemColors.Highlight;
+                    Time_btn_30.ForeColor = SystemColors.Control;
                     break;
                 case "45":
-                    Time_btn_45_1.BackColor = SystemColors.Highlight;
-                    Time_btn_45_1.ForeColor = SystemColors.Control;
+                    Time_btn_45.BackColor = SystemColors.Highlight;
+                    Time_btn_45.ForeColor = SystemColors.Control;
                     break;
                 case "60":
-                    Time_btn_60_1.BackColor = SystemColors.Highlight;
-                    Time_btn_60_1.ForeColor = SystemColors.Control;
+                    Time_btn_60.BackColor = SystemColors.Highlight;
+                    Time_btn_60.ForeColor = SystemColors.Control;
                     break;
             }
 
-            Load_Data(gFCode, TimeSelected, TimeDistance);
+            Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1], control);
         }
 
         private void Time_btn_1_Click(object sender, EventArgs e)
         {
-            Time_Changed("1");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_1_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_1_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_1_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_1_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_1_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_1_6")
+            {
+                control = 6;
+            }
+            Time_Changed("1", control);
         }
 
         private void Time_btn_3_Click(object sender, EventArgs e)
         {
-            Time_Changed("3");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_3_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_3_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_3_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_3_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_3_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_3_6")
+            {
+                control = 6;
+            }
+            Time_Changed("3", control);
         }
 
         private void Time_btn_5_Click(object sender, EventArgs e)
         {
-            Time_Changed("5");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_5_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_5_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_5_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_5_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_5_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_5_6")
+            {
+                control = 6;
+            }
+            Time_Changed("5", control);
         }
 
         private void Time_btn_10_Click(object sender, EventArgs e)
         {
-            Time_Changed("10");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_10_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_10_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_10_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_10_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_10_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_10_6")
+            {
+                control = 6;
+            }
+            Time_Changed("10", control);
         }
 
         private void Time_btn_15_Click(object sender, EventArgs e)
         {
-            Time_Changed("15");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_15_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_15_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_15_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_15_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_15_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_15_6")
+            {
+                control = 6;
+            }
+            Time_Changed("15", control);
         }
 
         private void Time_btn_30_Click(object sender, EventArgs e)
         {
-            Time_Changed("30");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_30_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_30_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_30_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_30_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_30_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_30_6")
+            {
+                control = 6;
+            }
+            Time_Changed("30", control);
         }
 
         private void Time_btn_45_Click(object sender, EventArgs e)
         {
-            Time_Changed("45");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_45_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_45_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_45_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_45_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_45_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_45_6")
+            {
+                control = 6;
+            }
+            Time_Changed("45", control);
         }
 
         private void Time_btn_60_Click(object sender, EventArgs e)
         {
-            Time_Changed("60");
+            Button btn = sender as Button;
+            int control = 0;
+            if (btn.Name == "Time_btn_60_1")
+            {
+                control = 1;
+            }
+            else if (btn.Name == "Time_btn_60_2")
+            {
+                control = 2;
+            }
+            else if (btn.Name == "Time_btn_60_3")
+            {
+                control = 3;
+            }
+            else if (btn.Name == "Time_btn_60_4")
+            {
+                control = 4;
+            }
+            else if (btn.Name == "Time_btn_60_5")
+            {
+                control = 5;
+            }
+            else if (btn.Name == "Time_btn_60_6")
+            {
+                control = 6;
+            }
+            Time_Changed("60", control);
         }
-        private void Time_btn_Disabled()
+        private void Time_btn_Disabled(int control)
         {
-            Time_btn_1_1.Enabled = false;
-            Time_btn_3_1.Enabled = false;
-            Time_btn_5_1.Enabled = false;
-            Time_btn_10_1.Enabled = false;
-            Time_btn_15_1.Enabled = false;
-            Time_btn_30_1.Enabled = false;
-            Time_btn_45_1.Enabled = false;
-            Time_btn_60_1.Enabled = false;
-            Time_btn_1_1.BackColor = SystemColors.ControlLight;
-            Time_btn_1_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_3_1.BackColor = SystemColors.ControlLight;
-            Time_btn_3_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_5_1.BackColor = SystemColors.ControlLight;
-            Time_btn_5_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_10_1.BackColor = SystemColors.ControlLight;
-            Time_btn_10_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_15_1.BackColor = SystemColors.ControlLight;
-            Time_btn_15_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_30_1.BackColor = SystemColors.ControlLight;
-            Time_btn_30_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_45_1.BackColor = SystemColors.ControlLight;
-            Time_btn_45_1.ForeColor = SystemColors.ControlDark;
-            Time_btn_60_1.BackColor = SystemColors.ControlLight;
-            Time_btn_60_1.ForeColor = SystemColors.ControlDark;
-            Time_ComboBox_1.Enabled = false;
-            Time_ComboBox_1.ForeColor = SystemColors.ControlDark;
+            string Time_btn_1_name = "Time_btn_1_" + (control).ToString();
+            string Time_btn_3_name = "Time_btn_3_" + (control).ToString();
+            string Time_btn_5_name = "Time_btn_5_" + (control).ToString();
+            string Time_btn_10_name = "Time_btn_10_" + (control).ToString();
+            string Time_btn_15_name = "Time_btn_15_" + (control).ToString();
+            string Time_btn_30_name = "Time_btn_30_" + (control).ToString();
+            string Time_btn_45_name = "Time_btn_45_" + (control).ToString();
+            string Time_btn_60_name = "Time_btn_60_" + (control).ToString();
+            string Time_ComboBox_name = "Time_ComboBox_" + (control).ToString();
+
+            var Time_btn_1 = this.Controls.Find(Time_btn_1_name, true).FirstOrDefault();
+            var Time_btn_3 = this.Controls.Find(Time_btn_3_name, true).FirstOrDefault();
+            var Time_btn_5 = this.Controls.Find(Time_btn_5_name, true).FirstOrDefault();
+            var Time_btn_10 = this.Controls.Find(Time_btn_10_name, true).FirstOrDefault();
+            var Time_btn_15 = this.Controls.Find(Time_btn_15_name, true).FirstOrDefault();
+            var Time_btn_30 = this.Controls.Find(Time_btn_30_name, true).FirstOrDefault();
+            var Time_btn_45 = this.Controls.Find(Time_btn_45_name, true).FirstOrDefault();
+            var Time_btn_60 = this.Controls.Find(Time_btn_60_name, true).FirstOrDefault();
+            var Time_ComboBox = this.Controls.Find(Time_ComboBox_name, true).FirstOrDefault();
+
+            Time_btn_1.Enabled = false;
+            Time_btn_3.Enabled = false;
+            Time_btn_5.Enabled = false;
+            Time_btn_10.Enabled = false;
+            Time_btn_15.Enabled = false;
+            Time_btn_30.Enabled = false;
+            Time_btn_45.Enabled = false;
+            Time_btn_60.Enabled = false;
+            Time_btn_1.BackColor = SystemColors.ControlLight;
+            Time_btn_1.ForeColor = SystemColors.ControlDark;
+            Time_btn_3.BackColor = SystemColors.ControlLight;
+            Time_btn_3.ForeColor = SystemColors.ControlDark;
+            Time_btn_5.BackColor = SystemColors.ControlLight;
+            Time_btn_5.ForeColor = SystemColors.ControlDark;
+            Time_btn_10.BackColor = SystemColors.ControlLight;
+            Time_btn_10.ForeColor = SystemColors.ControlDark;
+            Time_btn_15.BackColor = SystemColors.ControlLight;
+            Time_btn_15.ForeColor = SystemColors.ControlDark;
+            Time_btn_30.BackColor = SystemColors.ControlLight;
+            Time_btn_30.ForeColor = SystemColors.ControlDark;
+            Time_btn_45.BackColor = SystemColors.ControlLight;
+            Time_btn_45.ForeColor = SystemColors.ControlDark;
+            Time_btn_60.BackColor = SystemColors.ControlLight;
+            Time_btn_60.ForeColor = SystemColors.ControlDark;
+            Time_ComboBox.Enabled = false;
+            Time_ComboBox.ForeColor = SystemColors.ControlDark;
 
         }
 
-        private void Time_btn_Enabled()
+        private void Time_btn_Enabled(int control)
         {
-            Time_btn_1_1.Enabled = true;
-            Time_btn_3_1.Enabled = true;
-            Time_btn_5_1.Enabled = true;
-            Time_btn_10_1.Enabled = true;
-            Time_btn_15_1.Enabled = true;
-            Time_btn_30_1.Enabled = true;
-            Time_btn_45_1.Enabled = true;
-            Time_btn_60_1.Enabled = true;
-            Time_btn_1_1.BackColor = SystemColors.Highlight;
-            Time_btn_1_1.ForeColor = SystemColors.Control;
-            Time_btn_3_1.BackColor = SystemColors.Control;
-            Time_btn_3_1.ForeColor = SystemColors.ControlText;
-            Time_btn_5_1.BackColor = SystemColors.Control;
-            Time_btn_5_1.ForeColor = SystemColors.ControlText;
-            Time_btn_10_1.BackColor = SystemColors.Control;
-            Time_btn_10_1.ForeColor = SystemColors.ControlText;
-            Time_btn_15_1.BackColor = SystemColors.Control;
-            Time_btn_15_1.ForeColor = SystemColors.ControlText;
-            Time_btn_30_1.BackColor = SystemColors.Control;
-            Time_btn_30_1.ForeColor = SystemColors.ControlText;
-            Time_btn_45_1.BackColor = SystemColors.Control;
-            Time_btn_45_1.ForeColor = SystemColors.ControlText;
-            Time_btn_60_1.BackColor = SystemColors.Control;
-            Time_btn_60_1.ForeColor = SystemColors.ControlText;
-            Time_ComboBox_1.Enabled = true;
-            Time_ComboBox_1.ForeColor = SystemColors.ControlText;
+            string Time_btn_1_name = "Time_btn_1_" + (control).ToString();
+            string Time_btn_3_name = "Time_btn_3_" + (control).ToString();
+            string Time_btn_5_name = "Time_btn_5_" + (control).ToString();
+            string Time_btn_10_name = "Time_btn_10_" + (control).ToString();
+            string Time_btn_15_name = "Time_btn_15_" + (control).ToString();
+            string Time_btn_30_name = "Time_btn_30_" + (control).ToString();
+            string Time_btn_45_name = "Time_btn_45_" + (control).ToString();
+            string Time_btn_60_name = "Time_btn_60_" + (control).ToString();
+            string Time_ComboBox_name = "Time_ComboBox_" + (control).ToString();
+
+            var Time_btn_1 = this.Controls.Find(Time_btn_1_name, true).FirstOrDefault();
+            var Time_btn_3 = this.Controls.Find(Time_btn_3_name, true).FirstOrDefault();
+            var Time_btn_5 = this.Controls.Find(Time_btn_5_name, true).FirstOrDefault();
+            var Time_btn_10 = this.Controls.Find(Time_btn_10_name, true).FirstOrDefault();
+            var Time_btn_15 = this.Controls.Find(Time_btn_15_name, true).FirstOrDefault();
+            var Time_btn_30 = this.Controls.Find(Time_btn_30_name, true).FirstOrDefault();
+            var Time_btn_45 = this.Controls.Find(Time_btn_45_name, true).FirstOrDefault();
+            var Time_btn_60 = this.Controls.Find(Time_btn_60_name, true).FirstOrDefault();
+            var Time_ComboBox = this.Controls.Find(Time_ComboBox_name, true).FirstOrDefault();
+
+            Time_btn_1.Enabled = true;
+            Time_btn_3.Enabled = true;
+            Time_btn_5.Enabled = true;
+            Time_btn_10.Enabled = true;
+            Time_btn_15.Enabled = true;
+            Time_btn_30.Enabled = true;
+            Time_btn_45.Enabled = true;
+            Time_btn_60.Enabled = true;
+            Time_btn_1.BackColor = SystemColors.Highlight;
+            Time_btn_1.ForeColor = SystemColors.Control;
+            Time_btn_3.BackColor = SystemColors.Control;
+            Time_btn_3.ForeColor = SystemColors.ControlText;
+            Time_btn_5.BackColor = SystemColors.Control;
+            Time_btn_5.ForeColor = SystemColors.ControlText;
+            Time_btn_10.BackColor = SystemColors.Control;
+            Time_btn_10.ForeColor = SystemColors.ControlText;
+            Time_btn_15.BackColor = SystemColors.Control;
+            Time_btn_15.ForeColor = SystemColors.ControlText;
+            Time_btn_30.BackColor = SystemColors.Control;
+            Time_btn_30.ForeColor = SystemColors.ControlText;
+            Time_btn_45.BackColor = SystemColors.Control;
+            Time_btn_45.ForeColor = SystemColors.ControlText;
+            Time_btn_60.BackColor = SystemColors.Control;
+            Time_btn_60.ForeColor = SystemColors.ControlText;
+            Time_ComboBox.Enabled = true;
+            Time_ComboBox.ForeColor = SystemColors.ControlText;
         }
 
         private void Time_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (Time_ComboBox_1.SelectedIndex >= 0)
+            ComboBox combo = sender as ComboBox;
+            int control = 0;
+            if (combo.Name == "Time_ComboBox_1")
             {
-                this.TimeSelected = Time_ComboBox_1.SelectedItem as string;               
+                control = 1;
+            }
+            else if (combo.Name == "Time_ComboBox_2")
+            {
+                control = 2;
+            }
+            else if (combo.Name == "Time_ComboBox_3")
+            {
+                control = 3;
+            }
+            else if (combo.Name == "Time_ComboBox_4")
+            {
+                control = 4;
+            }
+            else if (combo.Name == "Time_ComboBox_5")
+            {
+                control = 5;
+            }
+            else if (combo.Name == "Time_ComboBox_6")
+            {
+                control = 6;
+            }
+
+            if (combo.SelectedIndex >= 0)
+            {
+                this.TimeSelected[control - 1] = combo.SelectedItem as string;               
             }
         }
 
         private void Time_ComboBox_TextChanged(object sender, EventArgs e)
         {
-            TimeSelected = Time_ComboBox_1.Text;
-            Time_Changed(TimeSelected);
+            ComboBox combo = sender as ComboBox;
+            int control = 0;
+            if (combo.Name == "Time_ComboBox_1")
+            {
+                control = 1;
+            }
+            else if (combo.Name == "Time_ComboBox_2")
+            {
+                control = 2;
+            }
+            else if (combo.Name == "Time_ComboBox_3")
+            {
+                control = 3;
+            }
+            else if (combo.Name == "Time_ComboBox_4")
+            {
+                control = 4;
+            }
+            else if (combo.Name == "Time_ComboBox_5")
+            {
+                control = 5;
+            }
+            else if (combo.Name == "Time_ComboBox_6")
+            {
+                control = 6;
+            }
+            TimeSelected[control - 1] = combo.Text;
+            Time_Changed(TimeSelected[control - 1], control);
         }
 
         private void Refresh_Data(object sender, EventArgs e)
         {
-            Load_Data(gFCode, TimeSelected, TimeDistance);
+            Load_Data(gFCode[0], TimeSelected[0], TimeDistance[0] , 1);
             Delay(100);
-            Get_GridData();
+            //Get_GridData();
         }
 
         private static DateTime Delay(int MS)
@@ -836,6 +1396,7 @@ namespace WindowsFormsApp4
         {
             string count = Convert.ToString(Stock_Count.Value);
             getDeal(count, "02");
+            
         }
 
         private void AccountComboChange(object sender, EventArgs e)
@@ -857,5 +1418,12 @@ namespace WindowsFormsApp4
                 e.Handled = true;
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
+
+
 }

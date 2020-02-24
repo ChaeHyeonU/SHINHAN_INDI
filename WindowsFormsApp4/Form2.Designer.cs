@@ -30,17 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Comm_Obj_DATA = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.Comm_Obj_DATA_1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.FCode_1 = new System.Windows.Forms.TextBox();
-            this.FCGrid = new System.Windows.Forms.DataGridView();
+            this.FCGrid_1 = new System.Windows.Forms.DataGridView();
             this.WMA_input_1 = new System.Windows.Forms.TextBox();
             this.WMA_input_btn_1 = new System.Windows.Forms.Button();
             this.Day_btn_1 = new System.Windows.Forms.Button();
@@ -122,7 +122,7 @@
             this.Day_btn_4 = new System.Windows.Forms.Button();
             this.WMA_input_btn_4 = new System.Windows.Forms.Button();
             this.WMA_input_4 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.FCGrid_4 = new System.Windows.Forms.DataGridView();
             this.FCode_4 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -144,10 +144,10 @@
             this.Time_btn_1_2 = new System.Windows.Forms.Button();
             this.Tick_btn_2 = new System.Windows.Forms.Button();
             this.Min_btn_2 = new System.Windows.Forms.Button();
-            this.button29 = new System.Windows.Forms.Button();
+            this.Day_btn_2 = new System.Windows.Forms.Button();
             this.WMA_input_btn_2 = new System.Windows.Forms.Button();
             this.WMA_input_2 = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.FCGrid_2 = new System.Windows.Forms.DataGridView();
             this.FCode_2 = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -172,7 +172,7 @@
             this.Day_btn_3 = new System.Windows.Forms.Button();
             this.WMA_input_btn_3 = new System.Windows.Forms.Button();
             this.WMA_input_3 = new System.Windows.Forms.TextBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.FCGrid_3 = new System.Windows.Forms.DataGridView();
             this.FCode_3 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
@@ -197,7 +197,7 @@
             this.Day_btn_6 = new System.Windows.Forms.Button();
             this.WMA_input_btn_6 = new System.Windows.Forms.Button();
             this.WMA_input_6 = new System.Windows.Forms.TextBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.FCGrid_6 = new System.Windows.Forms.DataGridView();
             this.FCode_6 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -222,11 +222,11 @@
             this.Day_btn_5 = new System.Windows.Forms.Button();
             this.WMA_input_btn_5 = new System.Windows.Forms.Button();
             this.WMA_input_5 = new System.Windows.Forms.TextBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.FCGrid_5 = new System.Windows.Forms.DataGridView();
             this.FCode_5 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FCGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).BeginInit();
@@ -235,23 +235,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).BeginInit();
             this.SuspendLayout();
             // 
-            // Comm_Obj_DATA
+            // Comm_Obj_DATA_1
             // 
-            this.Comm_Obj_DATA.Enabled = true;
-            this.Comm_Obj_DATA.Location = new System.Drawing.Point(8873, 7034);
-            this.Comm_Obj_DATA.Name = "Comm_Obj_DATA";
-            this.Comm_Obj_DATA.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA.OcxState")));
-            this.Comm_Obj_DATA.Size = new System.Drawing.Size(136, 50);
-            this.Comm_Obj_DATA.TabIndex = 0;
-            this.Comm_Obj_DATA.Visible = false;
-            this.Comm_Obj_DATA.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Gi_FC_ReceiveData);
+            this.Comm_Obj_DATA_1.Enabled = true;
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(8873, 7034);
+            this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
+            this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
+            this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_DATA_1.TabIndex = 0;
+            this.Comm_Obj_DATA_1.Visible = false;
+            this.Comm_Obj_DATA_1.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Gi_FC_ReceiveData);
             // 
             // Comm_Obj_DATA_Real
             // 
@@ -274,32 +274,32 @@
             this.FCode_1.Text = "101Q3";
             this.FCode_1.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
-            // FCGrid
+            // FCGrid_1
             // 
-            this.FCGrid.AllowUserToAddRows = false;
-            this.FCGrid.AllowUserToDeleteRows = false;
-            this.FCGrid.AllowUserToResizeColumns = false;
-            this.FCGrid.AllowUserToResizeRows = false;
-            this.FCGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.FCGrid.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.FCGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.FCGrid.Location = new System.Drawing.Point(7, 60);
-            this.FCGrid.Name = "FCGrid";
-            this.FCGrid.ReadOnly = true;
-            this.FCGrid.RowHeadersVisible = false;
-            this.FCGrid.RowTemplate.Height = 23;
-            this.FCGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.FCGrid.Size = new System.Drawing.Size(587, 275);
-            this.FCGrid.TabIndex = 999;
-            this.FCGrid.TabStop = false;
+            this.FCGrid_1.AllowUserToAddRows = false;
+            this.FCGrid_1.AllowUserToDeleteRows = false;
+            this.FCGrid_1.AllowUserToResizeColumns = false;
+            this.FCGrid_1.AllowUserToResizeRows = false;
+            this.FCGrid_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.FCGrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_1.Location = new System.Drawing.Point(7, 60);
+            this.FCGrid_1.Name = "FCGrid_1";
+            this.FCGrid_1.ReadOnly = true;
+            this.FCGrid_1.RowHeadersVisible = false;
+            this.FCGrid_1.RowTemplate.Height = 23;
+            this.FCGrid_1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_1.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_1.TabIndex = 999;
+            this.FCGrid_1.TabStop = false;
             // 
             // WMA_input_1
             // 
@@ -616,14 +616,14 @@
             // 
             // Price_GridView
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -873,7 +873,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1001, 41);
+            this.label12.Location = new System.Drawing.Point(998, 38);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(66, 13);
             this.label12.TabIndex = 1024;
@@ -883,7 +883,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("맑은 고딕", 9F);
-            this.label13.Location = new System.Drawing.Point(718, 41);
+            this.label13.Location = new System.Drawing.Point(715, 38);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(88, 15);
             this.label13.TabIndex = 1023;
@@ -893,7 +893,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(899, 42);
+            this.label14.Location = new System.Drawing.Point(896, 39);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 13);
             this.label14.TabIndex = 1022;
@@ -942,7 +942,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(995, 19);
+            this.label15.Location = new System.Drawing.Point(992, 16);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(82, 13);
             this.label15.TabIndex = 1021;
@@ -971,6 +971,8 @@
             this.Time_ComboBox_4.Size = new System.Drawing.Size(39, 21);
             this.Time_ComboBox_4.TabIndex = 1020;
             this.Time_ComboBox_4.Text = "1";
+            this.Time_ComboBox_4.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_4.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // Time_btn_60_4
             // 
@@ -981,6 +983,7 @@
             this.Time_btn_60_4.TabIndex = 1019;
             this.Time_btn_60_4.Text = "60";
             this.Time_btn_60_4.UseVisualStyleBackColor = true;
+            this.Time_btn_60_4.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
             // Time_btn_45_4
             // 
@@ -991,6 +994,7 @@
             this.Time_btn_45_4.TabIndex = 1018;
             this.Time_btn_45_4.Text = "45";
             this.Time_btn_45_4.UseVisualStyleBackColor = true;
+            this.Time_btn_45_4.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
             // Time_btn_30_4
             // 
@@ -1003,6 +1007,7 @@
             this.Time_btn_30_4.TabIndex = 1017;
             this.Time_btn_30_4.Text = "30";
             this.Time_btn_30_4.UseVisualStyleBackColor = false;
+            this.Time_btn_30_4.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
             // Time_btn_15_4
             // 
@@ -1013,6 +1018,7 @@
             this.Time_btn_15_4.TabIndex = 1016;
             this.Time_btn_15_4.Text = "15";
             this.Time_btn_15_4.UseVisualStyleBackColor = true;
+            this.Time_btn_15_4.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
             // Time_btn_10_4
             // 
@@ -1023,6 +1029,7 @@
             this.Time_btn_10_4.TabIndex = 1015;
             this.Time_btn_10_4.Text = "10";
             this.Time_btn_10_4.UseVisualStyleBackColor = true;
+            this.Time_btn_10_4.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
             // Time_btn_5_4
             // 
@@ -1033,6 +1040,7 @@
             this.Time_btn_5_4.TabIndex = 1014;
             this.Time_btn_5_4.Text = "5";
             this.Time_btn_5_4.UseVisualStyleBackColor = true;
+            this.Time_btn_5_4.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
             // Time_btn_3_4
             // 
@@ -1044,6 +1052,7 @@
             this.Time_btn_3_4.TabIndex = 1013;
             this.Time_btn_3_4.Text = "3";
             this.Time_btn_3_4.UseVisualStyleBackColor = true;
+            this.Time_btn_3_4.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
             // Time_btn_1_4
             // 
@@ -1056,6 +1065,7 @@
             this.Time_btn_1_4.TabIndex = 1012;
             this.Time_btn_1_4.Text = "1";
             this.Time_btn_1_4.UseVisualStyleBackColor = false;
+            this.Time_btn_1_4.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
             // Tick_btn_4
             // 
@@ -1065,6 +1075,7 @@
             this.Tick_btn_4.TabIndex = 1011;
             this.Tick_btn_4.Text = "틱";
             this.Tick_btn_4.UseVisualStyleBackColor = true;
+            this.Tick_btn_4.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
             // Min_btn_4
             // 
@@ -1074,6 +1085,7 @@
             this.Min_btn_4.TabIndex = 1010;
             this.Min_btn_4.Text = "분";
             this.Min_btn_4.UseVisualStyleBackColor = true;
+            this.Min_btn_4.Click += new System.EventHandler(this.Min_btn_Click);
             // 
             // Day_btn_4
             // 
@@ -1087,6 +1099,7 @@
             this.Day_btn_4.TabStop = false;
             this.Day_btn_4.Text = "일";
             this.Day_btn_4.UseVisualStyleBackColor = false;
+            this.Day_btn_4.Click += new System.EventHandler(this.Day_btn_Click);
             // 
             // WMA_input_btn_4
             // 
@@ -1096,6 +1109,7 @@
             this.WMA_input_btn_4.TabIndex = 1008;
             this.WMA_input_btn_4.Text = "설정";
             this.WMA_input_btn_4.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_4.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
             // WMA_input_4
             // 
@@ -1105,32 +1119,32 @@
             this.WMA_input_4.TabIndex = 1006;
             this.WMA_input_4.Text = "10";
             // 
-            // dataGridView1
+            // FCGrid_4
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(600, 60);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.Size = new System.Drawing.Size(587, 275);
-            this.dataGridView1.TabIndex = 1025;
-            this.dataGridView1.TabStop = false;
+            this.FCGrid_4.AllowUserToAddRows = false;
+            this.FCGrid_4.AllowUserToDeleteRows = false;
+            this.FCGrid_4.AllowUserToResizeColumns = false;
+            this.FCGrid_4.AllowUserToResizeRows = false;
+            this.FCGrid_4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.FCGrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_4.Location = new System.Drawing.Point(600, 60);
+            this.FCGrid_4.Name = "FCGrid_4";
+            this.FCGrid_4.ReadOnly = true;
+            this.FCGrid_4.RowHeadersVisible = false;
+            this.FCGrid_4.RowTemplate.Height = 23;
+            this.FCGrid_4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_4.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_4.TabIndex = 1025;
+            this.FCGrid_4.TabStop = false;
             // 
             // FCode_4
             // 
@@ -1140,6 +1154,7 @@
             this.FCode_4.Size = new System.Drawing.Size(76, 22);
             this.FCode_4.TabIndex = 1001;
             this.FCode_4.Text = "101Q3";
+            this.FCode_4.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label16
             // 
@@ -1242,6 +1257,8 @@
             this.Time_ComboBox_2.Size = new System.Drawing.Size(39, 21);
             this.Time_ComboBox_2.TabIndex = 1045;
             this.Time_ComboBox_2.Text = "1";
+            this.Time_ComboBox_2.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_2.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // Time_btn_60_2
             // 
@@ -1252,6 +1269,7 @@
             this.Time_btn_60_2.TabIndex = 1044;
             this.Time_btn_60_2.Text = "60";
             this.Time_btn_60_2.UseVisualStyleBackColor = true;
+            this.Time_btn_60_2.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
             // Time_btn_45_2
             // 
@@ -1262,6 +1280,7 @@
             this.Time_btn_45_2.TabIndex = 1043;
             this.Time_btn_45_2.Text = "45";
             this.Time_btn_45_2.UseVisualStyleBackColor = true;
+            this.Time_btn_45_2.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
             // Time_btn_30_2
             // 
@@ -1274,6 +1293,7 @@
             this.Time_btn_30_2.TabIndex = 1042;
             this.Time_btn_30_2.Text = "30";
             this.Time_btn_30_2.UseVisualStyleBackColor = false;
+            this.Time_btn_30_2.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
             // Time_btn_15_2
             // 
@@ -1284,6 +1304,7 @@
             this.Time_btn_15_2.TabIndex = 1041;
             this.Time_btn_15_2.Text = "15";
             this.Time_btn_15_2.UseVisualStyleBackColor = true;
+            this.Time_btn_15_2.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
             // Time_btn_10_2
             // 
@@ -1294,6 +1315,7 @@
             this.Time_btn_10_2.TabIndex = 1040;
             this.Time_btn_10_2.Text = "10";
             this.Time_btn_10_2.UseVisualStyleBackColor = true;
+            this.Time_btn_10_2.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
             // Time_btn_5_2
             // 
@@ -1304,6 +1326,7 @@
             this.Time_btn_5_2.TabIndex = 1039;
             this.Time_btn_5_2.Text = "5";
             this.Time_btn_5_2.UseVisualStyleBackColor = true;
+            this.Time_btn_5_2.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
             // Time_btn_3_2
             // 
@@ -1315,6 +1338,7 @@
             this.Time_btn_3_2.TabIndex = 1038;
             this.Time_btn_3_2.Text = "3";
             this.Time_btn_3_2.UseVisualStyleBackColor = true;
+            this.Time_btn_3_2.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
             // Time_btn_1_2
             // 
@@ -1327,6 +1351,7 @@
             this.Time_btn_1_2.TabIndex = 1037;
             this.Time_btn_1_2.Text = "1";
             this.Time_btn_1_2.UseVisualStyleBackColor = false;
+            this.Time_btn_1_2.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
             // Tick_btn_2
             // 
@@ -1336,6 +1361,7 @@
             this.Tick_btn_2.TabIndex = 1036;
             this.Tick_btn_2.Text = "틱";
             this.Tick_btn_2.UseVisualStyleBackColor = true;
+            this.Tick_btn_2.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
             // Min_btn_2
             // 
@@ -1345,19 +1371,21 @@
             this.Min_btn_2.TabIndex = 1035;
             this.Min_btn_2.Text = "분";
             this.Min_btn_2.UseVisualStyleBackColor = true;
+            this.Min_btn_2.Click += new System.EventHandler(this.Min_btn_Click);
             // 
-            // button29
+            // Day_btn_2
             // 
-            this.button29.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button29.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.button29.ForeColor = System.Drawing.SystemColors.Control;
-            this.button29.Location = new System.Drawing.Point(90, 337);
-            this.button29.Name = "button29";
-            this.button29.Size = new System.Drawing.Size(25, 23);
-            this.button29.TabIndex = 1034;
-            this.button29.TabStop = false;
-            this.button29.Text = "일";
-            this.button29.UseVisualStyleBackColor = false;
+            this.Day_btn_2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.Day_btn_2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Day_btn_2.ForeColor = System.Drawing.SystemColors.Control;
+            this.Day_btn_2.Location = new System.Drawing.Point(90, 337);
+            this.Day_btn_2.Name = "Day_btn_2";
+            this.Day_btn_2.Size = new System.Drawing.Size(25, 23);
+            this.Day_btn_2.TabIndex = 1034;
+            this.Day_btn_2.TabStop = false;
+            this.Day_btn_2.Text = "일";
+            this.Day_btn_2.UseVisualStyleBackColor = false;
+            this.Day_btn_2.Click += new System.EventHandler(this.Day_btn_Click);
             // 
             // WMA_input_btn_2
             // 
@@ -1367,6 +1395,7 @@
             this.WMA_input_btn_2.TabIndex = 1033;
             this.WMA_input_btn_2.Text = "설정";
             this.WMA_input_btn_2.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_2.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
             // WMA_input_2
             // 
@@ -1376,32 +1405,32 @@
             this.WMA_input_2.TabIndex = 1031;
             this.WMA_input_2.Text = "10";
             // 
-            // dataGridView2
+            // FCGrid_2
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(7, 384);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.Size = new System.Drawing.Size(587, 275);
-            this.dataGridView2.TabIndex = 1050;
-            this.dataGridView2.TabStop = false;
+            this.FCGrid_2.AllowUserToAddRows = false;
+            this.FCGrid_2.AllowUserToDeleteRows = false;
+            this.FCGrid_2.AllowUserToResizeColumns = false;
+            this.FCGrid_2.AllowUserToResizeRows = false;
+            this.FCGrid_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.FCGrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_2.Location = new System.Drawing.Point(7, 384);
+            this.FCGrid_2.Name = "FCGrid_2";
+            this.FCGrid_2.ReadOnly = true;
+            this.FCGrid_2.RowHeadersVisible = false;
+            this.FCGrid_2.RowTemplate.Height = 23;
+            this.FCGrid_2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_2.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_2.TabIndex = 1050;
+            this.FCGrid_2.TabStop = false;
             // 
             // FCode_2
             // 
@@ -1411,6 +1440,7 @@
             this.FCode_2.Size = new System.Drawing.Size(76, 22);
             this.FCode_2.TabIndex = 1026;
             this.FCode_2.Text = "101Q3";
+            this.FCode_2.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label20
             // 
@@ -1513,6 +1543,8 @@
             this.Time_ComboBox_3.Size = new System.Drawing.Size(39, 21);
             this.Time_ComboBox_3.TabIndex = 1070;
             this.Time_ComboBox_3.Text = "1";
+            this.Time_ComboBox_3.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_3.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // Time_btn_60_3
             // 
@@ -1523,6 +1555,7 @@
             this.Time_btn_60_3.TabIndex = 1069;
             this.Time_btn_60_3.Text = "60";
             this.Time_btn_60_3.UseVisualStyleBackColor = true;
+            this.Time_btn_60_3.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
             // Time_btn_45_3
             // 
@@ -1533,6 +1566,7 @@
             this.Time_btn_45_3.TabIndex = 1068;
             this.Time_btn_45_3.Text = "45";
             this.Time_btn_45_3.UseVisualStyleBackColor = true;
+            this.Time_btn_45_3.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
             // Time_btn_30_3
             // 
@@ -1545,6 +1579,7 @@
             this.Time_btn_30_3.TabIndex = 1067;
             this.Time_btn_30_3.Text = "30";
             this.Time_btn_30_3.UseVisualStyleBackColor = false;
+            this.Time_btn_30_3.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
             // Time_btn_15_3
             // 
@@ -1555,6 +1590,7 @@
             this.Time_btn_15_3.TabIndex = 1066;
             this.Time_btn_15_3.Text = "15";
             this.Time_btn_15_3.UseVisualStyleBackColor = true;
+            this.Time_btn_15_3.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
             // Time_btn_10_3
             // 
@@ -1565,6 +1601,7 @@
             this.Time_btn_10_3.TabIndex = 1065;
             this.Time_btn_10_3.Text = "10";
             this.Time_btn_10_3.UseVisualStyleBackColor = true;
+            this.Time_btn_10_3.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
             // Time_btn_5_3
             // 
@@ -1575,6 +1612,7 @@
             this.Time_btn_5_3.TabIndex = 1064;
             this.Time_btn_5_3.Text = "5";
             this.Time_btn_5_3.UseVisualStyleBackColor = true;
+            this.Time_btn_5_3.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
             // Time_btn_3_3
             // 
@@ -1586,6 +1624,7 @@
             this.Time_btn_3_3.TabIndex = 1063;
             this.Time_btn_3_3.Text = "3";
             this.Time_btn_3_3.UseVisualStyleBackColor = true;
+            this.Time_btn_3_3.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
             // Time_btn_1_3
             // 
@@ -1598,6 +1637,7 @@
             this.Time_btn_1_3.TabIndex = 1062;
             this.Time_btn_1_3.Text = "1";
             this.Time_btn_1_3.UseVisualStyleBackColor = false;
+            this.Time_btn_1_3.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
             // Tick_btn_3
             // 
@@ -1607,6 +1647,7 @@
             this.Tick_btn_3.TabIndex = 1061;
             this.Tick_btn_3.Text = "틱";
             this.Tick_btn_3.UseVisualStyleBackColor = true;
+            this.Tick_btn_3.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
             // Min_btn_3
             // 
@@ -1616,6 +1657,7 @@
             this.Min_btn_3.TabIndex = 1060;
             this.Min_btn_3.Text = "분";
             this.Min_btn_3.UseVisualStyleBackColor = true;
+            this.Min_btn_3.Click += new System.EventHandler(this.Min_btn_Click);
             // 
             // Day_btn_3
             // 
@@ -1629,6 +1671,7 @@
             this.Day_btn_3.TabStop = false;
             this.Day_btn_3.Text = "일";
             this.Day_btn_3.UseVisualStyleBackColor = false;
+            this.Day_btn_3.Click += new System.EventHandler(this.Day_btn_Click);
             // 
             // WMA_input_btn_3
             // 
@@ -1638,6 +1681,7 @@
             this.WMA_input_btn_3.TabIndex = 1058;
             this.WMA_input_btn_3.Text = "설정";
             this.WMA_input_btn_3.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_3.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
             // WMA_input_3
             // 
@@ -1647,32 +1691,32 @@
             this.WMA_input_3.TabIndex = 1056;
             this.WMA_input_3.Text = "10";
             // 
-            // dataGridView3
+            // FCGrid_3
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.AllowUserToResizeColumns = false;
-            this.dataGridView3.AllowUserToResizeRows = false;
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(7, 709);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView3.Size = new System.Drawing.Size(587, 275);
-            this.dataGridView3.TabIndex = 1075;
-            this.dataGridView3.TabStop = false;
+            this.FCGrid_3.AllowUserToAddRows = false;
+            this.FCGrid_3.AllowUserToDeleteRows = false;
+            this.FCGrid_3.AllowUserToResizeColumns = false;
+            this.FCGrid_3.AllowUserToResizeRows = false;
+            this.FCGrid_3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            this.FCGrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_3.Location = new System.Drawing.Point(7, 709);
+            this.FCGrid_3.Name = "FCGrid_3";
+            this.FCGrid_3.ReadOnly = true;
+            this.FCGrid_3.RowHeadersVisible = false;
+            this.FCGrid_3.RowTemplate.Height = 23;
+            this.FCGrid_3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_3.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_3.TabIndex = 1075;
+            this.FCGrid_3.TabStop = false;
             // 
             // FCode_3
             // 
@@ -1682,6 +1726,7 @@
             this.FCode_3.Size = new System.Drawing.Size(76, 22);
             this.FCode_3.TabIndex = 1051;
             this.FCode_3.Text = "101Q3";
+            this.FCode_3.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label24
             // 
@@ -1784,6 +1829,8 @@
             this.Time_ComboBox_6.Size = new System.Drawing.Size(39, 21);
             this.Time_ComboBox_6.TabIndex = 1120;
             this.Time_ComboBox_6.Text = "1";
+            this.Time_ComboBox_6.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_6.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // Time_btn_60_6
             // 
@@ -1794,6 +1841,7 @@
             this.Time_btn_60_6.TabIndex = 1119;
             this.Time_btn_60_6.Text = "60";
             this.Time_btn_60_6.UseVisualStyleBackColor = true;
+            this.Time_btn_60_6.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
             // Time_btn_45_6
             // 
@@ -1804,6 +1852,7 @@
             this.Time_btn_45_6.TabIndex = 1118;
             this.Time_btn_45_6.Text = "45";
             this.Time_btn_45_6.UseVisualStyleBackColor = true;
+            this.Time_btn_45_6.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
             // Time_btn_30_6
             // 
@@ -1816,6 +1865,7 @@
             this.Time_btn_30_6.TabIndex = 1117;
             this.Time_btn_30_6.Text = "30";
             this.Time_btn_30_6.UseVisualStyleBackColor = false;
+            this.Time_btn_30_6.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
             // Time_btn_15_6
             // 
@@ -1826,6 +1876,7 @@
             this.Time_btn_15_6.TabIndex = 1116;
             this.Time_btn_15_6.Text = "15";
             this.Time_btn_15_6.UseVisualStyleBackColor = true;
+            this.Time_btn_15_6.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
             // Time_btn_10_6
             // 
@@ -1836,6 +1887,7 @@
             this.Time_btn_10_6.TabIndex = 1115;
             this.Time_btn_10_6.Text = "10";
             this.Time_btn_10_6.UseVisualStyleBackColor = true;
+            this.Time_btn_10_6.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
             // Time_btn_5_6
             // 
@@ -1846,6 +1898,7 @@
             this.Time_btn_5_6.TabIndex = 1114;
             this.Time_btn_5_6.Text = "5";
             this.Time_btn_5_6.UseVisualStyleBackColor = true;
+            this.Time_btn_5_6.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
             // Time_btn_3_6
             // 
@@ -1857,6 +1910,7 @@
             this.Time_btn_3_6.TabIndex = 1113;
             this.Time_btn_3_6.Text = "3";
             this.Time_btn_3_6.UseVisualStyleBackColor = true;
+            this.Time_btn_3_6.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
             // Time_btn_1_6
             // 
@@ -1869,6 +1923,7 @@
             this.Time_btn_1_6.TabIndex = 1112;
             this.Time_btn_1_6.Text = "1";
             this.Time_btn_1_6.UseVisualStyleBackColor = false;
+            this.Time_btn_1_6.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
             // Tick_btn_6
             // 
@@ -1878,6 +1933,7 @@
             this.Tick_btn_6.TabIndex = 1111;
             this.Tick_btn_6.Text = "틱";
             this.Tick_btn_6.UseVisualStyleBackColor = true;
+            this.Tick_btn_6.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
             // Min_btn_6
             // 
@@ -1887,6 +1943,7 @@
             this.Min_btn_6.TabIndex = 1110;
             this.Min_btn_6.Text = "분";
             this.Min_btn_6.UseVisualStyleBackColor = true;
+            this.Min_btn_6.Click += new System.EventHandler(this.Min_btn_Click);
             // 
             // Day_btn_6
             // 
@@ -1900,6 +1957,7 @@
             this.Day_btn_6.TabStop = false;
             this.Day_btn_6.Text = "일";
             this.Day_btn_6.UseVisualStyleBackColor = false;
+            this.Day_btn_6.Click += new System.EventHandler(this.Day_btn_Click);
             // 
             // WMA_input_btn_6
             // 
@@ -1909,6 +1967,7 @@
             this.WMA_input_btn_6.TabIndex = 1108;
             this.WMA_input_btn_6.Text = "설정";
             this.WMA_input_btn_6.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_6.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
             // WMA_input_6
             // 
@@ -1918,32 +1977,32 @@
             this.WMA_input_6.TabIndex = 1106;
             this.WMA_input_6.Text = "10";
             // 
-            // dataGridView4
+            // FCGrid_6
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.AllowUserToResizeColumns = false;
-            this.dataGridView4.AllowUserToResizeRows = false;
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(600, 709);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView4.Size = new System.Drawing.Size(587, 275);
-            this.dataGridView4.TabIndex = 1125;
-            this.dataGridView4.TabStop = false;
+            this.FCGrid_6.AllowUserToAddRows = false;
+            this.FCGrid_6.AllowUserToDeleteRows = false;
+            this.FCGrid_6.AllowUserToResizeColumns = false;
+            this.FCGrid_6.AllowUserToResizeRows = false;
+            this.FCGrid_6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_6.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.FCGrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_6.Location = new System.Drawing.Point(600, 709);
+            this.FCGrid_6.Name = "FCGrid_6";
+            this.FCGrid_6.ReadOnly = true;
+            this.FCGrid_6.RowHeadersVisible = false;
+            this.FCGrid_6.RowTemplate.Height = 23;
+            this.FCGrid_6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_6.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_6.TabIndex = 1125;
+            this.FCGrid_6.TabStop = false;
             // 
             // FCode_6
             // 
@@ -1953,6 +2012,7 @@
             this.FCode_6.Size = new System.Drawing.Size(76, 22);
             this.FCode_6.TabIndex = 1101;
             this.FCode_6.Text = "101Q3";
+            this.FCode_6.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label28
             // 
@@ -2055,6 +2115,8 @@
             this.Time_ComboBox_5.Size = new System.Drawing.Size(39, 21);
             this.Time_ComboBox_5.TabIndex = 1095;
             this.Time_ComboBox_5.Text = "1";
+            this.Time_ComboBox_5.SelectedIndexChanged += new System.EventHandler(this.Time_ComboBox_SelectedIndexChanged);
+            this.Time_ComboBox_5.TextChanged += new System.EventHandler(this.Time_ComboBox_TextChanged);
             // 
             // Time_btn_60_5
             // 
@@ -2065,6 +2127,7 @@
             this.Time_btn_60_5.TabIndex = 1094;
             this.Time_btn_60_5.Text = "60";
             this.Time_btn_60_5.UseVisualStyleBackColor = true;
+            this.Time_btn_60_5.Click += new System.EventHandler(this.Time_btn_60_Click);
             // 
             // Time_btn_45_5
             // 
@@ -2075,6 +2138,7 @@
             this.Time_btn_45_5.TabIndex = 1093;
             this.Time_btn_45_5.Text = "45";
             this.Time_btn_45_5.UseVisualStyleBackColor = true;
+            this.Time_btn_45_5.Click += new System.EventHandler(this.Time_btn_45_Click);
             // 
             // Time_btn_30_5
             // 
@@ -2087,6 +2151,7 @@
             this.Time_btn_30_5.TabIndex = 1092;
             this.Time_btn_30_5.Text = "30";
             this.Time_btn_30_5.UseVisualStyleBackColor = false;
+            this.Time_btn_30_5.Click += new System.EventHandler(this.Time_btn_30_Click);
             // 
             // Time_btn_15_5
             // 
@@ -2097,6 +2162,7 @@
             this.Time_btn_15_5.TabIndex = 1091;
             this.Time_btn_15_5.Text = "15";
             this.Time_btn_15_5.UseVisualStyleBackColor = true;
+            this.Time_btn_15_5.Click += new System.EventHandler(this.Time_btn_15_Click);
             // 
             // Time_btn_10_5
             // 
@@ -2107,6 +2173,7 @@
             this.Time_btn_10_5.TabIndex = 1090;
             this.Time_btn_10_5.Text = "10";
             this.Time_btn_10_5.UseVisualStyleBackColor = true;
+            this.Time_btn_10_5.Click += new System.EventHandler(this.Time_btn_10_Click);
             // 
             // Time_btn_5_5
             // 
@@ -2117,6 +2184,7 @@
             this.Time_btn_5_5.TabIndex = 1089;
             this.Time_btn_5_5.Text = "5";
             this.Time_btn_5_5.UseVisualStyleBackColor = true;
+            this.Time_btn_5_5.Click += new System.EventHandler(this.Time_btn_5_Click);
             // 
             // Time_btn_3_5
             // 
@@ -2128,6 +2196,7 @@
             this.Time_btn_3_5.TabIndex = 1088;
             this.Time_btn_3_5.Text = "3";
             this.Time_btn_3_5.UseVisualStyleBackColor = true;
+            this.Time_btn_3_5.Click += new System.EventHandler(this.Time_btn_3_Click);
             // 
             // Time_btn_1_5
             // 
@@ -2140,6 +2209,7 @@
             this.Time_btn_1_5.TabIndex = 1087;
             this.Time_btn_1_5.Text = "1";
             this.Time_btn_1_5.UseVisualStyleBackColor = false;
+            this.Time_btn_1_5.Click += new System.EventHandler(this.Time_btn_1_Click);
             // 
             // Tick_btn_5
             // 
@@ -2149,6 +2219,7 @@
             this.Tick_btn_5.TabIndex = 1086;
             this.Tick_btn_5.Text = "틱";
             this.Tick_btn_5.UseVisualStyleBackColor = true;
+            this.Tick_btn_5.Click += new System.EventHandler(this.Tick_btn_Click);
             // 
             // Min_btn_5
             // 
@@ -2158,6 +2229,7 @@
             this.Min_btn_5.TabIndex = 1085;
             this.Min_btn_5.Text = "분";
             this.Min_btn_5.UseVisualStyleBackColor = true;
+            this.Min_btn_5.Click += new System.EventHandler(this.Min_btn_Click);
             // 
             // Day_btn_5
             // 
@@ -2171,6 +2243,7 @@
             this.Day_btn_5.TabStop = false;
             this.Day_btn_5.Text = "일";
             this.Day_btn_5.UseVisualStyleBackColor = false;
+            this.Day_btn_5.Click += new System.EventHandler(this.Day_btn_Click);
             // 
             // WMA_input_btn_5
             // 
@@ -2180,6 +2253,7 @@
             this.WMA_input_btn_5.TabIndex = 1083;
             this.WMA_input_btn_5.Text = "설정";
             this.WMA_input_btn_5.UseVisualStyleBackColor = true;
+            this.WMA_input_btn_5.Click += new System.EventHandler(this.WMA_input_btn_Click);
             // 
             // WMA_input_5
             // 
@@ -2189,32 +2263,32 @@
             this.WMA_input_5.TabIndex = 1081;
             this.WMA_input_5.Text = "10";
             // 
-            // dataGridView5
+            // FCGrid_5
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.AllowUserToResizeColumns = false;
-            this.dataGridView5.AllowUserToResizeRows = false;
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            this.dataGridView5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(600, 384);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.RowHeadersVisible = false;
-            this.dataGridView5.RowTemplate.Height = 23;
-            this.dataGridView5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView5.Size = new System.Drawing.Size(587, 275);
-            this.dataGridView5.TabIndex = 1100;
-            this.dataGridView5.TabStop = false;
+            this.FCGrid_5.AllowUserToAddRows = false;
+            this.FCGrid_5.AllowUserToDeleteRows = false;
+            this.FCGrid_5.AllowUserToResizeColumns = false;
+            this.FCGrid_5.AllowUserToResizeRows = false;
+            this.FCGrid_5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.FCGrid_5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.FCGrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.FCGrid_5.Location = new System.Drawing.Point(600, 384);
+            this.FCGrid_5.Name = "FCGrid_5";
+            this.FCGrid_5.ReadOnly = true;
+            this.FCGrid_5.RowHeadersVisible = false;
+            this.FCGrid_5.RowTemplate.Height = 23;
+            this.FCGrid_5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.FCGrid_5.Size = new System.Drawing.Size(587, 275);
+            this.FCGrid_5.TabIndex = 1100;
+            this.FCGrid_5.TabStop = false;
             // 
             // FCode_5
             // 
@@ -2224,36 +2298,62 @@
             this.FCode_5.Size = new System.Drawing.Size(76, 22);
             this.FCode_5.TabIndex = 1076;
             this.FCode_5.Text = "101Q3";
+            this.FCode_5.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1618, 989);
+            this.Controls.Add(this.FCGrid_4);
+            this.Controls.Add(this.FCode_4);
+            this.Controls.Add(this.WMA_input_4);
+            this.Controls.Add(this.WMA_input_btn_4);
+            this.Controls.Add(this.Day_btn_4);
+            this.Controls.Add(this.Min_btn_4);
+            this.Controls.Add(this.Tick_btn_4);
+            this.Controls.Add(this.Time_btn_1_4);
             this.Controls.Add(this.label24);
+            this.Controls.Add(this.Time_btn_3_4);
             this.Controls.Add(this.label25);
+            this.Controls.Add(this.Time_btn_5_4);
             this.Controls.Add(this.label26);
+            this.Controls.Add(this.Time_btn_10_4);
             this.Controls.Add(this.Angle_input_6);
+            this.Controls.Add(this.Time_btn_15_4);
             this.Controls.Add(this.intervalWma_6);
+            this.Controls.Add(this.Time_btn_30_4);
             this.Controls.Add(this.endWma_6);
+            this.Controls.Add(this.Time_btn_45_4);
             this.Controls.Add(this.startWma_6);
+            this.Controls.Add(this.Time_btn_60_4);
             this.Controls.Add(this.Distance_input_6);
+            this.Controls.Add(this.Time_ComboBox_4);
             this.Controls.Add(this.label27);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.Time_ComboBox_6);
+            this.Controls.Add(this.Distance_input_4);
             this.Controls.Add(this.Time_btn_60_6);
+            this.Controls.Add(this.startWma_4);
             this.Controls.Add(this.Time_btn_45_6);
+            this.Controls.Add(this.endWma_4);
             this.Controls.Add(this.Time_btn_30_6);
+            this.Controls.Add(this.intervalWma_4);
             this.Controls.Add(this.Time_btn_15_6);
+            this.Controls.Add(this.Angle_input_4);
             this.Controls.Add(this.Time_btn_10_6);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.Time_btn_5_6);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.Time_btn_3_6);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.Time_btn_1_6);
             this.Controls.Add(this.Tick_btn_6);
             this.Controls.Add(this.Min_btn_6);
             this.Controls.Add(this.Day_btn_6);
             this.Controls.Add(this.WMA_input_btn_6);
             this.Controls.Add(this.WMA_input_6);
-            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.FCGrid_6);
             this.Controls.Add(this.FCode_6);
             this.Controls.Add(this.label28);
             this.Controls.Add(this.label29);
@@ -2278,7 +2378,7 @@
             this.Controls.Add(this.Day_btn_5);
             this.Controls.Add(this.WMA_input_btn_5);
             this.Controls.Add(this.WMA_input_5);
-            this.Controls.Add(this.dataGridView5);
+            this.Controls.Add(this.FCGrid_5);
             this.Controls.Add(this.FCode_5);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.label21);
@@ -2303,7 +2403,7 @@
             this.Controls.Add(this.Day_btn_3);
             this.Controls.Add(this.WMA_input_btn_3);
             this.Controls.Add(this.WMA_input_3);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.FCGrid_3);
             this.Controls.Add(this.FCode_3);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label17);
@@ -2325,36 +2425,11 @@
             this.Controls.Add(this.Time_btn_1_2);
             this.Controls.Add(this.Tick_btn_2);
             this.Controls.Add(this.Min_btn_2);
-            this.Controls.Add(this.button29);
+            this.Controls.Add(this.Day_btn_2);
             this.Controls.Add(this.WMA_input_btn_2);
             this.Controls.Add(this.WMA_input_2);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.FCGrid_2);
             this.Controls.Add(this.FCode_2);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.Angle_input_4);
-            this.Controls.Add(this.intervalWma_4);
-            this.Controls.Add(this.endWma_4);
-            this.Controls.Add(this.startWma_4);
-            this.Controls.Add(this.Distance_input_4);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.Time_ComboBox_4);
-            this.Controls.Add(this.Time_btn_60_4);
-            this.Controls.Add(this.Time_btn_45_4);
-            this.Controls.Add(this.Time_btn_30_4);
-            this.Controls.Add(this.Time_btn_15_4);
-            this.Controls.Add(this.Time_btn_10_4);
-            this.Controls.Add(this.Time_btn_5_4);
-            this.Controls.Add(this.Time_btn_3_4);
-            this.Controls.Add(this.Time_btn_1_4);
-            this.Controls.Add(this.Tick_btn_4);
-            this.Controls.Add(this.Min_btn_4);
-            this.Controls.Add(this.Day_btn_4);
-            this.Controls.Add(this.WMA_input_btn_4);
-            this.Controls.Add(this.WMA_input_4);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.FCode_4);
             this.Controls.Add(this.axGiExpertControl1);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
@@ -2406,17 +2481,17 @@
             this.Controls.Add(this.WMA_input_btn_1);
             this.Controls.Add(this.WMA_input_1);
             this.Controls.Add(this.Comm_Obj_DATA_Real);
-            this.Controls.Add(this.FCGrid);
+            this.Controls.Add(this.FCGrid_1);
             this.Controls.Add(this.FCode_1);
-            this.Controls.Add(this.Comm_Obj_DATA);
+            this.Controls.Add(this.Comm_Obj_DATA_1);
             this.Font = new System.Drawing.Font("맑은 고딕", 8F);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SHINHAN_HTS_HELPER";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.FCGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).EndInit();
@@ -2425,11 +2500,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2439,13 +2514,13 @@
 
 
 
-        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_1;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_Real;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Account;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Price;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl2;
         private System.Windows.Forms.TextBox FCode_1;
-        private System.Windows.Forms.DataGridView FCGrid;
+        private System.Windows.Forms.DataGridView FCGrid_1;
         private System.Windows.Forms.TextBox WMA_input_1;
         private System.Windows.Forms.Button WMA_input_btn_1;
         private System.Windows.Forms.Button Day_btn_1;
@@ -2524,7 +2599,7 @@
         private System.Windows.Forms.Button Day_btn_4;
         private System.Windows.Forms.Button WMA_input_btn_4;
         private System.Windows.Forms.TextBox WMA_input_4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView FCGrid_4;
         private System.Windows.Forms.TextBox FCode_4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -2546,10 +2621,10 @@
         private System.Windows.Forms.Button Time_btn_1_2;
         private System.Windows.Forms.Button Tick_btn_2;
         private System.Windows.Forms.Button Min_btn_2;
-        private System.Windows.Forms.Button button29;
+        private System.Windows.Forms.Button Day_btn_2;
         private System.Windows.Forms.Button WMA_input_btn_2;
         private System.Windows.Forms.TextBox WMA_input_2;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView FCGrid_2;
         private System.Windows.Forms.TextBox FCode_2;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
@@ -2574,7 +2649,7 @@
         private System.Windows.Forms.Button Day_btn_3;
         private System.Windows.Forms.Button WMA_input_btn_3;
         private System.Windows.Forms.TextBox WMA_input_3;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView FCGrid_3;
         private System.Windows.Forms.TextBox FCode_3;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
@@ -2599,7 +2674,7 @@
         private System.Windows.Forms.Button Day_btn_6;
         private System.Windows.Forms.Button WMA_input_btn_6;
         private System.Windows.Forms.TextBox WMA_input_6;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView FCGrid_6;
         private System.Windows.Forms.TextBox FCode_6;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
@@ -2624,7 +2699,7 @@
         private System.Windows.Forms.Button Day_btn_5;
         private System.Windows.Forms.Button WMA_input_btn_5;
         private System.Windows.Forms.TextBox WMA_input_5;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView FCGrid_5;
         private System.Windows.Forms.TextBox FCode_5;
     }
 }
