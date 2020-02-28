@@ -58,33 +58,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.Distance_input_1 = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.Buy_btn = new System.Windows.Forms.Button();
-            this.Sell_btn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Stock_Count = new System.Windows.Forms.NumericUpDown();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.FCode_comboBox = new System.Windows.Forms.ComboBox();
-            this.Account_Num2 = new System.Windows.Forms.ComboBox();
+            this.Account_Num_1 = new System.Windows.Forms.ComboBox();
             this.Price_GridView = new System.Windows.Forms.DataGridView();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price_Lookup_btn = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.Account_Name2 = new System.Windows.Forms.TextBox();
+            this.Acc_PW_1 = new System.Windows.Forms.TextBox();
+            this.Account_Name_1 = new System.Windows.Forms.TextBox();
             this.Lookup_btn = new System.Windows.Forms.Button();
-            this.AccountPW = new System.Windows.Forms.TextBox();
-            this.Account_Name = new System.Windows.Forms.TextBox();
-            this.Account_Num = new System.Windows.Forms.ComboBox();
+            this.Acc_PW_2 = new System.Windows.Forms.TextBox();
+            this.Account_Name_2 = new System.Windows.Forms.TextBox();
+            this.Account_Num_2 = new System.Windows.Forms.ComboBox();
             this.Account_GridView = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comm_Obj_Account = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
@@ -228,11 +216,19 @@
             this.endTime = new System.Windows.Forms.TextBox();
             this.MecroSet = new System.Windows.Forms.CheckBox();
             this.TimerSet = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Order_type = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Order_Price = new System.Windows.Forms.TextBox();
+            this.Order_Code = new System.Windows.Forms.TextBox();
+            this.Stock_Count = new System.Windows.Forms.NumericUpDown();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Sell_btn = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.Buy_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).BeginInit();
@@ -244,12 +240,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).BeginInit();
             this.SuspendLayout();
             // 
             // Comm_Obj_DATA_1
             // 
             this.Comm_Obj_DATA_1.Enabled = true;
-            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(11584, 7497);
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9400, 8049);
             this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
             this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
             this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
@@ -260,7 +258,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(10968, 6849);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8784, 7401);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -500,126 +498,18 @@
             this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.Refresh_Data);
             // 
-            // Buy_btn
+            // Account_Num_1
             // 
-            this.Buy_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buy_btn.Location = new System.Drawing.Point(1477, 110);
-            this.Buy_btn.Name = "Buy_btn";
-            this.Buy_btn.Size = new System.Drawing.Size(39, 23);
-            this.Buy_btn.TabIndex = 63;
-            this.Buy_btn.Text = "매수";
-            this.Buy_btn.UseVisualStyleBackColor = true;
-            this.Buy_btn.Click += new System.EventHandler(this.Buy_btn_Click);
-            // 
-            // Sell_btn
-            // 
-            this.Sell_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sell_btn.Location = new System.Drawing.Point(1437, 110);
-            this.Sell_btn.Name = "Sell_btn";
-            this.Sell_btn.Size = new System.Drawing.Size(39, 23);
-            this.Sell_btn.TabIndex = 62;
-            this.Sell_btn.Text = "매도";
-            this.Sell_btn.UseVisualStyleBackColor = true;
-            this.Sell_btn.Click += new System.EventHandler(this.Sell_btn_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1408, 115);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 13);
-            this.label5.TabIndex = 61;
-            this.label5.Text = "PT";
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(1341, 110);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(64, 22);
-            this.numericUpDown2.TabIndex = 60;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(1302, 115);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
-            this.label4.TabIndex = 59;
-            this.label4.Text = "계약";
-            // 
-            // Stock_Count
-            // 
-            this.Stock_Count.Location = new System.Drawing.Point(1232, 110);
-            this.Stock_Count.Name = "Stock_Count";
-            this.Stock_Count.Size = new System.Drawing.Size(64, 22);
-            this.Stock_Count.TabIndex = 58;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(1454, 85);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(51, 22);
-            this.textBox5.TabIndex = 57;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1401, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 56;
-            this.label3.Text = "매수가능";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(1344, 85);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(51, 22);
-            this.textBox4.TabIndex = 55;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1311, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 54;
-            this.label2.Text = "단가";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1249, 85);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 22);
-            this.textBox1.TabIndex = 53;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1195, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 52;
-            this.label6.Text = "매도가능";
-            // 
-            // FCode_comboBox
-            // 
-            this.FCode_comboBox.Location = new System.Drawing.Point(1191, 11);
-            this.FCode_comboBox.Name = "FCode_comboBox";
-            this.FCode_comboBox.Size = new System.Drawing.Size(70, 21);
-            this.FCode_comboBox.TabIndex = 47;
-            // 
-            // Account_Num2
-            // 
-            this.Account_Num2.FormattingEnabled = true;
-            this.Account_Num2.Location = new System.Drawing.Point(1263, 11);
-            this.Account_Num2.Name = "Account_Num2";
-            this.Account_Num2.Size = new System.Drawing.Size(139, 21);
-            this.Account_Num2.TabIndex = 46;
-            this.Account_Num2.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange2);
+            this.Account_Num_1.FormattingEnabled = true;
+            this.Account_Num_1.Location = new System.Drawing.Point(1192, 9);
+            this.Account_Num_1.Name = "Account_Num_1";
+            this.Account_Num_1.Size = new System.Drawing.Size(139, 21);
+            this.Account_Num_1.TabIndex = 46;
+            this.Account_Num_1.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange2);
             // 
             // Price_GridView
             // 
+            this.Price_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 8F);
@@ -630,6 +520,7 @@
             this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column6,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -640,45 +531,53 @@
             this.Price_GridView.RowHeadersVisible = false;
             this.Price_GridView.RowHeadersWidth = 10;
             this.Price_GridView.RowTemplate.Height = 23;
-            this.Price_GridView.Size = new System.Drawing.Size(419, 45);
+            this.Price_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.Price_GridView.Size = new System.Drawing.Size(419, 183);
             this.Price_GridView.TabIndex = 43;
             this.Price_GridView.TabStop = false;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "코드";
+            this.Column6.Name = "Column6";
+            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Column6.Width = 54;
+            // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.HeaderText = "잔고";
             this.Column1.Name = "Column1";
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Column1.Width = 54;
             // 
             // Column2
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column2.HeaderText = "평균가(단)";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 82;
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column3.HeaderText = "평가손익";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 76;
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column4.HeaderText = "매매손익";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 76;
             // 
             // Column5
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column5.HeaderText = "평가금액";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 76;
             // 
             // Price_Lookup_btn
             // 
             this.Price_Lookup_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Price_Lookup_btn.Location = new System.Drawing.Point(1569, 10);
+            this.Price_Lookup_btn.Location = new System.Drawing.Point(1499, 7);
             this.Price_Lookup_btn.Name = "Price_Lookup_btn";
             this.Price_Lookup_btn.Size = new System.Drawing.Size(42, 23);
             this.Price_Lookup_btn.TabIndex = 37;
@@ -686,22 +585,22 @@
             this.Price_Lookup_btn.UseVisualStyleBackColor = true;
             this.Price_Lookup_btn.Click += new System.EventHandler(this.Price_Lookup_btn_Click);
             // 
-            // textBox3
+            // Acc_PW_1
             // 
-            this.textBox3.Location = new System.Drawing.Point(1526, 11);
-            this.textBox3.MaxLength = 4;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(41, 22);
-            this.textBox3.TabIndex = 36;
+            this.Acc_PW_1.Location = new System.Drawing.Point(1456, 8);
+            this.Acc_PW_1.MaxLength = 4;
+            this.Acc_PW_1.Name = "Acc_PW_1";
+            this.Acc_PW_1.PasswordChar = '*';
+            this.Acc_PW_1.Size = new System.Drawing.Size(41, 22);
+            this.Acc_PW_1.TabIndex = 36;
             // 
-            // Account_Name2
+            // Account_Name_1
             // 
-            this.Account_Name2.Enabled = false;
-            this.Account_Name2.Location = new System.Drawing.Point(1404, 11);
-            this.Account_Name2.Name = "Account_Name2";
-            this.Account_Name2.Size = new System.Drawing.Size(121, 22);
-            this.Account_Name2.TabIndex = 35;
+            this.Account_Name_1.Enabled = false;
+            this.Account_Name_1.Location = new System.Drawing.Point(1334, 8);
+            this.Account_Name_1.Name = "Account_Name_1";
+            this.Account_Name_1.Size = new System.Drawing.Size(121, 22);
+            this.Account_Name_1.TabIndex = 35;
             // 
             // Lookup_btn
             // 
@@ -714,32 +613,32 @@
             this.Lookup_btn.UseVisualStyleBackColor = true;
             this.Lookup_btn.Click += new System.EventHandler(this.Lookup_btn_Click);
             // 
-            // AccountPW
+            // Acc_PW_2
             // 
-            this.AccountPW.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.AccountPW.Location = new System.Drawing.Point(1456, 718);
-            this.AccountPW.MaxLength = 4;
-            this.AccountPW.Name = "AccountPW";
-            this.AccountPW.PasswordChar = '*';
-            this.AccountPW.Size = new System.Drawing.Size(48, 21);
-            this.AccountPW.TabIndex = 68;
+            this.Acc_PW_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Acc_PW_2.Location = new System.Drawing.Point(1456, 718);
+            this.Acc_PW_2.MaxLength = 4;
+            this.Acc_PW_2.Name = "Acc_PW_2";
+            this.Acc_PW_2.PasswordChar = '*';
+            this.Acc_PW_2.Size = new System.Drawing.Size(48, 21);
+            this.Acc_PW_2.TabIndex = 68;
             // 
-            // Account_Name
+            // Account_Name_2
             // 
-            this.Account_Name.Enabled = false;
-            this.Account_Name.Location = new System.Drawing.Point(1334, 717);
-            this.Account_Name.Name = "Account_Name";
-            this.Account_Name.Size = new System.Drawing.Size(121, 22);
-            this.Account_Name.TabIndex = 66;
+            this.Account_Name_2.Enabled = false;
+            this.Account_Name_2.Location = new System.Drawing.Point(1334, 717);
+            this.Account_Name_2.Name = "Account_Name_2";
+            this.Account_Name_2.Size = new System.Drawing.Size(121, 22);
+            this.Account_Name_2.TabIndex = 66;
             // 
-            // Account_Num
+            // Account_Num_2
             // 
-            this.Account_Num.FormattingEnabled = true;
-            this.Account_Num.Location = new System.Drawing.Point(1194, 718);
-            this.Account_Num.Name = "Account_Num";
-            this.Account_Num.Size = new System.Drawing.Size(138, 21);
-            this.Account_Num.TabIndex = 65;
-            this.Account_Num.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange);
+            this.Account_Num_2.FormattingEnabled = true;
+            this.Account_Num_2.Location = new System.Drawing.Point(1194, 718);
+            this.Account_Num_2.Name = "Account_Num_2";
+            this.Account_Num_2.Size = new System.Drawing.Size(138, 21);
+            this.Account_Num_2.TabIndex = 65;
+            this.Account_Num_2.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange);
             // 
             // Account_GridView
             // 
@@ -769,7 +668,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(9216, 3361);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(7032, 3913);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -781,7 +680,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(7683, 3450);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(5499, 4002);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -819,7 +718,7 @@
             // axGiExpertControl2
             // 
             this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(5607, 1759);
+            this.axGiExpertControl2.Location = new System.Drawing.Point(3423, 2311);
             this.axGiExpertControl2.Name = "axGiExpertControl2";
             this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
             this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
@@ -867,7 +766,7 @@
             // axGiExpertControl1
             // 
             this.axGiExpertControl1.Enabled = true;
-            this.axGiExpertControl1.Location = new System.Drawing.Point(4415, 1395);
+            this.axGiExpertControl1.Location = new System.Drawing.Point(2231, 1947);
             this.axGiExpertControl1.Name = "axGiExpertControl1";
             this.axGiExpertControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl1.OcxState")));
             this.axGiExpertControl1.Size = new System.Drawing.Size(136, 50);
@@ -2321,7 +2220,7 @@
             // MecroSet
             // 
             this.MecroSet.AutoSize = true;
-            this.MecroSet.Location = new System.Drawing.Point(1218, 245);
+            this.MecroSet.Location = new System.Drawing.Point(1197, 352);
             this.MecroSet.Name = "MecroSet";
             this.MecroSet.Size = new System.Drawing.Size(81, 17);
             this.MecroSet.TabIndex = 1128;
@@ -2331,7 +2230,7 @@
             // TimerSet
             // 
             this.TimerSet.AutoSize = true;
-            this.TimerSet.Location = new System.Drawing.Point(1218, 269);
+            this.TimerSet.Location = new System.Drawing.Point(1197, 376);
             this.TimerSet.Name = "TimerSet";
             this.TimerSet.Size = new System.Drawing.Size(81, 17);
             this.TimerSet.TabIndex = 1129;
@@ -2339,11 +2238,116 @@
             this.TimerSet.UseVisualStyleBackColor = true;
             this.TimerSet.CheckedChanged += new System.EventHandler(this.TimerSet_CheckedChanged);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox1.Controls.Add(this.Order_type);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.Order_Price);
+            this.groupBox1.Controls.Add(this.Order_Code);
+            this.groupBox1.Controls.Add(this.Stock_Count);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.Sell_btn);
+            this.groupBox1.Controls.Add(this.label32);
+            this.groupBox1.Controls.Add(this.Buy_btn);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(1197, 235);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(409, 99);
+            this.groupBox1.TabIndex = 1150;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "주문";
+            // 
+            // Order_type
+            // 
+            this.Order_type.FormattingEnabled = true;
+            this.Order_type.Items.AddRange(new object[] {
+            "시장가",
+            "지정가"});
+            this.Order_type.Location = new System.Drawing.Point(13, 24);
+            this.Order_type.Name = "Order_type";
+            this.Order_type.Size = new System.Drawing.Size(61, 21);
+            this.Order_type.TabIndex = 1147;
+            this.Order_type.Text = "시장가";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 63);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(29, 13);
+            this.label7.TabIndex = 54;
+            this.label7.Text = "단가";
+            // 
+            // Order_Price
+            // 
+            this.Order_Price.Location = new System.Drawing.Point(41, 58);
+            this.Order_Price.Name = "Order_Price";
+            this.Order_Price.Size = new System.Drawing.Size(94, 22);
+            this.Order_Price.TabIndex = 55;
+            // 
+            // Order_Code
+            // 
+            this.Order_Code.Location = new System.Drawing.Point(137, 23);
+            this.Order_Code.Name = "Order_Code";
+            this.Order_Code.Size = new System.Drawing.Size(72, 22);
+            this.Order_Code.TabIndex = 1146;
+            // 
+            // Stock_Count
+            // 
+            this.Stock_Count.Location = new System.Drawing.Point(177, 58);
+            this.Stock_Count.Name = "Stock_Count";
+            this.Stock_Count.Size = new System.Drawing.Size(64, 22);
+            this.Stock_Count.TabIndex = 58;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(80, 28);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(55, 13);
+            this.label8.TabIndex = 1145;
+            this.label8.Text = "종목 코드";
+            // 
+            // Sell_btn
+            // 
+            this.Sell_btn.BackColor = System.Drawing.Color.OrangeRed;
+            this.Sell_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Sell_btn.Location = new System.Drawing.Point(257, 58);
+            this.Sell_btn.Name = "Sell_btn";
+            this.Sell_btn.Size = new System.Drawing.Size(65, 23);
+            this.Sell_btn.TabIndex = 62;
+            this.Sell_btn.Text = "매도";
+            this.Sell_btn.UseVisualStyleBackColor = false;
+            this.Sell_btn.Click += new System.EventHandler(this.Sell_btn_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(145, 63);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(29, 13);
+            this.label32.TabIndex = 1144;
+            this.label32.Text = "수량";
+            // 
+            // Buy_btn
+            // 
+            this.Buy_btn.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Buy_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Buy_btn.Location = new System.Drawing.Point(327, 58);
+            this.Buy_btn.Name = "Buy_btn";
+            this.Buy_btn.Size = new System.Drawing.Size(65, 23);
+            this.Buy_btn.TabIndex = 63;
+            this.Buy_btn.Text = "매수";
+            this.Buy_btn.UseVisualStyleBackColor = false;
+            this.Buy_btn.Click += new System.EventHandler(this.Buy_btn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1618, 989);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TimerSet);
             this.Controls.Add(this.MecroSet);
             this.Controls.Add(this.endTime);
@@ -2486,27 +2490,14 @@
             this.Controls.Add(this.Comm_Obj_Account);
             this.Controls.Add(this.Account_GridView);
             this.Controls.Add(this.Lookup_btn);
-            this.Controls.Add(this.AccountPW);
-            this.Controls.Add(this.Account_Name);
-            this.Controls.Add(this.Account_Num);
-            this.Controls.Add(this.Buy_btn);
-            this.Controls.Add(this.Sell_btn);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.Stock_Count);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.FCode_comboBox);
-            this.Controls.Add(this.Account_Num2);
+            this.Controls.Add(this.Acc_PW_2);
+            this.Controls.Add(this.Account_Name_2);
+            this.Controls.Add(this.Account_Num_2);
+            this.Controls.Add(this.Account_Num_1);
             this.Controls.Add(this.Price_GridView);
             this.Controls.Add(this.Price_Lookup_btn);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.Account_Name2);
+            this.Controls.Add(this.Acc_PW_1);
+            this.Controls.Add(this.Account_Name_1);
             this.Controls.Add(this.Distance_input_1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Time_ComboBox_1);
@@ -2535,8 +2526,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).EndInit();
@@ -2548,6 +2537,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2581,33 +2573,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox Distance_input_1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button Buy_btn;
-        private System.Windows.Forms.Button Sell_btn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown Stock_Count;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox FCode_comboBox;
-        private System.Windows.Forms.ComboBox Account_Num2;
+        private System.Windows.Forms.ComboBox Account_Num_1;
         private System.Windows.Forms.DataGridView Price_GridView;
         private System.Windows.Forms.Button Price_Lookup_btn;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox Account_Name2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.TextBox Acc_PW_1;
+        private System.Windows.Forms.TextBox Account_Name_1;
         private System.Windows.Forms.Button Lookup_btn;
-        private System.Windows.Forms.TextBox AccountPW;
-        private System.Windows.Forms.TextBox Account_Name;
-        private System.Windows.Forms.ComboBox Account_Num;
+        private System.Windows.Forms.TextBox Acc_PW_2;
+        private System.Windows.Forms.TextBox Account_Name_2;
+        private System.Windows.Forms.ComboBox Account_Num_2;
         private System.Windows.Forms.DataGridView Account_GridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.TextBox startWma_1;
@@ -2748,5 +2722,21 @@
         private System.Windows.Forms.TextBox endTime;
         private System.Windows.Forms.CheckBox MecroSet;
         private System.Windows.Forms.CheckBox TimerSet;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ComboBox Order_type;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox Order_Price;
+        private System.Windows.Forms.TextBox Order_Code;
+        private System.Windows.Forms.NumericUpDown Stock_Count;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button Sell_btn;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Button Buy_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
