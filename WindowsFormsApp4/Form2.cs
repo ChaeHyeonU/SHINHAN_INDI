@@ -68,14 +68,14 @@ namespace WindowsFormsApp4
             setGridView();
         }
 
-        public void Load_Data(string Fcode, string time, string distance, int control)
+        public void Load_Data(string Fcode, string time, string distance)
         {
 
-            control_num = control;
-            gFCode[control - 1] = Fcode;
-            
+            control_num = 1;
+            gFCode[0] = Fcode;
+
             Comm_Obj_DATA_1.SetQueryName("TR_FCHART");
-            Comm_Obj_DATA_1.SetSingleData(0, gFCode[control - 1]);
+            Comm_Obj_DATA_1.SetSingleData(0, gFCode[0]);
 
             switch (distance)
             {
@@ -100,7 +100,171 @@ namespace WindowsFormsApp4
             Comm_Obj_DATA_1.RequestData();
 
             Delay(100);
+        }
+        public void Load_Data_2(string Fcode, string time, string distance)
+        {
 
+            control_num = 2;
+            gFCode[1] = Fcode;
+
+            Comm_Obj_DATA_2.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_2.SetSingleData(0, gFCode[1]);
+
+            switch (distance)
+            {
+                case "Day":
+                    Comm_Obj_DATA_1.SetSingleData(1, "D");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
+                    break;
+                case "Min":
+                    Comm_Obj_DATA_1.SetSingleData(1, "1");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
+                    break;
+                case "Tick":
+                    Comm_Obj_DATA_1.SetSingleData(1, "T");
+                    Comm_Obj_DATA_1.SetSingleData(2, time);
+                    break;
+
+
+            }
+            Comm_Obj_DATA_2.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_2.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_2.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_2.RequestData();
+
+            Delay(100);
+        }
+        public void Load_Data_3(string Fcode, string time, string distance)
+        {
+
+            control_num = 3;
+            gFCode[2] = Fcode;
+
+            Comm_Obj_DATA_3.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_3.SetSingleData(0, gFCode[2]);
+
+            switch (distance)
+            {
+                case "Day":
+                    Comm_Obj_DATA_3.SetSingleData(1, "D");
+                    Comm_Obj_DATA_3.SetSingleData(2, time);
+                    break;
+                case "Min":
+                    Comm_Obj_DATA_3.SetSingleData(1, "1");
+                    Comm_Obj_DATA_3.SetSingleData(2, time);
+                    break;
+                case "Tick":
+                    Comm_Obj_DATA_3.SetSingleData(1, "T");
+                    Comm_Obj_DATA_3.SetSingleData(2, time);
+                    break;
+
+
+            }
+            Comm_Obj_DATA_3.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_3.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_3.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_3.RequestData();
+
+            Delay(100);
+        }
+        public void Load_Data_4(string Fcode, string time, string distance)
+        {
+
+            control_num = 4;
+            gFCode[3] = Fcode;
+
+            Comm_Obj_DATA_4.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_4.SetSingleData(0, gFCode[3]);
+
+            switch (distance)
+            {
+                case "Day":
+                    Comm_Obj_DATA_4.SetSingleData(1, "D");
+                    Comm_Obj_DATA_4.SetSingleData(2, time);
+                    break;
+                case "Min":
+                    Comm_Obj_DATA_4.SetSingleData(1, "1");
+                    Comm_Obj_DATA_4.SetSingleData(2, time);
+                    break;
+                case "Tick":
+                    Comm_Obj_DATA_4.SetSingleData(1, "T");
+                    Comm_Obj_DATA_4.SetSingleData(2, time);
+                    break;
+
+
+            }
+            Comm_Obj_DATA_4.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_4.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_4.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_4.RequestData();
+
+            Delay(100);
+        }
+        public void Load_Data_5(string Fcode, string time, string distance)
+        {
+
+            control_num = 5;
+            gFCode[4] = Fcode;
+
+            Comm_Obj_DATA_5.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_5.SetSingleData(0, gFCode[4]);
+
+            switch (distance)
+            {
+                case "Day":
+                    Comm_Obj_DATA_5.SetSingleData(1, "D");
+                    Comm_Obj_DATA_5.SetSingleData(2, time);
+                    break;
+                case "Min":
+                    Comm_Obj_DATA_5.SetSingleData(1, "1");
+                    Comm_Obj_DATA_5.SetSingleData(2, time);
+                    break;
+                case "Tick":
+                    Comm_Obj_DATA_5.SetSingleData(1, "T");
+                    Comm_Obj_DATA_5.SetSingleData(2, time);
+                    break;
+
+
+            }
+            Comm_Obj_DATA_5.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_5.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_5.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_5.RequestData();
+
+            Delay(100);
+        }
+        public void Load_Data_6(string Fcode, string time, string distance)
+        {
+
+            control_num = 6;
+            gFCode[5] = Fcode;
+
+            Comm_Obj_DATA_6.SetQueryName("TR_FCHART");
+            Comm_Obj_DATA_6.SetSingleData(0, gFCode[5]);
+
+            switch (distance)
+            {
+                case "Day":
+                    Comm_Obj_DATA_6.SetSingleData(1, "D");
+                    Comm_Obj_DATA_6.SetSingleData(2, time);
+                    break;
+                case "Min":
+                    Comm_Obj_DATA_6.SetSingleData(1, "1");
+                    Comm_Obj_DATA_6.SetSingleData(2, time);
+                    break;
+                case "Tick":
+                    Comm_Obj_DATA_6.SetSingleData(1, "T");
+                    Comm_Obj_DATA_6.SetSingleData(2, time);
+                    break;
+
+
+            }
+            Comm_Obj_DATA_6.SetSingleData(3, "00000000");
+            Comm_Obj_DATA_6.SetSingleData(4, "99999999");
+            Comm_Obj_DATA_6.SetSingleData(5, RowNum.ToString());
+            Comm_Obj_DATA_6.RequestData();
+
+            Delay(100);
         }
 
         private DataTable Proc_TR_FCHART()
@@ -167,25 +331,97 @@ namespace WindowsFormsApp4
             {
                 gFCode[control - 1] = fcode;
 
-                Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1], control);
+                if (control == 1)
+                {
+                    Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
+                else if (control == 2)
+                {
+                    Load_Data_2(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
+                else if (control == 3)
+                {
+                    Load_Data_3(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
+                else if (control == 4)
+                {
+                    Load_Data_4(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
+                else if (control == 5)
+                {
+                    Load_Data_5(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
+                else if (control == 6)
+                {
+                    Load_Data_6(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+                }
             }
         }
-
 
         private void Gi_FC_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
             Proc_FC();
         }
-        
+
         private void Gi_FC_ReceiveRTData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveRTDataEvent e)
         {
             Proc_FC();
         }
-        
+        private void Gi_FC_ReceiveData_2(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_FC_2();
+        }
+
+        private void Gi_FC_ReceiveData_3(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_FC_3();
+        }
+
+        private void Gi_FC_ReceiveData_4(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_FC_4();
+        }
+
+        private void Gi_FC_ReceiveData_5(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_FC_5();
+        }
+
+        private void Gi_FC_ReceiveData_6(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_FC_6();
+        }
+
         private void Proc_FC()
         {
-            FCGrid_sample[control_num-1].DataSource = Proc_TR_FCHART();
-            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[control_num-1]);
+            FCGrid_sample[0].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[0]);
+        }
+        private void Proc_FC_2()
+        {
+            FCGrid_sample[1].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[1]);
+        }
+        private void Proc_FC_3()
+        {
+            FCGrid_sample[2].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[2]);
+        }
+
+        private void Proc_FC_4()
+        {
+            FCGrid_sample[3].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[3]);
+        }
+        private void Proc_FC_5()
+        {
+            FCGrid_sample[4].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[4]);
+        }
+        private void Proc_FC_6()
+        {
+            FCGrid_sample[5].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[5]);
         }
 
         private void setGridView()
@@ -656,7 +892,30 @@ namespace WindowsFormsApp4
                     break;
             }
 
-            Load_Data(gFCode[control - 1], set_time, TimeDistance[control - 1], control);
+            if (control == 1)
+            {
+                Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 2)
+            {
+                Load_Data_2(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 3)
+            {
+                Load_Data_3(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 4)
+            {
+                Load_Data_4(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 5)
+            {
+                Load_Data_5(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 6)
+            {
+                Load_Data_6(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
 
         }
 
@@ -834,7 +1093,30 @@ namespace WindowsFormsApp4
                     break;
             }
 
-            Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1], control);
+            if (control == 1)
+            {
+                Load_Data(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 2)
+            {
+                Load_Data_2(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 3)
+            {
+                Load_Data_3(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 4)
+            {
+                Load_Data_4(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 5)
+            {
+                Load_Data_5(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
+            else if (control == 6)
+            {
+                Load_Data_6(gFCode[control - 1], TimeSelected[control - 1], TimeDistance[control - 1]);
+            }
         }
 
         private void Time_btn_1_Click(object sender, EventArgs e)
@@ -1254,10 +1536,13 @@ namespace WindowsFormsApp4
 
         private void Refresh_Data(object sender, EventArgs e)
         {
-            for(int i=0; i<6; i++)
-            {
-                Load_Data(gFCode[i], TimeSelected[i], TimeDistance[i], i+1);
-            }
+            Load_Data(gFCode[0], TimeSelected[0], TimeDistance[0]);
+            Load_Data_2(gFCode[1], TimeSelected[1], TimeDistance[1]);
+            Load_Data_3(gFCode[2], TimeSelected[2], TimeDistance[2]);
+            Load_Data_4(gFCode[3], TimeSelected[3], TimeDistance[3]);
+            Load_Data_5(gFCode[4], TimeSelected[4], TimeDistance[4]);
+            Load_Data_6(gFCode[5], TimeSelected[5], TimeDistance[5]);
+
             Delay(100);
             for(int j=1; j<7; j++)
             {
@@ -1510,6 +1795,8 @@ namespace WindowsFormsApp4
             else
                 timer1.Stop();
         }
+
+        
     }
 
 
