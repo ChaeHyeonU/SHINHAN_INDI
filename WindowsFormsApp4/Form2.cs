@@ -14,11 +14,12 @@ namespace WindowsFormsApp4
     public partial class Form2 : Form
     {
         private int RowNum = 200;
-        private string[] gFCode = new string[6] { "101Q3", "22222", "101Q3", "101Q3", "101Q3", "101Q3" };
+        private string[] gFCode = new string[6] { "101Q3", "101Q3", "101Q3", "101Q3", "101Q3", "101Q3" };
         private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
         private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
         private int[] control_buy_sell = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] control_Enable_Angle = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] control_Mecro = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int control_num = 0;
         
         DataGridView[] FCGrid_sample;
@@ -59,7 +60,6 @@ namespace WindowsFormsApp4
                 TimeDistance_Changed(TimeDistance[i], i + 1);
                 //Load_Data(gFCode[i], TimeSelected[i], TimeDistance[i], i + 1);
             }
-            
 
             //Login();
 
@@ -187,10 +187,8 @@ namespace WindowsFormsApp4
         
         private void Proc_FC()
         {
-
-            FCGrid_sample[control_num - 1].DataSource = Proc_TR_FCHART();
-            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[control_num - 1]);
-
+            FCGrid_sample[control_num-1].DataSource = Proc_TR_FCHART();
+            Comm_Obj_DATA_Real.RequestRTReg("TR_FCHART", gFCode[control_num-1]);
         }
 
         private void setGridView()
@@ -203,78 +201,6 @@ namespace WindowsFormsApp4
             FCGrid_6 = FCGrid_sample[5];
         }
 
-        /*
-        private void WMA_input_btn_Click(object sender, EventArgs e)
-        {
-
-            Button btn = sender as Button;
-            if (!string.IsNullOrEmpty(startWma_1.Text) && !string.IsNullOrEmpty(endWma_1.Text) && !string.IsNullOrEmpty(intervalWma_1.Text))
-            {
-                Get_GridData();
-                MessageBox.Show(btn.Name + "번");
-            }
-
-            else
-                MessageBox.Show("입력값 오류");
-        }
-
-        private void Get_GridData()
-        {
-            int num = 1;
-            var startWma = this.Controls.Find("startWma_"+ num.ToString(), true).FirstOrDefault();
-
-            
-            if (string.IsNullOrEmpty(startWma.Text) || string.IsNullOrEmpty(endWma_1.Text) || string.IsNullOrEmpty(intervalWma_1.Text))
-            {
-                MessageBox.Show("입력값 오류");
-            }
-            else if (string.IsNullOrEmpty(WMA_input_1.Text))
-            {
-                MessageBox.Show("WMA 간격설정 오류");
-            }
-            else if (string.IsNullOrEmpty(Angle_input_1.Text))
-            {
-                MessageBox.Show("기울기 설정 오류");
-            }
-            else if (string.IsNullOrEmpty(Distance_input_1.Text))
-            {
-                MessageBox.Show("기울기 간격설정 오류");
-            }
-            else
-            {
-                int day = Convert.ToInt32(WMA_input_1.Text);
-                int[] index = getWMA_Index(Convert.ToInt32(startWma.Text), Convert.ToInt32(endWma_1.Text), Convert.ToInt32(intervalWma_1.Text));
-                int index_length = index.Length;
-                double[] aaa = new double[index_length];
-
-                for (int i = 0; i < RowNum; i++)
-                {
-                    FCGrid_1.Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(), day, 0)[i];
-                    FCGrid_1.Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(), day, 0))[i];
-                    FCGrid_1.Rows[i].Cells[9].Value = "";
-                    FCGrid_1.Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
-                    FCGrid_1.Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
-                }
-
-                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
-                {
-                    for (int i = 0; i < index_length; i++)
-                    {
-                        aaa[i] = Prov_WMA(Get_EndPrice(), index[i], 0)[j];
-                    }
-                    Mecro(aaa, j);
-                }
-                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
-                {
-                    for (int i = 0; i < index_length; i++)
-                    {
-                        aaa[i] = Prov_WMA(Get_EndPrice(), index[i], 0)[j];
-                    }
-                    set_Condition(aaa, j);
-                }
-            }
-        }
-        */
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
@@ -323,58 +249,101 @@ namespace WindowsFormsApp4
             var tmpText_angle = this.Controls.Find(Angle_name, true).FirstOrDefault();
             var tmpText_distance = this.Controls.Find(Distance_name, true).FirstOrDefault();
 
-            if (string.IsNullOrEmpty(tmpText_start.Text) || string.IsNullOrEmpty(tmpText_end.Text) || string.IsNullOrEmpty(tmpText_interval.Text))
+            if (true)
             {
-                MessageBox.Show("입력값 오류");
+                if (string.IsNullOrEmpty(tmpText_start.Text) || string.IsNullOrEmpty(tmpText_end.Text) || string.IsNullOrEmpty(tmpText_interval.Text))
+                {
+                    MessageBox.Show("입력값 오류");
+                }
+                else if (string.IsNullOrEmpty(tmpText_wma.Text))
+                {
+                    MessageBox.Show("WMA 간격설정 오류");
+                }
+                else if (string.IsNullOrEmpty(tmpText_angle.Text))
+                {
+                    MessageBox.Show("기울기 설정 오류");
+                }
+                else if (string.IsNullOrEmpty(tmpText_distance.Text))
+                {
+                    MessageBox.Show("기울기 간격설정 오류");
+                }
+                else
+                {
+                    int day = Convert.ToInt32(tmpText_wma.Text);
+                    int[] index = getWMA_Index(Convert.ToInt32(tmpText_start.Text), Convert.ToInt32(tmpText_end.Text), Convert.ToInt32(tmpText_interval.Text));
+                    int index_length = index.Length;
+                    double[] aaa = new double[index_length];
+
+                    for (int i = 0; i < RowNum; i++)
+                    {
+                        FCGrid_sample[control - 1].Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(control), day, 0)[i];
+                        FCGrid_sample[control - 1].Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(control), day, 0), control)[i];
+                        FCGrid_sample[control - 1].Rows[i].Cells[9].Value = "";
+                        FCGrid_sample[control - 1].Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
+                        FCGrid_sample[control - 1].Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
+                    }
+
+                    control_buy_sell[control - 1] = 0;
+                    control_Enable_Angle[control - 1] = 0;
+
+                    for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                    {
+                        for (int i = 0; i < index_length; i++)
+                        {
+                            aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                        }
+                        Mecro(aaa, j, control);
+                    }
+                    for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                    {
+                        for (int i = 0; i < index_length; i++)
+                        {
+                            aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                        }
+                        set_Condition(aaa, j, control);
+                    }
+                }
+                if(MecroSet.Checked)
+                    Mecro_Deal(control);
+                //setGridView();
             }
-            else if (string.IsNullOrEmpty(tmpText_wma.Text))
+            /*else
             {
-                MessageBox.Show("WMA 간격설정 오류");
-            }
-            else if (string.IsNullOrEmpty(tmpText_angle.Text))
+                MessageBox.Show("시간이 아닙니다");
+            }*/
+        }
+
+        private bool setTimeDeal() //startTime endTime
+        {
+            if(startTime.Text.Length !=4 || endTime.Text.Length != 4)
             {
-                MessageBox.Show("기울기 설정 오류");
-            }
-            else if (string.IsNullOrEmpty(tmpText_distance.Text))
-            {
-                MessageBox.Show("기울기 간격설정 오류");
+                MessageBox.Show("시간입력 다시 4자리로 입력");
+                return false;
             }
             else
             {
-                int day = Convert.ToInt32(tmpText_wma.Text);
-                int[] index = getWMA_Index(Convert.ToInt32(tmpText_start.Text), Convert.ToInt32(tmpText_end.Text), Convert.ToInt32(tmpText_interval.Text));
-                int index_length = index.Length;
-                double[] aaa = new double[index_length];
-
-                for (int i = 0; i < RowNum; i++)
+                int start = Convert.ToInt32(startTime.Text);
+                int end = Convert.ToInt32(endTime.Text);
+                int nowTime = Convert.ToInt32(DateTime.Now.ToString("HHmm"));
+                if (start == 0000 && end == 0000)
                 {
-                    FCGrid_sample[control - 1].Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(control), day, 0)[i];
-                    FCGrid_sample[control - 1].Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(control), day, 0), control)[i];
-                    FCGrid_sample[control - 1].Rows[i].Cells[9].Value = "";
-                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
-                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
+                    return true;
                 }
-
-                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                else if (start <0900 || end > 1545)
                 {
-                    for (int i = 0; i < index_length; i++)
-                    {
-                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
-                    }
-                    Mecro(aaa, j, control);
+                    MessageBox.Show("장마감시간");
+                    return false;
                 }
-                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
+                else
                 {
-                    for (int i = 0; i < index_length; i++)
-                    {
-                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
-                    }
-                    set_Condition(aaa, j, control);
-                }
+                    int gapTime1 = start - nowTime; //음수이어야함
+                    int gapTime2 = end - nowTime; //양수이어야함
 
-                
+                    if (gapTime1 < 0 && gapTime2 > 0)
+                        return true;
+                    return false;
+                }
             }
-            setGridView();
         }
 
 
@@ -417,7 +386,6 @@ namespace WindowsFormsApp4
             {
                 EndPrice[i] = Convert.ToDouble(FCGrid_sample[control - 1].Rows[i].Cells[5].Value);
             }
-
             return EndPrice;
         }
 
@@ -501,6 +469,7 @@ namespace WindowsFormsApp4
 
             //control_buy_sell // 0: 일반 1:역배 2: 정배 3:역배인데 기울기 x 4: 정배인데 기울기 x
             //control_Enable_Angle // 0:아무것도 없는 상태 1:매도 2:매수
+            
 
             if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] != 1 && control_Enable_Angle[control - 1] != 2) //역배 && 전 상태 != 역배 && !매수
             {
@@ -511,6 +480,7 @@ namespace WindowsFormsApp4
                     FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell[control - 1] = 1;
                     control_Enable_Angle[control - 1] = 1;
+                    //getDeal("01","01");
                 }
                 else
                 {
@@ -524,6 +494,7 @@ namespace WindowsFormsApp4
                  FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
                  control_buy_sell[control - 1] = 1;
                  control_Enable_Angle[control - 1] = 0;
+                 //getDeal("01", "01");
             }
             else if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] == 1)
             {
@@ -538,6 +509,7 @@ namespace WindowsFormsApp4
                     FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
                     control_buy_sell[control - 1] = 2;
                     control_Enable_Angle[control - 1] = 2;
+                    //getDeal("01", "02");
                 }
                 else
                 {
@@ -551,6 +523,7 @@ namespace WindowsFormsApp4
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
                 control_buy_sell[control - 1] = 2;
                 control_Enable_Angle[control - 1] = 0;
+                //getDeal("01", "02");
             }
             else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] == 2)
             {
@@ -562,6 +535,46 @@ namespace WindowsFormsApp4
             }
         }
 
+        private void Mecro_Deal(int control)
+        {
+            //control_Mecro 0:매도 1:매수 2:매도(청산) 3:매수(청산)
+            if((string)FCGrid_sample[control - 1].Rows[0].Cells[9].Value == "매도")
+            {
+                if(control_Mecro[control-1] != 1)
+                {
+                    getDeal("01", "01");
+                    control_Mecro[control-1] = 1;
+                }
+            }
+            else if ((string)FCGrid_sample[control - 1].Rows[0].Cells[9].Value == "매수")
+            {
+                if (control_Mecro[control-1] != 2)
+                {
+                    getDeal("01", "01");
+                    control_Mecro[control-1] = 2;
+                }
+            }
+            else if ((string)FCGrid_sample[control - 1].Rows[0].Cells[9].Value == "매도(청산)")
+            {
+                if (control_Mecro[control-1] != 3)
+                {
+                    getDeal("01", "01");
+                    control_Mecro[control-1] = 3;
+                }
+            }
+            else if((string)FCGrid_sample[control - 1].Rows[0].Cells[9].Value == "매수(청산)")
+            {
+                if (control_Mecro[control-1] != 4)
+                {
+                    getDeal("01", "01");
+                    control_Mecro[control-1] = 4;
+                }
+            }
+            else
+            {
+                control_Mecro[control-1] = 0;
+            }
+        }
 
         public bool checkSameArray(double[] arr1, double[] arr2)
         {
@@ -1231,9 +1244,16 @@ namespace WindowsFormsApp4
 
         private void Refresh_Data(object sender, EventArgs e)
         {
-            Load_Data(gFCode[0], TimeSelected[0], TimeDistance[0] , 1);
+            for(int i=0; i<6; i++)
+            {
+                Load_Data(gFCode[i], TimeSelected[i], TimeDistance[i], i+1);
+            }
             Delay(100);
-            //Get_GridData();
+            for(int j=1; j<7; j++)
+            {
+                Get_GridData(j);
+            }
+            setGridView();
         }
 
         private static DateTime Delay(int MS)
@@ -1253,13 +1273,13 @@ namespace WindowsFormsApp4
 
 
 
-        private void getAccount()
+        private void getAccount() //오른쪽 아래 계좌 조회
         {
             axGiExpertControl1.SetQueryName("AccountList");
             axGiExpertControl1.RequestData();
         }
 
-        public void AccountInfo()
+        public void AccountInfo() //오른쪽 아래 계좌정보 조회
         {
             if (AccountPW.Text != "0000")
             {
@@ -1297,49 +1317,49 @@ namespace WindowsFormsApp4
             Account_GridView.Rows[4].HeaderCell.Value = "현금증거금";
             Account_GridView.Rows.Add();
             Account_GridView.Rows[5].HeaderCell.Value = "인출가능금액";
+
         }
 
-        private void Proc_SABA655Q1()
+        private void Proc_SABA655Q1() //오른쪽 아래 계좌 정보 조회
         {
-            Account_GridView.Rows[0].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(0));
-            Account_GridView.Rows[1].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(1));
-            Account_GridView.Rows[2].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(5));
-            Account_GridView.Rows[3].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(18));
-            Account_GridView.Rows[4].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(19));
-            Account_GridView.Rows[5].Cells[0].Value = Convert.ToInt32(Comm_Obj_Account.GetSingleData(20));
+            Account_GridView.Rows[0].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(0));
+            Account_GridView.Rows[1].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(1));
+            Account_GridView.Rows[2].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(5));
+            Account_GridView.Rows[3].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(18));
+            Account_GridView.Rows[4].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(19));
+            Account_GridView.Rows[5].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(20));
         }
 
         private void Comm_Obj_Account_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
-            Proc_SABA655Q1();
+            Proc_SABA655Q1(); //총자산계좌잔고조회
         }
         private void Comm_Obj_AccountList_ReceivedData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
-            Proc_AccountList();
+            Proc_AccountList(); //계좌 목록 조회
         }
 
         private void Lookup_btn_Click(object sender, EventArgs e)
         {
-            AccountInfo();
+            AccountInfo(); //오른쪽 아래 조회
         }
 
         private void getPrice()
         {
             Comm_Obj_Price.SetQueryName("SABC820Q1");
-            Comm_Obj_Price.SetSingleData(0, "20200213");
+            Comm_Obj_Price.SetSingleData(0, "20200228");
             Comm_Obj_Price.SetSingleData(1, Account_Num2.Text); //00311155910
             Comm_Obj_Price.SetSingleData(2, "0000");
             Comm_Obj_Price.RequestData();
         }
 
-        private void Proc_SABC820Q1()
+        private void Proc_SABC820Q1() //가지고 있는 주식 정보
         {
             Price_GridView.Rows[0].Cells[0].Value = (string)Comm_Obj_Price.GetMultiData(0, 3);
             Price_GridView.Rows[0].Cells[1].Value = (string)Comm_Obj_Price.GetMultiData(0, 4);
             Price_GridView.Rows[0].Cells[2].Value = (string)Comm_Obj_Price.GetMultiData(0, 6);
             Price_GridView.Rows[0].Cells[3].Value = (string)Comm_Obj_Price.GetMultiData(0, 11);
             Price_GridView.Rows[0].Cells[4].Value = (string)Comm_Obj_Price.GetMultiData(0, 12);
-            MessageBox.Show((string)Comm_Obj_Price.GetErrorMessage());
         }
 
         private void Comm_Obj_Price_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
@@ -1361,11 +1381,12 @@ namespace WindowsFormsApp4
         {
             string aa = (string)axGiExpertControl2.GetSingleData(0); //0.주문번호
             string bb = (string)axGiExpertControl2.GetSingleData(1); //1.ORC주문번호
-
-            MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
-            MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
-            MessageBox.Show(aa);
-            MessageBox.Show(bb);
+            AutoClosingMessageBox(aa, "", 100);
+            AutoClosingMessageBox(bb, "", 100);
+            //MessageBox.Show(aa);
+            //MessageBox.Show(bb);
+            //MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
+            //MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
         }
         private void getDeal(string count, string control)
         {
@@ -1422,6 +1443,14 @@ namespace WindowsFormsApp4
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TimerSet_CheckedChanged(object sender, EventArgs e)
+        {
+            if (TimerSet.Checked)
+                timer1.Start();
+            else
+                timer1.Stop();
         }
     }
 
