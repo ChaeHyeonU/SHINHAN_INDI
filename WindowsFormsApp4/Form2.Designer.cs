@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA_1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.FCode_1 = new System.Windows.Forms.TextBox();
@@ -60,19 +60,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.Account_Num_1 = new System.Windows.Forms.ComboBox();
             this.Price_GridView = new System.Windows.Forms.DataGridView();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price_Lookup_btn = new System.Windows.Forms.Button();
             this.Acc_PW_1 = new System.Windows.Forms.TextBox();
             this.Account_Name_1 = new System.Windows.Forms.TextBox();
             this.Lookup_btn = new System.Windows.Forms.Button();
-            this.Acc_PW_2 = new System.Windows.Forms.TextBox();
-            this.Account_Name_2 = new System.Windows.Forms.TextBox();
-            this.Account_Num_2 = new System.Windows.Forms.ComboBox();
             this.Account_GridView = new System.Windows.Forms.DataGridView();
             this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Comm_Obj_Account = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
@@ -80,12 +71,12 @@
             this.startWma_1 = new System.Windows.Forms.TextBox();
             this.endWma_1 = new System.Windows.Forms.TextBox();
             this.intervalWma_1 = new System.Windows.Forms.TextBox();
-            this.axGiExpertControl2 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.Comm_Obj_Deal = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Angle_input_1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.axGiExpertControl1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.Comm_Obj_Accountinfo = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.directoryEntry1 = new System.DirectoryServices.DirectoryEntry();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -232,22 +223,13 @@
             this.Comm_Obj_DATA_5 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_6 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.TimerText = new System.Windows.Forms.TextBox();
-            this.EnableTimeSet = new System.Windows.Forms.CheckBox();
-            this.TimerSetButton = new System.Windows.Forms.Button();
-            this.EnableTimeSetButton = new System.Windows.Forms.Button();
-            this.TimerStopButton = new System.Windows.Forms.Button();
-            this.EnableTimeStopButton = new System.Windows.Forms.Button();
             this.SetDelay = new System.Windows.Forms.CheckBox();
             this.SetDelayText_1 = new System.Windows.Forms.TextBox();
-            this.SetDelayButton = new System.Windows.Forms.Button();
-            this.StopDelayButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.MecroSet_2 = new System.Windows.Forms.CheckBox();
             this.MecroSet_3 = new System.Windows.Forms.CheckBox();
             this.MecroSet_6 = new System.Windows.Forms.CheckBox();
             this.MecroSet_5 = new System.Windows.Forms.CheckBox();
             this.MecroSet_4 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.SetDelay_4 = new System.Windows.Forms.CheckBox();
             this.SetDelay_5 = new System.Windows.Forms.CheckBox();
             this.SetDelay_6 = new System.Windows.Forms.CheckBox();
@@ -259,21 +241,35 @@
             this.SetDelayText_6 = new System.Windows.Forms.TextBox();
             this.SetDelayText_5 = new System.Windows.Forms.TextBox();
             this.TimeSetCheck_1 = new System.Windows.Forms.CheckBox();
-            this.TimeSetCheck_6 = new System.Windows.Forms.CheckBox();
-            this.endTime_6 = new System.Windows.Forms.TextBox();
-            this.startTime_6 = new System.Windows.Forms.TextBox();
-            this.TimeSetCheck_5 = new System.Windows.Forms.CheckBox();
-            this.endTime_5 = new System.Windows.Forms.TextBox();
-            this.startTime_5 = new System.Windows.Forms.TextBox();
-            this.TimeSetCheck_4 = new System.Windows.Forms.CheckBox();
-            this.endTime_4 = new System.Windows.Forms.TextBox();
-            this.startTime_4 = new System.Windows.Forms.TextBox();
-            this.TimeSetCheck_3 = new System.Windows.Forms.CheckBox();
-            this.endTime_3 = new System.Windows.Forms.TextBox();
-            this.startTime_3 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.TimeSetCheck_2 = new System.Windows.Forms.CheckBox();
             this.endTime_2 = new System.Windows.Forms.TextBox();
             this.startTime_2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TimeSetCheck_3 = new System.Windows.Forms.CheckBox();
+            this.endTime_3 = new System.Windows.Forms.TextBox();
+            this.startTime_3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TimeSetCheck_4 = new System.Windows.Forms.CheckBox();
+            this.endTime_4 = new System.Windows.Forms.TextBox();
+            this.startTime_4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TimeSetCheck_5 = new System.Windows.Forms.CheckBox();
+            this.endTime_5 = new System.Windows.Forms.TextBox();
+            this.startTime_5 = new System.Windows.Forms.TextBox();
+            this.label33 = new System.Windows.Forms.Label();
+            this.TimeSetCheck_6 = new System.Windows.Forms.CheckBox();
+            this.endTime_6 = new System.Windows.Forms.TextBox();
+            this.startTime_6 = new System.Windows.Forms.TextBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.End_date_picker = new System.Windows.Forms.DateTimePicker();
+            this.Start_date_picker = new System.Windows.Forms.DateTimePicker();
+            this.Order_list = new System.Windows.Forms.DataGridView();
+            this.Comm_Obj_Orderlist = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).BeginInit();
@@ -281,8 +277,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Deal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Accountinfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).BeginInit();
@@ -295,12 +291,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_6)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Order_list)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Orderlist)).BeginInit();
             this.SuspendLayout();
             // 
             // Comm_Obj_DATA_1
             // 
             this.Comm_Obj_DATA_1.Enabled = true;
-            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9591, 8682);
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9512, 8538);
             this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
             this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
             this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
@@ -311,7 +311,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8975, 8034);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8896, 7890);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -336,14 +336,14 @@
             this.FCGrid_1.AllowUserToResizeRows = false;
             this.FCGrid_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FCGrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_1.Location = new System.Drawing.Point(7, 60);
             this.FCGrid_1.Name = "FCGrid_1";
@@ -562,69 +562,23 @@
             // Price_GridView
             // 
             this.Price_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Price_GridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column6,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
             this.Price_GridView.Location = new System.Drawing.Point(1192, 36);
             this.Price_GridView.Name = "Price_GridView";
             this.Price_GridView.RowHeadersVisible = false;
             this.Price_GridView.RowHeadersWidth = 10;
             this.Price_GridView.RowTemplate.Height = 23;
-            this.Price_GridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.Price_GridView.Size = new System.Drawing.Size(419, 183);
+            this.Price_GridView.Size = new System.Drawing.Size(419, 153);
             this.Price_GridView.TabIndex = 43;
             this.Price_GridView.TabStop = false;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "코드";
-            this.Column6.Name = "Column6";
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Column6.Width = 54;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "잔고";
-            this.Column1.Name = "Column1";
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Column1.Width = 54;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "평균가(단)";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 82;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "평가손익";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 76;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "매매손익";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 76;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "평가금액";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 76;
             // 
             // Price_Lookup_btn
             // 
@@ -665,33 +619,6 @@
             this.Lookup_btn.UseVisualStyleBackColor = true;
             this.Lookup_btn.Click += new System.EventHandler(this.Lookup_btn_Click);
             // 
-            // Acc_PW_2
-            // 
-            this.Acc_PW_2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Acc_PW_2.Location = new System.Drawing.Point(1456, 718);
-            this.Acc_PW_2.MaxLength = 4;
-            this.Acc_PW_2.Name = "Acc_PW_2";
-            this.Acc_PW_2.PasswordChar = '*';
-            this.Acc_PW_2.Size = new System.Drawing.Size(48, 21);
-            this.Acc_PW_2.TabIndex = 68;
-            // 
-            // Account_Name_2
-            // 
-            this.Account_Name_2.Enabled = false;
-            this.Account_Name_2.Location = new System.Drawing.Point(1334, 717);
-            this.Account_Name_2.Name = "Account_Name_2";
-            this.Account_Name_2.Size = new System.Drawing.Size(121, 22);
-            this.Account_Name_2.TabIndex = 66;
-            // 
-            // Account_Num_2
-            // 
-            this.Account_Num_2.FormattingEnabled = true;
-            this.Account_Num_2.Location = new System.Drawing.Point(1194, 718);
-            this.Account_Num_2.Name = "Account_Num_2";
-            this.Account_Num_2.Size = new System.Drawing.Size(138, 21);
-            this.Account_Num_2.TabIndex = 65;
-            this.Account_Num_2.SelectedIndexChanged += new System.EventHandler(this.AccountComboChange);
-            // 
             // Account_GridView
             // 
             this.Account_GridView.AllowUserToAddRows = false;
@@ -720,7 +647,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(7223, 4546);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(7144, 4402);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -732,7 +659,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(5690, 4635);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(5611, 4491);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -767,15 +694,15 @@
             this.intervalWma_1.Text = "2";
             this.intervalWma_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
-            // axGiExpertControl2
+            // Comm_Obj_Deal
             // 
-            this.axGiExpertControl2.Enabled = true;
-            this.axGiExpertControl2.Location = new System.Drawing.Point(3614, 2944);
-            this.axGiExpertControl2.Name = "axGiExpertControl2";
-            this.axGiExpertControl2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl2.OcxState")));
-            this.axGiExpertControl2.Size = new System.Drawing.Size(136, 50);
-            this.axGiExpertControl2.TabIndex = 82;
-            this.axGiExpertControl2.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Deal_ReceiveData);
+            this.Comm_Obj_Deal.Enabled = true;
+            this.Comm_Obj_Deal.Location = new System.Drawing.Point(3535, 2800);
+            this.Comm_Obj_Deal.Name = "Comm_Obj_Deal";
+            this.Comm_Obj_Deal.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Deal.OcxState")));
+            this.Comm_Obj_Deal.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_Deal.TabIndex = 82;
+            this.Comm_Obj_Deal.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_Deal_ReceiveData);
             // 
             // Angle_input_1
             // 
@@ -815,15 +742,15 @@
             this.label11.TabIndex = 86;
             this.label11.Text = "기울기 간격";
             // 
-            // axGiExpertControl1
+            // Comm_Obj_Accountinfo
             // 
-            this.axGiExpertControl1.Enabled = true;
-            this.axGiExpertControl1.Location = new System.Drawing.Point(2422, 2580);
-            this.axGiExpertControl1.Name = "axGiExpertControl1";
-            this.axGiExpertControl1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axGiExpertControl1.OcxState")));
-            this.axGiExpertControl1.Size = new System.Drawing.Size(136, 50);
-            this.axGiExpertControl1.TabIndex = 1000;
-            this.axGiExpertControl1.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_AccountList_ReceivedData);
+            this.Comm_Obj_Accountinfo.Enabled = true;
+            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(2343, 2436);
+            this.Comm_Obj_Accountinfo.Name = "Comm_Obj_Accountinfo";
+            this.Comm_Obj_Accountinfo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Accountinfo.OcxState")));
+            this.Comm_Obj_Accountinfo.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_Accountinfo.TabIndex = 1000;
+            this.Comm_Obj_Accountinfo.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_AccountList_ReceivedData);
             // 
             // label12
             // 
@@ -1082,14 +1009,14 @@
             this.FCGrid_4.AllowUserToResizeRows = false;
             this.FCGrid_4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FCGrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_4.Location = new System.Drawing.Point(600, 60);
             this.FCGrid_4.Name = "FCGrid_4";
@@ -1368,14 +1295,14 @@
             this.FCGrid_2.AllowUserToResizeRows = false;
             this.FCGrid_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.FCGrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_2.Location = new System.Drawing.Point(7, 384);
             this.FCGrid_2.Name = "FCGrid_2";
@@ -1654,14 +1581,14 @@
             this.FCGrid_3.AllowUserToResizeRows = false;
             this.FCGrid_3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.FCGrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_3.Location = new System.Drawing.Point(7, 709);
             this.FCGrid_3.Name = "FCGrid_3";
@@ -1940,14 +1867,14 @@
             this.FCGrid_6.AllowUserToResizeRows = false;
             this.FCGrid_6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_6.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.FCGrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_6.Location = new System.Drawing.Point(600, 709);
             this.FCGrid_6.Name = "FCGrid_6";
@@ -2226,14 +2153,14 @@
             this.FCGrid_5.AllowUserToResizeRows = false;
             this.FCGrid_5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.FCGrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_5.Location = new System.Drawing.Point(600, 384);
             this.FCGrid_5.Name = "FCGrid_5";
@@ -2257,37 +2184,38 @@
             // 
             // startTime_1
             // 
-            this.startTime_1.Location = new System.Drawing.Point(1335, 523);
+            this.startTime_1.Location = new System.Drawing.Point(35, 37);
+            this.startTime_1.MaxLength = 4;
             this.startTime_1.Name = "startTime_1";
-            this.startTime_1.Size = new System.Drawing.Size(29, 22);
+            this.startTime_1.Size = new System.Drawing.Size(30, 22);
             this.startTime_1.TabIndex = 1126;
-            this.startTime_1.Text = "0000";
+            this.startTime_1.Text = "0900";
             this.startTime_1.Visible = false;
             // 
             // endTime_1
             // 
-            this.endTime_1.Location = new System.Drawing.Point(1370, 520);
+            this.endTime_1.Location = new System.Drawing.Point(82, 37);
+            this.endTime_1.MaxLength = 4;
             this.endTime_1.Name = "endTime_1";
-            this.endTime_1.Size = new System.Drawing.Size(29, 22);
+            this.endTime_1.Size = new System.Drawing.Size(30, 22);
             this.endTime_1.TabIndex = 1127;
-            this.endTime_1.Text = "0000";
+            this.endTime_1.Text = "1530";
             this.endTime_1.Visible = false;
             // 
             // MecroSet_1
             // 
             this.MecroSet_1.AutoSize = true;
-            this.MecroSet_1.Location = new System.Drawing.Point(1194, 364);
+            this.MecroSet_1.Location = new System.Drawing.Point(31, 20);
             this.MecroSet_1.Name = "MecroSet_1";
-            this.MecroSet_1.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_1.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_1.TabIndex = 1128;
-            this.MecroSet_1.Text = "1번";
             this.MecroSet_1.UseVisualStyleBackColor = true;
             this.MecroSet_1.CheckedChanged += new System.EventHandler(this.MecroSet_CheckedChanged);
             // 
             // TimerSet
             // 
             this.TimerSet.AutoSize = true;
-            this.TimerSet.Location = new System.Drawing.Point(1201, 470);
+            this.TimerSet.Location = new System.Drawing.Point(1409, 303);
             this.TimerSet.Name = "TimerSet";
             this.TimerSet.Size = new System.Drawing.Size(74, 17);
             this.TimerSet.TabIndex = 1129;
@@ -2308,9 +2236,9 @@
             this.groupBox1.Controls.Add(this.label32);
             this.groupBox1.Controls.Add(this.Buy_btn);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(1197, 235);
+            this.groupBox1.Location = new System.Drawing.Point(1192, 195);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(409, 99);
+            this.groupBox1.Size = new System.Drawing.Size(419, 99);
             this.groupBox1.TabIndex = 1150;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "주문";
@@ -2402,7 +2330,7 @@
             // Comm_Obj_DATA_2
             // 
             this.Comm_Obj_DATA_2.Enabled = true;
-            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(1270, 1345);
+            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(1191, 1201);
             this.Comm_Obj_DATA_2.Name = "Comm_Obj_DATA_2";
             this.Comm_Obj_DATA_2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_2.OcxState")));
             this.Comm_Obj_DATA_2.Size = new System.Drawing.Size(136, 50);
@@ -2412,7 +2340,7 @@
             // Comm_Obj_DATA_3
             // 
             this.Comm_Obj_DATA_3.Enabled = true;
-            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(1311, 1339);
+            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(1232, 1195);
             this.Comm_Obj_DATA_3.Name = "Comm_Obj_DATA_3";
             this.Comm_Obj_DATA_3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_3.OcxState")));
             this.Comm_Obj_DATA_3.Size = new System.Drawing.Size(136, 50);
@@ -2422,7 +2350,7 @@
             // Comm_Obj_DATA_4
             // 
             this.Comm_Obj_DATA_4.Enabled = true;
-            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1183, 1295);
+            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1104, 1151);
             this.Comm_Obj_DATA_4.Name = "Comm_Obj_DATA_4";
             this.Comm_Obj_DATA_4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_4.OcxState")));
             this.Comm_Obj_DATA_4.Size = new System.Drawing.Size(136, 50);
@@ -2432,7 +2360,7 @@
             // Comm_Obj_DATA_5
             // 
             this.Comm_Obj_DATA_5.Enabled = true;
-            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1212, 1290);
+            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1133, 1146);
             this.Comm_Obj_DATA_5.Name = "Comm_Obj_DATA_5";
             this.Comm_Obj_DATA_5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_5.OcxState")));
             this.Comm_Obj_DATA_5.Size = new System.Drawing.Size(136, 50);
@@ -2442,7 +2370,7 @@
             // Comm_Obj_DATA_6
             // 
             this.Comm_Obj_DATA_6.Enabled = true;
-            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(1276, 1200);
+            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(1197, 1056);
             this.Comm_Obj_DATA_6.Name = "Comm_Obj_DATA_6";
             this.Comm_Obj_DATA_6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_6.OcxState")));
             this.Comm_Obj_DATA_6.Size = new System.Drawing.Size(136, 50);
@@ -2451,227 +2379,123 @@
             // 
             // TimerText
             // 
-            this.TimerText.Location = new System.Drawing.Point(1281, 470);
+            this.TimerText.Location = new System.Drawing.Point(1486, 300);
             this.TimerText.Name = "TimerText";
             this.TimerText.Size = new System.Drawing.Size(65, 22);
             this.TimerText.TabIndex = 1156;
             this.TimerText.Visible = false;
             // 
-            // EnableTimeSet
-            // 
-            this.EnableTimeSet.AutoSize = true;
-            this.EnableTimeSet.Location = new System.Drawing.Point(1207, 525);
-            this.EnableTimeSet.Name = "EnableTimeSet";
-            this.EnableTimeSet.Size = new System.Drawing.Size(74, 17);
-            this.EnableTimeSet.TabIndex = 1157;
-            this.EnableTimeSet.Text = "시간 설정";
-            this.EnableTimeSet.UseVisualStyleBackColor = true;
-            this.EnableTimeSet.Visible = false;
-            this.EnableTimeSet.CheckedChanged += new System.EventHandler(this.EnableTimeSet_CheckedChanged);
-            // 
-            // TimerSetButton
-            // 
-            this.TimerSetButton.Location = new System.Drawing.Point(1371, 470);
-            this.TimerSetButton.Name = "TimerSetButton";
-            this.TimerSetButton.Size = new System.Drawing.Size(44, 23);
-            this.TimerSetButton.TabIndex = 1158;
-            this.TimerSetButton.Text = "설정";
-            this.TimerSetButton.UseVisualStyleBackColor = true;
-            this.TimerSetButton.Visible = false;
-            this.TimerSetButton.Click += new System.EventHandler(this.TimerSetButton_Click);
-            // 
-            // EnableTimeSetButton
-            // 
-            this.EnableTimeSetButton.Location = new System.Drawing.Point(1411, 523);
-            this.EnableTimeSetButton.Name = "EnableTimeSetButton";
-            this.EnableTimeSetButton.Size = new System.Drawing.Size(44, 23);
-            this.EnableTimeSetButton.TabIndex = 1159;
-            this.EnableTimeSetButton.Text = "설정";
-            this.EnableTimeSetButton.UseVisualStyleBackColor = true;
-            this.EnableTimeSetButton.Visible = false;
-            this.EnableTimeSetButton.Click += new System.EventHandler(this.EnableTimeSetButton_Click);
-            // 
-            // TimerStopButton
-            // 
-            this.TimerStopButton.Location = new System.Drawing.Point(1421, 470);
-            this.TimerStopButton.Name = "TimerStopButton";
-            this.TimerStopButton.Size = new System.Drawing.Size(44, 23);
-            this.TimerStopButton.TabIndex = 1160;
-            this.TimerStopButton.Text = "정지";
-            this.TimerStopButton.UseVisualStyleBackColor = true;
-            this.TimerStopButton.Visible = false;
-            this.TimerStopButton.Click += new System.EventHandler(this.TimerStopButton_Click);
-            // 
-            // EnableTimeStopButton
-            // 
-            this.EnableTimeStopButton.Location = new System.Drawing.Point(1461, 523);
-            this.EnableTimeStopButton.Name = "EnableTimeStopButton";
-            this.EnableTimeStopButton.Size = new System.Drawing.Size(44, 23);
-            this.EnableTimeStopButton.TabIndex = 1161;
-            this.EnableTimeStopButton.Text = "삭제";
-            this.EnableTimeStopButton.UseVisualStyleBackColor = true;
-            this.EnableTimeStopButton.Visible = false;
-            // 
             // SetDelay
             // 
             this.SetDelay.AutoSize = true;
-            this.SetDelay.Location = new System.Drawing.Point(1328, 362);
+            this.SetDelay.Location = new System.Drawing.Point(6, 20);
             this.SetDelay.Name = "SetDelay";
-            this.SetDelay.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay.Size = new System.Drawing.Size(15, 14);
             this.SetDelay.TabIndex = 1162;
-            this.SetDelay.Text = "1번";
             this.SetDelay.UseVisualStyleBackColor = true;
             this.SetDelay.UseWaitCursor = true;
             // 
             // SetDelayText_1
             // 
-            this.SetDelayText_1.Location = new System.Drawing.Point(1374, 359);
+            this.SetDelayText_1.Location = new System.Drawing.Point(21, 16);
             this.SetDelayText_1.Name = "SetDelayText_1";
             this.SetDelayText_1.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_1.TabIndex = 1163;
             this.SetDelayText_1.Visible = false;
             // 
-            // SetDelayButton
-            // 
-            this.SetDelayButton.Location = new System.Drawing.Point(1499, 366);
-            this.SetDelayButton.Name = "SetDelayButton";
-            this.SetDelayButton.Size = new System.Drawing.Size(44, 23);
-            this.SetDelayButton.TabIndex = 1164;
-            this.SetDelayButton.Text = "설정";
-            this.SetDelayButton.UseVisualStyleBackColor = true;
-            this.SetDelayButton.Visible = false;
-            // 
-            // StopDelayButton
-            // 
-            this.StopDelayButton.Location = new System.Drawing.Point(1499, 395);
-            this.StopDelayButton.Name = "StopDelayButton";
-            this.StopDelayButton.Size = new System.Drawing.Size(44, 23);
-            this.StopDelayButton.TabIndex = 1165;
-            this.StopDelayButton.Text = "삭제";
-            this.StopDelayButton.UseVisualStyleBackColor = true;
-            this.StopDelayButton.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1194, 342);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 1166;
-            this.label2.Text = "자동 매수/매도";
-            // 
             // MecroSet_2
             // 
             this.MecroSet_2.AutoSize = true;
-            this.MecroSet_2.Location = new System.Drawing.Point(1194, 384);
+            this.MecroSet_2.Location = new System.Drawing.Point(31, 41);
             this.MecroSet_2.Name = "MecroSet_2";
-            this.MecroSet_2.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_2.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_2.TabIndex = 1167;
-            this.MecroSet_2.Text = "2번";
             this.MecroSet_2.UseVisualStyleBackColor = true;
             // 
             // MecroSet_3
             // 
             this.MecroSet_3.AutoSize = true;
-            this.MecroSet_3.Location = new System.Drawing.Point(1194, 407);
+            this.MecroSet_3.Location = new System.Drawing.Point(31, 62);
             this.MecroSet_3.Name = "MecroSet_3";
-            this.MecroSet_3.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_3.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_3.TabIndex = 1168;
-            this.MecroSet_3.Text = "3번";
             this.MecroSet_3.UseVisualStyleBackColor = true;
             // 
             // MecroSet_6
             // 
             this.MecroSet_6.AutoSize = true;
-            this.MecroSet_6.Location = new System.Drawing.Point(1238, 406);
+            this.MecroSet_6.Location = new System.Drawing.Point(52, 62);
             this.MecroSet_6.Name = "MecroSet_6";
-            this.MecroSet_6.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_6.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_6.TabIndex = 1169;
-            this.MecroSet_6.Text = "6번";
             this.MecroSet_6.UseVisualStyleBackColor = true;
             // 
             // MecroSet_5
             // 
             this.MecroSet_5.AutoSize = true;
-            this.MecroSet_5.Location = new System.Drawing.Point(1238, 384);
+            this.MecroSet_5.Location = new System.Drawing.Point(52, 41);
             this.MecroSet_5.Name = "MecroSet_5";
-            this.MecroSet_5.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_5.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_5.TabIndex = 1170;
-            this.MecroSet_5.Text = "5번";
             this.MecroSet_5.UseVisualStyleBackColor = true;
             // 
             // MecroSet_4
             // 
             this.MecroSet_4.AutoSize = true;
-            this.MecroSet_4.Location = new System.Drawing.Point(1238, 365);
+            this.MecroSet_4.Location = new System.Drawing.Point(52, 20);
             this.MecroSet_4.Name = "MecroSet_4";
-            this.MecroSet_4.Size = new System.Drawing.Size(43, 17);
+            this.MecroSet_4.Size = new System.Drawing.Size(15, 14);
             this.MecroSet_4.TabIndex = 1171;
-            this.MecroSet_4.Text = "4번";
             this.MecroSet_4.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1340, 340);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
-            this.label3.TabIndex = 1172;
-            this.label3.Text = "딜레이 설정";
             // 
             // SetDelay_4
             // 
             this.SetDelay_4.AutoSize = true;
-            this.SetDelay_4.Location = new System.Drawing.Point(1411, 364);
+            this.SetDelay_4.Location = new System.Drawing.Point(60, 20);
             this.SetDelay_4.Name = "SetDelay_4";
-            this.SetDelay_4.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay_4.Size = new System.Drawing.Size(15, 14);
             this.SetDelay_4.TabIndex = 1178;
-            this.SetDelay_4.Text = "4번";
             this.SetDelay_4.UseVisualStyleBackColor = true;
             // 
             // SetDelay_5
             // 
             this.SetDelay_5.AutoSize = true;
-            this.SetDelay_5.Location = new System.Drawing.Point(1411, 387);
+            this.SetDelay_5.Location = new System.Drawing.Point(60, 41);
             this.SetDelay_5.Name = "SetDelay_5";
-            this.SetDelay_5.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay_5.Size = new System.Drawing.Size(15, 14);
             this.SetDelay_5.TabIndex = 1177;
-            this.SetDelay_5.Text = "5번";
             this.SetDelay_5.UseVisualStyleBackColor = true;
             // 
             // SetDelay_6
             // 
             this.SetDelay_6.AutoSize = true;
-            this.SetDelay_6.Location = new System.Drawing.Point(1411, 407);
+            this.SetDelay_6.Location = new System.Drawing.Point(60, 62);
             this.SetDelay_6.Name = "SetDelay_6";
-            this.SetDelay_6.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay_6.Size = new System.Drawing.Size(15, 14);
             this.SetDelay_6.TabIndex = 1176;
-            this.SetDelay_6.Text = "6번";
             this.SetDelay_6.UseVisualStyleBackColor = true;
             // 
             // SetDelay_3
             // 
             this.SetDelay_3.AutoSize = true;
-            this.SetDelay_3.Location = new System.Drawing.Point(1331, 405);
+            this.SetDelay_3.Location = new System.Drawing.Point(6, 62);
             this.SetDelay_3.Name = "SetDelay_3";
-            this.SetDelay_3.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay_3.Size = new System.Drawing.Size(15, 14);
             this.SetDelay_3.TabIndex = 1175;
-            this.SetDelay_3.Text = "3번";
             this.SetDelay_3.UseVisualStyleBackColor = true;
             // 
             // SetDelay_2
             // 
             this.SetDelay_2.AutoSize = true;
-            this.SetDelay_2.Location = new System.Drawing.Point(1331, 383);
+            this.SetDelay_2.Location = new System.Drawing.Point(6, 41);
             this.SetDelay_2.Name = "SetDelay_2";
-            this.SetDelay_2.Size = new System.Drawing.Size(43, 17);
+            this.SetDelay_2.Size = new System.Drawing.Size(15, 14);
             this.SetDelay_2.TabIndex = 1174;
-            this.SetDelay_2.Text = "2번";
             this.SetDelay_2.UseVisualStyleBackColor = true;
             // 
             // SetDelayText_2
             // 
-            this.SetDelayText_2.Location = new System.Drawing.Point(1376, 382);
+            this.SetDelayText_2.Location = new System.Drawing.Point(21, 37);
             this.SetDelayText_2.Name = "SetDelayText_2";
             this.SetDelayText_2.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_2.TabIndex = 1179;
@@ -2679,7 +2503,7 @@
             // 
             // SetDelayText_3
             // 
-            this.SetDelayText_3.Location = new System.Drawing.Point(1377, 406);
+            this.SetDelayText_3.Location = new System.Drawing.Point(21, 57);
             this.SetDelayText_3.Name = "SetDelayText_3";
             this.SetDelayText_3.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_3.TabIndex = 1180;
@@ -2687,7 +2511,7 @@
             // 
             // SetDelayText_4
             // 
-            this.SetDelayText_4.Location = new System.Drawing.Point(1454, 358);
+            this.SetDelayText_4.Location = new System.Drawing.Point(75, 15);
             this.SetDelayText_4.Name = "SetDelayText_4";
             this.SetDelayText_4.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_4.TabIndex = 1181;
@@ -2695,7 +2519,7 @@
             // 
             // SetDelayText_6
             // 
-            this.SetDelayText_6.Location = new System.Drawing.Point(1454, 407);
+            this.SetDelayText_6.Location = new System.Drawing.Point(75, 57);
             this.SetDelayText_6.Name = "SetDelayText_6";
             this.SetDelayText_6.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_6.TabIndex = 1182;
@@ -2703,7 +2527,7 @@
             // 
             // SetDelayText_5
             // 
-            this.SetDelayText_5.Location = new System.Drawing.Point(1454, 385);
+            this.SetDelayText_5.Location = new System.Drawing.Point(75, 36);
             this.SetDelayText_5.Name = "SetDelayText_5";
             this.SetDelayText_5.Size = new System.Drawing.Size(29, 22);
             this.SetDelayText_5.TabIndex = 1183;
@@ -2712,200 +2536,349 @@
             // TimeSetCheck_1
             // 
             this.TimeSetCheck_1.AutoSize = true;
-            this.TimeSetCheck_1.Location = new System.Drawing.Point(1286, 525);
+            this.TimeSetCheck_1.Location = new System.Drawing.Point(14, 41);
             this.TimeSetCheck_1.Name = "TimeSetCheck_1";
-            this.TimeSetCheck_1.Size = new System.Drawing.Size(43, 17);
+            this.TimeSetCheck_1.Size = new System.Drawing.Size(15, 14);
             this.TimeSetCheck_1.TabIndex = 1184;
-            this.TimeSetCheck_1.Text = "1번";
             this.TimeSetCheck_1.UseVisualStyleBackColor = true;
             // 
-            // TimeSetCheck_6
+            // groupBox2
             // 
-            this.TimeSetCheck_6.AutoSize = true;
-            this.TimeSetCheck_6.Location = new System.Drawing.Point(1282, 665);
-            this.TimeSetCheck_6.Name = "TimeSetCheck_6";
-            this.TimeSetCheck_6.Size = new System.Drawing.Size(43, 17);
-            this.TimeSetCheck_6.TabIndex = 1187;
-            this.TimeSetCheck_6.Text = "6번";
-            this.TimeSetCheck_6.UseVisualStyleBackColor = true;
+            this.groupBox2.Controls.Add(this.MecroSet_1);
+            this.groupBox2.Controls.Add(this.MecroSet_2);
+            this.groupBox2.Controls.Add(this.MecroSet_3);
+            this.groupBox2.Controls.Add(this.MecroSet_6);
+            this.groupBox2.Controls.Add(this.MecroSet_5);
+            this.groupBox2.Controls.Add(this.MecroSet_4);
+            this.groupBox2.Location = new System.Drawing.Point(1192, 300);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(95, 84);
+            this.groupBox2.TabIndex = 1200;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "자동 매수/매도";
             // 
-            // endTime_6
+            // groupBox3
             // 
-            this.endTime_6.Location = new System.Drawing.Point(1367, 663);
-            this.endTime_6.Name = "endTime_6";
-            this.endTime_6.Size = new System.Drawing.Size(29, 22);
-            this.endTime_6.TabIndex = 1186;
-            this.endTime_6.Text = "0000";
-            this.endTime_6.Visible = false;
+            this.groupBox3.Controls.Add(this.SetDelay_2);
+            this.groupBox3.Controls.Add(this.SetDelay);
+            this.groupBox3.Controls.Add(this.SetDelay_3);
+            this.groupBox3.Controls.Add(this.SetDelayText_1);
+            this.groupBox3.Controls.Add(this.SetDelayText_2);
+            this.groupBox3.Controls.Add(this.SetDelayText_3);
+            this.groupBox3.Controls.Add(this.SetDelay_5);
+            this.groupBox3.Controls.Add(this.SetDelay_6);
+            this.groupBox3.Controls.Add(this.SetDelay_4);
+            this.groupBox3.Controls.Add(this.SetDelayText_5);
+            this.groupBox3.Controls.Add(this.SetDelayText_4);
+            this.groupBox3.Controls.Add(this.SetDelayText_6);
+            this.groupBox3.Location = new System.Drawing.Point(1288, 300);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(113, 84);
+            this.groupBox3.TabIndex = 1201;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "딜레이 설정";
             // 
-            // startTime_6
+            // label2
             // 
-            this.startTime_6.Location = new System.Drawing.Point(1331, 663);
-            this.startTime_6.Name = "startTime_6";
-            this.startTime_6.Size = new System.Drawing.Size(29, 22);
-            this.startTime_6.TabIndex = 1185;
-            this.startTime_6.Text = "0000";
-            this.startTime_6.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(67, 41);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(15, 13);
+            this.label2.TabIndex = 1202;
+            this.label2.Text = "~";
             // 
-            // TimeSetCheck_5
+            // label3
             // 
-            this.TimeSetCheck_5.AutoSize = true;
-            this.TimeSetCheck_5.Location = new System.Drawing.Point(1285, 639);
-            this.TimeSetCheck_5.Name = "TimeSetCheck_5";
-            this.TimeSetCheck_5.Size = new System.Drawing.Size(43, 17);
-            this.TimeSetCheck_5.TabIndex = 1190;
-            this.TimeSetCheck_5.Text = "5번";
-            this.TimeSetCheck_5.UseVisualStyleBackColor = true;
-            // 
-            // endTime_5
-            // 
-            this.endTime_5.Location = new System.Drawing.Point(1370, 637);
-            this.endTime_5.Name = "endTime_5";
-            this.endTime_5.Size = new System.Drawing.Size(29, 22);
-            this.endTime_5.TabIndex = 1189;
-            this.endTime_5.Text = "0000";
-            this.endTime_5.Visible = false;
-            // 
-            // startTime_5
-            // 
-            this.startTime_5.Location = new System.Drawing.Point(1334, 637);
-            this.startTime_5.Name = "startTime_5";
-            this.startTime_5.Size = new System.Drawing.Size(29, 22);
-            this.startTime_5.TabIndex = 1188;
-            this.startTime_5.Text = "0000";
-            this.startTime_5.Visible = false;
-            // 
-            // TimeSetCheck_4
-            // 
-            this.TimeSetCheck_4.AutoSize = true;
-            this.TimeSetCheck_4.Location = new System.Drawing.Point(1286, 609);
-            this.TimeSetCheck_4.Name = "TimeSetCheck_4";
-            this.TimeSetCheck_4.Size = new System.Drawing.Size(43, 17);
-            this.TimeSetCheck_4.TabIndex = 1193;
-            this.TimeSetCheck_4.Text = "4번";
-            this.TimeSetCheck_4.UseVisualStyleBackColor = true;
-            // 
-            // endTime_4
-            // 
-            this.endTime_4.Location = new System.Drawing.Point(1371, 607);
-            this.endTime_4.Name = "endTime_4";
-            this.endTime_4.Size = new System.Drawing.Size(29, 22);
-            this.endTime_4.TabIndex = 1192;
-            this.endTime_4.Text = "0000";
-            this.endTime_4.Visible = false;
-            // 
-            // startTime_4
-            // 
-            this.startTime_4.Location = new System.Drawing.Point(1335, 607);
-            this.startTime_4.Name = "startTime_4";
-            this.startTime_4.Size = new System.Drawing.Size(29, 22);
-            this.startTime_4.TabIndex = 1191;
-            this.startTime_4.Text = "0000";
-            this.startTime_4.Visible = false;
-            // 
-            // TimeSetCheck_3
-            // 
-            this.TimeSetCheck_3.AutoSize = true;
-            this.TimeSetCheck_3.Location = new System.Drawing.Point(1281, 581);
-            this.TimeSetCheck_3.Name = "TimeSetCheck_3";
-            this.TimeSetCheck_3.Size = new System.Drawing.Size(43, 17);
-            this.TimeSetCheck_3.TabIndex = 1196;
-            this.TimeSetCheck_3.Text = "3번";
-            this.TimeSetCheck_3.UseVisualStyleBackColor = true;
-            // 
-            // endTime_3
-            // 
-            this.endTime_3.Location = new System.Drawing.Point(1378, 579);
-            this.endTime_3.Name = "endTime_3";
-            this.endTime_3.Size = new System.Drawing.Size(29, 22);
-            this.endTime_3.TabIndex = 1195;
-            this.endTime_3.Text = "0000";
-            this.endTime_3.Visible = false;
-            // 
-            // startTime_3
-            // 
-            this.startTime_3.Location = new System.Drawing.Point(1342, 579);
-            this.startTime_3.Name = "startTime_3";
-            this.startTime_3.Size = new System.Drawing.Size(29, 22);
-            this.startTime_3.TabIndex = 1194;
-            this.startTime_3.Text = "0000";
-            this.startTime_3.Visible = false;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(67, 365);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(15, 13);
+            this.label3.TabIndex = 1206;
+            this.label3.Text = "~";
             // 
             // TimeSetCheck_2
             // 
             this.TimeSetCheck_2.AutoSize = true;
-            this.TimeSetCheck_2.Location = new System.Drawing.Point(1285, 553);
+            this.TimeSetCheck_2.Location = new System.Drawing.Point(14, 365);
             this.TimeSetCheck_2.Name = "TimeSetCheck_2";
-            this.TimeSetCheck_2.Size = new System.Drawing.Size(43, 17);
-            this.TimeSetCheck_2.TabIndex = 1199;
-            this.TimeSetCheck_2.Text = "2번";
+            this.TimeSetCheck_2.Size = new System.Drawing.Size(15, 14);
+            this.TimeSetCheck_2.TabIndex = 1205;
             this.TimeSetCheck_2.UseVisualStyleBackColor = true;
             // 
             // endTime_2
             // 
-            this.endTime_2.Location = new System.Drawing.Point(1370, 551);
+            this.endTime_2.Location = new System.Drawing.Point(82, 361);
+            this.endTime_2.MaxLength = 4;
             this.endTime_2.Name = "endTime_2";
-            this.endTime_2.Size = new System.Drawing.Size(29, 22);
-            this.endTime_2.TabIndex = 1198;
-            this.endTime_2.Text = "0000";
+            this.endTime_2.Size = new System.Drawing.Size(30, 22);
+            this.endTime_2.TabIndex = 1204;
+            this.endTime_2.Text = "1530";
             this.endTime_2.Visible = false;
             // 
             // startTime_2
             // 
-            this.startTime_2.Location = new System.Drawing.Point(1334, 551);
+            this.startTime_2.Location = new System.Drawing.Point(35, 361);
+            this.startTime_2.MaxLength = 4;
             this.startTime_2.Name = "startTime_2";
-            this.startTime_2.Size = new System.Drawing.Size(29, 22);
-            this.startTime_2.TabIndex = 1197;
-            this.startTime_2.Text = "0000";
+            this.startTime_2.Size = new System.Drawing.Size(30, 22);
+            this.startTime_2.TabIndex = 1203;
+            this.startTime_2.Text = "0900";
             this.startTime_2.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 690);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(15, 13);
+            this.label4.TabIndex = 1210;
+            this.label4.Text = "~";
+            // 
+            // TimeSetCheck_3
+            // 
+            this.TimeSetCheck_3.AutoSize = true;
+            this.TimeSetCheck_3.Location = new System.Drawing.Point(14, 690);
+            this.TimeSetCheck_3.Name = "TimeSetCheck_3";
+            this.TimeSetCheck_3.Size = new System.Drawing.Size(15, 14);
+            this.TimeSetCheck_3.TabIndex = 1209;
+            this.TimeSetCheck_3.UseVisualStyleBackColor = true;
+            // 
+            // endTime_3
+            // 
+            this.endTime_3.Location = new System.Drawing.Point(82, 686);
+            this.endTime_3.MaxLength = 4;
+            this.endTime_3.Name = "endTime_3";
+            this.endTime_3.Size = new System.Drawing.Size(30, 22);
+            this.endTime_3.TabIndex = 1208;
+            this.endTime_3.Text = "1530";
+            this.endTime_3.Visible = false;
+            // 
+            // startTime_3
+            // 
+            this.startTime_3.Location = new System.Drawing.Point(35, 686);
+            this.startTime_3.MaxLength = 4;
+            this.startTime_3.Name = "startTime_3";
+            this.startTime_3.Size = new System.Drawing.Size(30, 22);
+            this.startTime_3.TabIndex = 1207;
+            this.startTime_3.Text = "0900";
+            this.startTime_3.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(660, 41);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(15, 13);
+            this.label5.TabIndex = 1214;
+            this.label5.Text = "~";
+            // 
+            // TimeSetCheck_4
+            // 
+            this.TimeSetCheck_4.AutoSize = true;
+            this.TimeSetCheck_4.Location = new System.Drawing.Point(607, 41);
+            this.TimeSetCheck_4.Name = "TimeSetCheck_4";
+            this.TimeSetCheck_4.Size = new System.Drawing.Size(15, 14);
+            this.TimeSetCheck_4.TabIndex = 1213;
+            this.TimeSetCheck_4.UseVisualStyleBackColor = true;
+            // 
+            // endTime_4
+            // 
+            this.endTime_4.Location = new System.Drawing.Point(675, 37);
+            this.endTime_4.MaxLength = 4;
+            this.endTime_4.Name = "endTime_4";
+            this.endTime_4.Size = new System.Drawing.Size(30, 22);
+            this.endTime_4.TabIndex = 1212;
+            this.endTime_4.Text = "1530";
+            this.endTime_4.Visible = false;
+            // 
+            // startTime_4
+            // 
+            this.startTime_4.Location = new System.Drawing.Point(628, 37);
+            this.startTime_4.MaxLength = 4;
+            this.startTime_4.Name = "startTime_4";
+            this.startTime_4.Size = new System.Drawing.Size(30, 22);
+            this.startTime_4.TabIndex = 1211;
+            this.startTime_4.Text = "0900";
+            this.startTime_4.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(660, 365);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(15, 13);
+            this.label6.TabIndex = 1218;
+            this.label6.Text = "~";
+            // 
+            // TimeSetCheck_5
+            // 
+            this.TimeSetCheck_5.AutoSize = true;
+            this.TimeSetCheck_5.Location = new System.Drawing.Point(607, 365);
+            this.TimeSetCheck_5.Name = "TimeSetCheck_5";
+            this.TimeSetCheck_5.Size = new System.Drawing.Size(15, 14);
+            this.TimeSetCheck_5.TabIndex = 1217;
+            this.TimeSetCheck_5.UseVisualStyleBackColor = true;
+            // 
+            // endTime_5
+            // 
+            this.endTime_5.Location = new System.Drawing.Point(675, 361);
+            this.endTime_5.MaxLength = 4;
+            this.endTime_5.Name = "endTime_5";
+            this.endTime_5.Size = new System.Drawing.Size(30, 22);
+            this.endTime_5.TabIndex = 1216;
+            this.endTime_5.Text = "1530";
+            this.endTime_5.Visible = false;
+            // 
+            // startTime_5
+            // 
+            this.startTime_5.Location = new System.Drawing.Point(628, 361);
+            this.startTime_5.MaxLength = 4;
+            this.startTime_5.Name = "startTime_5";
+            this.startTime_5.Size = new System.Drawing.Size(30, 22);
+            this.startTime_5.TabIndex = 1215;
+            this.startTime_5.Text = "0900";
+            this.startTime_5.Visible = false;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(660, 690);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(15, 13);
+            this.label33.TabIndex = 1222;
+            this.label33.Text = "~";
+            // 
+            // TimeSetCheck_6
+            // 
+            this.TimeSetCheck_6.AutoSize = true;
+            this.TimeSetCheck_6.Location = new System.Drawing.Point(607, 690);
+            this.TimeSetCheck_6.Name = "TimeSetCheck_6";
+            this.TimeSetCheck_6.Size = new System.Drawing.Size(15, 14);
+            this.TimeSetCheck_6.TabIndex = 1221;
+            this.TimeSetCheck_6.UseVisualStyleBackColor = true;
+            // 
+            // endTime_6
+            // 
+            this.endTime_6.Location = new System.Drawing.Point(675, 686);
+            this.endTime_6.MaxLength = 4;
+            this.endTime_6.Name = "endTime_6";
+            this.endTime_6.Size = new System.Drawing.Size(30, 22);
+            this.endTime_6.TabIndex = 1220;
+            this.endTime_6.Text = "1530";
+            this.endTime_6.Visible = false;
+            // 
+            // startTime_6
+            // 
+            this.startTime_6.Location = new System.Drawing.Point(628, 686);
+            this.startTime_6.MaxLength = 4;
+            this.startTime_6.Name = "startTime_6";
+            this.startTime_6.Size = new System.Drawing.Size(30, 22);
+            this.startTime_6.TabIndex = 1219;
+            this.startTime_6.Text = "0900";
+            this.startTime_6.Visible = false;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(1375, 409);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(15, 13);
+            this.label34.TabIndex = 1227;
+            this.label34.Text = "~";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(1192, 410);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(77, 13);
+            this.label35.TabIndex = 1226;
+            this.label35.Text = "매매내역 조회";
+            // 
+            // End_date_picker
+            // 
+            this.End_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.End_date_picker.Location = new System.Drawing.Point(1392, 405);
+            this.End_date_picker.Name = "End_date_picker";
+            this.End_date_picker.Size = new System.Drawing.Size(97, 22);
+            this.End_date_picker.TabIndex = 1225;
+            this.End_date_picker.TabStop = false;
+            this.End_date_picker.Value = new System.DateTime(2020, 2, 28, 0, 0, 0, 0);
+            this.End_date_picker.ValueChanged += new System.EventHandler(this.Orderlist_date_Changed);
+            // 
+            // Start_date_picker
+            // 
+            this.Start_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Start_date_picker.Location = new System.Drawing.Point(1275, 405);
+            this.Start_date_picker.Name = "Start_date_picker";
+            this.Start_date_picker.Size = new System.Drawing.Size(97, 22);
+            this.Start_date_picker.TabIndex = 1224;
+            this.Start_date_picker.TabStop = false;
+            this.Start_date_picker.Value = new System.DateTime(2020, 2, 28, 0, 0, 0, 0);
+            this.Start_date_picker.ValueChanged += new System.EventHandler(this.Orderlist_date_Changed);
+            // 
+            // Order_list
+            // 
+            this.Order_list.AllowUserToAddRows = false;
+            this.Order_list.AllowUserToDeleteRows = false;
+            this.Order_list.AllowUserToResizeColumns = false;
+            this.Order_list.AllowUserToResizeRows = false;
+            this.Order_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.Order_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Order_list.Location = new System.Drawing.Point(1194, 428);
+            this.Order_list.Name = "Order_list";
+            this.Order_list.ReadOnly = true;
+            this.Order_list.RowHeadersVisible = false;
+            this.Order_list.RowTemplate.Height = 23;
+            this.Order_list.Size = new System.Drawing.Size(419, 275);
+            this.Order_list.TabIndex = 1223;
+            this.Order_list.TabStop = false;
+            // 
+            // Comm_Obj_Orderlist
+            // 
+            this.Comm_Obj_Orderlist.Enabled = true;
+            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(204, 519);
+            this.Comm_Obj_Orderlist.Name = "Comm_Obj_Orderlist";
+            this.Comm_Obj_Orderlist.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Orderlist.OcxState")));
+            this.Comm_Obj_Orderlist.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_Orderlist.TabIndex = 1228;
+            this.Comm_Obj_Orderlist.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_obj_Orderlist_ReceiveData);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1618, 989);
-            this.Controls.Add(this.TimeSetCheck_2);
-            this.Controls.Add(this.endTime_2);
-            this.Controls.Add(this.startTime_2);
-            this.Controls.Add(this.TimeSetCheck_3);
-            this.Controls.Add(this.endTime_3);
-            this.Controls.Add(this.startTime_3);
-            this.Controls.Add(this.TimeSetCheck_4);
-            this.Controls.Add(this.endTime_4);
-            this.Controls.Add(this.startTime_4);
-            this.Controls.Add(this.TimeSetCheck_5);
-            this.Controls.Add(this.endTime_5);
-            this.Controls.Add(this.startTime_5);
+            this.Controls.Add(this.Comm_Obj_Orderlist);
+            this.Controls.Add(this.label34);
+            this.Controls.Add(this.label35);
+            this.Controls.Add(this.End_date_picker);
+            this.Controls.Add(this.Start_date_picker);
+            this.Controls.Add(this.Order_list);
+            this.Controls.Add(this.label33);
             this.Controls.Add(this.TimeSetCheck_6);
             this.Controls.Add(this.endTime_6);
             this.Controls.Add(this.startTime_6);
-            this.Controls.Add(this.TimeSetCheck_1);
-            this.Controls.Add(this.SetDelayText_5);
-            this.Controls.Add(this.SetDelayText_6);
-            this.Controls.Add(this.SetDelayText_4);
-            this.Controls.Add(this.SetDelayText_3);
-            this.Controls.Add(this.SetDelayText_2);
-            this.Controls.Add(this.SetDelay_4);
-            this.Controls.Add(this.SetDelay_5);
-            this.Controls.Add(this.SetDelay_6);
-            this.Controls.Add(this.SetDelay_3);
-            this.Controls.Add(this.SetDelay_2);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TimeSetCheck_5);
+            this.Controls.Add(this.endTime_5);
+            this.Controls.Add(this.startTime_5);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TimeSetCheck_4);
+            this.Controls.Add(this.endTime_4);
+            this.Controls.Add(this.startTime_4);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TimeSetCheck_3);
+            this.Controls.Add(this.endTime_3);
+            this.Controls.Add(this.startTime_3);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.MecroSet_4);
-            this.Controls.Add(this.MecroSet_5);
-            this.Controls.Add(this.MecroSet_6);
-            this.Controls.Add(this.MecroSet_3);
-            this.Controls.Add(this.MecroSet_2);
+            this.Controls.Add(this.TimeSetCheck_2);
+            this.Controls.Add(this.endTime_2);
+            this.Controls.Add(this.startTime_2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.StopDelayButton);
-            this.Controls.Add(this.SetDelayButton);
-            this.Controls.Add(this.SetDelayText_1);
-            this.Controls.Add(this.SetDelay);
-            this.Controls.Add(this.EnableTimeStopButton);
-            this.Controls.Add(this.TimerStopButton);
-            this.Controls.Add(this.EnableTimeSetButton);
-            this.Controls.Add(this.TimerSetButton);
-            this.Controls.Add(this.EnableTimeSet);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.TimeSetCheck_1);
             this.Controls.Add(this.TimerText);
             this.Controls.Add(this.Comm_Obj_DATA_6);
             this.Controls.Add(this.Comm_Obj_DATA_5);
@@ -2915,7 +2888,6 @@
             this.Controls.Add(this.Comm_Obj_DATA_1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.TimerSet);
-            this.Controls.Add(this.MecroSet_1);
             this.Controls.Add(this.endTime_1);
             this.Controls.Add(this.startTime_1);
             this.Controls.Add(this.FCGrid_4);
@@ -3043,12 +3015,12 @@
             this.Controls.Add(this.WMA_input_2);
             this.Controls.Add(this.FCGrid_2);
             this.Controls.Add(this.FCode_2);
-            this.Controls.Add(this.axGiExpertControl1);
+            this.Controls.Add(this.Comm_Obj_Accountinfo);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.Angle_input_1);
-            this.Controls.Add(this.axGiExpertControl2);
+            this.Controls.Add(this.Comm_Obj_Deal);
             this.Controls.Add(this.intervalWma_1);
             this.Controls.Add(this.endWma_1);
             this.Controls.Add(this.startWma_1);
@@ -3056,9 +3028,6 @@
             this.Controls.Add(this.Comm_Obj_Account);
             this.Controls.Add(this.Account_GridView);
             this.Controls.Add(this.Lookup_btn);
-            this.Controls.Add(this.Acc_PW_2);
-            this.Controls.Add(this.Account_Name_2);
-            this.Controls.Add(this.Account_Num_2);
             this.Controls.Add(this.Account_Num_1);
             this.Controls.Add(this.Price_GridView);
             this.Controls.Add(this.Price_Lookup_btn);
@@ -3095,8 +3064,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Account)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Price)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axGiExpertControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Deal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Accountinfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).EndInit();
@@ -3110,6 +3079,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_6)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Order_list)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Orderlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3123,7 +3098,7 @@
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_Real;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Account;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Price;
-        private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl2;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Deal;
         private System.Windows.Forms.TextBox FCode_1;
         private System.Windows.Forms.DataGridView FCGrid_1;
         private System.Windows.Forms.TextBox WMA_input_1;
@@ -3149,9 +3124,6 @@
         private System.Windows.Forms.TextBox Acc_PW_1;
         private System.Windows.Forms.TextBox Account_Name_1;
         private System.Windows.Forms.Button Lookup_btn;
-        private System.Windows.Forms.TextBox Acc_PW_2;
-        private System.Windows.Forms.TextBox Account_Name_2;
-        private System.Windows.Forms.ComboBox Account_Num_2;
         private System.Windows.Forms.DataGridView Account_GridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.TextBox startWma_1;
@@ -3161,7 +3133,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private AxGIEXPERTCONTROLLib.AxGiExpertControl axGiExpertControl1;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Accountinfo;
         private System.DirectoryServices.DirectoryEntry directoryEntry1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -3302,34 +3274,19 @@
         private System.Windows.Forms.Button Sell_btn;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Button Buy_btn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_2;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_3;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_4;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_5;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_6;
         private System.Windows.Forms.TextBox TimerText;
-        private System.Windows.Forms.CheckBox EnableTimeSet;
-        private System.Windows.Forms.Button TimerSetButton;
-        private System.Windows.Forms.Button EnableTimeSetButton;
-        private System.Windows.Forms.Button TimerStopButton;
-        private System.Windows.Forms.Button EnableTimeStopButton;
         private System.Windows.Forms.CheckBox SetDelay;
         private System.Windows.Forms.TextBox SetDelayText_1;
-        private System.Windows.Forms.Button SetDelayButton;
-        private System.Windows.Forms.Button StopDelayButton;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox MecroSet_2;
         private System.Windows.Forms.CheckBox MecroSet_3;
         private System.Windows.Forms.CheckBox MecroSet_6;
         private System.Windows.Forms.CheckBox MecroSet_5;
         private System.Windows.Forms.CheckBox MecroSet_4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox SetDelay_4;
         private System.Windows.Forms.CheckBox SetDelay_5;
         private System.Windows.Forms.CheckBox SetDelay_6;
@@ -3341,20 +3298,34 @@
         private System.Windows.Forms.TextBox SetDelayText_6;
         private System.Windows.Forms.TextBox SetDelayText_5;
         private System.Windows.Forms.CheckBox TimeSetCheck_1;
-        private System.Windows.Forms.CheckBox TimeSetCheck_6;
-        private System.Windows.Forms.TextBox endTime_6;
-        private System.Windows.Forms.TextBox startTime_6;
-        private System.Windows.Forms.CheckBox TimeSetCheck_5;
-        private System.Windows.Forms.TextBox endTime_5;
-        private System.Windows.Forms.TextBox startTime_5;
-        private System.Windows.Forms.CheckBox TimeSetCheck_4;
-        private System.Windows.Forms.TextBox endTime_4;
-        private System.Windows.Forms.TextBox startTime_4;
-        private System.Windows.Forms.CheckBox TimeSetCheck_3;
-        private System.Windows.Forms.TextBox endTime_3;
-        private System.Windows.Forms.TextBox startTime_3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox TimeSetCheck_2;
         private System.Windows.Forms.TextBox endTime_2;
         private System.Windows.Forms.TextBox startTime_2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox TimeSetCheck_3;
+        private System.Windows.Forms.TextBox endTime_3;
+        private System.Windows.Forms.TextBox startTime_3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox TimeSetCheck_4;
+        private System.Windows.Forms.TextBox endTime_4;
+        private System.Windows.Forms.TextBox startTime_4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckBox TimeSetCheck_5;
+        private System.Windows.Forms.TextBox endTime_5;
+        private System.Windows.Forms.TextBox startTime_5;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.CheckBox TimeSetCheck_6;
+        private System.Windows.Forms.TextBox endTime_6;
+        private System.Windows.Forms.TextBox startTime_6;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.DateTimePicker End_date_picker;
+        private System.Windows.Forms.DateTimePicker Start_date_picker;
+        private System.Windows.Forms.DataGridView Order_list;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Orderlist;
     }
 }

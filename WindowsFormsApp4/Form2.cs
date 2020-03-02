@@ -41,6 +41,7 @@ namespace WindowsFormsApp4
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            
             FCGrid_sample = new DataGridView[ARR_COUNT];
             FCode_1.Text = gFCode[0];
             FCode_2.Text = gFCode[1];
@@ -57,15 +58,16 @@ namespace WindowsFormsApp4
 
             for (int i = 0; i < 6; i++)
             {
-                TimeDistance_Changed(TimeDistance[i], i + 1);
-                //Load_Data(gFCode[i], TimeSelected[i], TimeDistance[i], i + 1);
+                TimeDistance_Changed(TimeDistance[i], i + 1);               
             }
 
             //Login();
-
             getAccount();
+            Init_Orderlist();
 
+            //Account_Num_1.Text = (string)Account_Num_1.Items[0];
             setGridView();
+            
         }
 
         public void Load_Data(string Fcode, string time, string distance, int control)
@@ -583,7 +585,6 @@ namespace WindowsFormsApp4
         {
             FCGrid_sample[2].DataSource = Proc_TR_FCHART_3();
         }
-
         private void Proc_FC_4()
         {
             FCGrid_sample[3].DataSource = Proc_TR_FCHART_4();
@@ -707,8 +708,9 @@ namespace WindowsFormsApp4
                         }
                         set_Condition(aaa, j, control);
                     }
-                
+                /*
                 if (MecroSet_1.Checked)
+
                     if (EnableTimeSet.Checked)
                     {
                         if(setTimeDeal() == true)
@@ -718,6 +720,7 @@ namespace WindowsFormsApp4
                     }
                     else
                         Mecro_Deal(control);
+                        */
                 //setGridView();
             }
             /*else
@@ -1749,38 +1752,25 @@ namespace WindowsFormsApp4
 
 
 
-        private void getAccount() //오른쪽 아래 계좌 조회
+        private void getAccount() //계좌 조회
         {
-            axGiExpertControl1.SetQueryName("AccountList");
-            axGiExpertControl1.RequestData();
+            Comm_Obj_Accountinfo.SetQueryName("AccountList");
+            Comm_Obj_Accountinfo.RequestData();
         }
 
-        public void AccountInfo() //오른쪽 아래 계좌정보 조회
+        private void Comm_Obj_AccountList_ReceivedData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
-            if (Acc_PW_2.Text != "0000")
-            {
-                MessageBox.Show("비밀번호 확인");
-            }
-            else
-            {
-                Comm_Obj_Account.SetQueryName("SABA655Q1");
-                Comm_Obj_Account.SetSingleData(0, Account_Num_2.Text); //00311155910
-                Comm_Obj_Account.SetSingleData(1, "01");
-                Comm_Obj_Account.SetSingleData(2, Acc_PW_2.Text);
-                Comm_Obj_Account.RequestData();
-            }
+            Proc_AccountList(); //계좌 목록 조회
         }
 
         private void Proc_AccountList()
         {
-            short nRowSize = axGiExpertControl1.GetMultiRowCount();
+            short nRowSize = Comm_Obj_Accountinfo.GetMultiRowCount();
             for (short i = 0; i < nRowSize; i++)
             {
-                Account_Num_2.Items.Add((string)axGiExpertControl1.GetMultiData(i, 0));
-                Account_Num_1.Items.Add((string)axGiExpertControl1.GetMultiData(i, 0));
+                Account_Num_1.Items.Add((string)Comm_Obj_Accountinfo.GetMultiData(i, 0));
             }
-            //Account_Name.Text = (string)Comm_Obj_Account.GetMultiData(0, 1);
-            //Account_Name2.Text = (string)Comm_Obj_Account.GetMultiData(0, 1);
+
             Account_GridView.Rows.Add();
             Account_GridView.Rows[0].HeaderCell.Value = "순자산";
             Account_GridView.Rows.Add();
@@ -1796,7 +1786,32 @@ namespace WindowsFormsApp4
 
         }
 
-        private void Proc_SABA655Q1() //오른쪽 아래 계좌 정보 조회
+        private void Lookup_btn_Click(object sender, EventArgs e)
+        {
+            AccountInfo(); //오른쪽 아래 조회
+        }
+
+        public void AccountInfo() //오른쪽 아래 계좌정보 조회
+        {
+            if (Acc_PW_1.Text != "0000")
+            {
+                MessageBox.Show("비밀번호 확인");
+            }
+            else
+            {
+                Comm_Obj_Account.SetQueryName("SABA655Q1");
+                Comm_Obj_Account.SetSingleData(0, Account_Num_1.Text); //00311155910
+                Comm_Obj_Account.SetSingleData(1, "01");
+                Comm_Obj_Account.SetSingleData(2, Acc_PW_1.Text);
+                Comm_Obj_Account.RequestData();
+            }
+        }
+        private void Comm_Obj_Account_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_SABA655Q1(); //총자산계좌잔고조회
+        }
+
+        private void Proc_SABA655Q1() //오른쪽 아래 계좌 정보
         {
             Account_GridView.Rows[0].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(0));
             Account_GridView.Rows[1].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(1));
@@ -1804,20 +1819,11 @@ namespace WindowsFormsApp4
             Account_GridView.Rows[3].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(18));
             Account_GridView.Rows[4].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(19));
             Account_GridView.Rows[5].Cells[0].Value = Convert.ToInt64(Comm_Obj_Account.GetSingleData(20));
-        }
+        }    
 
-        private void Comm_Obj_Account_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        private void Price_Lookup_btn_Click(object sender, EventArgs e)
         {
-            Proc_SABA655Q1(); //총자산계좌잔고조회
-        }
-        private void Comm_Obj_AccountList_ReceivedData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
-        {
-            Proc_AccountList(); //계좌 목록 조회
-        }
-
-        private void Lookup_btn_Click(object sender, EventArgs e)
-        {
-            AccountInfo(); //오른쪽 아래 조회
+            getPrice();
         }
 
         private void getPrice()
@@ -1829,29 +1835,6 @@ namespace WindowsFormsApp4
             Comm_Obj_Price.SetSingleData(2, Acc_PW_1.Text);
             Comm_Obj_Price.RequestData();
 
-            /*
-            Comm_Obj_Price.SetQueryName("SABC967Q1");
-            Comm_Obj_Price.SetSingleData(0, Account_Num_1.Text);    //00311155910
-            Comm_Obj_Price.SetSingleData(1, Acc_PW_1.Text);
-            Comm_Obj_Price.SetSingleData(2, "0");   // 0:전체 1:강세불리 2:약세불리
-            Comm_Obj_Price.SetSingleData(3, "0");   // 0:전체 1:선물 2:옵션
-            Comm_Obj_Price.SetSingleData(4, "2");   // 1:단순평균가 2:이동평균가
-            Comm_Obj_Price.RequestData();
-            */
-        }
-
-        private void Proc_SABC820Q1() //가지고 있는 주식 정보
-        {
-            int nRowSize = Comm_Obj_Price.GetMultiRowCount();
-            for (int i = 0; i < nRowSize; i++)
-            {
-                Price_GridView.Rows[i].Cells[0].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 0);
-                Price_GridView.Rows[i].Cells[1].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
-                Price_GridView.Rows[i].Cells[2].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
-                Price_GridView.Rows[i].Cells[3].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
-                Price_GridView.Rows[i].Cells[4].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
-                Price_GridView.Rows[i].Cells[5].Value = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
-            }
         }
 
         private void Comm_Obj_Price_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
@@ -1859,11 +1842,49 @@ namespace WindowsFormsApp4
             Proc_SABC820Q1();
         }
 
-        private void Price_Lookup_btn_Click(object sender, EventArgs e)
+        private void Proc_SABC820Q1() //가지고 있는 주식 정보
         {
-            getPrice();
-        }
+            int nRowSize = Comm_Obj_Price.GetMultiRowCount();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("종목코드");
+            dt.Columns.Add("잔고");
+            dt.Columns.Add("평균가(단)");
+            dt.Columns.Add("평가손익");
+            dt.Columns.Add("매매손익");
+            dt.Columns.Add("평가금액");
 
+            for (int i = 0; i < nRowSize; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 0);
+                dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
+                dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
+                dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
+                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
+                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dt.Rows.Add(dr);
+            }
+            Price_GridView.DataSource = dt;
+        }
+        
+        private void getDeal(string Acc_num, string Acc_pw, string code, string count, string price, string control, string type)
+        {
+            Comm_Obj_Deal.SetQueryName("SABC100U1");
+            Comm_Obj_Deal.SetSingleData(0, Acc_num); // 계좌번호
+            Comm_Obj_Deal.SetSingleData(1, Acc_pw); //비밀번호
+            Comm_Obj_Deal.SetSingleData(2, code); //종목코드
+            Comm_Obj_Deal.SetSingleData(3, count); // 주문수량 
+            Comm_Obj_Deal.SetSingleData(4, price); //주문단가 -999.99 ~ 999.99
+            Comm_Obj_Deal.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
+            Comm_Obj_Deal.SetSingleData(6, control); // 매매구분 01:매도 02:매수
+            Comm_Obj_Deal.SetSingleData(7, type); //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
+            Comm_Obj_Deal.SetSingleData(8, "1"); //차익거래구분 1:차익 2:헷지 3:기타
+            Comm_Obj_Deal.SetSingleData(9, "1"); //처리구분 1:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(10, "0"); //정정취소수량구분 0:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(11, ""); //원주문번호 (신규매도/매수시 생략)
+            Comm_Obj_Deal.SetSingleData(12, ""); //예약주문여부 1:예약 (예약주문 어닌경우생략)
+            Comm_Obj_Deal.RequestData();
+        }
         private void Comm_Obj_Deal_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
             Proc_SABC100U1();
@@ -1871,8 +1892,8 @@ namespace WindowsFormsApp4
 
         private void Proc_SABC100U1()
         {
-            string aa = (string)axGiExpertControl2.GetSingleData(0); //0.주문번호
-            string bb = (string)axGiExpertControl2.GetSingleData(1); //1.ORC주문번호
+            string aa = (string)Comm_Obj_Deal.GetSingleData(0); //0.주문번호
+            string bb = (string)Comm_Obj_Deal.GetSingleData(1); //1.ORC주문번호
             AutoClosingMessageBox(aa, "", 100);
             AutoClosingMessageBox(bb, "", 100);
             //MessageBox.Show(aa);
@@ -1880,23 +1901,74 @@ namespace WindowsFormsApp4
             //MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
             //MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
         }
-        private void getDeal(string Acc_num, string Acc_pw, string code, string count, string price, string control, string type)
+
+        private void Init_Orderlist()  //주문내역 날짜 초기화
         {
-            axGiExpertControl2.SetQueryName("SABC100U1");
-            axGiExpertControl2.SetSingleData(0, Acc_num); // 계좌번호
-            axGiExpertControl2.SetSingleData(1, Acc_pw); //비밀번호
-            axGiExpertControl2.SetSingleData(2, code); //종목코드
-            axGiExpertControl2.SetSingleData(3, count); // 주문수량 
-            axGiExpertControl2.SetSingleData(4, price); //주문단가 -999.99 ~ 999.99
-            axGiExpertControl2.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
-            axGiExpertControl2.SetSingleData(6, control); // 매매구분 01:매도 02:매수
-            axGiExpertControl2.SetSingleData(7, type); //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
-            axGiExpertControl2.SetSingleData(8, "1"); //차익거래구분 1:차익 2:헷지 3:기타
-            axGiExpertControl2.SetSingleData(9, "1"); //처리구분 1:신규 2:정정 3:취소
-            axGiExpertControl2.SetSingleData(10, "0"); //정정취소수량구분 0:신규 2:정정 3:취소
-            axGiExpertControl2.SetSingleData(11, ""); //원주문번호 (신규매도/매수시 생략)
-            axGiExpertControl2.SetSingleData(12, ""); //예약주문여부 1:예약 (예약주문 어닌경우생략)
-            axGiExpertControl2.RequestData();
+            this.Start_date_picker.CustomFormat = "yyyyMMdd";
+            this.End_date_picker.CustomFormat = "yyyyMMdd";
+
+            string start_date = DateTime.Now.AddDays(-7).ToString("yyyyMMdd");
+            string end_date = DateTime.Now.ToString("yyyyMMdd");
+
+            this.Start_date_picker.Value = DateTime.ParseExact(start_date, "yyyyMMdd", null);
+            this.End_date_picker.Value = DateTime.ParseExact(end_date, "yyyyMMdd", null);
+        }
+
+        private void Orderlist_date_Changed(object sender, EventArgs e)
+        {
+            get_Orderlist(Account_Num_1.Text, Acc_PW_1.Text);
+        }
+
+        private void get_Orderlist(string Acc_num, string Acc_pw)  //주문내역 가져오기
+        {
+            Comm_Obj_Orderlist.SetQueryName("SABC203Q2");
+            Comm_Obj_Orderlist.SetSingleData(0, Acc_num); // 계좌번호
+            Comm_Obj_Orderlist.SetSingleData(1, Acc_pw); //비밀번호
+            Comm_Obj_Orderlist.SetSingleData(2, "%"); //매매구분 %:전체
+            Comm_Obj_Orderlist.SetSingleData(3, "%"); //종목코드 %:전체
+            Comm_Obj_Orderlist.SetSingleData(4, "000"); //시장ID코드
+            Comm_Obj_Orderlist.SetSingleData(5, "%"); // 옵션구분코드
+            Comm_Obj_Orderlist.SetSingleData(6, this.Start_date_picker.Text); //조회시작일
+            Comm_Obj_Orderlist.SetSingleData(7, this.End_date_picker.Text); //조회종료일
+            Comm_Obj_Orderlist.RequestData();
+
+        }
+
+        private void Comm_obj_Orderlist_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_SABC203Q2();
+        }
+
+        private void Proc_SABC203Q2()
+        {
+            int nRowSize = Comm_Obj_Orderlist.GetMultiRowCount();
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("주문일자");
+            dt.Columns.Add("종목코드");
+            dt.Columns.Add("매매구분");
+            dt.Columns.Add("체결수량");
+            dt.Columns.Add("체결단가");
+            dt.Columns.Add("체결금액");
+            dt.Columns.Add("손익금액");
+            dt.Columns.Add("수수료");
+
+
+            for (int i = 0; i < nRowSize; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 0);
+                dr[1] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 1);
+                dr[2] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 2);
+                dr[3] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 3);
+                dr[4] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 4);
+                dr[5] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 5);
+                dr[6] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 6);
+                dr[7] = (string)Comm_Obj_Orderlist.GetMultiData(Convert.ToInt16(i), 7);
+                dt.Rows.Add(dr);
+            }
+            Order_list.DataSource = dt;
+
         }
 
         private void Sell_btn_Click(object sender, EventArgs e)
@@ -1947,16 +2019,10 @@ namespace WindowsFormsApp4
             getDeal(Acc_num, Acc_pw, code, count, price, control, type);
         }
 
-        private void AccountComboChange(object sender, EventArgs e)
-        {
-            short index = Convert.ToInt16(Account_Num_2.SelectedIndex);
-            Account_Name_2.Text = Convert.ToString(axGiExpertControl1.GetMultiData(index, 1));
-        }
-
         private void AccountComboChange2(object sender, EventArgs e)
         {
             short index = Convert.ToInt16(Account_Num_1.SelectedIndex);
-            Account_Name_1.Text = Convert.ToString(axGiExpertControl1.GetMultiData(index, 1));
+            Account_Name_1.Text = Convert.ToString(Comm_Obj_Accountinfo.GetMultiData(index, 1));
         }
         private void txtInterval_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -1972,17 +2038,17 @@ namespace WindowsFormsApp4
             if (TimerSet.Checked)
             {
                 TimerText.Visible = true;
-                TimerSetButton.Visible = true;
-                TimerStopButton.Visible = true;
+                //TimerSetButton.Visible = true;
+                //TimerStopButton.Visible = true;
             }
             else
             {
                 TimerText.Visible = false;
-                TimerSetButton.Visible = false;
-                TimerStopButton.Visible = false;
+                //TimerSetButton.Visible = false;
+                //TimerStopButton.Visible = false;
             }
         }
-
+        /*
         private void TimerSetButton_Click(object sender, EventArgs e)
         {
             timer1.Interval = Convert.ToInt32(TimerText.Text);
@@ -2011,13 +2077,16 @@ namespace WindowsFormsApp4
                 EnableTimeSetButton.Visible = false;
             }
         }
+        */
 
         private void MecroSet_CheckedChanged(object sender, EventArgs e)
         {
+            /*
             if (MecroSet_1.Checked)
                 EnableTimeSet.Visible = true;
             else
                 EnableTimeSet.Visible = false;
+                */
         }
     }
 }
