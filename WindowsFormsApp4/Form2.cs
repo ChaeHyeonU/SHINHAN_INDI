@@ -24,6 +24,7 @@ namespace WindowsFormsApp4
         private int[] control_Time_Set = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] control_Delay_Set = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] condition_Delay = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] buy_sell_Count = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int control_num = 0;
 
         DataGridView[] FCGrid_sample;
@@ -734,13 +735,6 @@ namespace WindowsFormsApp4
                     Mecro_Deal(control);
                 }
             }
-
-                //setGridView();
-            
-            /*else
-            {
-                MessageBox.Show("시간이 아닙니다");
-            }*/
         }
         private void Mecro_Set_Checked(int control) // 0: 매크로사용 x   1: 매크로사용
         {
@@ -885,20 +879,20 @@ namespace WindowsFormsApp4
 
         private void Mecro_Deal(int control)
         {
-
             //control_Mecro 0:매도 1:매수 2:매도(청산) 3:매수(청산)
 
             string Acc_num = Account_Num_1.Text;
             string Acc_pw = Acc_PW_1.Text;
             string code = gFCode[control - 1];
-            string count = "1";
             string cont;              // 01: 매도   02: 매수
             string price = "0";
             string type = "M";        //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
+            string tmp_Count = "CountText_" + (control).ToString();
+            string count = (this.Controls.Find(tmp_Count, true).FirstOrDefault()).Text;
 
-            if(control_Mecro_Deal[control -1] == 1) //매크로 사용 여부
+            if (control_Mecro_Deal[control - 1] == 1) //매크로 사용 여부
             {
-                if(control_Delay_Set[control-1] == 1) //딜레이 사용 여부 // 딜레이 사용
+                if (control_Delay_Set[control - 1] == 1) //딜레이 사용 여부 // 딜레이 사용
                 {
                     if (condition_Delay[control - 1] == 0) //현재 딜레이 상태 여부 
                     {
@@ -912,6 +906,7 @@ namespace WindowsFormsApp4
                                 cont = "01";
                                 getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
                                 control_Mecro[control - 1] = 1;
+                                buy_sell_Count[control - 1] -= Convert.ToInt32(count);
 
                                 condition_Delay[control - 1] = Delay;
 
@@ -960,6 +955,7 @@ namespace WindowsFormsApp4
                                 cont = "02";
                                 getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
                                 control_Mecro[control - 1] = 2;
+                                buy_sell_Count[control - 1] += Convert.ToInt32(count);
 
                                 condition_Delay[control - 1] = Delay;
 
@@ -1004,19 +1000,21 @@ namespace WindowsFormsApp4
                     }
                     else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도(청산)")
                     {
-                        if (control_Mecro[control - 1] != 3)
+                        if (control_Mecro[control - 1] != 3 && buy_sell_Count[control - 1] > 0)
                         {
                             cont = "01";
-                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type);
+                            buy_sell_Count[control - 1] = 0;
                             control_Mecro[control - 1] = 3;
                         }
                     }
                     else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
                     {
-                        if (control_Mecro[control - 1] != 4)
+                        if (control_Mecro[control - 1] != 4 && buy_sell_Count[control - 1] < 0)
                         {
                             cont = "02";
-                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type);
+                            buy_sell_Count[control - 1] = 0;
                             control_Mecro[control - 1] = 4;
                         }
                     }
@@ -1024,7 +1022,7 @@ namespace WindowsFormsApp4
                     {
                         control_Mecro[control - 1] = 0;
                     }
-                    
+
                 }
                 else //딜레이 사용 x
                 {
@@ -1034,6 +1032,7 @@ namespace WindowsFormsApp4
                         {
                             cont = "01";
                             getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            buy_sell_Count[control - 1] -= Convert.ToInt32(count);
                             control_Mecro[control - 1] = 1;
                         }
                     }
@@ -1043,24 +1042,27 @@ namespace WindowsFormsApp4
                         {
                             cont = "02";
                             getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            buy_sell_Count[control - 1] += Convert.ToInt32(count);
                             control_Mecro[control - 1] = 2;
                         }
                     }
                     else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도(청산)")
                     {
-                        if (control_Mecro[control - 1] != 3)
+                        if (control_Mecro[control - 1] != 3 && buy_sell_Count[control - 1] > 0)
                         {
                             cont = "01";
-                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type);
+                            buy_sell_Count[control - 1] = 0;
                             control_Mecro[control - 1] = 3;
                         }
                     }
                     else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
                     {
-                        if (control_Mecro[control - 1] != 4)
+                        if (control_Mecro[control - 1] != 4 && buy_sell_Count[control - 1] < 0)
                         {
                             cont = "02";
-                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type);
+                            buy_sell_Count[control - 1] = 0;
                             control_Mecro[control - 1] = 4;
                         }
                     }
@@ -1069,7 +1071,6 @@ namespace WindowsFormsApp4
                         control_Mecro[control - 1] = 0;
                     }
                 }
-                
             }
         }
 
@@ -2328,56 +2329,5 @@ namespace WindowsFormsApp4
                 timer.Stop();
             }
         }
-        
-        private void SetDelay_1_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_1.Checked)
-                SetDelayText_1.Visible = true;
-            else
-                SetDelayText_1.Visible = false;
-        }
-
-        private void SetDelay_2_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_2.Checked)
-                SetDelayText_2.Visible = true;
-            else
-                SetDelayText_2.Visible = false;
-        }
-
-        private void SetDelay_3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_3.Checked)
-                SetDelayText_3.Visible = true;
-            else
-                SetDelayText_3.Visible = false;
-        }
-
-        private void SetDelay_4_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_4.Checked)
-                SetDelayText_4.Visible = true;
-            else
-                SetDelayText_4.Visible = false;
-        }
-
-        private void SetDelay_5_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_5.Checked)
-                SetDelayText_5.Visible = true;
-            else
-                SetDelayText_5.Visible = false;
-        }
-
-        private void SetDelay_6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_6.Checked)
-                SetDelayText_6.Visible = true;
-            else
-                SetDelayText_6.Visible = false;
-        }
-
-
-
     }
 }
