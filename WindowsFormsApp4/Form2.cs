@@ -20,6 +20,10 @@ namespace WindowsFormsApp4
         private int[] control_buy_sell = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] control_Enable_Angle = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] control_Mecro = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] control_Mecro_Deal = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] control_Time_Set = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] control_Delay_Set = new int[6] { 0, 0, 0, 0, 0, 0 };
+        private int[] condition_Delay = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int control_num = 0;
 
         DataGridView[] FCGrid_sample;
@@ -33,6 +37,10 @@ namespace WindowsFormsApp4
         System.Threading.Timer _timeoutTimer; //쓰레드 타이머 string _caption; const int WM_CLOSE = 0x0010; 
         string _caption;
         const int WM_CLOSE = 0X0010;//close 명령
+
+        //청산 먼저 못하게
+        //계좌 count textbox
+        //청산 계좌 갯수
 
         public Form2()
         {
@@ -656,81 +664,228 @@ namespace WindowsFormsApp4
             var tmpText_angle = this.Controls.Find(Angle_name, true).FirstOrDefault();
             var tmpText_distance = this.Controls.Find(Distance_name, true).FirstOrDefault();
 
-            
-                if (string.IsNullOrEmpty(tmpText_start.Text) || string.IsNullOrEmpty(tmpText_end.Text) || string.IsNullOrEmpty(tmpText_interval.Text))
+
+            if (string.IsNullOrEmpty(tmpText_start.Text) || string.IsNullOrEmpty(tmpText_end.Text) || string.IsNullOrEmpty(tmpText_interval.Text))
+            {
+                MessageBox.Show("입력값 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_wma.Text))
+            {
+                MessageBox.Show("WMA 간격설정 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_angle.Text))
+            {
+                MessageBox.Show("기울기 설정 오류");
+            }
+            else if (string.IsNullOrEmpty(tmpText_distance.Text))
+            {
+                MessageBox.Show("기울기 간격설정 오류");
+            }
+            else
+            {
+                int day = Convert.ToInt32(tmpText_wma.Text);
+                int[] index = getWMA_Index(Convert.ToInt32(tmpText_start.Text), Convert.ToInt32(tmpText_end.Text), Convert.ToInt32(tmpText_interval.Text));
+                int index_length = index.Length;
+                double[] aaa = new double[index_length];
+
+                for (int i = 0; i < RowNum; i++)
                 {
-                    MessageBox.Show("입력값 오류");
+                    FCGrid_sample[control - 1].Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(control), day, 0)[i];
+                    FCGrid_sample[control - 1].Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(control), day, 0), control)[i];
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Value = "";
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
+                    FCGrid_sample[control - 1].Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
                 }
-                else if (string.IsNullOrEmpty(tmpText_wma.Text))
+
+                control_buy_sell[control - 1] = 0;
+                control_Enable_Angle[control - 1] = 0;
+
+                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
                 {
-                    MessageBox.Show("WMA 간격설정 오류");
+                    for (int i = 0; i < index_length; i++)
+                    {
+                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                    }
+                    Mecro(aaa, j, control);
                 }
-                else if (string.IsNullOrEmpty(tmpText_angle.Text))
+                for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
                 {
-                    MessageBox.Show("기울기 설정 오류");
+                    for (int i = 0; i < index_length; i++)
+                    {
+                        aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
+                    }
+                    set_Condition(aaa, j, control);
                 }
-                else if (string.IsNullOrEmpty(tmpText_distance.Text))
+                //control_Mecro_Deal[control - 1] = 1;
+
+                Mecro_Set_Checked(control);
+                Time_Set_Checked(control);
+                Delay_Set_Checked(control);
+
+                if (control_Time_Set[control-1] == 1)
                 {
-                    MessageBox.Show("기울기 간격설정 오류");
+                    if (setTimeDeal(control) == true)
+                    {
+                        Mecro_Deal(control);
+                    }
                 }
                 else
                 {
-                    int day = Convert.ToInt32(tmpText_wma.Text);
-                    int[] index = getWMA_Index(Convert.ToInt32(tmpText_start.Text), Convert.ToInt32(tmpText_end.Text), Convert.ToInt32(tmpText_interval.Text));
-                    int index_length = index.Length;
-                    double[] aaa = new double[index_length];
-
-                    for (int i = 0; i < RowNum; i++)
-                    {
-                        FCGrid_sample[control - 1].Rows[i].Cells[6].Value = Prov_WMA(Get_EndPrice(control), day, 0)[i];
-                        FCGrid_sample[control - 1].Rows[i].Cells[7].Value = Get_Angle(Prov_WMA(Get_EndPrice(control), day, 0), control)[i];
-                        FCGrid_sample[control - 1].Rows[i].Cells[9].Value = "";
-                        FCGrid_sample[control - 1].Rows[i].Cells[9].Style.BackColor = SystemColors.Window;
-                        FCGrid_sample[control - 1].Rows[i].Cells[9].Style.ForeColor = SystemColors.WindowText;
-                    }
-
-                    control_buy_sell[control - 1] = 0;
-                    control_Enable_Angle[control - 1] = 0;
-
-                    for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
-                    {
-                        for (int i = 0; i < index_length; i++)
-                        {
-                            aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
-                        }
-                        Mecro(aaa, j, control);
-                    }
-                    for (int j = RowNum - index[index_length - 1]; j >= 0; j--)
-                    {
-                        for (int i = 0; i < index_length; i++)
-                        {
-                            aaa[i] = Prov_WMA(Get_EndPrice(control), index[i], 0)[j];
-                        }
-                        set_Condition(aaa, j, control);
-                    }
-                /*
-                if (MecroSet_1.Checked)
-
-                    if (EnableTimeSet.Checked)
-                    {
-                        if(setTimeDeal() == true)
-                        {
-                            Mecro_Deal(control);
-                        }
-                    }
-                    else
-                        Mecro_Deal(control);
-                        */
-                //setGridView();
+                    Mecro_Deal(control);
+                }
             }
+
+                //setGridView();
+            
             /*else
             {
                 MessageBox.Show("시간이 아닙니다");
             }*/
         }
+        private void Mecro_Set_Checked(int control) // 0: 매크로사용 x   1: 매크로사용
+        {
+            string Mecro_Checked = "MecroSet_" + (control).ToString();
+            CheckBox MecroSet = (CheckBox)this.Controls.Find(Mecro_Checked, true).FirstOrDefault();
+
+            if (MecroSet.Checked)
+                control_Mecro_Deal[control - 1] = 1;
+            else
+                control_Mecro_Deal[control - 1] = 0;
+        }
+        private void Time_Set_Checked(int control) // 0: 시간설정사용 x   1: 시간설정사용
+        {
+            string Time_Checked = "TimeSetCheck_" + (control).ToString();
+            string tmp_StartTime = "startTime_" + (control).ToString();
+            string tmp_EndTime = "endTime_" + (control).ToString();
+
+            var startTime = this.Controls.Find(tmp_StartTime, true).FirstOrDefault();
+            var endTime = this.Controls.Find(tmp_EndTime, true).FirstOrDefault();
+
+            CheckBox Time_Set_Checked = (CheckBox)this.Controls.Find(Time_Checked, true).FirstOrDefault();
+
+            if (Time_Set_Checked.Checked)
+            {
+                if (startTime.Text.Length != 4 || endTime.Text.Length != 4)
+                {
+                    MessageBox.Show("시간입력 다시 4자리로 입력");
+                }
+                else if (Convert.ToInt32(startTime.Text) < 0900 || Convert.ToInt32(endTime.Text) > 1545)
+                {
+                    MessageBox.Show("장마감시간");
+                }
+                else
+                {
+                    //MessageBox.Show("시간 설정되었습니다");
+                    control_Time_Set[control - 1] = 1;
+                }
+            }
+            else
+                control_Time_Set[control - 1] = 0;
+        }
+        private void Delay_Set_Checked(int control) // 0: 딜레이설정사용 x   1 >: 딜레이설정사용중
+        {
+            string Time_Checked = "SetDelay_" + (control).ToString();
+            CheckBox Time_Set_Checked = (CheckBox)this.Controls.Find(Time_Checked, true).FirstOrDefault();
+
+            if (Time_Set_Checked.Checked)
+                control_Delay_Set[control - 1] = 1;
+            else
+                control_Delay_Set[control - 1] = 0;
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[0] > 0)
+            {
+                condition_Delay[0] = condition_Delay[0] - 1;
+                Visible_Delay_1.Text = Convert.ToString(condition_Delay[0]);
+            }
+            else
+            {
+                timer1.Stop();
+                //MessageBox.Show("1번 타이머 종료");
+            }
+        }
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[1] > 0)
+            {
+                condition_Delay[1] = condition_Delay[1] - 1;
+                Visible_Delay_2.Text = Convert.ToString(condition_Delay[1]);
+            }
+                
+            else
+            {
+                timer2.Stop();
+                //MessageBox.Show("2번 타이머 종료");
+            }
+                
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[2] > 0)
+            {
+                condition_Delay[2] = condition_Delay[2] - 1;
+                Visible_Delay_3.Text = Convert.ToString(condition_Delay[2]);
+            }
+                
+            else
+            {
+                //MessageBox.Show("3번 타이머 종료");
+                timer3.Stop();
+            }
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[3] > 0)
+            {
+                condition_Delay[3] = condition_Delay[3] - 1;
+                Visible_Delay_4.Text = Convert.ToString(condition_Delay[3]);
+            }
+                
+            else
+            {
+                //MessageBox.Show("4번 타이머 종료");
+                timer4.Stop();
+            }
+                
+        }
+
+        private void timer5_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[4] > 0)
+            {
+                condition_Delay[4] = condition_Delay[4] - 1;
+                Visible_Delay_5.Text = Convert.ToString(condition_Delay[4]);
+            }
+            else
+            {
+                //MessageBox.Show("5번 타이머 종료");
+                timer5.Stop();
+            }
+               
+        }
+
+        private void timer6_Tick(object sender, EventArgs e)
+        {
+            if (condition_Delay[5] > 0)
+            {
+                condition_Delay[5] = condition_Delay[5] - 1;
+                Visible_Delay_6.Text = Convert.ToString(condition_Delay[5]);
+            }
+                
+            else
+            {
+                //MessageBox.Show("6번 타이머 종료");
+                timer6.Stop();
+            }
+                
+        }
 
         private void Mecro_Deal(int control)
         {
+
             //control_Mecro 0:매도 1:매수 2:매도(청산) 3:매수(청산)
 
             string Acc_num = Account_Num_1.Text;
@@ -741,76 +896,195 @@ namespace WindowsFormsApp4
             string price = "0";
             string type = "M";        //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
 
-            if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도")
+            if(control_Mecro_Deal[control -1] == 1) //매크로 사용 여부
             {
-                if (control_Mecro[control - 1] != 1)
+                if(control_Delay_Set[control-1] == 1) //딜레이 사용 여부 // 딜레이 사용
                 {
-                    cont = "01";
-                    getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
-                    control_Mecro[control - 1] = 1;
+                    if (condition_Delay[control - 1] == 0) //현재 딜레이 상태 여부 
+                    {
+                        string tmp_Delay = "SetDelayText_" + (control).ToString();
+                        int Delay = Convert.ToInt32(this.Controls.Find(tmp_Delay, true).FirstOrDefault().Text);
+
+                        if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도")
+                        {
+                            if (control_Mecro[control - 1] != 1)
+                            {
+                                cont = "01";
+                                getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                                control_Mecro[control - 1] = 1;
+
+                                condition_Delay[control - 1] = Delay;
+
+                                if (control == 1)
+                                {
+                                    timer1.Tick += new EventHandler(timer1_Tick);
+                                    timer1.Start();
+                                    //MessageBox.Show("1번 타이머 시작");
+                                }
+                                else if (control == 2)
+                                {
+                                    timer2.Tick += new EventHandler(timer2_Tick);
+                                    timer2.Start();
+                                    //MessageBox.Show("2번 타이머 시작");
+                                }
+                                else if (control == 3)
+                                {
+                                    timer3.Tick += new EventHandler(timer3_Tick);
+                                    timer3.Start();
+                                    //MessageBox.Show("3번 타이머 시작");
+                                }
+                                else if (control == 4)
+                                {
+                                    timer4.Tick += new EventHandler(timer4_Tick);
+                                    timer4.Start();
+                                    //MessageBox.Show("4번 타이머 시작");
+                                }
+                                else if (control == 5)
+                                {
+                                    timer5.Tick += new EventHandler(timer5_Tick);
+                                    timer5.Start();
+                                    //MessageBox.Show("5번 타이머 시작");
+                                }
+                                else if (control == 6)
+                                {
+                                    timer6.Tick += new EventHandler(timer6_Tick);
+                                    timer6.Start();
+                                    //MessageBox.Show("6번 타이머 시작");
+                                }
+                            }
+                        }
+                        else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수")
+                        {
+                            if (control_Mecro[control - 1] != 2)
+                            {
+                                cont = "02";
+                                getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                                control_Mecro[control - 1] = 2;
+
+                                condition_Delay[control - 1] = Delay;
+
+                                if (control == 1)
+                                {
+                                    timer1.Tick += new EventHandler(timer1_Tick);
+                                    timer1.Start();
+                                    //MessageBox.Show("1번 타이머 시작");
+                                }
+                                else if (control == 2)
+                                {
+                                    timer2.Tick += new EventHandler(timer2_Tick);
+                                    timer2.Start();
+                                    //MessageBox.Show("2번 타이머 시작");
+                                }
+                                else if (control == 3)
+                                {
+                                    timer3.Tick += new EventHandler(timer3_Tick);
+                                    timer3.Start();
+                                    //MessageBox.Show("3번 타이머 시작");
+                                }
+                                else if (control == 4)
+                                {
+                                    timer4.Tick += new EventHandler(timer4_Tick);
+                                    timer4.Start();
+                                    //MessageBox.Show("4번 타이머 시작");
+                                }
+                                else if (control == 5)
+                                {
+                                    timer5.Tick += new EventHandler(timer5_Tick);
+                                    timer5.Start();
+                                    //MessageBox.Show("5번 타이머 시작");
+                                }
+                                else if (control == 6)
+                                {
+                                    timer6.Tick += new EventHandler(timer6_Tick);
+                                    timer6.Start();
+                                    //MessageBox.Show("6번 타이머 시작");
+                                }
+                            }
+                        }
+                    }
+                    else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도(청산)")
+                    {
+                        if (control_Mecro[control - 1] != 3)
+                        {
+                            cont = "01";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 3;
+                        }
+                    }
+                    else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
+                    {
+                        if (control_Mecro[control - 1] != 4)
+                        {
+                            cont = "02";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 4;
+                        }
+                    }
+                    else
+                    {
+                        control_Mecro[control - 1] = 0;
+                    }
+                    
                 }
-            }
-            else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수")
-            {
-                if (control_Mecro[control - 1] != 2)
+                else //딜레이 사용 x
                 {
-                    cont = "02";
-                    getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
-                    control_Mecro[control - 1] = 2;
+                    if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도")
+                    {
+                        if (control_Mecro[control - 1] != 1)
+                        {
+                            cont = "01";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 1;
+                        }
+                    }
+                    else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수")
+                    {
+                        if (control_Mecro[control - 1] != 2)
+                        {
+                            cont = "02";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 2;
+                        }
+                    }
+                    else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도(청산)")
+                    {
+                        if (control_Mecro[control - 1] != 3)
+                        {
+                            cont = "01";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 3;
+                        }
+                    }
+                    else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
+                    {
+                        if (control_Mecro[control - 1] != 4)
+                        {
+                            cont = "02";
+                            getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
+                            control_Mecro[control - 1] = 4;
+                        }
+                    }
+                    else
+                    {
+                        control_Mecro[control - 1] = 0;
+                    }
                 }
-            }
-            else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매도(청산)")
-            {
-                if (control_Mecro[control - 1] != 3)
-                {
-                    cont = "01";
-                    getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
-                    control_Mecro[control - 1] = 3;
-                }
-            }
-            else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
-            {
-                if (control_Mecro[control - 1] != 4)
-                {
-                    cont = "02";
-                    getDeal(Acc_num, Acc_pw, code, count, price, cont, type);
-                    control_Mecro[control - 1] = 4;
-                }
-            }
-            else
-            {
-                control_Mecro[control - 1] = 0;
-            }
-        }
-        private void EnableTimeSetButton_Click(object sender, EventArgs e)
-        {   
-            if (startTime_1.Text.Length != 4 || endTime_1.Text.Length != 4)
-            {
-                MessageBox.Show("시간입력 다시 4자리로 입력");
-            }
-            else if (Convert.ToInt32(startTime_1.Text) == 0000 && Convert.ToInt32(endTime_1.Text) == 0000)
-            {
-                MessageBox.Show("전체 시간");
-            }
-            else if (Convert.ToInt32(startTime_1.Text) < 0900 || Convert.ToInt32(endTime_1.Text) > 1545)
-            {
-                MessageBox.Show("장마감시간");
-            }
-            else
-            {
-                MessageBox.Show("시간 설정되었습니다");
+                
             }
         }
 
-        private bool setTimeDeal() //startTime endTime
+        private bool setTimeDeal(int control) //startTime endTime
         {
-            int start = Convert.ToInt32(startTime_1.Text);
-            int end = Convert.ToInt32(endTime_1.Text);
+            string tmp_Start = "startTime_" + (control).ToString();
+            string tmp_End = "endTime_" + (control).ToString();
+            int start = Convert.ToInt32((this.Controls.Find(tmp_Start, true).FirstOrDefault()).Text);
+            int end = Convert.ToInt32((this.Controls.Find(tmp_End, true).FirstOrDefault()).Text);
+
             int nowTime = Convert.ToInt32(DateTime.Now.ToString("HHmm"));
             int gapTime1 = start - nowTime; //음수이어야함
             int gapTime2 = end - nowTime; //양수이어야함
 
-            if(start == 0000 && end == 0000)
+            if (start == 0000 && end == 0000)
             {
                 return true;
             }
@@ -824,9 +1098,12 @@ namespace WindowsFormsApp4
         {
             int[] angle = new int[RowNum];
 
-            int day = Convert.ToInt32(WMA_input_1.Text);
+            string tmp_Day = "WMA_input_" + (control).ToString();
+            string tmp_Where = "Distance_input_" + (control).ToString();
+
+            int day = Convert.ToInt32((this.Controls.Find(tmp_Day, true).FirstOrDefault()).Text);
+            int where = Convert.ToInt32((this.Controls.Find(tmp_Where, true).FirstOrDefault()).Text);
             int time = Convert.ToInt32(TimeSelected[control - 1]);
-            int where = Convert.ToInt32(Distance_input_1.Text);
 
             double radians;
 
@@ -994,7 +1271,6 @@ namespace WindowsFormsApp4
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.ForeColor = Color.White;
                 control_buy_sell[control - 1] = 2;
                 control_Enable_Angle[control - 1] = 0;
-                //getDeal("01", "02");
             }
             else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] == 2)
             {
@@ -2037,56 +2313,70 @@ namespace WindowsFormsApp4
         {
             if (TimerSet.Checked)
             {
-                TimerText.Visible = true;
-                //TimerSetButton.Visible = true;
-                //TimerStopButton.Visible = true;
+                if (string.IsNullOrEmpty(TimerText.Text))
+                {
+                    MessageBox.Show("시간 입력");
+                }
+                else
+                {
+                    timer.Interval = Convert.ToInt32(TimerText.Text) * 1000;
+                    timer.Start();
+                }
             }
             else
             {
-                TimerText.Visible = false;
-                //TimerSetButton.Visible = false;
-                //TimerStopButton.Visible = false;
+                timer.Stop();
             }
         }
-        /*
-        private void TimerSetButton_Click(object sender, EventArgs e)
+        
+        private void SetDelay_1_CheckedChanged(object sender, EventArgs e)
         {
-            timer1.Interval = Convert.ToInt32(TimerText.Text);
-            timer1.Start();
-        }
-
-        private void TimerStopButton_Click(object sender, EventArgs e)
-        {
-            timer1.Stop();
-        }
-
-        private void EnableTimeSet_CheckedChanged(object sender, EventArgs e)
-        {
-            if (EnableTimeSet.Checked)
-            {
-                startTime_1.Visible = true;
-                endTime_1.Visible = true;
-                EnableTimeStopButton.Visible = true;
-                EnableTimeSetButton.Visible = true;
-            }
+            if (SetDelay_1.Checked)
+                SetDelayText_1.Visible = true;
             else
-            {
-                startTime_1.Visible = false;
-                endTime_1.Visible = false;
-                EnableTimeStopButton.Visible = false;
-                EnableTimeSetButton.Visible = false;
-            }
+                SetDelayText_1.Visible = false;
         }
-        */
 
-        private void MecroSet_CheckedChanged(object sender, EventArgs e)
+        private void SetDelay_2_CheckedChanged(object sender, EventArgs e)
         {
-            /*
-            if (MecroSet_1.Checked)
-                EnableTimeSet.Visible = true;
+            if (SetDelay_2.Checked)
+                SetDelayText_2.Visible = true;
             else
-                EnableTimeSet.Visible = false;
-                */
+                SetDelayText_2.Visible = false;
         }
+
+        private void SetDelay_3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SetDelay_3.Checked)
+                SetDelayText_3.Visible = true;
+            else
+                SetDelayText_3.Visible = false;
+        }
+
+        private void SetDelay_4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SetDelay_4.Checked)
+                SetDelayText_4.Visible = true;
+            else
+                SetDelayText_4.Visible = false;
+        }
+
+        private void SetDelay_5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SetDelay_5.Checked)
+                SetDelayText_5.Visible = true;
+            else
+                SetDelayText_5.Visible = false;
+        }
+
+        private void SetDelay_6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (SetDelay_6.Checked)
+                SetDelayText_6.Visible = true;
+            else
+                SetDelayText_6.Visible = false;
+        }
+
+       
     }
 }
