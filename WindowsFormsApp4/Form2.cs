@@ -2377,6 +2377,7 @@ namespace WindowsFormsApp4
                 SetDelayText_6.Visible = false;
         }
 
-       
+
+
     }
 }
