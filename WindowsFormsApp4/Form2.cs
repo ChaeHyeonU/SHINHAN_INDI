@@ -13,8 +13,8 @@ namespace WindowsFormsApp4
 
     public partial class Form2 : Form
     {
-        private int RowNum = 200;
-        private string[] gFCode = new string[6] { "101Q3", "101Q3", "201Q3267", "101Q3", "101Q3", "101Q3" };
+        private int RowNum = 100;
+        private string[] gFCode = new string[6] { "101Q3", "101Q3", "101Q3", "101Q3", "101Q3", "101Q3" };
         private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
         private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
         private int[] control_buy_sell = new int[6] { 0, 0, 0, 0, 0, 0 };
@@ -26,6 +26,9 @@ namespace WindowsFormsApp4
         private int[] condition_Delay = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] buy_sell_Count = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int control_num = 0;
+
+
+        private List<string> code_list;
 
         DataGridView[] FCGrid_sample;
         const int ARR_COUNT = 6;
@@ -46,6 +49,7 @@ namespace WindowsFormsApp4
         public Form2()
         {
             InitializeComponent();
+            this.code_list = new List<string>();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -76,7 +80,15 @@ namespace WindowsFormsApp4
 
             //Account_Num_1.Text = (string)Account_Num_1.Items[0];
             setGridView();
-            
+
+
+            // 선물 코드 목록 조회
+            Comm_Obj_Code_List.SetQueryName("fut_mst");
+            Comm_Obj_Code_List.RequestData();
+
+            // 옵션 코드 목록 조회
+            Comm_Obj_Code_List.SetQueryName("opt_mst");
+            Comm_Obj_Code_List.RequestData();
         }
 
         public void Load_Data(string Fcode, string time, string distance, int control)
@@ -315,6 +327,18 @@ namespace WindowsFormsApp4
 
             Delay(100);
         }
+        
+        private void Proc_TR_msc()
+        {
+            // fst_msc, opt_msc
+            //string[] output;
+            int nRowSize = Comm_Obj_Code_List.GetMultiRowCount();
+            for(int i=0;i<nRowSize;i++)
+            {
+                this.code_list.Add((string)Comm_Obj_Code_List.GetMultiData(short.Parse(i.ToString()), 1) + "(" + (string)Comm_Obj_Code_List.GetMultiData(short.Parse(i.ToString()), 2) + ")");
+            }
+        }
+        
         
         private DataTable Proc_TR_FCHART()
         {
@@ -740,11 +764,12 @@ namespace WindowsFormsApp4
         {
             string Mecro_Checked = "MecroSet_" + (control).ToString();
             CheckBox MecroSet = (CheckBox)this.Controls.Find(Mecro_Checked, true).FirstOrDefault();
-
+            
             if (MecroSet.Checked)
                 control_Mecro_Deal[control - 1] = 1;
             else
                 control_Mecro_Deal[control - 1] = 0;
+                
         }
         private void Time_Set_Checked(int control) // 0: 시간설정사용 x   1: 시간설정사용
         {
@@ -791,7 +816,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[0] > 0)
             {
                 condition_Delay[0] = condition_Delay[0] - 1;
-                Visible_Delay_1.Text = Convert.ToString(condition_Delay[0]);
+                //Visible_Delay_1.Text = Convert.ToString(condition_Delay[0]);
             }
             else
             {
@@ -804,7 +829,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[1] > 0)
             {
                 condition_Delay[1] = condition_Delay[1] - 1;
-                Visible_Delay_2.Text = Convert.ToString(condition_Delay[1]);
+                //Visible_Delay_2.Text = Convert.ToString(condition_Delay[1]);
             }
                 
             else
@@ -820,7 +845,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[2] > 0)
             {
                 condition_Delay[2] = condition_Delay[2] - 1;
-                Visible_Delay_3.Text = Convert.ToString(condition_Delay[2]);
+                //Visible_Delay_3.Text = Convert.ToString(condition_Delay[2]);
             }
                 
             else
@@ -835,7 +860,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[3] > 0)
             {
                 condition_Delay[3] = condition_Delay[3] - 1;
-                Visible_Delay_4.Text = Convert.ToString(condition_Delay[3]);
+                //Visible_Delay_4.Text = Convert.ToString(condition_Delay[3]);
             }
                 
             else
@@ -851,7 +876,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[4] > 0)
             {
                 condition_Delay[4] = condition_Delay[4] - 1;
-                Visible_Delay_5.Text = Convert.ToString(condition_Delay[4]);
+                //Visible_Delay_5.Text = Convert.ToString(condition_Delay[4]);
             }
             else
             {
@@ -866,7 +891,7 @@ namespace WindowsFormsApp4
             if (condition_Delay[5] > 0)
             {
                 condition_Delay[5] = condition_Delay[5] - 1;
-                Visible_Delay_6.Text = Convert.ToString(condition_Delay[5]);
+                //Visible_Delay_6.Text = Convert.ToString(condition_Delay[5]);
             }
                 
             else
@@ -1302,7 +1327,8 @@ namespace WindowsFormsApp4
 
         private void AutoClosingMessageBox(string text, string caption, int timeout)
         {
-            _caption = caption; _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, timeout, System.Threading.Timeout.Infinite);
+            _caption = caption; 
+            _timeoutTimer = new System.Threading.Timer(OnTimerElapsed, null, timeout, System.Threading.Timeout.Infinite);
             MessageBox.Show(text, caption);
 
         }
@@ -2124,6 +2150,7 @@ namespace WindowsFormsApp4
             int nRowSize = Comm_Obj_Price.GetMultiRowCount();
             DataTable dt = new DataTable();
             dt.Columns.Add("종목코드");
+            dt.Columns.Add("매도매수");
             dt.Columns.Add("잔고");
             dt.Columns.Add("평균가(단)");
             dt.Columns.Add("평가손익");
@@ -2134,11 +2161,12 @@ namespace WindowsFormsApp4
             {
                 DataRow dr = dt.NewRow();
                 dr[0] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 0);
-                dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
-                dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
-                dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
-                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
-                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 2);
+                dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
+                dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
+                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
+                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
+                dr[6] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
                 dt.Rows.Add(dr);
             }
             Price_GridView.DataSource = dt;
@@ -2216,6 +2244,11 @@ namespace WindowsFormsApp4
             Proc_SABC203Q2();
         }
 
+        private void Comm_obj_Code_List_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_TR_msc();
+        }
+
         private void Proc_SABC203Q2()
         {
             int nRowSize = Comm_Obj_Orderlist.GetMultiRowCount();
@@ -2248,12 +2281,12 @@ namespace WindowsFormsApp4
 
         }
 
-        private void Sell_btn_Click(object sender, EventArgs e)
+        /*private void Sell_btn_Click(object sender, EventArgs e)
         {
             string Acc_num = Account_Num_1.Text;
             string Acc_pw = Acc_PW_1.Text;
-            string code = Order_Code.Text;
-            string count = Convert.ToString(Stock_Count.Value);
+            string code = "101Q3"; // 나중에 고쳐야될부분
+            string count = "3"; //  Convert.ToString(Stock_Count.Value);
             string control = "01";
             string price;
             string type;
@@ -2294,7 +2327,7 @@ namespace WindowsFormsApp4
                 type = "L";
             }
             getDeal(Acc_num, Acc_pw, code, count, price, control, type);
-        }
+        }*/
 
         private void AccountComboChange2(object sender, EventArgs e)
         {
@@ -2310,24 +2343,166 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void TimerSet_CheckedChanged(object sender, EventArgs e)
+        private void FCode_1_Click(object sender, EventArgs e)
         {
-            if (TimerSet.Checked)
+            TextBox Tmp = sender as TextBox;
+            select_code_form sc_form = new select_code_form(Tmp, this.code_list);
+            sc_form.Show();
+        }
+
+        private void SL_function(int control)
+        {
+
+        }
+
+        private void SL_Button_Click(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            int control = 0;
+            if (tmp.Name == "SL_Button_1")
             {
-                if (string.IsNullOrEmpty(TimerText.Text))
+                if (SL_Control_1.Checked == true)
                 {
-                    MessageBox.Show("시간 입력");
+                    control = 1;
+                    AutoClosingMessageBox("(1번 종목)\n스탑로스 설정되었습니다.", "", 1);
                 }
                 else
+                    control = 0;
+            }
+            else if (tmp.Name == "SL_Button_1")
+            {
+                if (SL_Control_2.Checked == true)
                 {
-                    timer.Interval = Convert.ToInt32(TimerText.Text) * 1000;
-                    timer.Start();
+                    control = 2;
+                    AutoClosingMessageBox("(2번 종목)\n스탑로스 설정되었습니다.", "", 10);
                 }
+                else
+                    control = 0;
+            }
+            else if (tmp.Name == "SL_Button_3")
+            {
+                if (SL_Control_3.Checked == true)
+                {
+                    control = 3;
+                    AutoClosingMessageBox("(3번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+                else
+                    control = 0;
+            }
+            else if (tmp.Name == "SL_Button_4")
+            {
+                if (SL_Control_4.Checked == true)
+                {
+                    control = 4;
+                    AutoClosingMessageBox("(4번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+                else
+                    control = 0;
+            }
+            else if (tmp.Name == "SL_Button_5")
+            {
+                if(SL_Control_5.Checked == true)
+                {
+                    control = 5;
+                    AutoClosingMessageBox("(5번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+                else
+                    control = 0;
+            }
+            else if (tmp.Name == "SL_Button_6")
+            {
+                if (SL_Control_6.Checked == true)
+                {
+                    control = 6;
+                    AutoClosingMessageBox("(6번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+                else
+                    control = 0;
+            }
+
+            if(control != 0)
+                SL_function(control);
+        }
+
+        double start_price = 270.00;    //주문가격
+        bool TS_on = false;
+        double tick = 0.05;
+
+        private void TrailingStop_start(int control)
+        {
+            string TS_StartTick_name = "TS_StartTick_" + (control).ToString();
+            string TS_EndTick_name = "TS_EndTick_" + (control).ToString();
+            string TS_Final_High_name = "TS_Final_High_" + (control).ToString();
+            string TS_Final_Low_name = "TS_Final_Low_" + (control).ToString();
+            string FCode_name = "FCode_" + (control).ToString();
+            string CountText_name = "CountText_" + (control).ToString();  
+
+            var TS_StartTick = this.Controls.Find(TS_StartTick_name, true).FirstOrDefault();
+            var TS_EndTick = this.Controls.Find(TS_EndTick_name, true).FirstOrDefault();
+            var TS_Final_High = this.Controls.Find(TS_Final_High_name, true).FirstOrDefault();
+            var TS_Final_Low = this.Controls.Find(TS_Final_Low_name, true).FirstOrDefault();
+            var FCode = this.Controls.Find(FCode_name, true).FirstOrDefault();
+            var CountText = this.Controls.Find(CountText_name, true).FirstOrDefault();
+            
+            double starttick = Convert.ToDouble(TS_StartTick.Text);       //ts시점
+            double endtick = Convert.ToDouble(TS_EndTick.Text);           //ts지점
+            double final_high = Convert.ToDouble(TS_Final_High.Text);     //익절지점
+            double final_low = Convert.ToDouble(TS_Final_Low.Text);       //손절지점
+
+            TrailingStop_function(control, FCode.Text, CountText.Text, start_price, starttick, endtick, final_high, final_low);
+        }
+
+        private void TrailingStop_function(int control,string code, string count, double price, double starttick, double endtick, double final_high, double final_low)
+        {
+            string TS_OrderHow_name = "TS_OrderHow_" + (control).ToString();
+            ComboBox TS_OrderHow = (ComboBox)this.Controls.Find(TS_OrderHow_name, true).FirstOrDefault();
+
+
+            double TS_now_endprice = Convert.ToDouble(FCGrid_sample[control - 1].Rows[1].Cells[5].Value);      //현재가
+
+            if (TS_now_endprice >= start_price + tick * final_high || TS_now_endprice <= start_price - tick * final_low)
+            {
+                //익절 or 손절 주문
+                /*
+                getDeal(Account_Num_1.Text,Acc_PW_1.Text, FCode.Text, CountText.Text, TS_OrderHow.SelectedIndex)
+                TS_on = false;
+                */        
             }
             else
             {
-                timer.Stop();
+                double TS_ing = price + tick * starttick;
+
+                if (TS_now_endprice >= TS_ing)
+                {
+                    TS_on = true;
+                    TrailingStop_function(control, code, count, TS_ing, starttick, endtick, final_high, final_low);
+                }
+                else if(TS_on == true && TS_now_endprice == price + tick * endtick)
+                {
+                    //스탑지점 주문
+                    /*
+                    getDeal(Account_Num_1.Text,Acc_PW_1.Text, FCode.Text, CountText.Text, TS_OrderHow.SelectedIndex)
+                    TS_on = false;
+                    */
+                }
+
             }
+
+        }
+        
+        private void Tick_Select(int control)
+        {
+            string FCode_name = "FCode_" + (control).ToString();
+            var FCode = this.Controls.Find(FCode_name, true).FirstOrDefault();
+
+            Comm_Obj_FH_Real.SetQueryName("FH");
+            Comm_Obj_FH_Real.SetSingleData(0, FCode.Text);  //코드
+            Comm_Obj_FH_Real.RequestData();
+        }
+
+        private void Comm_Obj_FH_Real_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+
         }
     }
 }

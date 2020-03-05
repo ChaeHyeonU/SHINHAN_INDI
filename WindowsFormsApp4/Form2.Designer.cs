@@ -30,15 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA_1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.Comm_Obj_FH_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
+            this.Comm_Obj_Code_List = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.FCode_1 = new System.Windows.Forms.TextBox();
             this.FCGrid_1 = new System.Windows.Forms.DataGridView();
             this.WMA_input_1 = new System.Windows.Forms.TextBox();
@@ -204,44 +205,12 @@
             this.FCode_5 = new System.Windows.Forms.TextBox();
             this.startTime_1 = new System.Windows.Forms.TextBox();
             this.endTime_1 = new System.Windows.Forms.TextBox();
-            this.MecroSet_1 = new System.Windows.Forms.CheckBox();
-            this.TimerSet = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Order_type = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.Order_Price = new System.Windows.Forms.TextBox();
-            this.Order_Code = new System.Windows.Forms.TextBox();
-            this.Stock_Count = new System.Windows.Forms.NumericUpDown();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Sell_btn = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.Buy_btn = new System.Windows.Forms.Button();
             this.Comm_Obj_DATA_2 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_3 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_4 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_5 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_6 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
-            this.TimerText = new System.Windows.Forms.TextBox();
-            this.SetDelayText_1 = new System.Windows.Forms.TextBox();
-            this.MecroSet_2 = new System.Windows.Forms.CheckBox();
-            this.MecroSet_3 = new System.Windows.Forms.CheckBox();
-            this.MecroSet_6 = new System.Windows.Forms.CheckBox();
-            this.MecroSet_5 = new System.Windows.Forms.CheckBox();
-            this.MecroSet_4 = new System.Windows.Forms.CheckBox();
-            this.SetDelay_4 = new System.Windows.Forms.CheckBox();
-            this.SetDelay_5 = new System.Windows.Forms.CheckBox();
-            this.SetDelay_6 = new System.Windows.Forms.CheckBox();
-            this.SetDelay_3 = new System.Windows.Forms.CheckBox();
-            this.SetDelay_2 = new System.Windows.Forms.CheckBox();
-            this.SetDelayText_2 = new System.Windows.Forms.TextBox();
-            this.SetDelayText_3 = new System.Windows.Forms.TextBox();
-            this.SetDelayText_4 = new System.Windows.Forms.TextBox();
-            this.SetDelayText_6 = new System.Windows.Forms.TextBox();
-            this.SetDelayText_5 = new System.Windows.Forms.TextBox();
             this.TimeSetCheck_1 = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.SetDelay_1 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TimeSetCheck_2 = new System.Windows.Forms.CheckBox();
@@ -275,117 +244,220 @@
             this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.timer5 = new System.Windows.Forms.Timer(this.components);
             this.timer6 = new System.Windows.Forms.Timer(this.components);
-            this.Visible_Delay_1 = new System.Windows.Forms.TextBox();
-            this.Visible_Delay_6 = new System.Windows.Forms.TextBox();
-            this.Visible_Delay_5 = new System.Windows.Forms.TextBox();
-            this.Visible_Delay_3 = new System.Windows.Forms.TextBox();
-            this.Visible_Delay_2 = new System.Windows.Forms.TextBox();
-            this.Visible_Delay_4 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label47 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label48 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.label51 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.label52 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.label53 = new System.Windows.Forms.Label();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.label57 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.label58 = new System.Windows.Forms.Label();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.label59 = new System.Windows.Forms.Label();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label60 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.label64 = new System.Windows.Forms.Label();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
-            this.label65 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label66 = new System.Windows.Forms.Label();
-            this.textBox33 = new System.Windows.Forms.TextBox();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.label69 = new System.Windows.Forms.Label();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.label70 = new System.Windows.Forms.Label();
-            this.checkBox12 = new System.Windows.Forms.CheckBox();
-            this.label71 = new System.Windows.Forms.Label();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.CountText_6 = new System.Windows.Forms.TextBox();
-            this.CountText_5 = new System.Windows.Forms.TextBox();
-            this.CountText_4 = new System.Windows.Forms.TextBox();
-            this.CountText_3 = new System.Windows.Forms.TextBox();
-            this.CountText_2 = new System.Windows.Forms.TextBox();
             this.CountText_1 = new System.Windows.Forms.TextBox();
+            this.SetDelay_1 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_1 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_1 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label69 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_1 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_1 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.TS_Control_1 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_1 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_1 = new System.Windows.Forms.Button();
+            this.TS_EndTick_1 = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.TS_StartTick_1 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_1 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_1 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.SL_LowTick_1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.SL_HighTick_1 = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.CountText_2 = new System.Windows.Forms.TextBox();
+            this.SetDelay_2 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_2 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_2 = new System.Windows.Forms.TextBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_2 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.TS_Control_2 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_2 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_2 = new System.Windows.Forms.Button();
+            this.TS_EndTick_2 = new System.Windows.Forms.TextBox();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.TS_StartTick_2 = new System.Windows.Forms.TextBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_2 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_2 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_2 = new System.Windows.Forms.Button();
+            this.label43 = new System.Windows.Forms.Label();
+            this.SL_LowTick_2 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.SL_HighTick_2 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.CountText_3 = new System.Windows.Forms.TextBox();
+            this.SetDelay_3 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_3 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_3 = new System.Windows.Forms.TextBox();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_3 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_3 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_3 = new System.Windows.Forms.Button();
+            this.label49 = new System.Windows.Forms.Label();
+            this.SL_LowTick_3 = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.SL_HighTick_3 = new System.Windows.Forms.TextBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_3 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_3 = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.TS_Control_3 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_3 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_3 = new System.Windows.Forms.Button();
+            this.TS_EndTick_3 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.TS_StartTick_3 = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.CountText_4 = new System.Windows.Forms.TextBox();
+            this.SetDelay_4 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_4 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_4 = new System.Windows.Forms.TextBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_4 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_4 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_4 = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
+            this.SL_LowTick_4 = new System.Windows.Forms.TextBox();
+            this.label56 = new System.Windows.Forms.Label();
+            this.SL_HighTick_4 = new System.Windows.Forms.TextBox();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_4 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_4 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.TS_Control_4 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_4 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_4 = new System.Windows.Forms.Button();
+            this.TS_EndTick_4 = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.TS_StartTick_4 = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.CountText_5 = new System.Windows.Forms.TextBox();
+            this.SetDelay_5 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_5 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_5 = new System.Windows.Forms.TextBox();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_5 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_5 = new System.Windows.Forms.TextBox();
+            this.label59 = new System.Windows.Forms.Label();
+            this.TS_Control_5 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_5 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_5 = new System.Windows.Forms.Button();
+            this.TS_EndTick_5 = new System.Windows.Forms.TextBox();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.TS_StartTick_5 = new System.Windows.Forms.TextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.label60 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_5 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_5 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_5 = new System.Windows.Forms.Button();
+            this.label61 = new System.Windows.Forms.Label();
+            this.SL_LowTick_5 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.SL_HighTick_5 = new System.Windows.Forms.TextBox();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.CountText_6 = new System.Windows.Forms.TextBox();
+            this.SetDelay_6 = new System.Windows.Forms.CheckBox();
+            this.MecroSet_6 = new System.Windows.Forms.CheckBox();
+            this.SetDelayText_6 = new System.Windows.Forms.TextBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.label63 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.TS_Final_Low_6 = new System.Windows.Forms.TextBox();
+            this.TS_Final_High_6 = new System.Windows.Forms.TextBox();
+            this.label65 = new System.Windows.Forms.Label();
+            this.TS_Control_6 = new System.Windows.Forms.CheckBox();
+            this.TS_OrderHow_6 = new System.Windows.Forms.ComboBox();
+            this.TS_Button_6 = new System.Windows.Forms.Button();
+            this.TS_EndTick_6 = new System.Windows.Forms.TextBox();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.TS_StartTick_6 = new System.Windows.Forms.TextBox();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.label66 = new System.Windows.Forms.Label();
+            this.SL_OrderHow_6 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_6 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_6 = new System.Windows.Forms.Button();
+            this.label67 = new System.Windows.Forms.Label();
+            this.SL_LowTick_6 = new System.Windows.Forms.TextBox();
+            this.label68 = new System.Windows.Forms.Label();
+            this.SL_HighTick_6 = new System.Windows.Forms.TextBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_3 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_4 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.Remain_datagrid_6 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_FH_Real)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Code_List)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).BeginInit();
@@ -398,29 +470,56 @@
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_6)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Order_list)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Orderlist)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_1)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.groupBox6.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.groupBox13.SuspendLayout();
+            this.groupBox16.SuspendLayout();
+            this.groupBox15.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.groupBox17.SuspendLayout();
+            this.groupBox19.SuspendLayout();
+            this.groupBox20.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.groupBox21.SuspendLayout();
+            this.groupBox23.SuspendLayout();
+            this.groupBox24.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_2)).BeginInit();
+            this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_3)).BeginInit();
+            this.groupBox14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_4)).BeginInit();
+            this.groupBox18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_5)).BeginInit();
+            this.groupBox22.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_6)).BeginInit();
             this.SuspendLayout();
             // 
             // Comm_Obj_DATA_1
             // 
             this.Comm_Obj_DATA_1.Enabled = true;
-            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9750, 8845);
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(10354, 9386);
             this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
             this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
             this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
@@ -428,15 +527,27 @@
             this.Comm_Obj_DATA_1.Visible = false;
             this.Comm_Obj_DATA_1.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Gi_FC_ReceiveData);
             // 
-            // Comm_Obj_DATA_Real
+            // Comm_Obj_FH_Real
             // 
-            this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(9134, 8197);
-            this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
-            this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
-            this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
-            this.Comm_Obj_DATA_Real.TabIndex = 5;
-            this.Comm_Obj_DATA_Real.Visible = false;
+            this.Comm_Obj_FH_Real.Enabled = true;
+            this.Comm_Obj_FH_Real.Location = new System.Drawing.Point(9738, 8738);
+            this.Comm_Obj_FH_Real.Name = "Comm_Obj_FH_Real";
+            this.Comm_Obj_FH_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_FH_Real.OcxState")));
+            this.Comm_Obj_FH_Real.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_FH_Real.TabIndex = 5;
+            this.Comm_Obj_FH_Real.Visible = false;
+            this.Comm_Obj_FH_Real.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_Obj_FH_Real_ReceiveData);
+            // 
+            // Comm_Obj_Code_List
+            // 
+            this.Comm_Obj_Code_List.Enabled = true;
+            this.Comm_Obj_Code_List.Location = new System.Drawing.Point(10354, 8486);
+            this.Comm_Obj_Code_List.Name = "Comm_Obj_Code_List";
+            this.Comm_Obj_Code_List.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Code_List.OcxState")));
+            this.Comm_Obj_Code_List.Size = new System.Drawing.Size(136, 50);
+            this.Comm_Obj_Code_List.TabIndex = 0;
+            this.Comm_Obj_Code_List.Visible = false;
+            this.Comm_Obj_Code_List.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Comm_obj_Code_List_ReceiveData);
             // 
             // FCode_1
             // 
@@ -446,6 +557,7 @@
             this.FCode_1.Size = new System.Drawing.Size(76, 22);
             this.FCode_1.TabIndex = 1;
             this.FCode_1.Text = "101Q3";
+            this.FCode_1.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_1.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // FCGrid_1
@@ -456,14 +568,14 @@
             this.FCGrid_1.AllowUserToResizeRows = false;
             this.FCGrid_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.FCGrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_1.Location = new System.Drawing.Point(7, 60);
             this.FCGrid_1.Name = "FCGrid_1";
@@ -667,6 +779,7 @@
             // 
             // timer
             // 
+            this.timer.Enabled = true;
             this.timer.Interval = 10000;
             this.timer.Tick += new System.EventHandler(this.Refresh_Data);
             // 
@@ -682,14 +795,14 @@
             // Price_GridView
             // 
             this.Price_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Location = new System.Drawing.Point(1192, 36);
             this.Price_GridView.Name = "Price_GridView";
@@ -731,7 +844,7 @@
             // Lookup_btn
             // 
             this.Lookup_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Lookup_btn.Location = new System.Drawing.Point(1420, 825);
+            this.Lookup_btn.Location = new System.Drawing.Point(1419, 826);
             this.Lookup_btn.Name = "Lookup_btn";
             this.Lookup_btn.Size = new System.Drawing.Size(57, 23);
             this.Lookup_btn.TabIndex = 69;
@@ -767,7 +880,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(7382, 4709);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(7986, 5250);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -779,7 +892,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(5849, 4798);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(6453, 5339);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -817,7 +930,7 @@
             // Comm_Obj_Deal
             // 
             this.Comm_Obj_Deal.Enabled = true;
-            this.Comm_Obj_Deal.Location = new System.Drawing.Point(3773, 3107);
+            this.Comm_Obj_Deal.Location = new System.Drawing.Point(4377, 3648);
             this.Comm_Obj_Deal.Name = "Comm_Obj_Deal";
             this.Comm_Obj_Deal.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Deal.OcxState")));
             this.Comm_Obj_Deal.Size = new System.Drawing.Size(136, 50);
@@ -865,7 +978,7 @@
             // Comm_Obj_Accountinfo
             // 
             this.Comm_Obj_Accountinfo.Enabled = true;
-            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(2581, 2743);
+            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(3185, 3284);
             this.Comm_Obj_Accountinfo.Name = "Comm_Obj_Accountinfo";
             this.Comm_Obj_Accountinfo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Accountinfo.OcxState")));
             this.Comm_Obj_Accountinfo.Size = new System.Drawing.Size(136, 50);
@@ -895,7 +1008,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(896, 39);
+            this.label14.Location = new System.Drawing.Point(899, 42);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(29, 13);
             this.label14.TabIndex = 1022;
@@ -1129,14 +1242,14 @@
             this.FCGrid_4.AllowUserToResizeRows = false;
             this.FCGrid_4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.FCGrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_4.Location = new System.Drawing.Point(600, 60);
             this.FCGrid_4.Name = "FCGrid_4";
@@ -1156,6 +1269,7 @@
             this.FCode_4.Size = new System.Drawing.Size(76, 22);
             this.FCode_4.TabIndex = 1001;
             this.FCode_4.Text = "101Q3";
+            this.FCode_4.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_4.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label16
@@ -1415,14 +1529,14 @@
             this.FCGrid_2.AllowUserToResizeRows = false;
             this.FCGrid_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.FCGrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_2.Location = new System.Drawing.Point(7, 384);
             this.FCGrid_2.Name = "FCGrid_2";
@@ -1442,6 +1556,7 @@
             this.FCode_2.Size = new System.Drawing.Size(76, 22);
             this.FCode_2.TabIndex = 1026;
             this.FCode_2.Text = "101Q3";
+            this.FCode_2.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_2.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label20
@@ -1701,14 +1816,14 @@
             this.FCGrid_3.AllowUserToResizeRows = false;
             this.FCGrid_3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.FCGrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_3.Location = new System.Drawing.Point(7, 709);
             this.FCGrid_3.Name = "FCGrid_3";
@@ -1728,6 +1843,7 @@
             this.FCode_3.Size = new System.Drawing.Size(76, 22);
             this.FCode_3.TabIndex = 1051;
             this.FCode_3.Text = "101Q3";
+            this.FCode_3.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_3.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label24
@@ -1987,14 +2103,14 @@
             this.FCGrid_6.AllowUserToResizeRows = false;
             this.FCGrid_6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_6.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.FCGrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_6.Location = new System.Drawing.Point(600, 709);
             this.FCGrid_6.Name = "FCGrid_6";
@@ -2014,6 +2130,7 @@
             this.FCode_6.Size = new System.Drawing.Size(76, 22);
             this.FCode_6.TabIndex = 1101;
             this.FCode_6.Text = "101Q3";
+            this.FCode_6.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_6.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // label28
@@ -2273,14 +2390,14 @@
             this.FCGrid_5.AllowUserToResizeRows = false;
             this.FCGrid_5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.FCGrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_5.Location = new System.Drawing.Point(600, 384);
             this.FCGrid_5.Name = "FCGrid_5";
@@ -2300,6 +2417,7 @@
             this.FCode_5.Size = new System.Drawing.Size(76, 22);
             this.FCode_5.TabIndex = 1076;
             this.FCode_5.Text = "101Q3";
+            this.FCode_5.Click += new System.EventHandler(this.FCode_1_Click);
             this.FCode_5.TextChanged += new System.EventHandler(this.FCode_TextChanged);
             // 
             // startTime_1
@@ -2320,134 +2438,10 @@
             this.endTime_1.TabIndex = 1127;
             this.endTime_1.Text = "1530";
             // 
-            // MecroSet_1
-            // 
-            this.MecroSet_1.AutoSize = true;
-            this.MecroSet_1.Location = new System.Drawing.Point(8, 20);
-            this.MecroSet_1.Name = "MecroSet_1";
-            this.MecroSet_1.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_1.TabIndex = 1128;
-            this.MecroSet_1.UseVisualStyleBackColor = true;
-            // 
-            // TimerSet
-            // 
-            this.TimerSet.AutoSize = true;
-            this.TimerSet.Location = new System.Drawing.Point(1417, 276);
-            this.TimerSet.Name = "TimerSet";
-            this.TimerSet.Size = new System.Drawing.Size(74, 17);
-            this.TimerSet.TabIndex = 1129;
-            this.TimerSet.Text = "자동 로딩";
-            this.TimerSet.UseVisualStyleBackColor = true;
-            this.TimerSet.CheckedChanged += new System.EventHandler(this.TimerSet_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox1.Controls.Add(this.Order_type);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.Order_Price);
-            this.groupBox1.Controls.Add(this.Order_Code);
-            this.groupBox1.Controls.Add(this.Stock_Count);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.Sell_btn);
-            this.groupBox1.Controls.Add(this.label32);
-            this.groupBox1.Controls.Add(this.Buy_btn);
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(1192, 171);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(419, 99);
-            this.groupBox1.TabIndex = 1150;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "주문";
-            // 
-            // Order_type
-            // 
-            this.Order_type.FormattingEnabled = true;
-            this.Order_type.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.Order_type.Location = new System.Drawing.Point(13, 24);
-            this.Order_type.Name = "Order_type";
-            this.Order_type.Size = new System.Drawing.Size(61, 21);
-            this.Order_type.TabIndex = 1147;
-            this.Order_type.Text = "시장가";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(9, 63);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(29, 13);
-            this.label7.TabIndex = 54;
-            this.label7.Text = "단가";
-            // 
-            // Order_Price
-            // 
-            this.Order_Price.Location = new System.Drawing.Point(41, 58);
-            this.Order_Price.Name = "Order_Price";
-            this.Order_Price.Size = new System.Drawing.Size(94, 22);
-            this.Order_Price.TabIndex = 55;
-            // 
-            // Order_Code
-            // 
-            this.Order_Code.Location = new System.Drawing.Point(137, 23);
-            this.Order_Code.Name = "Order_Code";
-            this.Order_Code.Size = new System.Drawing.Size(72, 22);
-            this.Order_Code.TabIndex = 1146;
-            // 
-            // Stock_Count
-            // 
-            this.Stock_Count.Location = new System.Drawing.Point(177, 58);
-            this.Stock_Count.Name = "Stock_Count";
-            this.Stock_Count.Size = new System.Drawing.Size(64, 22);
-            this.Stock_Count.TabIndex = 58;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(80, 28);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 13);
-            this.label8.TabIndex = 1145;
-            this.label8.Text = "종목 코드";
-            // 
-            // Sell_btn
-            // 
-            this.Sell_btn.BackColor = System.Drawing.Color.OrangeRed;
-            this.Sell_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Sell_btn.Location = new System.Drawing.Point(257, 58);
-            this.Sell_btn.Name = "Sell_btn";
-            this.Sell_btn.Size = new System.Drawing.Size(65, 23);
-            this.Sell_btn.TabIndex = 62;
-            this.Sell_btn.Text = "매도";
-            this.Sell_btn.UseVisualStyleBackColor = false;
-            this.Sell_btn.Click += new System.EventHandler(this.Sell_btn_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(145, 63);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(29, 13);
-            this.label32.TabIndex = 1144;
-            this.label32.Text = "수량";
-            // 
-            // Buy_btn
-            // 
-            this.Buy_btn.BackColor = System.Drawing.Color.DodgerBlue;
-            this.Buy_btn.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Buy_btn.Location = new System.Drawing.Point(327, 58);
-            this.Buy_btn.Name = "Buy_btn";
-            this.Buy_btn.Size = new System.Drawing.Size(65, 23);
-            this.Buy_btn.TabIndex = 63;
-            this.Buy_btn.Text = "매수";
-            this.Buy_btn.UseVisualStyleBackColor = false;
-            this.Buy_btn.Click += new System.EventHandler(this.Buy_btn_Click);
-            // 
             // Comm_Obj_DATA_2
             // 
             this.Comm_Obj_DATA_2.Enabled = true;
-            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(1429, 1508);
+            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(2033, 2049);
             this.Comm_Obj_DATA_2.Name = "Comm_Obj_DATA_2";
             this.Comm_Obj_DATA_2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_2.OcxState")));
             this.Comm_Obj_DATA_2.Size = new System.Drawing.Size(136, 50);
@@ -2457,7 +2451,7 @@
             // Comm_Obj_DATA_3
             // 
             this.Comm_Obj_DATA_3.Enabled = true;
-            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(1470, 1502);
+            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(2074, 2043);
             this.Comm_Obj_DATA_3.Name = "Comm_Obj_DATA_3";
             this.Comm_Obj_DATA_3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_3.OcxState")));
             this.Comm_Obj_DATA_3.Size = new System.Drawing.Size(136, 50);
@@ -2467,7 +2461,7 @@
             // Comm_Obj_DATA_4
             // 
             this.Comm_Obj_DATA_4.Enabled = true;
-            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1342, 1458);
+            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1946, 1999);
             this.Comm_Obj_DATA_4.Name = "Comm_Obj_DATA_4";
             this.Comm_Obj_DATA_4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_4.OcxState")));
             this.Comm_Obj_DATA_4.Size = new System.Drawing.Size(136, 50);
@@ -2477,7 +2471,7 @@
             // Comm_Obj_DATA_5
             // 
             this.Comm_Obj_DATA_5.Enabled = true;
-            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1371, 1453);
+            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1975, 1994);
             this.Comm_Obj_DATA_5.Name = "Comm_Obj_DATA_5";
             this.Comm_Obj_DATA_5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_5.OcxState")));
             this.Comm_Obj_DATA_5.Size = new System.Drawing.Size(136, 50);
@@ -2487,151 +2481,12 @@
             // Comm_Obj_DATA_6
             // 
             this.Comm_Obj_DATA_6.Enabled = true;
-            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(1435, 1363);
+            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(2039, 1904);
             this.Comm_Obj_DATA_6.Name = "Comm_Obj_DATA_6";
             this.Comm_Obj_DATA_6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_6.OcxState")));
             this.Comm_Obj_DATA_6.Size = new System.Drawing.Size(136, 50);
             this.Comm_Obj_DATA_6.TabIndex = 1155;
             this.Comm_Obj_DATA_6.ReceiveData += new AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEventHandler(this.Gi_FC_ReceiveData_6);
-            // 
-            // TimerText
-            // 
-            this.TimerText.Location = new System.Drawing.Point(1490, 271);
-            this.TimerText.Name = "TimerText";
-            this.TimerText.Size = new System.Drawing.Size(28, 22);
-            this.TimerText.TabIndex = 1156;
-            // 
-            // SetDelayText_1
-            // 
-            this.SetDelayText_1.Location = new System.Drawing.Point(21, 16);
-            this.SetDelayText_1.Name = "SetDelayText_1";
-            this.SetDelayText_1.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_1.TabIndex = 1163;
-            // 
-            // MecroSet_2
-            // 
-            this.MecroSet_2.AutoSize = true;
-            this.MecroSet_2.Location = new System.Drawing.Point(8, 41);
-            this.MecroSet_2.Name = "MecroSet_2";
-            this.MecroSet_2.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_2.TabIndex = 1167;
-            this.MecroSet_2.UseVisualStyleBackColor = true;
-            // 
-            // MecroSet_3
-            // 
-            this.MecroSet_3.AutoSize = true;
-            this.MecroSet_3.Location = new System.Drawing.Point(8, 62);
-            this.MecroSet_3.Name = "MecroSet_3";
-            this.MecroSet_3.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_3.TabIndex = 1168;
-            this.MecroSet_3.UseVisualStyleBackColor = true;
-            // 
-            // MecroSet_6
-            // 
-            this.MecroSet_6.AutoSize = true;
-            this.MecroSet_6.Location = new System.Drawing.Point(56, 62);
-            this.MecroSet_6.Name = "MecroSet_6";
-            this.MecroSet_6.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_6.TabIndex = 1169;
-            this.MecroSet_6.UseVisualStyleBackColor = true;
-            // 
-            // MecroSet_5
-            // 
-            this.MecroSet_5.AutoSize = true;
-            this.MecroSet_5.Location = new System.Drawing.Point(56, 41);
-            this.MecroSet_5.Name = "MecroSet_5";
-            this.MecroSet_5.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_5.TabIndex = 1170;
-            this.MecroSet_5.UseVisualStyleBackColor = true;
-            // 
-            // MecroSet_4
-            // 
-            this.MecroSet_4.AutoSize = true;
-            this.MecroSet_4.Location = new System.Drawing.Point(56, 20);
-            this.MecroSet_4.Name = "MecroSet_4";
-            this.MecroSet_4.Size = new System.Drawing.Size(15, 14);
-            this.MecroSet_4.TabIndex = 1171;
-            this.MecroSet_4.UseVisualStyleBackColor = true;
-            // 
-            // SetDelay_4
-            // 
-            this.SetDelay_4.AutoSize = true;
-            this.SetDelay_4.Location = new System.Drawing.Point(60, 20);
-            this.SetDelay_4.Name = "SetDelay_4";
-            this.SetDelay_4.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_4.TabIndex = 1178;
-            this.SetDelay_4.UseVisualStyleBackColor = true;
-            // 
-            // SetDelay_5
-            // 
-            this.SetDelay_5.AutoSize = true;
-            this.SetDelay_5.Location = new System.Drawing.Point(60, 41);
-            this.SetDelay_5.Name = "SetDelay_5";
-            this.SetDelay_5.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_5.TabIndex = 1177;
-            this.SetDelay_5.UseVisualStyleBackColor = true;
-            // 
-            // SetDelay_6
-            // 
-            this.SetDelay_6.AutoSize = true;
-            this.SetDelay_6.Location = new System.Drawing.Point(60, 62);
-            this.SetDelay_6.Name = "SetDelay_6";
-            this.SetDelay_6.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_6.TabIndex = 1176;
-            this.SetDelay_6.UseVisualStyleBackColor = true;
-            // 
-            // SetDelay_3
-            // 
-            this.SetDelay_3.AutoSize = true;
-            this.SetDelay_3.Location = new System.Drawing.Point(6, 62);
-            this.SetDelay_3.Name = "SetDelay_3";
-            this.SetDelay_3.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_3.TabIndex = 1175;
-            this.SetDelay_3.UseVisualStyleBackColor = true;
-            // 
-            // SetDelay_2
-            // 
-            this.SetDelay_2.AutoSize = true;
-            this.SetDelay_2.Location = new System.Drawing.Point(6, 41);
-            this.SetDelay_2.Name = "SetDelay_2";
-            this.SetDelay_2.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_2.TabIndex = 1174;
-            this.SetDelay_2.UseVisualStyleBackColor = true;
-            // 
-            // SetDelayText_2
-            // 
-            this.SetDelayText_2.Location = new System.Drawing.Point(21, 37);
-            this.SetDelayText_2.Name = "SetDelayText_2";
-            this.SetDelayText_2.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_2.TabIndex = 1179;
-            // 
-            // SetDelayText_3
-            // 
-            this.SetDelayText_3.Location = new System.Drawing.Point(21, 57);
-            this.SetDelayText_3.Name = "SetDelayText_3";
-            this.SetDelayText_3.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_3.TabIndex = 1180;
-            // 
-            // SetDelayText_4
-            // 
-            this.SetDelayText_4.Location = new System.Drawing.Point(75, 15);
-            this.SetDelayText_4.Name = "SetDelayText_4";
-            this.SetDelayText_4.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_4.TabIndex = 1181;
-            // 
-            // SetDelayText_6
-            // 
-            this.SetDelayText_6.Location = new System.Drawing.Point(75, 57);
-            this.SetDelayText_6.Name = "SetDelayText_6";
-            this.SetDelayText_6.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_6.TabIndex = 1182;
-            // 
-            // SetDelayText_5
-            // 
-            this.SetDelayText_5.Location = new System.Drawing.Point(75, 36);
-            this.SetDelayText_5.Name = "SetDelayText_5";
-            this.SetDelayText_5.Size = new System.Drawing.Size(29, 22);
-            this.SetDelayText_5.TabIndex = 1183;
             // 
             // TimeSetCheck_1
             // 
@@ -2641,57 +2496,6 @@
             this.TimeSetCheck_1.Size = new System.Drawing.Size(15, 14);
             this.TimeSetCheck_1.TabIndex = 1184;
             this.TimeSetCheck_1.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.CountText_6);
-            this.groupBox2.Controls.Add(this.MecroSet_1);
-            this.groupBox2.Controls.Add(this.CountText_5);
-            this.groupBox2.Controls.Add(this.CountText_4);
-            this.groupBox2.Controls.Add(this.MecroSet_2);
-            this.groupBox2.Controls.Add(this.MecroSet_3);
-            this.groupBox2.Controls.Add(this.CountText_3);
-            this.groupBox2.Controls.Add(this.MecroSet_6);
-            this.groupBox2.Controls.Add(this.CountText_2);
-            this.groupBox2.Controls.Add(this.CountText_1);
-            this.groupBox2.Controls.Add(this.MecroSet_5);
-            this.groupBox2.Controls.Add(this.MecroSet_4);
-            this.groupBox2.Location = new System.Drawing.Point(1192, 271);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(110, 84);
-            this.groupBox2.TabIndex = 1200;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "자동 매수/매도";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.SetDelay_1);
-            this.groupBox3.Controls.Add(this.SetDelay_2);
-            this.groupBox3.Controls.Add(this.SetDelay_3);
-            this.groupBox3.Controls.Add(this.SetDelayText_1);
-            this.groupBox3.Controls.Add(this.SetDelayText_2);
-            this.groupBox3.Controls.Add(this.SetDelayText_3);
-            this.groupBox3.Controls.Add(this.SetDelay_5);
-            this.groupBox3.Controls.Add(this.SetDelay_6);
-            this.groupBox3.Controls.Add(this.SetDelay_4);
-            this.groupBox3.Controls.Add(this.SetDelayText_5);
-            this.groupBox3.Controls.Add(this.SetDelayText_4);
-            this.groupBox3.Controls.Add(this.SetDelayText_6);
-            this.groupBox3.Location = new System.Drawing.Point(1303, 272);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(113, 84);
-            this.groupBox3.TabIndex = 1201;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "딜레이 설정";
-            // 
-            // SetDelay_1
-            // 
-            this.SetDelay_1.AutoSize = true;
-            this.SetDelay_1.Location = new System.Drawing.Point(6, 19);
-            this.SetDelay_1.Name = "SetDelay_1";
-            this.SetDelay_1.Size = new System.Drawing.Size(15, 14);
-            this.SetDelay_1.TabIndex = 1184;
-            this.SetDelay_1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -2885,7 +2689,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(1368, 633);
+            this.label34.Location = new System.Drawing.Point(1501, 854);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(15, 13);
             this.label34.TabIndex = 1227;
@@ -2894,7 +2698,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(1190, 632);
+            this.label35.Location = new System.Drawing.Point(1418, 854);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(77, 13);
             this.label35.TabIndex = 1226;
@@ -2903,7 +2707,7 @@
             // End_date_picker
             // 
             this.End_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.End_date_picker.Location = new System.Drawing.Point(1384, 628);
+            this.End_date_picker.Location = new System.Drawing.Point(1517, 849);
             this.End_date_picker.Name = "End_date_picker";
             this.End_date_picker.Size = new System.Drawing.Size(97, 22);
             this.End_date_picker.TabIndex = 1225;
@@ -2914,7 +2718,7 @@
             // Start_date_picker
             // 
             this.Start_date_picker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Start_date_picker.Location = new System.Drawing.Point(1269, 628);
+            this.Start_date_picker.Location = new System.Drawing.Point(1499, 829);
             this.Start_date_picker.Name = "Start_date_picker";
             this.Start_date_picker.Size = new System.Drawing.Size(97, 22);
             this.Start_date_picker.TabIndex = 1224;
@@ -2930,19 +2734,19 @@
             this.Order_list.AllowUserToResizeRows = false;
             this.Order_list.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.Order_list.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Order_list.Location = new System.Drawing.Point(1192, 653);
+            this.Order_list.Location = new System.Drawing.Point(1420, 874);
             this.Order_list.Name = "Order_list";
             this.Order_list.ReadOnly = true;
             this.Order_list.RowHeadersVisible = false;
             this.Order_list.RowTemplate.Height = 23;
-            this.Order_list.Size = new System.Drawing.Size(419, 166);
+            this.Order_list.Size = new System.Drawing.Size(228, 110);
             this.Order_list.TabIndex = 1223;
             this.Order_list.TabStop = false;
             // 
             // Comm_Obj_Orderlist
             // 
             this.Comm_Obj_Orderlist.Enabled = true;
-            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(442, 1125);
+            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(1046, 1666);
             this.Comm_Obj_Orderlist.Name = "Comm_Obj_Orderlist";
             this.Comm_Obj_Orderlist.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Orderlist.OcxState")));
             this.Comm_Obj_Orderlist.Size = new System.Drawing.Size(136, 50);
@@ -2978,1012 +2782,2092 @@
             this.timer6.Interval = 1000;
             this.timer6.Tick += new System.EventHandler(this.timer6_Tick);
             // 
-            // Visible_Delay_1
+            // tabControl1
             // 
-            this.Visible_Delay_1.Location = new System.Drawing.Point(1529, 271);
-            this.Visible_Delay_1.Name = "Visible_Delay_1";
-            this.Visible_Delay_1.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_1.TabIndex = 1185;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Location = new System.Drawing.Point(1193, 171);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(418, 634);
+            this.tabControl1.TabIndex = 1229;
             // 
-            // Visible_Delay_6
+            // tabPage1
             // 
-            this.Visible_Delay_6.Location = new System.Drawing.Point(1571, 327);
-            this.Visible_Delay_6.Name = "Visible_Delay_6";
-            this.Visible_Delay_6.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_6.TabIndex = 1229;
-            // 
-            // Visible_Delay_5
-            // 
-            this.Visible_Delay_5.Location = new System.Drawing.Point(1571, 299);
-            this.Visible_Delay_5.Name = "Visible_Delay_5";
-            this.Visible_Delay_5.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_5.TabIndex = 1230;
-            // 
-            // Visible_Delay_3
-            // 
-            this.Visible_Delay_3.Location = new System.Drawing.Point(1529, 327);
-            this.Visible_Delay_3.Name = "Visible_Delay_3";
-            this.Visible_Delay_3.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_3.TabIndex = 1231;
-            // 
-            // Visible_Delay_2
-            // 
-            this.Visible_Delay_2.Location = new System.Drawing.Point(1529, 299);
-            this.Visible_Delay_2.Name = "Visible_Delay_2";
-            this.Visible_Delay_2.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_2.TabIndex = 1232;
-            // 
-            // Visible_Delay_4
-            // 
-            this.Visible_Delay_4.Location = new System.Drawing.Point(1571, 271);
-            this.Visible_Delay_4.Name = "Visible_Delay_4";
-            this.Visible_Delay_4.Size = new System.Drawing.Size(29, 22);
-            this.Visible_Delay_4.TabIndex = 1233;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox1.Location = new System.Drawing.Point(18, 14);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(61, 21);
-            this.comboBox1.TabIndex = 1148;
-            this.comboBox1.Text = "시장가";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(173, 14);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(28, 22);
-            this.textBox8.TabIndex = 1244;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(81, 18);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(29, 13);
-            this.label36.TabIndex = 1245;
-            this.label36.Text = "손절";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(141, 19);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(29, 13);
-            this.label37.TabIndex = 1246;
-            this.label37.Text = "익절";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(2, 18);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 1252;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(2, 51);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 1253;
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 14);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(28, 22);
-            this.textBox1.TabIndex = 1254;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(94, 37);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(38, 22);
-            this.textBox2.TabIndex = 1258;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(134, 42);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(29, 13);
-            this.label38.TabIndex = 1257;
-            this.label38.Text = "스탑";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(17, 42);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(77, 13);
-            this.label39.TabIndex = 1256;
-            this.label39.Text = "트레일링 발동";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(164, 37);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(38, 22);
-            this.textBox3.TabIndex = 1255;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(94, 58);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(38, 22);
-            this.textBox4.TabIndex = 1262;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(134, 62);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(29, 13);
-            this.label40.TabIndex = 1261;
-            this.label40.Text = "익절";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(37, 63);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(51, 13);
-            this.label41.TabIndex = 1260;
-            this.label41.Text = "최종손절";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(164, 58);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(38, 22);
-            this.textBox5.TabIndex = 1259;
+            this.tabPage1.Controls.Add(this.groupBox4);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox2);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(410, 608);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "1번종목 청산";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.textBox4);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Controls.Add(this.label40);
-            this.groupBox4.Controls.Add(this.textBox8);
-            this.groupBox4.Controls.Add(this.label41);
-            this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.textBox5);
-            this.groupBox4.Controls.Add(this.label37);
-            this.groupBox4.Controls.Add(this.checkBox1);
-            this.groupBox4.Controls.Add(this.label38);
-            this.groupBox4.Controls.Add(this.checkBox2);
-            this.groupBox4.Controls.Add(this.label39);
-            this.groupBox4.Controls.Add(this.textBox1);
-            this.groupBox4.Controls.Add(this.textBox3);
-            this.groupBox4.Location = new System.Drawing.Point(1192, 356);
+            this.groupBox4.Controls.Add(this.CountText_1);
+            this.groupBox4.Controls.Add(this.SetDelay_1);
+            this.groupBox4.Controls.Add(this.MecroSet_1);
+            this.groupBox4.Controls.Add(this.SetDelayText_1);
+            this.groupBox4.Location = new System.Drawing.Point(6, 318);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(205, 88);
-            this.groupBox4.TabIndex = 1263;
+            this.groupBox4.Size = new System.Drawing.Size(398, 68);
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.textBox6);
-            this.groupBox5.Controls.Add(this.textBox7);
-            this.groupBox5.Controls.Add(this.comboBox2);
-            this.groupBox5.Controls.Add(this.label42);
-            this.groupBox5.Controls.Add(this.textBox9);
-            this.groupBox5.Controls.Add(this.label43);
-            this.groupBox5.Controls.Add(this.label44);
-            this.groupBox5.Controls.Add(this.textBox10);
-            this.groupBox5.Controls.Add(this.label45);
-            this.groupBox5.Controls.Add(this.checkBox3);
-            this.groupBox5.Controls.Add(this.label46);
-            this.groupBox5.Controls.Add(this.checkBox4);
-            this.groupBox5.Controls.Add(this.label47);
-            this.groupBox5.Controls.Add(this.textBox11);
-            this.groupBox5.Controls.Add(this.textBox12);
-            this.groupBox5.Location = new System.Drawing.Point(1403, 356);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(205, 88);
-            this.groupBox5.TabIndex = 1264;
-            this.groupBox5.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(94, 37);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(38, 22);
-            this.textBox6.TabIndex = 1258;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(94, 58);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(38, 22);
-            this.textBox7.TabIndex = 1262;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox2.Location = new System.Drawing.Point(18, 14);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(61, 21);
-            this.comboBox2.TabIndex = 1148;
-            this.comboBox2.Text = "시장가";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(134, 62);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(29, 13);
-            this.label42.TabIndex = 1261;
-            this.label42.Text = "익절";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(173, 14);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(28, 22);
-            this.textBox9.TabIndex = 1244;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(37, 63);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(51, 13);
-            this.label43.TabIndex = 1260;
-            this.label43.Text = "최종손절";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(81, 18);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(29, 13);
-            this.label44.TabIndex = 1245;
-            this.label44.Text = "손절";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(164, 58);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(38, 22);
-            this.textBox10.TabIndex = 1259;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(141, 19);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(29, 13);
-            this.label45.TabIndex = 1246;
-            this.label45.Text = "익절";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(2, 18);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 1252;
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(134, 42);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(29, 13);
-            this.label46.TabIndex = 1257;
-            this.label46.Text = "스탑";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(2, 51);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 1253;
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(17, 42);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(77, 13);
-            this.label47.TabIndex = 1256;
-            this.label47.Text = "트레일링 발동";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(110, 14);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(28, 22);
-            this.textBox11.TabIndex = 1254;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(164, 37);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(38, 22);
-            this.textBox12.TabIndex = 1255;
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.textBox13);
-            this.groupBox6.Controls.Add(this.textBox14);
-            this.groupBox6.Controls.Add(this.comboBox3);
-            this.groupBox6.Controls.Add(this.label48);
-            this.groupBox6.Controls.Add(this.textBox15);
-            this.groupBox6.Controls.Add(this.label49);
-            this.groupBox6.Controls.Add(this.label50);
-            this.groupBox6.Controls.Add(this.textBox16);
-            this.groupBox6.Controls.Add(this.label51);
-            this.groupBox6.Controls.Add(this.checkBox5);
-            this.groupBox6.Controls.Add(this.label52);
-            this.groupBox6.Controls.Add(this.checkBox6);
-            this.groupBox6.Controls.Add(this.label53);
-            this.groupBox6.Controls.Add(this.textBox17);
-            this.groupBox6.Controls.Add(this.textBox18);
-            this.groupBox6.Location = new System.Drawing.Point(1403, 444);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(205, 88);
-            this.groupBox6.TabIndex = 1266;
-            this.groupBox6.TabStop = false;
-            // 
-            // textBox13
-            // 
-            this.textBox13.Location = new System.Drawing.Point(94, 37);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(38, 22);
-            this.textBox13.TabIndex = 1258;
-            // 
-            // textBox14
-            // 
-            this.textBox14.Location = new System.Drawing.Point(94, 58);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(38, 22);
-            this.textBox14.TabIndex = 1262;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox3.Location = new System.Drawing.Point(18, 14);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(61, 21);
-            this.comboBox3.TabIndex = 1148;
-            this.comboBox3.Text = "시장가";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(134, 62);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(29, 13);
-            this.label48.TabIndex = 1261;
-            this.label48.Text = "익절";
-            // 
-            // textBox15
-            // 
-            this.textBox15.Location = new System.Drawing.Point(173, 14);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(28, 22);
-            this.textBox15.TabIndex = 1244;
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(37, 63);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(51, 13);
-            this.label49.TabIndex = 1260;
-            this.label49.Text = "최종손절";
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(81, 18);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(29, 13);
-            this.label50.TabIndex = 1245;
-            this.label50.Text = "손절";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Location = new System.Drawing.Point(164, 58);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(38, 22);
-            this.textBox16.TabIndex = 1259;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(141, 19);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(29, 13);
-            this.label51.TabIndex = 1246;
-            this.label51.Text = "익절";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(2, 18);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 1252;
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(134, 42);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(29, 13);
-            this.label52.TabIndex = 1257;
-            this.label52.Text = "스탑";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(2, 51);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 1253;
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(17, 42);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(77, 13);
-            this.label53.TabIndex = 1256;
-            this.label53.Text = "트레일링 발동";
-            // 
-            // textBox17
-            // 
-            this.textBox17.Location = new System.Drawing.Point(110, 14);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(28, 22);
-            this.textBox17.TabIndex = 1254;
-            // 
-            // textBox18
-            // 
-            this.textBox18.Location = new System.Drawing.Point(164, 37);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(38, 22);
-            this.textBox18.TabIndex = 1255;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox19);
-            this.groupBox7.Controls.Add(this.textBox20);
-            this.groupBox7.Controls.Add(this.comboBox4);
-            this.groupBox7.Controls.Add(this.label54);
-            this.groupBox7.Controls.Add(this.textBox21);
-            this.groupBox7.Controls.Add(this.label55);
-            this.groupBox7.Controls.Add(this.label56);
-            this.groupBox7.Controls.Add(this.textBox22);
-            this.groupBox7.Controls.Add(this.label57);
-            this.groupBox7.Controls.Add(this.checkBox7);
-            this.groupBox7.Controls.Add(this.label58);
-            this.groupBox7.Controls.Add(this.checkBox8);
-            this.groupBox7.Controls.Add(this.label59);
-            this.groupBox7.Controls.Add(this.textBox23);
-            this.groupBox7.Controls.Add(this.textBox24);
-            this.groupBox7.Location = new System.Drawing.Point(1192, 444);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(205, 88);
-            this.groupBox7.TabIndex = 1265;
-            this.groupBox7.TabStop = false;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(94, 37);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(38, 22);
-            this.textBox19.TabIndex = 1258;
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(94, 58);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(38, 22);
-            this.textBox20.TabIndex = 1262;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox4.Location = new System.Drawing.Point(18, 14);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(61, 21);
-            this.comboBox4.TabIndex = 1148;
-            this.comboBox4.Text = "시장가";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(134, 62);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(29, 13);
-            this.label54.TabIndex = 1261;
-            this.label54.Text = "익절";
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(173, 14);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(28, 22);
-            this.textBox21.TabIndex = 1244;
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(37, 63);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(51, 13);
-            this.label55.TabIndex = 1260;
-            this.label55.Text = "최종손절";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(81, 18);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(29, 13);
-            this.label56.TabIndex = 1245;
-            this.label56.Text = "손절";
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(164, 58);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(38, 22);
-            this.textBox22.TabIndex = 1259;
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(141, 19);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(29, 13);
-            this.label57.TabIndex = 1246;
-            this.label57.Text = "익절";
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(2, 18);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 1252;
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // label58
-            // 
-            this.label58.AutoSize = true;
-            this.label58.Location = new System.Drawing.Point(134, 42);
-            this.label58.Name = "label58";
-            this.label58.Size = new System.Drawing.Size(29, 13);
-            this.label58.TabIndex = 1257;
-            this.label58.Text = "스탑";
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Location = new System.Drawing.Point(2, 51);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 1253;
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Location = new System.Drawing.Point(17, 42);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(77, 13);
-            this.label59.TabIndex = 1256;
-            this.label59.Text = "트레일링 발동";
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(110, 14);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(28, 22);
-            this.textBox23.TabIndex = 1254;
-            // 
-            // textBox24
-            // 
-            this.textBox24.Location = new System.Drawing.Point(164, 37);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(38, 22);
-            this.textBox24.TabIndex = 1255;
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBox25);
-            this.groupBox8.Controls.Add(this.textBox26);
-            this.groupBox8.Controls.Add(this.comboBox5);
-            this.groupBox8.Controls.Add(this.label60);
-            this.groupBox8.Controls.Add(this.textBox27);
-            this.groupBox8.Controls.Add(this.label61);
-            this.groupBox8.Controls.Add(this.label62);
-            this.groupBox8.Controls.Add(this.textBox28);
-            this.groupBox8.Controls.Add(this.label63);
-            this.groupBox8.Controls.Add(this.checkBox9);
-            this.groupBox8.Controls.Add(this.label64);
-            this.groupBox8.Controls.Add(this.checkBox10);
-            this.groupBox8.Controls.Add(this.label65);
-            this.groupBox8.Controls.Add(this.textBox29);
-            this.groupBox8.Controls.Add(this.textBox30);
-            this.groupBox8.Location = new System.Drawing.Point(1403, 532);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(205, 88);
-            this.groupBox8.TabIndex = 1268;
-            this.groupBox8.TabStop = false;
-            // 
-            // textBox25
-            // 
-            this.textBox25.Location = new System.Drawing.Point(94, 37);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(38, 22);
-            this.textBox25.TabIndex = 1258;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(94, 58);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(38, 22);
-            this.textBox26.TabIndex = 1262;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox5.Location = new System.Drawing.Point(18, 14);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(61, 21);
-            this.comboBox5.TabIndex = 1148;
-            this.comboBox5.Text = "시장가";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Location = new System.Drawing.Point(134, 62);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(29, 13);
-            this.label60.TabIndex = 1261;
-            this.label60.Text = "익절";
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(173, 14);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(28, 22);
-            this.textBox27.TabIndex = 1244;
-            // 
-            // label61
-            // 
-            this.label61.AutoSize = true;
-            this.label61.Location = new System.Drawing.Point(37, 63);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(51, 13);
-            this.label61.TabIndex = 1260;
-            this.label61.Text = "최종손절";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(81, 18);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(29, 13);
-            this.label62.TabIndex = 1245;
-            this.label62.Text = "손절";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(164, 58);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(38, 22);
-            this.textBox28.TabIndex = 1259;
-            // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(141, 19);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(29, 13);
-            this.label63.TabIndex = 1246;
-            this.label63.Text = "익절";
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Location = new System.Drawing.Point(2, 18);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(15, 14);
-            this.checkBox9.TabIndex = 1252;
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // label64
-            // 
-            this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(134, 42);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(29, 13);
-            this.label64.TabIndex = 1257;
-            this.label64.Text = "스탑";
-            // 
-            // checkBox10
-            // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(2, 51);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(15, 14);
-            this.checkBox10.TabIndex = 1253;
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // label65
-            // 
-            this.label65.AutoSize = true;
-            this.label65.Location = new System.Drawing.Point(17, 42);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(77, 13);
-            this.label65.TabIndex = 1256;
-            this.label65.Text = "트레일링 발동";
-            // 
-            // textBox29
-            // 
-            this.textBox29.Location = new System.Drawing.Point(110, 14);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(28, 22);
-            this.textBox29.TabIndex = 1254;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Location = new System.Drawing.Point(164, 37);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(38, 22);
-            this.textBox30.TabIndex = 1255;
-            // 
-            // groupBox9
-            // 
-            this.groupBox9.Controls.Add(this.textBox31);
-            this.groupBox9.Controls.Add(this.textBox32);
-            this.groupBox9.Controls.Add(this.comboBox6);
-            this.groupBox9.Controls.Add(this.label66);
-            this.groupBox9.Controls.Add(this.textBox33);
-            this.groupBox9.Controls.Add(this.label67);
-            this.groupBox9.Controls.Add(this.label68);
-            this.groupBox9.Controls.Add(this.textBox34);
-            this.groupBox9.Controls.Add(this.label69);
-            this.groupBox9.Controls.Add(this.checkBox11);
-            this.groupBox9.Controls.Add(this.label70);
-            this.groupBox9.Controls.Add(this.checkBox12);
-            this.groupBox9.Controls.Add(this.label71);
-            this.groupBox9.Controls.Add(this.textBox35);
-            this.groupBox9.Controls.Add(this.textBox36);
-            this.groupBox9.Location = new System.Drawing.Point(1192, 532);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(205, 88);
-            this.groupBox9.TabIndex = 1267;
-            this.groupBox9.TabStop = false;
-            // 
-            // textBox31
-            // 
-            this.textBox31.Location = new System.Drawing.Point(94, 37);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(38, 22);
-            this.textBox31.TabIndex = 1258;
-            // 
-            // textBox32
-            // 
-            this.textBox32.Location = new System.Drawing.Point(94, 58);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(38, 22);
-            this.textBox32.TabIndex = 1262;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "시장가",
-            "지정가"});
-            this.comboBox6.Location = new System.Drawing.Point(18, 14);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(61, 21);
-            this.comboBox6.TabIndex = 1148;
-            this.comboBox6.Text = "시장가";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Location = new System.Drawing.Point(134, 62);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(29, 13);
-            this.label66.TabIndex = 1261;
-            this.label66.Text = "익절";
-            // 
-            // textBox33
-            // 
-            this.textBox33.Location = new System.Drawing.Point(173, 14);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(28, 22);
-            this.textBox33.TabIndex = 1244;
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Location = new System.Drawing.Point(37, 63);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(51, 13);
-            this.label67.TabIndex = 1260;
-            this.label67.Text = "최종손절";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Location = new System.Drawing.Point(81, 18);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(29, 13);
-            this.label68.TabIndex = 1245;
-            this.label68.Text = "손절";
-            // 
-            // textBox34
-            // 
-            this.textBox34.Location = new System.Drawing.Point(164, 58);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(38, 22);
-            this.textBox34.TabIndex = 1259;
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Location = new System.Drawing.Point(141, 19);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(29, 13);
-            this.label69.TabIndex = 1246;
-            this.label69.Text = "익절";
-            // 
-            // checkBox11
-            // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(2, 18);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(15, 14);
-            this.checkBox11.TabIndex = 1252;
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.groupBox4.Text = "기타옵션";
+            // 
+            // CountText_1
+            // 
+            this.CountText_1.Location = new System.Drawing.Point(158, 40);
+            this.CountText_1.Name = "CountText_1";
+            this.CountText_1.Size = new System.Drawing.Size(230, 22);
+            this.CountText_1.TabIndex = 1245;
+            // 
+            // SetDelay_1
+            // 
+            this.SetDelay_1.AutoSize = true;
+            this.SetDelay_1.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_1.Name = "SetDelay_1";
+            this.SetDelay_1.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_1.TabIndex = 1244;
+            this.SetDelay_1.Text = "딜레이 옵션";
+            this.SetDelay_1.UseVisualStyleBackColor = true;
+            // 
+            // MecroSet_1
+            // 
+            this.MecroSet_1.AutoSize = true;
+            this.MecroSet_1.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_1.Name = "MecroSet_1";
+            this.MecroSet_1.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_1.TabIndex = 1243;
+            this.MecroSet_1.Text = "자동매매 시작여부";
+            this.MecroSet_1.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_1
+            // 
+            this.SetDelayText_1.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_1.Name = "SetDelayText_1";
+            this.SetDelayText_1.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_1.TabIndex = 1242;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.Remain_datagrid_1);
+            this.groupBox3.Location = new System.Drawing.Point(6, 392);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(398, 210);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "1번종목 잔고";
+            // 
+            // Remain_datagrid_1
+            // 
+            this.Remain_datagrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5});
+            this.Remain_datagrid_1.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_1.Name = "Remain_datagrid_1";
+            this.Remain_datagrid_1.RowHeadersVisible = false;
+            this.Remain_datagrid_1.RowTemplate.Height = 23;
+            this.Remain_datagrid_1.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_1.TabIndex = 0;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "날짜";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "매매구분";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "종목코드";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "가격";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "개수";
+            this.Column5.Name = "Column5";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label70);
+            this.groupBox2.Controls.Add(this.label69);
+            this.groupBox2.Controls.Add(this.TS_Final_Low_1);
+            this.groupBox2.Controls.Add(this.TS_Final_High_1);
+            this.groupBox2.Controls.Add(this.label38);
+            this.groupBox2.Controls.Add(this.TS_Control_1);
+            this.groupBox2.Controls.Add(this.TS_OrderHow_1);
+            this.groupBox2.Controls.Add(this.TS_Button_1);
+            this.groupBox2.Controls.Add(this.TS_EndTick_1);
+            this.groupBox2.Controls.Add(this.label36);
+            this.groupBox2.Controls.Add(this.label32);
+            this.groupBox2.Controls.Add(this.TS_StartTick_1);
+            this.groupBox2.Location = new System.Drawing.Point(6, 143);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(398, 169);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "트레일링스탑";
             // 
             // label70
             // 
             this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(134, 42);
+            this.label70.Location = new System.Drawing.Point(206, 107);
             this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(29, 13);
-            this.label70.TabIndex = 1257;
-            this.label70.Text = "스탑";
+            this.label70.Size = new System.Drawing.Size(81, 13);
+            this.label70.TabIndex = 1239;
+            this.label70.Text = "최종 익절(Tick)";
             // 
-            // checkBox12
+            // label69
             // 
-            this.checkBox12.AutoSize = true;
-            this.checkBox12.Location = new System.Drawing.Point(2, 51);
-            this.checkBox12.Name = "checkBox12";
-            this.checkBox12.Size = new System.Drawing.Size(15, 14);
-            this.checkBox12.TabIndex = 1253;
-            this.checkBox12.UseVisualStyleBackColor = true;
+            this.label69.AutoSize = true;
+            this.label69.Location = new System.Drawing.Point(9, 107);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(81, 13);
+            this.label69.TabIndex = 1238;
+            this.label69.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_1
+            // 
+            this.TS_Final_Low_1.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_1.Name = "TS_Final_Low_1";
+            this.TS_Final_Low_1.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_1.TabIndex = 1237;
+            // 
+            // TS_Final_High_1
+            // 
+            this.TS_Final_High_1.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_1.Name = "TS_Final_High_1";
+            this.TS_Final_High_1.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_1.TabIndex = 1236;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(9, 80);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(51, 13);
+            this.label38.TabIndex = 1235;
+            this.label38.Text = "주문방식";
+            // 
+            // TS_Control_1
+            // 
+            this.TS_Control_1.AutoSize = true;
+            this.TS_Control_1.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_1.Name = "TS_Control_1";
+            this.TS_Control_1.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_1.TabIndex = 1232;
+            this.TS_Control_1.Text = "트레일링스탑 작동여부";
+            this.TS_Control_1.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_1
+            // 
+            this.TS_OrderHow_1.FormattingEnabled = true;
+            this.TS_OrderHow_1.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_1.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_1.Name = "TS_OrderHow_1";
+            this.TS_OrderHow_1.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_1.TabIndex = 1234;
+            // 
+            // TS_Button_1
+            // 
+            this.TS_Button_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_1.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_1.Name = "TS_Button_1";
+            this.TS_Button_1.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_1.TabIndex = 1232;
+            this.TS_Button_1.Text = "설정";
+            this.TS_Button_1.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_1
+            // 
+            this.TS_EndTick_1.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_1.Name = "TS_EndTick_1";
+            this.TS_EndTick_1.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_1.TabIndex = 1234;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(9, 52);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(147, 13);
+            this.label36.TabIndex = 1233;
+            this.label36.Text = "트레일링스탑 발동지점(Tick)";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(9, 24);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(147, 13);
+            this.label32.TabIndex = 1232;
+            this.label32.Text = "트레일링스탑 발동시점(Tick)";
+            // 
+            // TS_StartTick_1
+            // 
+            this.TS_StartTick_1.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_1.Name = "TS_StartTick_1";
+            this.TS_StartTick_1.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_1.TabIndex = 1231;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label37);
+            this.groupBox1.Controls.Add(this.SL_OrderHow_1);
+            this.groupBox1.Controls.Add(this.SL_Control_1);
+            this.groupBox1.Controls.Add(this.SL_Button_1);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.SL_LowTick_1);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.SL_HighTick_1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(398, 131);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "스탑로스";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(9, 76);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(51, 13);
+            this.label37.TabIndex = 1233;
+            this.label37.Text = "주문방식";
+            // 
+            // SL_OrderHow_1
+            // 
+            this.SL_OrderHow_1.FormattingEnabled = true;
+            this.SL_OrderHow_1.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_1.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_1.Name = "SL_OrderHow_1";
+            this.SL_OrderHow_1.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_1.TabIndex = 1232;
+            // 
+            // SL_Control_1
+            // 
+            this.SL_Control_1.AutoSize = true;
+            this.SL_Control_1.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_1.Name = "SL_Control_1";
+            this.SL_Control_1.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_1.TabIndex = 1231;
+            this.SL_Control_1.Text = "스탑로스 작동여부";
+            this.SL_Control_1.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_1
+            // 
+            this.SL_Button_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_1.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_1.Name = "SL_Button_1";
+            this.SL_Button_1.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_1.TabIndex = 1230;
+            this.SL_Button_1.Text = "설정";
+            this.SL_Button_1.UseVisualStyleBackColor = true;
+            this.SL_Button_1.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 46);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(51, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "손절틱수";
+            // 
+            // SL_LowTick_1
+            // 
+            this.SL_LowTick_1.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_1.Name = "SL_LowTick_1";
+            this.SL_LowTick_1.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_1.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(9, 18);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "익절틱수";
+            // 
+            // SL_HighTick_1
+            // 
+            this.SL_HighTick_1.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_1.Name = "SL_HighTick_1";
+            this.SL_HighTick_1.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox6);
+            this.tabPage2.Controls.Add(this.groupBox5);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            this.tabPage2.Controls.Add(this.groupBox8);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(410, 608);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "2번종목 청산";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.CountText_2);
+            this.groupBox5.Controls.Add(this.SetDelay_2);
+            this.groupBox5.Controls.Add(this.MecroSet_2);
+            this.groupBox5.Controls.Add(this.SetDelayText_2);
+            this.groupBox5.Location = new System.Drawing.Point(6, 318);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(398, 68);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "기타옵션";
+            // 
+            // CountText_2
+            // 
+            this.CountText_2.Location = new System.Drawing.Point(158, 40);
+            this.CountText_2.Name = "CountText_2";
+            this.CountText_2.Size = new System.Drawing.Size(230, 22);
+            this.CountText_2.TabIndex = 1245;
+            // 
+            // SetDelay_2
+            // 
+            this.SetDelay_2.AutoSize = true;
+            this.SetDelay_2.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_2.Name = "SetDelay_2";
+            this.SetDelay_2.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_2.TabIndex = 1244;
+            this.SetDelay_2.Text = "딜레이 옵션";
+            this.SetDelay_2.UseVisualStyleBackColor = true;
+            // 
+            // MecroSet_2
+            // 
+            this.MecroSet_2.AutoSize = true;
+            this.MecroSet_2.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_2.Name = "MecroSet_2";
+            this.MecroSet_2.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_2.TabIndex = 1243;
+            this.MecroSet_2.Text = "자동매매 시작여부";
+            this.MecroSet_2.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_2
+            // 
+            this.SetDelayText_2.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_2.Name = "SetDelayText_2";
+            this.SetDelayText_2.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_2.TabIndex = 1242;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.label39);
+            this.groupBox7.Controls.Add(this.label40);
+            this.groupBox7.Controls.Add(this.TS_Final_Low_2);
+            this.groupBox7.Controls.Add(this.TS_Final_High_2);
+            this.groupBox7.Controls.Add(this.label41);
+            this.groupBox7.Controls.Add(this.TS_Control_2);
+            this.groupBox7.Controls.Add(this.TS_OrderHow_2);
+            this.groupBox7.Controls.Add(this.TS_Button_2);
+            this.groupBox7.Controls.Add(this.TS_EndTick_2);
+            this.groupBox7.Controls.Add(this.label71);
+            this.groupBox7.Controls.Add(this.label72);
+            this.groupBox7.Controls.Add(this.TS_StartTick_2);
+            this.groupBox7.Location = new System.Drawing.Point(6, 143);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(398, 169);
+            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "트레일링스탑";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(206, 107);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(81, 13);
+            this.label39.TabIndex = 1239;
+            this.label39.Text = "최종 익절(Tick)";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(9, 107);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(81, 13);
+            this.label40.TabIndex = 1238;
+            this.label40.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_2
+            // 
+            this.TS_Final_Low_2.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_2.Name = "TS_Final_Low_2";
+            this.TS_Final_Low_2.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_2.TabIndex = 1237;
+            // 
+            // TS_Final_High_2
+            // 
+            this.TS_Final_High_2.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_2.Name = "TS_Final_High_2";
+            this.TS_Final_High_2.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_2.TabIndex = 1236;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(9, 80);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(51, 13);
+            this.label41.TabIndex = 1235;
+            this.label41.Text = "주문방식";
+            // 
+            // TS_Control_2
+            // 
+            this.TS_Control_2.AutoSize = true;
+            this.TS_Control_2.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_2.Name = "TS_Control_2";
+            this.TS_Control_2.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_2.TabIndex = 1232;
+            this.TS_Control_2.Text = "트레일링스탑 작동여부";
+            this.TS_Control_2.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_2
+            // 
+            this.TS_OrderHow_2.FormattingEnabled = true;
+            this.TS_OrderHow_2.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_2.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_2.Name = "TS_OrderHow_2";
+            this.TS_OrderHow_2.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_2.TabIndex = 1234;
+            // 
+            // TS_Button_2
+            // 
+            this.TS_Button_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_2.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_2.Name = "TS_Button_2";
+            this.TS_Button_2.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_2.TabIndex = 1232;
+            this.TS_Button_2.Text = "설정";
+            this.TS_Button_2.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_2
+            // 
+            this.TS_EndTick_2.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_2.Name = "TS_EndTick_2";
+            this.TS_EndTick_2.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_2.TabIndex = 1234;
             // 
             // label71
             // 
             this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(17, 42);
+            this.label71.Location = new System.Drawing.Point(9, 52);
             this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(77, 13);
-            this.label71.TabIndex = 1256;
-            this.label71.Text = "트레일링 발동";
+            this.label71.Size = new System.Drawing.Size(147, 13);
+            this.label71.TabIndex = 1233;
+            this.label71.Text = "트레일링스탑 발동지점(Tick)";
             // 
-            // textBox35
+            // label72
             // 
-            this.textBox35.Location = new System.Drawing.Point(110, 14);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(28, 22);
-            this.textBox35.TabIndex = 1254;
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(9, 24);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(147, 13);
+            this.label72.TabIndex = 1232;
+            this.label72.Text = "트레일링스탑 발동시점(Tick)";
             // 
-            // textBox36
+            // TS_StartTick_2
             // 
-            this.textBox36.Location = new System.Drawing.Point(164, 37);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(38, 22);
-            this.textBox36.TabIndex = 1255;
+            this.TS_StartTick_2.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_2.Name = "TS_StartTick_2";
+            this.TS_StartTick_2.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_2.TabIndex = 1231;
             // 
-            // button1
+            // groupBox8
             // 
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(1484, 628);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 23);
-            this.button1.TabIndex = 1269;
-            this.button1.Text = "조회";
-            this.button1.UseVisualStyleBackColor = true;
+            this.groupBox8.Controls.Add(this.label42);
+            this.groupBox8.Controls.Add(this.SL_OrderHow_2);
+            this.groupBox8.Controls.Add(this.SL_Control_2);
+            this.groupBox8.Controls.Add(this.SL_Button_2);
+            this.groupBox8.Controls.Add(this.label43);
+            this.groupBox8.Controls.Add(this.SL_LowTick_2);
+            this.groupBox8.Controls.Add(this.label44);
+            this.groupBox8.Controls.Add(this.SL_HighTick_2);
+            this.groupBox8.Location = new System.Drawing.Point(6, 6);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(398, 131);
+            this.groupBox8.TabIndex = 4;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "스탑로스";
             // 
-            // CountText_6
+            // label42
             // 
-            this.CountText_6.Location = new System.Drawing.Point(74, 55);
-            this.CountText_6.Name = "CountText_6";
-            this.CountText_6.Size = new System.Drawing.Size(29, 22);
-            this.CountText_6.TabIndex = 1196;
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(9, 76);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(51, 13);
+            this.label42.TabIndex = 1233;
+            this.label42.Text = "주문방식";
             // 
-            // CountText_5
+            // SL_OrderHow_2
             // 
-            this.CountText_5.Location = new System.Drawing.Point(74, 34);
-            this.CountText_5.Name = "CountText_5";
-            this.CountText_5.Size = new System.Drawing.Size(29, 22);
-            this.CountText_5.TabIndex = 1195;
+            this.SL_OrderHow_2.FormattingEnabled = true;
+            this.SL_OrderHow_2.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_2.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_2.Name = "SL_OrderHow_2";
+            this.SL_OrderHow_2.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_2.TabIndex = 1232;
             // 
-            // CountText_4
+            // SL_Control_2
             // 
-            this.CountText_4.Location = new System.Drawing.Point(74, 13);
-            this.CountText_4.Name = "CountText_4";
-            this.CountText_4.Size = new System.Drawing.Size(29, 22);
-            this.CountText_4.TabIndex = 1194;
+            this.SL_Control_2.AutoSize = true;
+            this.SL_Control_2.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_2.Name = "SL_Control_2";
+            this.SL_Control_2.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_2.TabIndex = 1231;
+            this.SL_Control_2.Text = "스탑로스 작동여부";
+            this.SL_Control_2.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_2
+            // 
+            this.SL_Button_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_2.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_2.Name = "SL_Button_2";
+            this.SL_Button_2.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_2.TabIndex = 1230;
+            this.SL_Button_2.Text = "설정";
+            this.SL_Button_2.UseVisualStyleBackColor = true;
+            this.SL_Button_2.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(9, 46);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(51, 13);
+            this.label43.TabIndex = 3;
+            this.label43.Text = "손절틱수";
+            // 
+            // SL_LowTick_2
+            // 
+            this.SL_LowTick_2.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_2.Name = "SL_LowTick_2";
+            this.SL_LowTick_2.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_2.TabIndex = 2;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(9, 18);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(51, 13);
+            this.label44.TabIndex = 1;
+            this.label44.Text = "익절틱수";
+            // 
+            // SL_HighTick_2
+            // 
+            this.SL_HighTick_2.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_2.Name = "SL_HighTick_2";
+            this.SL_HighTick_2.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_2.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox10);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            this.tabPage3.Controls.Add(this.groupBox12);
+            this.tabPage3.Controls.Add(this.groupBox11);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(410, 608);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "3번종목 청산";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.CountText_3);
+            this.groupBox9.Controls.Add(this.SetDelay_3);
+            this.groupBox9.Controls.Add(this.MecroSet_3);
+            this.groupBox9.Controls.Add(this.SetDelayText_3);
+            this.groupBox9.Location = new System.Drawing.Point(6, 318);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(398, 68);
+            this.groupBox9.TabIndex = 1236;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "기타옵션";
             // 
             // CountText_3
             // 
-            this.CountText_3.Location = new System.Drawing.Point(23, 55);
+            this.CountText_3.Location = new System.Drawing.Point(158, 40);
             this.CountText_3.Name = "CountText_3";
-            this.CountText_3.Size = new System.Drawing.Size(29, 22);
-            this.CountText_3.TabIndex = 1193;
+            this.CountText_3.Size = new System.Drawing.Size(230, 22);
+            this.CountText_3.TabIndex = 1245;
             // 
-            // CountText_2
+            // SetDelay_3
             // 
-            this.CountText_2.Location = new System.Drawing.Point(23, 35);
-            this.CountText_2.Name = "CountText_2";
-            this.CountText_2.Size = new System.Drawing.Size(29, 22);
-            this.CountText_2.TabIndex = 1192;
+            this.SetDelay_3.AutoSize = true;
+            this.SetDelay_3.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_3.Name = "SetDelay_3";
+            this.SetDelay_3.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_3.TabIndex = 1244;
+            this.SetDelay_3.Text = "딜레이 옵션";
+            this.SetDelay_3.UseVisualStyleBackColor = true;
             // 
-            // CountText_1
+            // MecroSet_3
             // 
-            this.CountText_1.Location = new System.Drawing.Point(23, 14);
-            this.CountText_1.Name = "CountText_1";
-            this.CountText_1.Size = new System.Drawing.Size(29, 22);
-            this.CountText_1.TabIndex = 1191;
+            this.MecroSet_3.AutoSize = true;
+            this.MecroSet_3.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_3.Name = "MecroSet_3";
+            this.MecroSet_3.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_3.TabIndex = 1243;
+            this.MecroSet_3.Text = "자동매매 시작여부";
+            this.MecroSet_3.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_3
+            // 
+            this.SetDelayText_3.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_3.Name = "SetDelayText_3";
+            this.SetDelayText_3.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_3.TabIndex = 1242;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.label48);
+            this.groupBox12.Controls.Add(this.SL_OrderHow_3);
+            this.groupBox12.Controls.Add(this.SL_Control_3);
+            this.groupBox12.Controls.Add(this.SL_Button_3);
+            this.groupBox12.Controls.Add(this.label49);
+            this.groupBox12.Controls.Add(this.SL_LowTick_3);
+            this.groupBox12.Controls.Add(this.label50);
+            this.groupBox12.Controls.Add(this.SL_HighTick_3);
+            this.groupBox12.Location = new System.Drawing.Point(6, 6);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(398, 131);
+            this.groupBox12.TabIndex = 4;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "스탑로스";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Location = new System.Drawing.Point(9, 76);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(51, 13);
+            this.label48.TabIndex = 1233;
+            this.label48.Text = "주문방식";
+            // 
+            // SL_OrderHow_3
+            // 
+            this.SL_OrderHow_3.FormattingEnabled = true;
+            this.SL_OrderHow_3.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_3.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_3.Name = "SL_OrderHow_3";
+            this.SL_OrderHow_3.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_3.TabIndex = 1232;
+            // 
+            // SL_Control_3
+            // 
+            this.SL_Control_3.AutoSize = true;
+            this.SL_Control_3.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_3.Name = "SL_Control_3";
+            this.SL_Control_3.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_3.TabIndex = 1231;
+            this.SL_Control_3.Text = "스탑로스 작동여부";
+            this.SL_Control_3.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_3
+            // 
+            this.SL_Button_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_3.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_3.Name = "SL_Button_3";
+            this.SL_Button_3.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_3.TabIndex = 1230;
+            this.SL_Button_3.Text = "설정";
+            this.SL_Button_3.UseVisualStyleBackColor = true;
+            this.SL_Button_3.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(9, 46);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(51, 13);
+            this.label49.TabIndex = 3;
+            this.label49.Text = "손절틱수";
+            // 
+            // SL_LowTick_3
+            // 
+            this.SL_LowTick_3.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_3.Name = "SL_LowTick_3";
+            this.SL_LowTick_3.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_3.TabIndex = 2;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(9, 18);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(51, 13);
+            this.label50.TabIndex = 1;
+            this.label50.Text = "익절틱수";
+            // 
+            // SL_HighTick_3
+            // 
+            this.SL_HighTick_3.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_3.Name = "SL_HighTick_3";
+            this.SL_HighTick_3.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_3.TabIndex = 0;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.label45);
+            this.groupBox11.Controls.Add(this.label46);
+            this.groupBox11.Controls.Add(this.TS_Final_Low_3);
+            this.groupBox11.Controls.Add(this.TS_Final_High_3);
+            this.groupBox11.Controls.Add(this.label47);
+            this.groupBox11.Controls.Add(this.TS_Control_3);
+            this.groupBox11.Controls.Add(this.TS_OrderHow_3);
+            this.groupBox11.Controls.Add(this.TS_Button_3);
+            this.groupBox11.Controls.Add(this.TS_EndTick_3);
+            this.groupBox11.Controls.Add(this.label73);
+            this.groupBox11.Controls.Add(this.label74);
+            this.groupBox11.Controls.Add(this.TS_StartTick_3);
+            this.groupBox11.Location = new System.Drawing.Point(6, 143);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(398, 169);
+            this.groupBox11.TabIndex = 1234;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "트레일링스탑";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(206, 107);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(81, 13);
+            this.label45.TabIndex = 1239;
+            this.label45.Text = "최종 익절(Tick)";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(9, 107);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(81, 13);
+            this.label46.TabIndex = 1238;
+            this.label46.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_3
+            // 
+            this.TS_Final_Low_3.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_3.Name = "TS_Final_Low_3";
+            this.TS_Final_Low_3.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_3.TabIndex = 1237;
+            // 
+            // TS_Final_High_3
+            // 
+            this.TS_Final_High_3.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_3.Name = "TS_Final_High_3";
+            this.TS_Final_High_3.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_3.TabIndex = 1236;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(9, 80);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(51, 13);
+            this.label47.TabIndex = 1235;
+            this.label47.Text = "주문방식";
+            // 
+            // TS_Control_3
+            // 
+            this.TS_Control_3.AutoSize = true;
+            this.TS_Control_3.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_3.Name = "TS_Control_3";
+            this.TS_Control_3.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_3.TabIndex = 1232;
+            this.TS_Control_3.Text = "트레일링스탑 작동여부";
+            this.TS_Control_3.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_3
+            // 
+            this.TS_OrderHow_3.FormattingEnabled = true;
+            this.TS_OrderHow_3.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_3.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_3.Name = "TS_OrderHow_3";
+            this.TS_OrderHow_3.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_3.TabIndex = 1234;
+            // 
+            // TS_Button_3
+            // 
+            this.TS_Button_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_3.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_3.Name = "TS_Button_3";
+            this.TS_Button_3.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_3.TabIndex = 1232;
+            this.TS_Button_3.Text = "설정";
+            this.TS_Button_3.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_3
+            // 
+            this.TS_EndTick_3.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_3.Name = "TS_EndTick_3";
+            this.TS_EndTick_3.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_3.TabIndex = 1234;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(9, 52);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(147, 13);
+            this.label73.TabIndex = 1233;
+            this.label73.Text = "트레일링스탑 발동지점(Tick)";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(9, 24);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(147, 13);
+            this.label74.TabIndex = 1232;
+            this.label74.Text = "트레일링스탑 발동시점(Tick)";
+            // 
+            // TS_StartTick_3
+            // 
+            this.TS_StartTick_3.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_3.Name = "TS_StartTick_3";
+            this.TS_StartTick_3.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_3.TabIndex = 1231;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.groupBox14);
+            this.tabPage4.Controls.Add(this.groupBox13);
+            this.tabPage4.Controls.Add(this.groupBox16);
+            this.tabPage4.Controls.Add(this.groupBox15);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(410, 608);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "4번종목 청산";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupBox13
+            // 
+            this.groupBox13.Controls.Add(this.CountText_4);
+            this.groupBox13.Controls.Add(this.SetDelay_4);
+            this.groupBox13.Controls.Add(this.MecroSet_4);
+            this.groupBox13.Controls.Add(this.SetDelayText_4);
+            this.groupBox13.Location = new System.Drawing.Point(6, 318);
+            this.groupBox13.Name = "groupBox13";
+            this.groupBox13.Size = new System.Drawing.Size(398, 68);
+            this.groupBox13.TabIndex = 1236;
+            this.groupBox13.TabStop = false;
+            this.groupBox13.Text = "기타옵션";
+            // 
+            // CountText_4
+            // 
+            this.CountText_4.Location = new System.Drawing.Point(158, 40);
+            this.CountText_4.Name = "CountText_4";
+            this.CountText_4.Size = new System.Drawing.Size(230, 22);
+            this.CountText_4.TabIndex = 1245;
+            // 
+            // SetDelay_4
+            // 
+            this.SetDelay_4.AutoSize = true;
+            this.SetDelay_4.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_4.Name = "SetDelay_4";
+            this.SetDelay_4.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_4.TabIndex = 1244;
+            this.SetDelay_4.Text = "딜레이 옵션";
+            this.SetDelay_4.UseVisualStyleBackColor = true;
+            // 
+            // MecroSet_4
+            // 
+            this.MecroSet_4.AutoSize = true;
+            this.MecroSet_4.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_4.Name = "MecroSet_4";
+            this.MecroSet_4.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_4.TabIndex = 1243;
+            this.MecroSet_4.Text = "자동매매 시작여부";
+            this.MecroSet_4.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_4
+            // 
+            this.SetDelayText_4.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_4.Name = "SetDelayText_4";
+            this.SetDelayText_4.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_4.TabIndex = 1242;
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.label54);
+            this.groupBox16.Controls.Add(this.SL_OrderHow_4);
+            this.groupBox16.Controls.Add(this.SL_Control_4);
+            this.groupBox16.Controls.Add(this.SL_Button_4);
+            this.groupBox16.Controls.Add(this.label55);
+            this.groupBox16.Controls.Add(this.SL_LowTick_4);
+            this.groupBox16.Controls.Add(this.label56);
+            this.groupBox16.Controls.Add(this.SL_HighTick_4);
+            this.groupBox16.Location = new System.Drawing.Point(6, 6);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(398, 131);
+            this.groupBox16.TabIndex = 4;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "스탑로스";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(9, 76);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(51, 13);
+            this.label54.TabIndex = 1233;
+            this.label54.Text = "주문방식";
+            // 
+            // SL_OrderHow_4
+            // 
+            this.SL_OrderHow_4.FormattingEnabled = true;
+            this.SL_OrderHow_4.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_4.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_4.Name = "SL_OrderHow_4";
+            this.SL_OrderHow_4.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_4.TabIndex = 1232;
+            // 
+            // SL_Control_4
+            // 
+            this.SL_Control_4.AutoSize = true;
+            this.SL_Control_4.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_4.Name = "SL_Control_4";
+            this.SL_Control_4.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_4.TabIndex = 1231;
+            this.SL_Control_4.Text = "스탑로스 작동여부";
+            this.SL_Control_4.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_4
+            // 
+            this.SL_Button_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_4.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_4.Name = "SL_Button_4";
+            this.SL_Button_4.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_4.TabIndex = 1230;
+            this.SL_Button_4.Text = "설정";
+            this.SL_Button_4.UseVisualStyleBackColor = true;
+            this.SL_Button_4.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(9, 46);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(51, 13);
+            this.label55.TabIndex = 3;
+            this.label55.Text = "손절틱수";
+            // 
+            // SL_LowTick_4
+            // 
+            this.SL_LowTick_4.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_4.Name = "SL_LowTick_4";
+            this.SL_LowTick_4.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_4.TabIndex = 2;
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(9, 18);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(51, 13);
+            this.label56.TabIndex = 1;
+            this.label56.Text = "익절틱수";
+            // 
+            // SL_HighTick_4
+            // 
+            this.SL_HighTick_4.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_4.Name = "SL_HighTick_4";
+            this.SL_HighTick_4.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_4.TabIndex = 0;
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.label51);
+            this.groupBox15.Controls.Add(this.label52);
+            this.groupBox15.Controls.Add(this.TS_Final_Low_4);
+            this.groupBox15.Controls.Add(this.TS_Final_High_4);
+            this.groupBox15.Controls.Add(this.label53);
+            this.groupBox15.Controls.Add(this.TS_Control_4);
+            this.groupBox15.Controls.Add(this.TS_OrderHow_4);
+            this.groupBox15.Controls.Add(this.TS_Button_4);
+            this.groupBox15.Controls.Add(this.TS_EndTick_4);
+            this.groupBox15.Controls.Add(this.label75);
+            this.groupBox15.Controls.Add(this.label76);
+            this.groupBox15.Controls.Add(this.TS_StartTick_4);
+            this.groupBox15.Location = new System.Drawing.Point(6, 143);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(398, 169);
+            this.groupBox15.TabIndex = 1234;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "트레일링스탑";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(206, 107);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(81, 13);
+            this.label51.TabIndex = 1239;
+            this.label51.Text = "최종 익절(Tick)";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(9, 107);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(81, 13);
+            this.label52.TabIndex = 1238;
+            this.label52.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_4
+            // 
+            this.TS_Final_Low_4.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_4.Name = "TS_Final_Low_4";
+            this.TS_Final_Low_4.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_4.TabIndex = 1237;
+            // 
+            // TS_Final_High_4
+            // 
+            this.TS_Final_High_4.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_4.Name = "TS_Final_High_4";
+            this.TS_Final_High_4.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_4.TabIndex = 1236;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(9, 80);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(51, 13);
+            this.label53.TabIndex = 1235;
+            this.label53.Text = "주문방식";
+            // 
+            // TS_Control_4
+            // 
+            this.TS_Control_4.AutoSize = true;
+            this.TS_Control_4.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_4.Name = "TS_Control_4";
+            this.TS_Control_4.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_4.TabIndex = 1232;
+            this.TS_Control_4.Text = "트레일링스탑 작동여부";
+            this.TS_Control_4.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_4
+            // 
+            this.TS_OrderHow_4.FormattingEnabled = true;
+            this.TS_OrderHow_4.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_4.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_4.Name = "TS_OrderHow_4";
+            this.TS_OrderHow_4.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_4.TabIndex = 1234;
+            // 
+            // TS_Button_4
+            // 
+            this.TS_Button_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_4.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_4.Name = "TS_Button_4";
+            this.TS_Button_4.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_4.TabIndex = 1232;
+            this.TS_Button_4.Text = "설정";
+            this.TS_Button_4.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_4
+            // 
+            this.TS_EndTick_4.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_4.Name = "TS_EndTick_4";
+            this.TS_EndTick_4.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_4.TabIndex = 1234;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(9, 52);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(147, 13);
+            this.label75.TabIndex = 1233;
+            this.label75.Text = "트레일링스탑 발동지점(Tick)";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(9, 24);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(147, 13);
+            this.label76.TabIndex = 1232;
+            this.label76.Text = "트레일링스탑 발동시점(Tick)";
+            // 
+            // TS_StartTick_4
+            // 
+            this.TS_StartTick_4.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_4.Name = "TS_StartTick_4";
+            this.TS_StartTick_4.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_4.TabIndex = 1231;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox18);
+            this.tabPage5.Controls.Add(this.groupBox17);
+            this.tabPage5.Controls.Add(this.groupBox19);
+            this.tabPage5.Controls.Add(this.groupBox20);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(410, 608);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "5번종목 청산";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.CountText_5);
+            this.groupBox17.Controls.Add(this.SetDelay_5);
+            this.groupBox17.Controls.Add(this.MecroSet_5);
+            this.groupBox17.Controls.Add(this.SetDelayText_5);
+            this.groupBox17.Location = new System.Drawing.Point(6, 318);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(398, 68);
+            this.groupBox17.TabIndex = 7;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "기타옵션";
+            // 
+            // CountText_5
+            // 
+            this.CountText_5.Location = new System.Drawing.Point(158, 40);
+            this.CountText_5.Name = "CountText_5";
+            this.CountText_5.Size = new System.Drawing.Size(230, 22);
+            this.CountText_5.TabIndex = 1245;
+            // 
+            // SetDelay_5
+            // 
+            this.SetDelay_5.AutoSize = true;
+            this.SetDelay_5.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_5.Name = "SetDelay_5";
+            this.SetDelay_5.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_5.TabIndex = 1244;
+            this.SetDelay_5.Text = "딜레이 옵션";
+            this.SetDelay_5.UseVisualStyleBackColor = true;
+            // 
+            // MecroSet_5
+            // 
+            this.MecroSet_5.AutoSize = true;
+            this.MecroSet_5.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_5.Name = "MecroSet_5";
+            this.MecroSet_5.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_5.TabIndex = 1243;
+            this.MecroSet_5.Text = "자동매매 시작여부";
+            this.MecroSet_5.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_5
+            // 
+            this.SetDelayText_5.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_5.Name = "SetDelayText_5";
+            this.SetDelayText_5.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_5.TabIndex = 1242;
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.Controls.Add(this.label57);
+            this.groupBox19.Controls.Add(this.label58);
+            this.groupBox19.Controls.Add(this.TS_Final_Low_5);
+            this.groupBox19.Controls.Add(this.TS_Final_High_5);
+            this.groupBox19.Controls.Add(this.label59);
+            this.groupBox19.Controls.Add(this.TS_Control_5);
+            this.groupBox19.Controls.Add(this.TS_OrderHow_5);
+            this.groupBox19.Controls.Add(this.TS_Button_5);
+            this.groupBox19.Controls.Add(this.TS_EndTick_5);
+            this.groupBox19.Controls.Add(this.label77);
+            this.groupBox19.Controls.Add(this.label78);
+            this.groupBox19.Controls.Add(this.TS_StartTick_5);
+            this.groupBox19.Location = new System.Drawing.Point(6, 143);
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.Size = new System.Drawing.Size(398, 169);
+            this.groupBox19.TabIndex = 5;
+            this.groupBox19.TabStop = false;
+            this.groupBox19.Text = "트레일링스탑";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(206, 107);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(81, 13);
+            this.label57.TabIndex = 1239;
+            this.label57.Text = "최종 익절(Tick)";
+            // 
+            // label58
+            // 
+            this.label58.AutoSize = true;
+            this.label58.Location = new System.Drawing.Point(9, 107);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(81, 13);
+            this.label58.TabIndex = 1238;
+            this.label58.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_5
+            // 
+            this.TS_Final_Low_5.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_5.Name = "TS_Final_Low_5";
+            this.TS_Final_Low_5.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_5.TabIndex = 1237;
+            // 
+            // TS_Final_High_5
+            // 
+            this.TS_Final_High_5.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_5.Name = "TS_Final_High_5";
+            this.TS_Final_High_5.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_5.TabIndex = 1236;
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Location = new System.Drawing.Point(9, 80);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(51, 13);
+            this.label59.TabIndex = 1235;
+            this.label59.Text = "주문방식";
+            // 
+            // TS_Control_5
+            // 
+            this.TS_Control_5.AutoSize = true;
+            this.TS_Control_5.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_5.Name = "TS_Control_5";
+            this.TS_Control_5.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_5.TabIndex = 1232;
+            this.TS_Control_5.Text = "트레일링스탑 작동여부";
+            this.TS_Control_5.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_5
+            // 
+            this.TS_OrderHow_5.FormattingEnabled = true;
+            this.TS_OrderHow_5.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_5.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_5.Name = "TS_OrderHow_5";
+            this.TS_OrderHow_5.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_5.TabIndex = 1234;
+            // 
+            // TS_Button_5
+            // 
+            this.TS_Button_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_5.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_5.Name = "TS_Button_5";
+            this.TS_Button_5.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_5.TabIndex = 1232;
+            this.TS_Button_5.Text = "설정";
+            this.TS_Button_5.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_5
+            // 
+            this.TS_EndTick_5.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_5.Name = "TS_EndTick_5";
+            this.TS_EndTick_5.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_5.TabIndex = 1234;
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(9, 52);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(147, 13);
+            this.label77.TabIndex = 1233;
+            this.label77.Text = "트레일링스탑 발동지점(Tick)";
+            // 
+            // label78
+            // 
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(9, 24);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(147, 13);
+            this.label78.TabIndex = 1232;
+            this.label78.Text = "트레일링스탑 발동시점(Tick)";
+            // 
+            // TS_StartTick_5
+            // 
+            this.TS_StartTick_5.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_5.Name = "TS_StartTick_5";
+            this.TS_StartTick_5.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_5.TabIndex = 1231;
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.label60);
+            this.groupBox20.Controls.Add(this.SL_OrderHow_5);
+            this.groupBox20.Controls.Add(this.SL_Control_5);
+            this.groupBox20.Controls.Add(this.SL_Button_5);
+            this.groupBox20.Controls.Add(this.label61);
+            this.groupBox20.Controls.Add(this.SL_LowTick_5);
+            this.groupBox20.Controls.Add(this.label62);
+            this.groupBox20.Controls.Add(this.SL_HighTick_5);
+            this.groupBox20.Location = new System.Drawing.Point(6, 6);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(398, 131);
+            this.groupBox20.TabIndex = 4;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "스탑로스";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Location = new System.Drawing.Point(9, 76);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(51, 13);
+            this.label60.TabIndex = 1233;
+            this.label60.Text = "주문방식";
+            // 
+            // SL_OrderHow_5
+            // 
+            this.SL_OrderHow_5.FormattingEnabled = true;
+            this.SL_OrderHow_5.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_5.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_5.Name = "SL_OrderHow_5";
+            this.SL_OrderHow_5.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_5.TabIndex = 1232;
+            // 
+            // SL_Control_5
+            // 
+            this.SL_Control_5.AutoSize = true;
+            this.SL_Control_5.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_5.Name = "SL_Control_5";
+            this.SL_Control_5.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_5.TabIndex = 1231;
+            this.SL_Control_5.Text = "스탑로스 작동여부";
+            this.SL_Control_5.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_5
+            // 
+            this.SL_Button_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_5.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_5.Name = "SL_Button_5";
+            this.SL_Button_5.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_5.TabIndex = 1230;
+            this.SL_Button_5.Text = "설정";
+            this.SL_Button_5.UseVisualStyleBackColor = true;
+            this.SL_Button_5.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Location = new System.Drawing.Point(9, 46);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(51, 13);
+            this.label61.TabIndex = 3;
+            this.label61.Text = "손절틱수";
+            // 
+            // SL_LowTick_5
+            // 
+            this.SL_LowTick_5.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_5.Name = "SL_LowTick_5";
+            this.SL_LowTick_5.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_5.TabIndex = 2;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(9, 18);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(51, 13);
+            this.label62.TabIndex = 1;
+            this.label62.Text = "익절틱수";
+            // 
+            // SL_HighTick_5
+            // 
+            this.SL_HighTick_5.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_5.Name = "SL_HighTick_5";
+            this.SL_HighTick_5.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_5.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.groupBox22);
+            this.tabPage6.Controls.Add(this.groupBox21);
+            this.tabPage6.Controls.Add(this.groupBox23);
+            this.tabPage6.Controls.Add(this.groupBox24);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(410, 608);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "6번종목 청산";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.Controls.Add(this.CountText_6);
+            this.groupBox21.Controls.Add(this.SetDelay_6);
+            this.groupBox21.Controls.Add(this.MecroSet_6);
+            this.groupBox21.Controls.Add(this.SetDelayText_6);
+            this.groupBox21.Location = new System.Drawing.Point(6, 318);
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.Size = new System.Drawing.Size(398, 68);
+            this.groupBox21.TabIndex = 7;
+            this.groupBox21.TabStop = false;
+            this.groupBox21.Text = "기타옵션";
+            // 
+            // CountText_6
+            // 
+            this.CountText_6.Location = new System.Drawing.Point(158, 40);
+            this.CountText_6.Name = "CountText_6";
+            this.CountText_6.Size = new System.Drawing.Size(230, 22);
+            this.CountText_6.TabIndex = 1241;
+            // 
+            // SetDelay_6
+            // 
+            this.SetDelay_6.AutoSize = true;
+            this.SetDelay_6.Location = new System.Drawing.Point(10, 18);
+            this.SetDelay_6.Name = "SetDelay_6";
+            this.SetDelay_6.Size = new System.Drawing.Size(85, 17);
+            this.SetDelay_6.TabIndex = 1240;
+            this.SetDelay_6.Text = "딜레이 옵션";
+            this.SetDelay_6.UseVisualStyleBackColor = true;
+            // 
+            // MecroSet_6
+            // 
+            this.MecroSet_6.AutoSize = true;
+            this.MecroSet_6.Location = new System.Drawing.Point(10, 42);
+            this.MecroSet_6.Name = "MecroSet_6";
+            this.MecroSet_6.Size = new System.Drawing.Size(118, 17);
+            this.MecroSet_6.TabIndex = 1239;
+            this.MecroSet_6.Text = "자동매매 시작여부";
+            this.MecroSet_6.UseVisualStyleBackColor = true;
+            // 
+            // SetDelayText_6
+            // 
+            this.SetDelayText_6.Location = new System.Drawing.Point(158, 15);
+            this.SetDelayText_6.Name = "SetDelayText_6";
+            this.SetDelayText_6.Size = new System.Drawing.Size(230, 22);
+            this.SetDelayText_6.TabIndex = 1238;
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.label63);
+            this.groupBox23.Controls.Add(this.label64);
+            this.groupBox23.Controls.Add(this.TS_Final_Low_6);
+            this.groupBox23.Controls.Add(this.TS_Final_High_6);
+            this.groupBox23.Controls.Add(this.label65);
+            this.groupBox23.Controls.Add(this.TS_Control_6);
+            this.groupBox23.Controls.Add(this.TS_OrderHow_6);
+            this.groupBox23.Controls.Add(this.TS_Button_6);
+            this.groupBox23.Controls.Add(this.TS_EndTick_6);
+            this.groupBox23.Controls.Add(this.label79);
+            this.groupBox23.Controls.Add(this.label80);
+            this.groupBox23.Controls.Add(this.TS_StartTick_6);
+            this.groupBox23.Location = new System.Drawing.Point(6, 143);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(398, 169);
+            this.groupBox23.TabIndex = 5;
+            this.groupBox23.TabStop = false;
+            this.groupBox23.Text = "트레일링스탑";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(206, 107);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(81, 13);
+            this.label63.TabIndex = 1239;
+            this.label63.Text = "최종 익절(Tick)";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Location = new System.Drawing.Point(9, 107);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(81, 13);
+            this.label64.TabIndex = 1238;
+            this.label64.Text = "최종 손절(Tick)";
+            // 
+            // TS_Final_Low_6
+            // 
+            this.TS_Final_Low_6.Location = new System.Drawing.Point(292, 104);
+            this.TS_Final_Low_6.Name = "TS_Final_Low_6";
+            this.TS_Final_Low_6.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_Low_6.TabIndex = 1237;
+            // 
+            // TS_Final_High_6
+            // 
+            this.TS_Final_High_6.Location = new System.Drawing.Point(96, 104);
+            this.TS_Final_High_6.Name = "TS_Final_High_6";
+            this.TS_Final_High_6.Size = new System.Drawing.Size(100, 22);
+            this.TS_Final_High_6.TabIndex = 1236;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Location = new System.Drawing.Point(9, 80);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(51, 13);
+            this.label65.TabIndex = 1235;
+            this.label65.Text = "주문방식";
+            // 
+            // TS_Control_6
+            // 
+            this.TS_Control_6.AutoSize = true;
+            this.TS_Control_6.Location = new System.Drawing.Point(162, 144);
+            this.TS_Control_6.Name = "TS_Control_6";
+            this.TS_Control_6.Size = new System.Drawing.Size(140, 17);
+            this.TS_Control_6.TabIndex = 1232;
+            this.TS_Control_6.Text = "트레일링스탑 작동여부";
+            this.TS_Control_6.UseVisualStyleBackColor = true;
+            // 
+            // TS_OrderHow_6
+            // 
+            this.TS_OrderHow_6.FormattingEnabled = true;
+            this.TS_OrderHow_6.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.TS_OrderHow_6.Location = new System.Drawing.Point(162, 77);
+            this.TS_OrderHow_6.Name = "TS_OrderHow_6";
+            this.TS_OrderHow_6.Size = new System.Drawing.Size(230, 21);
+            this.TS_OrderHow_6.TabIndex = 1234;
+            // 
+            // TS_Button_6
+            // 
+            this.TS_Button_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.TS_Button_6.Location = new System.Drawing.Point(344, 140);
+            this.TS_Button_6.Name = "TS_Button_6";
+            this.TS_Button_6.Size = new System.Drawing.Size(48, 23);
+            this.TS_Button_6.TabIndex = 1232;
+            this.TS_Button_6.Text = "설정";
+            this.TS_Button_6.UseVisualStyleBackColor = true;
+            // 
+            // TS_EndTick_6
+            // 
+            this.TS_EndTick_6.Location = new System.Drawing.Point(162, 49);
+            this.TS_EndTick_6.Name = "TS_EndTick_6";
+            this.TS_EndTick_6.Size = new System.Drawing.Size(230, 22);
+            this.TS_EndTick_6.TabIndex = 1234;
+            // 
+            // label79
+            // 
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(9, 52);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(147, 13);
+            this.label79.TabIndex = 1233;
+            this.label79.Text = "트레일링스탑 발동지점(Tick)";
+            // 
+            // label80
+            // 
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(9, 24);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(147, 13);
+            this.label80.TabIndex = 1232;
+            this.label80.Text = "트레일링스탑 발동시점(Tick)";
+            // 
+            // TS_StartTick_6
+            // 
+            this.TS_StartTick_6.Location = new System.Drawing.Point(162, 21);
+            this.TS_StartTick_6.Name = "TS_StartTick_6";
+            this.TS_StartTick_6.Size = new System.Drawing.Size(230, 22);
+            this.TS_StartTick_6.TabIndex = 1231;
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.Controls.Add(this.label66);
+            this.groupBox24.Controls.Add(this.SL_OrderHow_6);
+            this.groupBox24.Controls.Add(this.SL_Control_6);
+            this.groupBox24.Controls.Add(this.SL_Button_6);
+            this.groupBox24.Controls.Add(this.label67);
+            this.groupBox24.Controls.Add(this.SL_LowTick_6);
+            this.groupBox24.Controls.Add(this.label68);
+            this.groupBox24.Controls.Add(this.SL_HighTick_6);
+            this.groupBox24.Location = new System.Drawing.Point(6, 6);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(398, 131);
+            this.groupBox24.TabIndex = 4;
+            this.groupBox24.TabStop = false;
+            this.groupBox24.Text = "스탑로스";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Location = new System.Drawing.Point(9, 76);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(51, 13);
+            this.label66.TabIndex = 1233;
+            this.label66.Text = "주문방식";
+            // 
+            // SL_OrderHow_6
+            // 
+            this.SL_OrderHow_6.FormattingEnabled = true;
+            this.SL_OrderHow_6.Items.AddRange(new object[] {
+            "시장가",
+            "상대1호가",
+            "상대2호가",
+            "상대3호가",
+            "상대4호가",
+            "상대5호가",
+            "상대6호가",
+            "상대7호가",
+            "상대8호가",
+            "상대9호가",
+            "상대10호가"});
+            this.SL_OrderHow_6.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_6.Name = "SL_OrderHow_6";
+            this.SL_OrderHow_6.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_6.TabIndex = 1232;
+            // 
+            // SL_Control_6
+            // 
+            this.SL_Control_6.AutoSize = true;
+            this.SL_Control_6.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_6.Name = "SL_Control_6";
+            this.SL_Control_6.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_6.TabIndex = 1231;
+            this.SL_Control_6.Text = "스탑로스 작동여부";
+            this.SL_Control_6.UseVisualStyleBackColor = true;
+            // 
+            // SL_Button_6
+            // 
+            this.SL_Button_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_6.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_6.Name = "SL_Button_6";
+            this.SL_Button_6.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_6.TabIndex = 1230;
+            this.SL_Button_6.Text = "설정";
+            this.SL_Button_6.UseVisualStyleBackColor = true;
+            this.SL_Button_6.Click += new System.EventHandler(this.SL_Button_Click);
+            // 
+            // label67
+            // 
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(9, 46);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(51, 13);
+            this.label67.TabIndex = 3;
+            this.label67.Text = "손절틱수";
+            // 
+            // SL_LowTick_6
+            // 
+            this.SL_LowTick_6.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_6.Name = "SL_LowTick_6";
+            this.SL_LowTick_6.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_6.TabIndex = 2;
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Location = new System.Drawing.Point(9, 18);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(51, 13);
+            this.label68.TabIndex = 1;
+            this.label68.Text = "익절틱수";
+            // 
+            // SL_HighTick_6
+            // 
+            this.SL_HighTick_6.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_6.Name = "SL_HighTick_6";
+            this.SL_HighTick_6.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_6.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.Remain_datagrid_2);
+            this.groupBox6.Location = new System.Drawing.Point(6, 392);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(398, 210);
+            this.groupBox6.TabIndex = 1246;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "2번종목 잔고";
+            // 
+            // Remain_datagrid_2
+            // 
+            this.Remain_datagrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.Remain_datagrid_2.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_2.Name = "Remain_datagrid_2";
+            this.Remain_datagrid_2.RowHeadersVisible = false;
+            this.Remain_datagrid_2.RowTemplate.Height = 23;
+            this.Remain_datagrid_2.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_2.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "날짜";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "매매구분";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "종목코드";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "가격";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "개수";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // groupBox10
+            // 
+            this.groupBox10.Controls.Add(this.Remain_datagrid_3);
+            this.groupBox10.Location = new System.Drawing.Point(6, 392);
+            this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Size = new System.Drawing.Size(398, 210);
+            this.groupBox10.TabIndex = 1237;
+            this.groupBox10.TabStop = false;
+            this.groupBox10.Text = "3번종목 잔고";
+            // 
+            // Remain_datagrid_3
+            // 
+            this.Remain_datagrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.Remain_datagrid_3.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_3.Name = "Remain_datagrid_3";
+            this.Remain_datagrid_3.RowHeadersVisible = false;
+            this.Remain_datagrid_3.RowTemplate.Height = 23;
+            this.Remain_datagrid_3.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_3.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "날짜";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "매매구분";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "종목코드";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "가격";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "개수";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.Controls.Add(this.Remain_datagrid_4);
+            this.groupBox14.Location = new System.Drawing.Point(6, 392);
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.Size = new System.Drawing.Size(398, 210);
+            this.groupBox14.TabIndex = 1237;
+            this.groupBox14.TabStop = false;
+            this.groupBox14.Text = "4번종목 잔고";
+            // 
+            // Remain_datagrid_4
+            // 
+            this.Remain_datagrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.Remain_datagrid_4.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_4.Name = "Remain_datagrid_4";
+            this.Remain_datagrid_4.RowHeadersVisible = false;
+            this.Remain_datagrid_4.RowTemplate.Height = 23;
+            this.Remain_datagrid_4.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_4.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "날짜";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "매매구분";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "종목코드";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "가격";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.HeaderText = "개수";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.Remain_datagrid_5);
+            this.groupBox18.Location = new System.Drawing.Point(6, 392);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(398, 210);
+            this.groupBox18.TabIndex = 8;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "5번종목 잔고";
+            // 
+            // Remain_datagrid_5
+            // 
+            this.Remain_datagrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20});
+            this.Remain_datagrid_5.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_5.Name = "Remain_datagrid_5";
+            this.Remain_datagrid_5.RowHeadersVisible = false;
+            this.Remain_datagrid_5.RowTemplate.Height = 23;
+            this.Remain_datagrid_5.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_5.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.HeaderText = "날짜";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.HeaderText = "매매구분";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.HeaderText = "종목코드";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.HeaderText = "가격";
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.HeaderText = "개수";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.Remain_datagrid_6);
+            this.groupBox22.Location = new System.Drawing.Point(6, 392);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(398, 210);
+            this.groupBox22.TabIndex = 8;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "6번종목 잔고";
+            // 
+            // Remain_datagrid_6
+            // 
+            this.Remain_datagrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Remain_datagrid_6.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.Remain_datagrid_6.Location = new System.Drawing.Point(0, 15);
+            this.Remain_datagrid_6.Name = "Remain_datagrid_6";
+            this.Remain_datagrid_6.RowHeadersVisible = false;
+            this.Remain_datagrid_6.RowTemplate.Height = 23;
+            this.Remain_datagrid_6.Size = new System.Drawing.Size(398, 195);
+            this.Remain_datagrid_6.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.HeaderText = "날짜";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.HeaderText = "매매구분";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.HeaderText = "종목코드";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.HeaderText = "가격";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.HeaderText = "개수";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1618, 989);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.groupBox8);
-            this.Controls.Add(this.groupBox6);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.Visible_Delay_4);
-            this.Controls.Add(this.Visible_Delay_2);
-            this.Controls.Add(this.Visible_Delay_3);
-            this.Controls.Add(this.Visible_Delay_5);
-            this.Controls.Add(this.Visible_Delay_6);
-            this.Controls.Add(this.Visible_Delay_1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.Comm_Obj_Orderlist);
             this.Controls.Add(this.label34);
             this.Controls.Add(this.label35);
@@ -4011,18 +4895,14 @@
             this.Controls.Add(this.endTime_2);
             this.Controls.Add(this.startTime_2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TimeSetCheck_1);
-            this.Controls.Add(this.TimerText);
             this.Controls.Add(this.Comm_Obj_DATA_6);
             this.Controls.Add(this.Comm_Obj_DATA_5);
             this.Controls.Add(this.Comm_Obj_DATA_4);
             this.Controls.Add(this.Comm_Obj_DATA_3);
             this.Controls.Add(this.Comm_Obj_DATA_2);
             this.Controls.Add(this.Comm_Obj_DATA_1);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.TimerSet);
+            this.Controls.Add(this.Comm_Obj_Code_List);
             this.Controls.Add(this.endTime_1);
             this.Controls.Add(this.startTime_1);
             this.Controls.Add(this.FCGrid_4);
@@ -4184,7 +5064,7 @@
             this.Controls.Add(this.Day_btn_1);
             this.Controls.Add(this.WMA_input_btn_1);
             this.Controls.Add(this.WMA_input_1);
-            this.Controls.Add(this.Comm_Obj_DATA_Real);
+            this.Controls.Add(this.Comm_Obj_FH_Real);
             this.Controls.Add(this.FCGrid_1);
             this.Controls.Add(this.FCode_1);
             this.Font = new System.Drawing.Font("맑은 고딕", 8F);
@@ -4193,7 +5073,8 @@
             this.Text = "SHINHAN_HTS_HELPER";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_Real)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_FH_Real)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Code_List)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Price_GridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Account_GridView)).EndInit();
@@ -4206,32 +5087,68 @@
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FCGrid_5)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Stock_Count)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_6)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Order_list)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_Orderlist)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_1)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.groupBox13.ResumeLayout(false);
+            this.groupBox13.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
+            this.groupBox19.ResumeLayout(false);
+            this.groupBox19.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
+            this.tabPage6.ResumeLayout(false);
+            this.groupBox21.ResumeLayout(false);
+            this.groupBox21.PerformLayout();
+            this.groupBox23.ResumeLayout(false);
+            this.groupBox23.PerformLayout();
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox24.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_2)).EndInit();
+            this.groupBox10.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_3)).EndInit();
+            this.groupBox14.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_4)).EndInit();
+            this.groupBox18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_5)).EndInit();
+            this.groupBox22.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Remain_datagrid_6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4240,9 +5157,9 @@
         #endregion
 
 
-
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Code_List;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_1;
-        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_Real;
+        private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_FH_Real;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Account;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Price;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_Deal;
@@ -4408,43 +5325,12 @@
         private System.Windows.Forms.TextBox FCode_5;
         private System.Windows.Forms.TextBox startTime_1;
         private System.Windows.Forms.TextBox endTime_1;
-        private System.Windows.Forms.CheckBox MecroSet_1;
-        private System.Windows.Forms.CheckBox TimerSet;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox Order_type;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox Order_Price;
-        private System.Windows.Forms.TextBox Order_Code;
-        private System.Windows.Forms.NumericUpDown Stock_Count;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button Sell_btn;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Button Buy_btn;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_2;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_3;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_4;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_5;
         private AxGIEXPERTCONTROLLib.AxGiExpertControl Comm_Obj_DATA_6;
-        private System.Windows.Forms.TextBox TimerText;
-        private System.Windows.Forms.TextBox SetDelayText_1;
-        private System.Windows.Forms.CheckBox MecroSet_2;
-        private System.Windows.Forms.CheckBox MecroSet_3;
-        private System.Windows.Forms.CheckBox MecroSet_6;
-        private System.Windows.Forms.CheckBox MecroSet_5;
-        private System.Windows.Forms.CheckBox MecroSet_4;
-        private System.Windows.Forms.CheckBox SetDelay_4;
-        private System.Windows.Forms.CheckBox SetDelay_5;
-        private System.Windows.Forms.CheckBox SetDelay_6;
-        private System.Windows.Forms.CheckBox SetDelay_3;
-        private System.Windows.Forms.CheckBox SetDelay_2;
-        private System.Windows.Forms.TextBox SetDelayText_2;
-        private System.Windows.Forms.TextBox SetDelayText_3;
-        private System.Windows.Forms.TextBox SetDelayText_4;
-        private System.Windows.Forms.TextBox SetDelayText_6;
-        private System.Windows.Forms.TextBox SetDelayText_5;
         private System.Windows.Forms.CheckBox TimeSetCheck_1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox TimeSetCheck_2;
@@ -4478,115 +5364,216 @@
         private System.Windows.Forms.Timer timer4;
         private System.Windows.Forms.Timer timer5;
         private System.Windows.Forms.Timer timer6;
-        private System.Windows.Forms.CheckBox SetDelay_1;
-        private System.Windows.Forms.TextBox Visible_Delay_1;
-        private System.Windows.Forms.TextBox Visible_Delay_6;
-        private System.Windows.Forms.TextBox Visible_Delay_5;
-        private System.Windows.Forms.TextBox Visible_Delay_3;
-        private System.Windows.Forms.TextBox Visible_Delay_2;
-        private System.Windows.Forms.TextBox Visible_Delay_4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.Label label57;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.Label label58;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.CheckBox TS_Control_1;
+        private System.Windows.Forms.ComboBox TS_OrderHow_1;
+        private System.Windows.Forms.Button TS_Button_1;
+        private System.Windows.Forms.TextBox TS_EndTick_1;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TextBox TS_StartTick_1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.ComboBox SL_OrderHow_1;
+        private System.Windows.Forms.CheckBox SL_Control_1;
+        private System.Windows.Forms.Button SL_Button_1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox SL_LowTick_1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox SL_HighTick_1;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.ComboBox comboBox5;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.ComboBox SL_OrderHow_2;
+        private System.Windows.Forms.CheckBox SL_Control_2;
+        private System.Windows.Forms.Button SL_Button_2;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox SL_LowTick_2;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox SL_HighTick_2;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.ComboBox SL_OrderHow_3;
+        private System.Windows.Forms.CheckBox SL_Control_3;
+        private System.Windows.Forms.Button SL_Button_3;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.TextBox SL_LowTick_3;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.TextBox SL_HighTick_3;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.ComboBox SL_OrderHow_4;
+        private System.Windows.Forms.CheckBox SL_Control_4;
+        private System.Windows.Forms.Button SL_Button_4;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.TextBox SL_LowTick_4;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TextBox SL_HighTick_4;
+        private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.ComboBox SL_OrderHow_5;
+        private System.Windows.Forms.CheckBox SL_Control_5;
+        private System.Windows.Forms.Button SL_Button_5;
         private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.TextBox SL_LowTick_5;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.Label label64;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.Label label65;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.GroupBox groupBox9;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.TextBox SL_HighTick_5;
+        private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.ComboBox SL_OrderHow_6;
+        private System.Windows.Forms.CheckBox SL_Control_6;
+        private System.Windows.Forms.Button SL_Button_6;
         private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.TextBox SL_LowTick_6;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.Label label69;
-        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.TextBox SL_HighTick_6;
+        private System.Windows.Forms.TextBox TS_Final_Low_1;
+        private System.Windows.Forms.TextBox TS_Final_High_1;
         private System.Windows.Forms.Label label70;
-        private System.Windows.Forms.CheckBox checkBox12;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.TextBox TS_Final_Low_2;
+        private System.Windows.Forms.TextBox TS_Final_High_2;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.CheckBox TS_Control_2;
+        private System.Windows.Forms.ComboBox TS_OrderHow_2;
+        private System.Windows.Forms.Button TS_Button_2;
+        private System.Windows.Forms.TextBox TS_EndTick_2;
         private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.TextBox TS_StartTick_2;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.TextBox TS_Final_Low_3;
+        private System.Windows.Forms.TextBox TS_Final_High_3;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.CheckBox TS_Control_3;
+        private System.Windows.Forms.ComboBox TS_OrderHow_3;
+        private System.Windows.Forms.Button TS_Button_3;
+        private System.Windows.Forms.TextBox TS_EndTick_3;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox TS_StartTick_3;
+        private System.Windows.Forms.GroupBox groupBox13;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.TextBox TS_Final_Low_4;
+        private System.Windows.Forms.TextBox TS_Final_High_4;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.CheckBox TS_Control_4;
+        private System.Windows.Forms.ComboBox TS_OrderHow_4;
+        private System.Windows.Forms.Button TS_Button_4;
+        private System.Windows.Forms.TextBox TS_EndTick_4;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox TS_StartTick_4;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.TextBox TS_Final_Low_5;
+        private System.Windows.Forms.TextBox TS_Final_High_5;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.CheckBox TS_Control_5;
+        private System.Windows.Forms.ComboBox TS_OrderHow_5;
+        private System.Windows.Forms.Button TS_Button_5;
+        private System.Windows.Forms.TextBox TS_EndTick_5;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.TextBox TS_StartTick_5;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.GroupBox groupBox23;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.TextBox TS_Final_Low_6;
+        private System.Windows.Forms.TextBox TS_Final_High_6;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.CheckBox TS_Control_6;
+        private System.Windows.Forms.ComboBox TS_OrderHow_6;
+        private System.Windows.Forms.Button TS_Button_6;
+        private System.Windows.Forms.TextBox TS_EndTick_6;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.TextBox TS_StartTick_6;
         private System.Windows.Forms.TextBox CountText_6;
-        private System.Windows.Forms.TextBox CountText_5;
-        private System.Windows.Forms.TextBox CountText_4;
-        private System.Windows.Forms.TextBox CountText_3;
-        private System.Windows.Forms.TextBox CountText_2;
+        private System.Windows.Forms.CheckBox SetDelay_6;
+        private System.Windows.Forms.CheckBox MecroSet_6;
+        private System.Windows.Forms.TextBox SetDelayText_6;
         private System.Windows.Forms.TextBox CountText_1;
+        private System.Windows.Forms.CheckBox SetDelay_1;
+        private System.Windows.Forms.CheckBox MecroSet_1;
+        private System.Windows.Forms.TextBox SetDelayText_1;
+        private System.Windows.Forms.TextBox CountText_2;
+        private System.Windows.Forms.CheckBox SetDelay_2;
+        private System.Windows.Forms.CheckBox MecroSet_2;
+        private System.Windows.Forms.TextBox SetDelayText_2;
+        private System.Windows.Forms.TextBox CountText_3;
+        private System.Windows.Forms.CheckBox SetDelay_3;
+        private System.Windows.Forms.CheckBox MecroSet_3;
+        private System.Windows.Forms.TextBox SetDelayText_3;
+        private System.Windows.Forms.TextBox CountText_4;
+        private System.Windows.Forms.CheckBox SetDelay_4;
+        private System.Windows.Forms.CheckBox MecroSet_4;
+        private System.Windows.Forms.TextBox SetDelayText_4;
+        private System.Windows.Forms.TextBox CountText_5;
+        private System.Windows.Forms.CheckBox SetDelay_5;
+        private System.Windows.Forms.CheckBox MecroSet_5;
+        private System.Windows.Forms.TextBox SetDelayText_5;
+        private System.Windows.Forms.DataGridView Remain_datagrid_1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView Remain_datagrid_2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.GroupBox groupBox10;
+        private System.Windows.Forms.DataGridView Remain_datagrid_3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.DataGridView Remain_datagrid_4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.DataGridView Remain_datagrid_5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.GroupBox groupBox22;
+        private System.Windows.Forms.DataGridView Remain_datagrid_6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
     }
 }
