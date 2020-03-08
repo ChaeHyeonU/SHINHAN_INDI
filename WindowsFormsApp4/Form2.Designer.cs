@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA_1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_Code_List = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
@@ -273,13 +273,13 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_1 = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_1 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_1 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_1 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_1 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_1 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_1 = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -308,13 +308,13 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_2 = new System.Windows.Forms.ComboBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_2 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_2 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_2 = new System.Windows.Forms.Button();
             this.label43 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_2 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_2 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_2 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_2 = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.label45 = new System.Windows.Forms.Label();
@@ -343,13 +343,13 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_3 = new System.Windows.Forms.ComboBox();
-            this.checkBox11 = new System.Windows.Forms.CheckBox();
-            this.button9 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_3 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_3 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_3 = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_3 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_3 = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_3 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_3 = new System.Windows.Forms.TextBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.label51 = new System.Windows.Forms.Label();
@@ -378,13 +378,13 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.label54 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_4 = new System.Windows.Forms.ComboBox();
-            this.checkBox15 = new System.Windows.Forms.CheckBox();
-            this.button12 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_4 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_4 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_4 = new System.Windows.Forms.Button();
             this.label55 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_4 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_4 = new System.Windows.Forms.TextBox();
             this.label56 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_4 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_4 = new System.Windows.Forms.TextBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.label57 = new System.Windows.Forms.Label();
@@ -413,13 +413,13 @@
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.label60 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_5 = new System.Windows.Forms.ComboBox();
-            this.checkBox19 = new System.Windows.Forms.CheckBox();
-            this.button15 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_5 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_5 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_5 = new System.Windows.Forms.Button();
             this.label61 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_5 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_5 = new System.Windows.Forms.TextBox();
             this.label62 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_5 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_5 = new System.Windows.Forms.TextBox();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
             this.label63 = new System.Windows.Forms.Label();
@@ -448,13 +448,13 @@
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.label66 = new System.Windows.Forms.Label();
-            this.StopLoss_Combo_6 = new System.Windows.Forms.ComboBox();
-            this.checkBox23 = new System.Windows.Forms.CheckBox();
-            this.button18 = new System.Windows.Forms.Button();
+            this.SL_OrderHow_6 = new System.Windows.Forms.ComboBox();
+            this.SL_Control_6 = new System.Windows.Forms.CheckBox();
+            this.SL_Button_6 = new System.Windows.Forms.Button();
             this.label67 = new System.Windows.Forms.Label();
-            this.StopLose_Lose_6 = new System.Windows.Forms.TextBox();
+            this.SL_LowTick_6 = new System.Windows.Forms.TextBox();
             this.label68 = new System.Windows.Forms.Label();
-            this.StopLose_Profit_6 = new System.Windows.Forms.TextBox();
+            this.SL_HighTick_6 = new System.Windows.Forms.TextBox();
             this.Comm_Obj_RealTimeData = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_Tick = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             ((System.ComponentModel.ISupportInitialize)(this.Comm_Obj_DATA_1)).BeginInit();
@@ -523,7 +523,7 @@
             // Comm_Obj_DATA_1
             // 
             this.Comm_Obj_DATA_1.Enabled = true;
-            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9520, 9544);
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(9817, 9683);
             this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
             this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
             this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
@@ -534,7 +534,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(8904, 8896);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(9201, 9035);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -544,7 +544,7 @@
             // Comm_Obj_Code_List
             // 
             this.Comm_Obj_Code_List.Enabled = true;
-            this.Comm_Obj_Code_List.Location = new System.Drawing.Point(9520, 8644);
+            this.Comm_Obj_Code_List.Location = new System.Drawing.Point(9817, 8783);
             this.Comm_Obj_Code_List.Name = "Comm_Obj_Code_List";
             this.Comm_Obj_Code_List.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Code_List.OcxState")));
             this.Comm_Obj_Code_List.Size = new System.Drawing.Size(136, 50);
@@ -571,14 +571,14 @@
             this.FCGrid_1.AllowUserToResizeRows = false;
             this.FCGrid_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle71.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle71.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle71.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle71.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle71.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle71.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle71;
             this.FCGrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_1.Location = new System.Drawing.Point(7, 60);
             this.FCGrid_1.Name = "FCGrid_1";
@@ -797,14 +797,14 @@
             // Price_GridView
             // 
             this.Price_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle72.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle72.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle72.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle72.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle72.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle72.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle72;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Location = new System.Drawing.Point(1192, 36);
             this.Price_GridView.Name = "Price_GridView";
@@ -882,7 +882,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(7152, 5408);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(7449, 5547);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -894,7 +894,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(5619, 5497);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(5916, 5636);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -932,7 +932,7 @@
             // Comm_Obj_Deal
             // 
             this.Comm_Obj_Deal.Enabled = true;
-            this.Comm_Obj_Deal.Location = new System.Drawing.Point(3543, 3806);
+            this.Comm_Obj_Deal.Location = new System.Drawing.Point(3840, 3945);
             this.Comm_Obj_Deal.Name = "Comm_Obj_Deal";
             this.Comm_Obj_Deal.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Deal.OcxState")));
             this.Comm_Obj_Deal.Size = new System.Drawing.Size(136, 50);
@@ -980,7 +980,7 @@
             // Comm_Obj_Accountinfo
             // 
             this.Comm_Obj_Accountinfo.Enabled = true;
-            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(2351, 3442);
+            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(2648, 3581);
             this.Comm_Obj_Accountinfo.Name = "Comm_Obj_Accountinfo";
             this.Comm_Obj_Accountinfo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Accountinfo.OcxState")));
             this.Comm_Obj_Accountinfo.Size = new System.Drawing.Size(136, 50);
@@ -1250,14 +1250,14 @@
             this.FCGrid_4.AllowUserToResizeRows = false;
             this.FCGrid_4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle73.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle73.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle73.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle73.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle73.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle73.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle73;
             this.FCGrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_4.Location = new System.Drawing.Point(600, 60);
             this.FCGrid_4.Name = "FCGrid_4";
@@ -1543,14 +1543,14 @@
             this.FCGrid_2.AllowUserToResizeRows = false;
             this.FCGrid_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle74.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle74.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle74.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle74.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle74;
             this.FCGrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_2.Location = new System.Drawing.Point(7, 384);
             this.FCGrid_2.Name = "FCGrid_2";
@@ -1836,14 +1836,14 @@
             this.FCGrid_3.AllowUserToResizeRows = false;
             this.FCGrid_3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle75.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle75.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle75.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle75.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle75.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle75;
             this.FCGrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_3.Location = new System.Drawing.Point(7, 709);
             this.FCGrid_3.Name = "FCGrid_3";
@@ -2129,14 +2129,14 @@
             this.FCGrid_6.AllowUserToResizeRows = false;
             this.FCGrid_6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_6.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle76.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle76.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle76.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle76.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle76.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle76.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle76;
             this.FCGrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_6.Location = new System.Drawing.Point(600, 709);
             this.FCGrid_6.Name = "FCGrid_6";
@@ -2422,14 +2422,14 @@
             this.FCGrid_5.AllowUserToResizeRows = false;
             this.FCGrid_5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle77.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle77.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle77.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle77.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle77;
             this.FCGrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_5.Location = new System.Drawing.Point(600, 384);
             this.FCGrid_5.Name = "FCGrid_5";
@@ -2475,7 +2475,7 @@
             // Comm_Obj_DATA_2
             // 
             this.Comm_Obj_DATA_2.Enabled = true;
-            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(1199, 2207);
+            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(1496, 2346);
             this.Comm_Obj_DATA_2.Name = "Comm_Obj_DATA_2";
             this.Comm_Obj_DATA_2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_2.OcxState")));
             this.Comm_Obj_DATA_2.Size = new System.Drawing.Size(136, 50);
@@ -2485,7 +2485,7 @@
             // Comm_Obj_DATA_3
             // 
             this.Comm_Obj_DATA_3.Enabled = true;
-            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(1240, 2201);
+            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(1537, 2340);
             this.Comm_Obj_DATA_3.Name = "Comm_Obj_DATA_3";
             this.Comm_Obj_DATA_3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_3.OcxState")));
             this.Comm_Obj_DATA_3.Size = new System.Drawing.Size(136, 50);
@@ -2495,7 +2495,7 @@
             // Comm_Obj_DATA_4
             // 
             this.Comm_Obj_DATA_4.Enabled = true;
-            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1112, 2157);
+            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(1409, 2296);
             this.Comm_Obj_DATA_4.Name = "Comm_Obj_DATA_4";
             this.Comm_Obj_DATA_4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_4.OcxState")));
             this.Comm_Obj_DATA_4.Size = new System.Drawing.Size(136, 50);
@@ -2505,7 +2505,7 @@
             // Comm_Obj_DATA_5
             // 
             this.Comm_Obj_DATA_5.Enabled = true;
-            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1141, 2152);
+            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(1438, 2291);
             this.Comm_Obj_DATA_5.Name = "Comm_Obj_DATA_5";
             this.Comm_Obj_DATA_5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_5.OcxState")));
             this.Comm_Obj_DATA_5.Size = new System.Drawing.Size(136, 50);
@@ -2515,7 +2515,7 @@
             // Comm_Obj_DATA_6
             // 
             this.Comm_Obj_DATA_6.Enabled = true;
-            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(1205, 2062);
+            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(1502, 2201);
             this.Comm_Obj_DATA_6.Name = "Comm_Obj_DATA_6";
             this.Comm_Obj_DATA_6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_6.OcxState")));
             this.Comm_Obj_DATA_6.Size = new System.Drawing.Size(136, 50);
@@ -2790,7 +2790,7 @@
             // Comm_Obj_Orderlist
             // 
             this.Comm_Obj_Orderlist.Enabled = true;
-            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(272, 1824);
+            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(569, 1963);
             this.Comm_Obj_Orderlist.Name = "Comm_Obj_Orderlist";
             this.Comm_Obj_Orderlist.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Orderlist.OcxState")));
             this.Comm_Obj_Orderlist.Size = new System.Drawing.Size(136, 50);
@@ -2853,7 +2853,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "1번종목 청산";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // groupBox2
             // 
@@ -2869,7 +2868,7 @@
             this.groupBox2.Controls.Add(this.label36);
             this.groupBox2.Controls.Add(this.label32);
             this.groupBox2.Controls.Add(this.TS_StartTick_1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 150);
+            this.groupBox2.Location = new System.Drawing.Point(6, 143);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(398, 169);
             this.groupBox2.TabIndex = 4;
@@ -2928,6 +2927,7 @@
             this.TS_Control_1.TabIndex = 1232;
             this.TS_Control_1.Text = "트레일링스탑 작동여부";
             this.TS_Control_1.UseVisualStyleBackColor = true;
+            this.TS_Control_1.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_1
             // 
@@ -2968,6 +2968,7 @@
             this.TS_Button_1.TabIndex = 1232;
             this.TS_Button_1.Text = "설정";
             this.TS_Button_1.UseVisualStyleBackColor = true;
+            this.TS_Button_1.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_1
             // 
@@ -3009,7 +3010,7 @@
             this.groupBox4.Controls.Add(this.SetDelay_1);
             this.groupBox4.Controls.Add(this.MecroSet_1);
             this.groupBox4.Controls.Add(this.SetDelayText_1);
-            this.groupBox4.Location = new System.Drawing.Point(6, 327);
+            this.groupBox4.Location = new System.Drawing.Point(6, 318);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(398, 68);
             this.groupBox4.TabIndex = 3;
@@ -3055,9 +3056,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.Remain_datagrid_1);
-            this.groupBox3.Location = new System.Drawing.Point(6, 401);
+            this.groupBox3.Location = new System.Drawing.Point(6, 392);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(398, 199);
+            this.groupBox3.Size = new System.Drawing.Size(398, 218);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "1번종목 잔고";
@@ -3075,7 +3076,7 @@
             this.Remain_datagrid_1.Name = "Remain_datagrid_1";
             this.Remain_datagrid_1.RowHeadersVisible = false;
             this.Remain_datagrid_1.RowTemplate.Height = 23;
-            this.Remain_datagrid_1.Size = new System.Drawing.Size(387, 211);
+            this.Remain_datagrid_1.Size = new System.Drawing.Size(387, 191);
             this.Remain_datagrid_1.TabIndex = 0;
             // 
             // Column1
@@ -3106,13 +3107,13 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label37);
-            this.groupBox1.Controls.Add(this.StopLoss_Combo_1);
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.SL_OrderHow_1);
+            this.groupBox1.Controls.Add(this.SL_Control_1);
+            this.groupBox1.Controls.Add(this.SL_Button_1);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.StopLose_Lose_1);
+            this.groupBox1.Controls.Add(this.SL_LowTick_1);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.StopLose_Profit_1);
+            this.groupBox1.Controls.Add(this.SL_HighTick_1);
             this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(398, 131);
@@ -3129,10 +3130,10 @@
             this.label37.TabIndex = 1233;
             this.label37.Text = "주문방식";
             // 
-            // StopLoss_Combo_1
+            // SL_OrderHow_1
             // 
-            this.StopLoss_Combo_1.FormattingEnabled = true;
-            this.StopLoss_Combo_1.Items.AddRange(new object[] {
+            this.SL_OrderHow_1.FormattingEnabled = true;
+            this.SL_OrderHow_1.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -3144,30 +3145,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_1.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_1.Name = "StopLoss_Combo_1";
-            this.StopLoss_Combo_1.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_1.TabIndex = 1232;
+            this.SL_OrderHow_1.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_1.Name = "SL_OrderHow_1";
+            this.SL_OrderHow_1.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_1.TabIndex = 1232;
             // 
-            // checkBox1
+            // SL_Control_1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(160, 102);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 17);
-            this.checkBox1.TabIndex = 1231;
-            this.checkBox1.Text = "스탑로스 작동여부";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.SL_Control_1.AutoSize = true;
+            this.SL_Control_1.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_1.Name = "SL_Control_1";
+            this.SL_Control_1.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_1.TabIndex = 1231;
+            this.SL_Control_1.Text = "스탑로스 작동여부";
+            this.SL_Control_1.UseVisualStyleBackColor = true;
+            this.SL_Control_1.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button1
+            // SL_Button_1
             // 
-            this.button1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button1.Location = new System.Drawing.Point(344, 98);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(48, 23);
-            this.button1.TabIndex = 1230;
-            this.button1.Text = "설정";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SL_Button_1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_1.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_1.Name = "SL_Button_1";
+            this.SL_Button_1.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_1.TabIndex = 1230;
+            this.SL_Button_1.Text = "설정";
+            this.SL_Button_1.UseVisualStyleBackColor = true;
+            this.SL_Button_1.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label8
             // 
@@ -3178,13 +3181,13 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "손절틱수";
             // 
-            // StopLose_Lose_1
+            // SL_LowTick_1
             // 
-            this.StopLose_Lose_1.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_1.Name = "StopLose_Lose_1";
-            this.StopLose_Lose_1.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_1.TabIndex = 2;
-            this.StopLose_Lose_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_1.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_1.Name = "SL_LowTick_1";
+            this.SL_LowTick_1.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_1.TabIndex = 2;
+            this.SL_LowTick_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label7
             // 
@@ -3195,13 +3198,13 @@
             this.label7.TabIndex = 1;
             this.label7.Text = "익절틱수";
             // 
-            // StopLose_Profit_1
+            // SL_HighTick_1
             // 
-            this.StopLose_Profit_1.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_1.Name = "StopLose_Profit_1";
-            this.StopLose_Profit_1.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_1.TabIndex = 0;
-            this.StopLose_Profit_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_1.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_1.Name = "SL_HighTick_1";
+            this.SL_HighTick_1.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_1.TabIndex = 0;
+            this.SL_HighTick_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // tabPage2
             // 
@@ -3233,7 +3236,7 @@
             this.groupBox7.Controls.Add(this.TS_StartTick_2);
             this.groupBox7.Location = new System.Drawing.Point(6, 143);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(398, 180);
+            this.groupBox7.Size = new System.Drawing.Size(398, 168);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "트레일링스탑";
@@ -3290,6 +3293,7 @@
             this.TS_Control_2.TabIndex = 1232;
             this.TS_Control_2.Text = "트레일링스탑 작동여부";
             this.TS_Control_2.UseVisualStyleBackColor = true;
+            this.TS_Control_2.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_2
             // 
@@ -3320,6 +3324,7 @@
             this.TS_Button_2.TabIndex = 1232;
             this.TS_Button_2.Text = "설정";
             this.TS_Button_2.UseVisualStyleBackColor = true;
+            this.TS_Button_2.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_2
             // 
@@ -3361,7 +3366,7 @@
             this.groupBox5.Controls.Add(this.SetDelay_2);
             this.groupBox5.Controls.Add(this.MecroSet_2);
             this.groupBox5.Controls.Add(this.SetDelayText_2);
-            this.groupBox5.Location = new System.Drawing.Point(6, 329);
+            this.groupBox5.Location = new System.Drawing.Point(6, 317);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(398, 68);
             this.groupBox5.TabIndex = 7;
@@ -3407,12 +3412,12 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.Remain_datagrid_2);
-            this.groupBox6.Location = new System.Drawing.Point(6, 403);
+            this.groupBox6.Location = new System.Drawing.Point(6, 391);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(398, 197);
+            this.groupBox6.Size = new System.Drawing.Size(398, 219);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "1번종목 잔고";
+            this.groupBox6.Text = "2번종목 잔고";
             // 
             // Remain_datagrid_2
             // 
@@ -3427,7 +3432,7 @@
             this.Remain_datagrid_2.Name = "Remain_datagrid_2";
             this.Remain_datagrid_2.RowHeadersVisible = false;
             this.Remain_datagrid_2.RowTemplate.Height = 23;
-            this.Remain_datagrid_2.Size = new System.Drawing.Size(387, 211);
+            this.Remain_datagrid_2.Size = new System.Drawing.Size(387, 192);
             this.Remain_datagrid_2.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -3458,13 +3463,13 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label42);
-            this.groupBox8.Controls.Add(this.StopLoss_Combo_2);
-            this.groupBox8.Controls.Add(this.checkBox7);
-            this.groupBox8.Controls.Add(this.button6);
+            this.groupBox8.Controls.Add(this.SL_OrderHow_2);
+            this.groupBox8.Controls.Add(this.SL_Control_2);
+            this.groupBox8.Controls.Add(this.SL_Button_2);
             this.groupBox8.Controls.Add(this.label43);
-            this.groupBox8.Controls.Add(this.StopLose_Lose_2);
+            this.groupBox8.Controls.Add(this.SL_LowTick_2);
             this.groupBox8.Controls.Add(this.label44);
-            this.groupBox8.Controls.Add(this.StopLose_Profit_2);
+            this.groupBox8.Controls.Add(this.SL_HighTick_2);
             this.groupBox8.Location = new System.Drawing.Point(6, 6);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(398, 131);
@@ -3481,10 +3486,10 @@
             this.label42.TabIndex = 1233;
             this.label42.Text = "주문방식";
             // 
-            // StopLoss_Combo_2
+            // SL_OrderHow_2
             // 
-            this.StopLoss_Combo_2.FormattingEnabled = true;
-            this.StopLoss_Combo_2.Items.AddRange(new object[] {
+            this.SL_OrderHow_2.FormattingEnabled = true;
+            this.SL_OrderHow_2.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -3496,30 +3501,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_2.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_2.Name = "StopLoss_Combo_2";
-            this.StopLoss_Combo_2.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_2.TabIndex = 1232;
+            this.SL_OrderHow_2.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_2.Name = "SL_OrderHow_2";
+            this.SL_OrderHow_2.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_2.TabIndex = 1232;
             // 
-            // checkBox7
+            // SL_Control_2
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(160, 102);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(118, 17);
-            this.checkBox7.TabIndex = 1231;
-            this.checkBox7.Text = "스탑로스 작동여부";
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.SL_Control_2.AutoSize = true;
+            this.SL_Control_2.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_2.Name = "SL_Control_2";
+            this.SL_Control_2.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_2.TabIndex = 1231;
+            this.SL_Control_2.Text = "스탑로스 작동여부";
+            this.SL_Control_2.UseVisualStyleBackColor = true;
+            this.SL_Control_2.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button6
+            // SL_Button_2
             // 
-            this.button6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button6.Location = new System.Drawing.Point(344, 98);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(48, 23);
-            this.button6.TabIndex = 1230;
-            this.button6.Text = "설정";
-            this.button6.UseVisualStyleBackColor = true;
+            this.SL_Button_2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_2.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_2.Name = "SL_Button_2";
+            this.SL_Button_2.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_2.TabIndex = 1230;
+            this.SL_Button_2.Text = "설정";
+            this.SL_Button_2.UseVisualStyleBackColor = true;
+            this.SL_Button_2.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label43
             // 
@@ -3530,13 +3537,13 @@
             this.label43.TabIndex = 3;
             this.label43.Text = "손절틱수";
             // 
-            // StopLose_Lose_2
+            // SL_LowTick_2
             // 
-            this.StopLose_Lose_2.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_2.Name = "StopLose_Lose_2";
-            this.StopLose_Lose_2.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_2.TabIndex = 2;
-            this.StopLose_Lose_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_2.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_2.Name = "SL_LowTick_2";
+            this.SL_LowTick_2.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_2.TabIndex = 2;
+            this.SL_LowTick_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label44
             // 
@@ -3547,13 +3554,13 @@
             this.label44.TabIndex = 1;
             this.label44.Text = "익절틱수";
             // 
-            // StopLose_Profit_2
+            // SL_HighTick_2
             // 
-            this.StopLose_Profit_2.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_2.Name = "StopLose_Profit_2";
-            this.StopLose_Profit_2.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_2.TabIndex = 0;
-            this.StopLose_Profit_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_2.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_2.Name = "SL_HighTick_2";
+            this.SL_HighTick_2.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_2.TabIndex = 0;
+            this.SL_HighTick_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // tabPage3
             // 
@@ -3582,7 +3589,7 @@
             this.groupBox11.Controls.Add(this.label73);
             this.groupBox11.Controls.Add(this.label74);
             this.groupBox11.Controls.Add(this.TS_StartTick_3);
-            this.groupBox11.Location = new System.Drawing.Point(6, 152);
+            this.groupBox11.Location = new System.Drawing.Point(6, 143);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(398, 169);
             this.groupBox11.TabIndex = 1235;
@@ -3641,6 +3648,7 @@
             this.TS_Control_3.TabIndex = 1232;
             this.TS_Control_3.Text = "트레일링스탑 작동여부";
             this.TS_Control_3.UseVisualStyleBackColor = true;
+            this.TS_Control_3.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_3
             // 
@@ -3671,6 +3679,7 @@
             this.TS_Button_3.TabIndex = 1232;
             this.TS_Button_3.Text = "설정";
             this.TS_Button_3.UseVisualStyleBackColor = true;
+            this.TS_Button_3.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_3
             // 
@@ -3712,7 +3721,7 @@
             this.groupBox9.Controls.Add(this.SetDelay_3);
             this.groupBox9.Controls.Add(this.MecroSet_3);
             this.groupBox9.Controls.Add(this.SetDelayText_3);
-            this.groupBox9.Location = new System.Drawing.Point(6, 327);
+            this.groupBox9.Location = new System.Drawing.Point(6, 318);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(398, 68);
             this.groupBox9.TabIndex = 7;
@@ -3758,12 +3767,12 @@
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.Remain_datagrid_3);
-            this.groupBox10.Location = new System.Drawing.Point(6, 401);
+            this.groupBox10.Location = new System.Drawing.Point(6, 392);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(398, 202);
+            this.groupBox10.Size = new System.Drawing.Size(398, 218);
             this.groupBox10.TabIndex = 6;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "1번종목 잔고";
+            this.groupBox10.Text = "3번종목 잔고";
             // 
             // Remain_datagrid_3
             // 
@@ -3778,7 +3787,7 @@
             this.Remain_datagrid_3.Name = "Remain_datagrid_3";
             this.Remain_datagrid_3.RowHeadersVisible = false;
             this.Remain_datagrid_3.RowTemplate.Height = 23;
-            this.Remain_datagrid_3.Size = new System.Drawing.Size(386, 214);
+            this.Remain_datagrid_3.Size = new System.Drawing.Size(387, 191);
             this.Remain_datagrid_3.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -3809,13 +3818,13 @@
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.label48);
-            this.groupBox12.Controls.Add(this.StopLoss_Combo_3);
-            this.groupBox12.Controls.Add(this.checkBox11);
-            this.groupBox12.Controls.Add(this.button9);
+            this.groupBox12.Controls.Add(this.SL_OrderHow_3);
+            this.groupBox12.Controls.Add(this.SL_Control_3);
+            this.groupBox12.Controls.Add(this.SL_Button_3);
             this.groupBox12.Controls.Add(this.label49);
-            this.groupBox12.Controls.Add(this.StopLose_Lose_3);
+            this.groupBox12.Controls.Add(this.SL_LowTick_3);
             this.groupBox12.Controls.Add(this.label50);
-            this.groupBox12.Controls.Add(this.StopLose_Profit_3);
+            this.groupBox12.Controls.Add(this.SL_HighTick_3);
             this.groupBox12.Location = new System.Drawing.Point(6, 6);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(398, 131);
@@ -3832,10 +3841,10 @@
             this.label48.TabIndex = 1233;
             this.label48.Text = "주문방식";
             // 
-            // StopLoss_Combo_3
+            // SL_OrderHow_3
             // 
-            this.StopLoss_Combo_3.FormattingEnabled = true;
-            this.StopLoss_Combo_3.Items.AddRange(new object[] {
+            this.SL_OrderHow_3.FormattingEnabled = true;
+            this.SL_OrderHow_3.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -3847,30 +3856,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_3.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_3.Name = "StopLoss_Combo_3";
-            this.StopLoss_Combo_3.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_3.TabIndex = 1232;
+            this.SL_OrderHow_3.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_3.Name = "SL_OrderHow_3";
+            this.SL_OrderHow_3.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_3.TabIndex = 1232;
             // 
-            // checkBox11
+            // SL_Control_3
             // 
-            this.checkBox11.AutoSize = true;
-            this.checkBox11.Location = new System.Drawing.Point(160, 102);
-            this.checkBox11.Name = "checkBox11";
-            this.checkBox11.Size = new System.Drawing.Size(118, 17);
-            this.checkBox11.TabIndex = 1231;
-            this.checkBox11.Text = "스탑로스 작동여부";
-            this.checkBox11.UseVisualStyleBackColor = true;
+            this.SL_Control_3.AutoSize = true;
+            this.SL_Control_3.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_3.Name = "SL_Control_3";
+            this.SL_Control_3.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_3.TabIndex = 1231;
+            this.SL_Control_3.Text = "스탑로스 작동여부";
+            this.SL_Control_3.UseVisualStyleBackColor = true;
+            this.SL_Control_3.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button9
+            // SL_Button_3
             // 
-            this.button9.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button9.Location = new System.Drawing.Point(344, 98);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(48, 23);
-            this.button9.TabIndex = 1230;
-            this.button9.Text = "설정";
-            this.button9.UseVisualStyleBackColor = true;
+            this.SL_Button_3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_3.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_3.Name = "SL_Button_3";
+            this.SL_Button_3.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_3.TabIndex = 1230;
+            this.SL_Button_3.Text = "설정";
+            this.SL_Button_3.UseVisualStyleBackColor = true;
+            this.SL_Button_3.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label49
             // 
@@ -3881,13 +3892,13 @@
             this.label49.TabIndex = 3;
             this.label49.Text = "손절틱수";
             // 
-            // StopLose_Lose_3
+            // SL_LowTick_3
             // 
-            this.StopLose_Lose_3.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_3.Name = "StopLose_Lose_3";
-            this.StopLose_Lose_3.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_3.TabIndex = 2;
-            this.StopLose_Lose_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_3.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_3.Name = "SL_LowTick_3";
+            this.SL_LowTick_3.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_3.TabIndex = 2;
+            this.SL_LowTick_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label50
             // 
@@ -3898,13 +3909,13 @@
             this.label50.TabIndex = 1;
             this.label50.Text = "익절틱수";
             // 
-            // StopLose_Profit_3
+            // SL_HighTick_3
             // 
-            this.StopLose_Profit_3.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_3.Name = "StopLose_Profit_3";
-            this.StopLose_Profit_3.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_3.TabIndex = 0;
-            this.StopLose_Profit_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_3.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_3.Name = "SL_HighTick_3";
+            this.SL_HighTick_3.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_3.TabIndex = 0;
+            this.SL_HighTick_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // tabPage4
             // 
@@ -3933,7 +3944,7 @@
             this.groupBox15.Controls.Add(this.label75);
             this.groupBox15.Controls.Add(this.label76);
             this.groupBox15.Controls.Add(this.TS_StartTick_4);
-            this.groupBox15.Location = new System.Drawing.Point(6, 145);
+            this.groupBox15.Location = new System.Drawing.Point(6, 143);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(398, 169);
             this.groupBox15.TabIndex = 1235;
@@ -3990,6 +4001,7 @@
             this.TS_Control_4.TabIndex = 1232;
             this.TS_Control_4.Text = "트레일링스탑 작동여부";
             this.TS_Control_4.UseVisualStyleBackColor = true;
+            this.TS_Control_4.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_4
             // 
@@ -4020,6 +4032,7 @@
             this.TS_Button_4.TabIndex = 1232;
             this.TS_Button_4.Text = "설정";
             this.TS_Button_4.UseVisualStyleBackColor = true;
+            this.TS_Button_4.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_4
             // 
@@ -4061,7 +4074,7 @@
             this.groupBox13.Controls.Add(this.SetDelay_4);
             this.groupBox13.Controls.Add(this.MecroSet_4);
             this.groupBox13.Controls.Add(this.SetDelayText_4);
-            this.groupBox13.Location = new System.Drawing.Point(6, 329);
+            this.groupBox13.Location = new System.Drawing.Point(6, 318);
             this.groupBox13.Name = "groupBox13";
             this.groupBox13.Size = new System.Drawing.Size(398, 68);
             this.groupBox13.TabIndex = 7;
@@ -4107,12 +4120,12 @@
             // groupBox14
             // 
             this.groupBox14.Controls.Add(this.Remain_datagrid_4);
-            this.groupBox14.Location = new System.Drawing.Point(6, 403);
+            this.groupBox14.Location = new System.Drawing.Point(6, 392);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(398, 200);
+            this.groupBox14.Size = new System.Drawing.Size(398, 211);
             this.groupBox14.TabIndex = 6;
             this.groupBox14.TabStop = false;
-            this.groupBox14.Text = "1번종목 잔고";
+            this.groupBox14.Text = "4번종목 잔고";
             // 
             // Remain_datagrid_4
             // 
@@ -4127,7 +4140,7 @@
             this.Remain_datagrid_4.Name = "Remain_datagrid_4";
             this.Remain_datagrid_4.RowHeadersVisible = false;
             this.Remain_datagrid_4.RowTemplate.Height = 23;
-            this.Remain_datagrid_4.Size = new System.Drawing.Size(387, 214);
+            this.Remain_datagrid_4.Size = new System.Drawing.Size(387, 190);
             this.Remain_datagrid_4.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn11
@@ -4158,13 +4171,13 @@
             // groupBox16
             // 
             this.groupBox16.Controls.Add(this.label54);
-            this.groupBox16.Controls.Add(this.StopLoss_Combo_4);
-            this.groupBox16.Controls.Add(this.checkBox15);
-            this.groupBox16.Controls.Add(this.button12);
+            this.groupBox16.Controls.Add(this.SL_OrderHow_4);
+            this.groupBox16.Controls.Add(this.SL_Control_4);
+            this.groupBox16.Controls.Add(this.SL_Button_4);
             this.groupBox16.Controls.Add(this.label55);
-            this.groupBox16.Controls.Add(this.StopLose_Lose_4);
+            this.groupBox16.Controls.Add(this.SL_LowTick_4);
             this.groupBox16.Controls.Add(this.label56);
-            this.groupBox16.Controls.Add(this.StopLose_Profit_4);
+            this.groupBox16.Controls.Add(this.SL_HighTick_4);
             this.groupBox16.Location = new System.Drawing.Point(6, 6);
             this.groupBox16.Name = "groupBox16";
             this.groupBox16.Size = new System.Drawing.Size(398, 131);
@@ -4181,10 +4194,10 @@
             this.label54.TabIndex = 1233;
             this.label54.Text = "주문방식";
             // 
-            // StopLoss_Combo_4
+            // SL_OrderHow_4
             // 
-            this.StopLoss_Combo_4.FormattingEnabled = true;
-            this.StopLoss_Combo_4.Items.AddRange(new object[] {
+            this.SL_OrderHow_4.FormattingEnabled = true;
+            this.SL_OrderHow_4.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -4196,30 +4209,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_4.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_4.Name = "StopLoss_Combo_4";
-            this.StopLoss_Combo_4.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_4.TabIndex = 1232;
+            this.SL_OrderHow_4.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_4.Name = "SL_OrderHow_4";
+            this.SL_OrderHow_4.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_4.TabIndex = 1232;
             // 
-            // checkBox15
+            // SL_Control_4
             // 
-            this.checkBox15.AutoSize = true;
-            this.checkBox15.Location = new System.Drawing.Point(160, 102);
-            this.checkBox15.Name = "checkBox15";
-            this.checkBox15.Size = new System.Drawing.Size(118, 17);
-            this.checkBox15.TabIndex = 1231;
-            this.checkBox15.Text = "스탑로스 작동여부";
-            this.checkBox15.UseVisualStyleBackColor = true;
+            this.SL_Control_4.AutoSize = true;
+            this.SL_Control_4.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_4.Name = "SL_Control_4";
+            this.SL_Control_4.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_4.TabIndex = 1231;
+            this.SL_Control_4.Text = "스탑로스 작동여부";
+            this.SL_Control_4.UseVisualStyleBackColor = true;
+            this.SL_Control_4.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button12
+            // SL_Button_4
             // 
-            this.button12.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button12.Location = new System.Drawing.Point(344, 98);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(48, 23);
-            this.button12.TabIndex = 1230;
-            this.button12.Text = "설정";
-            this.button12.UseVisualStyleBackColor = true;
+            this.SL_Button_4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_4.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_4.Name = "SL_Button_4";
+            this.SL_Button_4.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_4.TabIndex = 1230;
+            this.SL_Button_4.Text = "설정";
+            this.SL_Button_4.UseVisualStyleBackColor = true;
+            this.SL_Button_4.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label55
             // 
@@ -4230,13 +4245,13 @@
             this.label55.TabIndex = 3;
             this.label55.Text = "손절틱수";
             // 
-            // StopLose_Lose_4
+            // SL_LowTick_4
             // 
-            this.StopLose_Lose_4.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_4.Name = "StopLose_Lose_4";
-            this.StopLose_Lose_4.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_4.TabIndex = 2;
-            this.StopLose_Lose_4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_4.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_4.Name = "SL_LowTick_4";
+            this.SL_LowTick_4.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_4.TabIndex = 2;
+            this.SL_LowTick_4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label56
             // 
@@ -4247,13 +4262,13 @@
             this.label56.TabIndex = 1;
             this.label56.Text = "익절틱수";
             // 
-            // StopLose_Profit_4
+            // SL_HighTick_4
             // 
-            this.StopLose_Profit_4.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_4.Name = "StopLose_Profit_4";
-            this.StopLose_Profit_4.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_4.TabIndex = 0;
-            this.StopLose_Profit_4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_4.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_4.Name = "SL_HighTick_4";
+            this.SL_HighTick_4.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_4.TabIndex = 0;
+            this.SL_HighTick_4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // tabPage5
             // 
@@ -4282,7 +4297,7 @@
             this.groupBox19.Controls.Add(this.label77);
             this.groupBox19.Controls.Add(this.label78);
             this.groupBox19.Controls.Add(this.TS_StartTick_5);
-            this.groupBox19.Location = new System.Drawing.Point(6, 150);
+            this.groupBox19.Location = new System.Drawing.Point(6, 143);
             this.groupBox19.Name = "groupBox19";
             this.groupBox19.Size = new System.Drawing.Size(398, 169);
             this.groupBox19.TabIndex = 8;
@@ -4341,6 +4356,7 @@
             this.TS_Control_5.TabIndex = 1232;
             this.TS_Control_5.Text = "트레일링스탑 작동여부";
             this.TS_Control_5.UseVisualStyleBackColor = true;
+            this.TS_Control_5.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_5
             // 
@@ -4371,6 +4387,7 @@
             this.TS_Button_5.TabIndex = 1232;
             this.TS_Button_5.Text = "설정";
             this.TS_Button_5.UseVisualStyleBackColor = true;
+            this.TS_Button_5.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_5
             // 
@@ -4412,7 +4429,7 @@
             this.groupBox17.Controls.Add(this.SetDelay_5);
             this.groupBox17.Controls.Add(this.MecroSet_5);
             this.groupBox17.Controls.Add(this.SetDelayText_5);
-            this.groupBox17.Location = new System.Drawing.Point(6, 326);
+            this.groupBox17.Location = new System.Drawing.Point(6, 318);
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.Size = new System.Drawing.Size(398, 68);
             this.groupBox17.TabIndex = 7;
@@ -4458,12 +4475,12 @@
             // groupBox18
             // 
             this.groupBox18.Controls.Add(this.Remain_datagrid_5);
-            this.groupBox18.Location = new System.Drawing.Point(6, 400);
+            this.groupBox18.Location = new System.Drawing.Point(6, 392);
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Size = new System.Drawing.Size(398, 203);
+            this.groupBox18.Size = new System.Drawing.Size(398, 218);
             this.groupBox18.TabIndex = 6;
             this.groupBox18.TabStop = false;
-            this.groupBox18.Text = "1번종목 잔고";
+            this.groupBox18.Text = "5번종목 잔고";
             // 
             // Remain_datagrid_5
             // 
@@ -4478,7 +4495,7 @@
             this.Remain_datagrid_5.Name = "Remain_datagrid_5";
             this.Remain_datagrid_5.RowHeadersVisible = false;
             this.Remain_datagrid_5.RowTemplate.Height = 23;
-            this.Remain_datagrid_5.Size = new System.Drawing.Size(387, 220);
+            this.Remain_datagrid_5.Size = new System.Drawing.Size(387, 190);
             this.Remain_datagrid_5.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn16
@@ -4509,13 +4526,13 @@
             // groupBox20
             // 
             this.groupBox20.Controls.Add(this.label60);
-            this.groupBox20.Controls.Add(this.StopLoss_Combo_5);
-            this.groupBox20.Controls.Add(this.checkBox19);
-            this.groupBox20.Controls.Add(this.button15);
+            this.groupBox20.Controls.Add(this.SL_OrderHow_5);
+            this.groupBox20.Controls.Add(this.SL_Control_5);
+            this.groupBox20.Controls.Add(this.SL_Button_5);
             this.groupBox20.Controls.Add(this.label61);
-            this.groupBox20.Controls.Add(this.StopLose_Lose_5);
+            this.groupBox20.Controls.Add(this.SL_LowTick_5);
             this.groupBox20.Controls.Add(this.label62);
-            this.groupBox20.Controls.Add(this.StopLose_Profit_5);
+            this.groupBox20.Controls.Add(this.SL_HighTick_5);
             this.groupBox20.Location = new System.Drawing.Point(6, 6);
             this.groupBox20.Name = "groupBox20";
             this.groupBox20.Size = new System.Drawing.Size(398, 131);
@@ -4532,10 +4549,10 @@
             this.label60.TabIndex = 1233;
             this.label60.Text = "주문방식";
             // 
-            // StopLoss_Combo_5
+            // SL_OrderHow_5
             // 
-            this.StopLoss_Combo_5.FormattingEnabled = true;
-            this.StopLoss_Combo_5.Items.AddRange(new object[] {
+            this.SL_OrderHow_5.FormattingEnabled = true;
+            this.SL_OrderHow_5.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -4547,30 +4564,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_5.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_5.Name = "StopLoss_Combo_5";
-            this.StopLoss_Combo_5.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_5.TabIndex = 1232;
+            this.SL_OrderHow_5.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_5.Name = "SL_OrderHow_5";
+            this.SL_OrderHow_5.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_5.TabIndex = 1232;
             // 
-            // checkBox19
+            // SL_Control_5
             // 
-            this.checkBox19.AutoSize = true;
-            this.checkBox19.Location = new System.Drawing.Point(160, 102);
-            this.checkBox19.Name = "checkBox19";
-            this.checkBox19.Size = new System.Drawing.Size(118, 17);
-            this.checkBox19.TabIndex = 1231;
-            this.checkBox19.Text = "스탑로스 작동여부";
-            this.checkBox19.UseVisualStyleBackColor = true;
+            this.SL_Control_5.AutoSize = true;
+            this.SL_Control_5.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_5.Name = "SL_Control_5";
+            this.SL_Control_5.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_5.TabIndex = 1231;
+            this.SL_Control_5.Text = "스탑로스 작동여부";
+            this.SL_Control_5.UseVisualStyleBackColor = true;
+            this.SL_Control_5.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button15
+            // SL_Button_5
             // 
-            this.button15.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button15.Location = new System.Drawing.Point(344, 98);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(48, 23);
-            this.button15.TabIndex = 1230;
-            this.button15.Text = "설정";
-            this.button15.UseVisualStyleBackColor = true;
+            this.SL_Button_5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_5.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_5.Name = "SL_Button_5";
+            this.SL_Button_5.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_5.TabIndex = 1230;
+            this.SL_Button_5.Text = "설정";
+            this.SL_Button_5.UseVisualStyleBackColor = true;
+            this.SL_Button_5.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label61
             // 
@@ -4581,13 +4600,13 @@
             this.label61.TabIndex = 3;
             this.label61.Text = "손절틱수";
             // 
-            // StopLose_Lose_5
+            // SL_LowTick_5
             // 
-            this.StopLose_Lose_5.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_5.Name = "StopLose_Lose_5";
-            this.StopLose_Lose_5.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_5.TabIndex = 2;
-            this.StopLose_Lose_5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_5.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_5.Name = "SL_LowTick_5";
+            this.SL_LowTick_5.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_5.TabIndex = 2;
+            this.SL_LowTick_5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label62
             // 
@@ -4598,13 +4617,13 @@
             this.label62.TabIndex = 1;
             this.label62.Text = "익절틱수";
             // 
-            // StopLose_Profit_5
+            // SL_HighTick_5
             // 
-            this.StopLose_Profit_5.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_5.Name = "StopLose_Profit_5";
-            this.StopLose_Profit_5.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_5.TabIndex = 0;
-            this.StopLose_Profit_5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_5.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_5.Name = "SL_HighTick_5";
+            this.SL_HighTick_5.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_5.TabIndex = 0;
+            this.SL_HighTick_5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // tabPage6
             // 
@@ -4633,7 +4652,7 @@
             this.groupBox23.Controls.Add(this.label79);
             this.groupBox23.Controls.Add(this.label80);
             this.groupBox23.Controls.Add(this.TS_StartTick_6);
-            this.groupBox23.Location = new System.Drawing.Point(6, 150);
+            this.groupBox23.Location = new System.Drawing.Point(6, 143);
             this.groupBox23.Name = "groupBox23";
             this.groupBox23.Size = new System.Drawing.Size(398, 169);
             this.groupBox23.TabIndex = 8;
@@ -4692,6 +4711,7 @@
             this.TS_Control_6.TabIndex = 1232;
             this.TS_Control_6.Text = "트레일링스탑 작동여부";
             this.TS_Control_6.UseVisualStyleBackColor = true;
+            this.TS_Control_6.CheckedChanged += new System.EventHandler(this.TS_pickone);
             // 
             // TS_OrderHow_6
             // 
@@ -4722,6 +4742,7 @@
             this.TS_Button_6.TabIndex = 1232;
             this.TS_Button_6.Text = "설정";
             this.TS_Button_6.UseVisualStyleBackColor = true;
+            this.TS_Button_6.Click += new System.EventHandler(this.TS_Button_Click);
             // 
             // TS_EndTick_6
             // 
@@ -4763,7 +4784,7 @@
             this.groupBox21.Controls.Add(this.SetDelay_6);
             this.groupBox21.Controls.Add(this.MecroSet_6);
             this.groupBox21.Controls.Add(this.SetDelayText_6);
-            this.groupBox21.Location = new System.Drawing.Point(6, 323);
+            this.groupBox21.Location = new System.Drawing.Point(6, 316);
             this.groupBox21.Name = "groupBox21";
             this.groupBox21.Size = new System.Drawing.Size(398, 68);
             this.groupBox21.TabIndex = 7;
@@ -4809,12 +4830,12 @@
             // groupBox22
             // 
             this.groupBox22.Controls.Add(this.Remain_datagrid_6);
-            this.groupBox22.Location = new System.Drawing.Point(6, 397);
+            this.groupBox22.Location = new System.Drawing.Point(6, 390);
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(398, 206);
+            this.groupBox22.Size = new System.Drawing.Size(398, 216);
             this.groupBox22.TabIndex = 6;
             this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "1번종목 잔고";
+            this.groupBox22.Text = "6번종목 잔고";
             // 
             // Remain_datagrid_6
             // 
@@ -4829,7 +4850,7 @@
             this.Remain_datagrid_6.Name = "Remain_datagrid_6";
             this.Remain_datagrid_6.RowHeadersVisible = false;
             this.Remain_datagrid_6.RowTemplate.Height = 23;
-            this.Remain_datagrid_6.Size = new System.Drawing.Size(387, 214);
+            this.Remain_datagrid_6.Size = new System.Drawing.Size(387, 192);
             this.Remain_datagrid_6.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn21
@@ -4860,13 +4881,13 @@
             // groupBox24
             // 
             this.groupBox24.Controls.Add(this.label66);
-            this.groupBox24.Controls.Add(this.StopLoss_Combo_6);
-            this.groupBox24.Controls.Add(this.checkBox23);
-            this.groupBox24.Controls.Add(this.button18);
+            this.groupBox24.Controls.Add(this.SL_OrderHow_6);
+            this.groupBox24.Controls.Add(this.SL_Control_6);
+            this.groupBox24.Controls.Add(this.SL_Button_6);
             this.groupBox24.Controls.Add(this.label67);
-            this.groupBox24.Controls.Add(this.StopLose_Lose_6);
+            this.groupBox24.Controls.Add(this.SL_LowTick_6);
             this.groupBox24.Controls.Add(this.label68);
-            this.groupBox24.Controls.Add(this.StopLose_Profit_6);
+            this.groupBox24.Controls.Add(this.SL_HighTick_6);
             this.groupBox24.Location = new System.Drawing.Point(6, 6);
             this.groupBox24.Name = "groupBox24";
             this.groupBox24.Size = new System.Drawing.Size(398, 131);
@@ -4883,10 +4904,10 @@
             this.label66.TabIndex = 1233;
             this.label66.Text = "주문방식";
             // 
-            // StopLoss_Combo_6
+            // SL_OrderHow_6
             // 
-            this.StopLoss_Combo_6.FormattingEnabled = true;
-            this.StopLoss_Combo_6.Items.AddRange(new object[] {
+            this.SL_OrderHow_6.FormattingEnabled = true;
+            this.SL_OrderHow_6.Items.AddRange(new object[] {
             "시장가",
             "상대1호가",
             "상대2호가",
@@ -4898,30 +4919,32 @@
             "상대8호가",
             "상대9호가",
             "상대10호가"});
-            this.StopLoss_Combo_6.Location = new System.Drawing.Point(160, 73);
-            this.StopLoss_Combo_6.Name = "StopLoss_Combo_6";
-            this.StopLoss_Combo_6.Size = new System.Drawing.Size(232, 21);
-            this.StopLoss_Combo_6.TabIndex = 1232;
+            this.SL_OrderHow_6.Location = new System.Drawing.Point(160, 73);
+            this.SL_OrderHow_6.Name = "SL_OrderHow_6";
+            this.SL_OrderHow_6.Size = new System.Drawing.Size(232, 21);
+            this.SL_OrderHow_6.TabIndex = 1232;
             // 
-            // checkBox23
+            // SL_Control_6
             // 
-            this.checkBox23.AutoSize = true;
-            this.checkBox23.Location = new System.Drawing.Point(160, 102);
-            this.checkBox23.Name = "checkBox23";
-            this.checkBox23.Size = new System.Drawing.Size(118, 17);
-            this.checkBox23.TabIndex = 1231;
-            this.checkBox23.Text = "스탑로스 작동여부";
-            this.checkBox23.UseVisualStyleBackColor = true;
+            this.SL_Control_6.AutoSize = true;
+            this.SL_Control_6.Location = new System.Drawing.Point(160, 102);
+            this.SL_Control_6.Name = "SL_Control_6";
+            this.SL_Control_6.Size = new System.Drawing.Size(118, 17);
+            this.SL_Control_6.TabIndex = 1231;
+            this.SL_Control_6.Text = "스탑로스 작동여부";
+            this.SL_Control_6.UseVisualStyleBackColor = true;
+            this.SL_Control_6.CheckedChanged += new System.EventHandler(this.SL_pickone);
             // 
-            // button18
+            // SL_Button_6
             // 
-            this.button18.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.button18.Location = new System.Drawing.Point(344, 98);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(48, 23);
-            this.button18.TabIndex = 1230;
-            this.button18.Text = "설정";
-            this.button18.UseVisualStyleBackColor = true;
+            this.SL_Button_6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.SL_Button_6.Location = new System.Drawing.Point(344, 98);
+            this.SL_Button_6.Name = "SL_Button_6";
+            this.SL_Button_6.Size = new System.Drawing.Size(48, 23);
+            this.SL_Button_6.TabIndex = 1230;
+            this.SL_Button_6.Text = "설정";
+            this.SL_Button_6.UseVisualStyleBackColor = true;
+            this.SL_Button_6.Click += new System.EventHandler(this.SL_Button_Click);
             // 
             // label67
             // 
@@ -4932,13 +4955,13 @@
             this.label67.TabIndex = 3;
             this.label67.Text = "손절틱수";
             // 
-            // StopLose_Lose_6
+            // SL_LowTick_6
             // 
-            this.StopLose_Lose_6.Location = new System.Drawing.Point(160, 43);
-            this.StopLose_Lose_6.Name = "StopLose_Lose_6";
-            this.StopLose_Lose_6.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Lose_6.TabIndex = 2;
-            this.StopLose_Lose_6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_LowTick_6.Location = new System.Drawing.Point(160, 43);
+            this.SL_LowTick_6.Name = "SL_LowTick_6";
+            this.SL_LowTick_6.Size = new System.Drawing.Size(232, 22);
+            this.SL_LowTick_6.TabIndex = 2;
+            this.SL_LowTick_6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // label68
             // 
@@ -4949,18 +4972,18 @@
             this.label68.TabIndex = 1;
             this.label68.Text = "익절틱수";
             // 
-            // StopLose_Profit_6
+            // SL_HighTick_6
             // 
-            this.StopLose_Profit_6.Location = new System.Drawing.Point(160, 15);
-            this.StopLose_Profit_6.Name = "StopLose_Profit_6";
-            this.StopLose_Profit_6.Size = new System.Drawing.Size(232, 22);
-            this.StopLose_Profit_6.TabIndex = 0;
-            this.StopLose_Profit_6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
+            this.SL_HighTick_6.Location = new System.Drawing.Point(160, 15);
+            this.SL_HighTick_6.Name = "SL_HighTick_6";
+            this.SL_HighTick_6.Size = new System.Drawing.Size(232, 22);
+            this.SL_HighTick_6.TabIndex = 0;
+            this.SL_HighTick_6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInterval_KeyPress);
             // 
             // Comm_Obj_RealTimeData
             // 
             this.Comm_Obj_RealTimeData.Enabled = true;
-            this.Comm_Obj_RealTimeData.Location = new System.Drawing.Point(700, 752);
+            this.Comm_Obj_RealTimeData.Location = new System.Drawing.Point(997, 891);
             this.Comm_Obj_RealTimeData.Name = "Comm_Obj_RealTimeData";
             this.Comm_Obj_RealTimeData.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_RealTimeData.OcxState")));
             this.Comm_Obj_RealTimeData.Size = new System.Drawing.Size(136, 50);
@@ -4970,7 +4993,7 @@
             // Comm_Obj_Tick
             // 
             this.Comm_Obj_Tick.Enabled = true;
-            this.Comm_Obj_Tick.Location = new System.Drawing.Point(392, 648);
+            this.Comm_Obj_Tick.Location = new System.Drawing.Point(689, 787);
             this.Comm_Obj_Tick.Name = "Comm_Obj_Tick";
             this.Comm_Obj_Tick.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Tick.OcxState")));
             this.Comm_Obj_Tick.Size = new System.Drawing.Size(136, 50);
@@ -5493,13 +5516,13 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox SL_OrderHow_1;
+        private System.Windows.Forms.CheckBox SL_Control_1;
+        private System.Windows.Forms.Button SL_Button_1;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox StopLose_Lose_1;
+        private System.Windows.Forms.TextBox SL_LowTick_1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox StopLose_Profit_1;
+        private System.Windows.Forms.TextBox SL_HighTick_1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.CheckBox SetDelay_1;
         private System.Windows.Forms.CheckBox MecroSet_1;
@@ -5511,13 +5534,13 @@
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_2;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.ComboBox SL_OrderHow_2;
+        private System.Windows.Forms.CheckBox SL_Control_2;
+        private System.Windows.Forms.Button SL_Button_2;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox StopLose_Lose_2;
+        private System.Windows.Forms.TextBox SL_LowTick_2;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox StopLose_Profit_2;
+        private System.Windows.Forms.TextBox SL_HighTick_2;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.CheckBox SetDelay_3;
         private System.Windows.Forms.CheckBox MecroSet_3;
@@ -5525,13 +5548,13 @@
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_3;
-        private System.Windows.Forms.CheckBox checkBox11;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ComboBox SL_OrderHow_3;
+        private System.Windows.Forms.CheckBox SL_Control_3;
+        private System.Windows.Forms.Button SL_Button_3;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.TextBox StopLose_Lose_3;
+        private System.Windows.Forms.TextBox SL_LowTick_3;
         private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.TextBox StopLose_Profit_3;
+        private System.Windows.Forms.TextBox SL_HighTick_3;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.CheckBox SetDelay_4;
         private System.Windows.Forms.CheckBox MecroSet_4;
@@ -5539,13 +5562,13 @@
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.GroupBox groupBox16;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_4;
-        private System.Windows.Forms.CheckBox checkBox15;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.ComboBox SL_OrderHow_4;
+        private System.Windows.Forms.CheckBox SL_Control_4;
+        private System.Windows.Forms.Button SL_Button_4;
         private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.TextBox StopLose_Lose_4;
+        private System.Windows.Forms.TextBox SL_LowTick_4;
         private System.Windows.Forms.Label label56;
-        private System.Windows.Forms.TextBox StopLose_Profit_4;
+        private System.Windows.Forms.TextBox SL_HighTick_4;
         private System.Windows.Forms.GroupBox groupBox17;
         private System.Windows.Forms.CheckBox SetDelay_5;
         private System.Windows.Forms.CheckBox MecroSet_5;
@@ -5553,13 +5576,13 @@
         private System.Windows.Forms.GroupBox groupBox18;
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.Label label60;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_5;
-        private System.Windows.Forms.CheckBox checkBox19;
-        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ComboBox SL_OrderHow_5;
+        private System.Windows.Forms.CheckBox SL_Control_5;
+        private System.Windows.Forms.Button SL_Button_5;
         private System.Windows.Forms.Label label61;
-        private System.Windows.Forms.TextBox StopLose_Lose_5;
+        private System.Windows.Forms.TextBox SL_LowTick_5;
         private System.Windows.Forms.Label label62;
-        private System.Windows.Forms.TextBox StopLose_Profit_5;
+        private System.Windows.Forms.TextBox SL_HighTick_5;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.CheckBox SetDelay_6;
         private System.Windows.Forms.CheckBox MecroSet_6;
@@ -5567,13 +5590,13 @@
         private System.Windows.Forms.GroupBox groupBox22;
         private System.Windows.Forms.GroupBox groupBox24;
         private System.Windows.Forms.Label label66;
-        private System.Windows.Forms.ComboBox StopLoss_Combo_6;
-        private System.Windows.Forms.CheckBox checkBox23;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.ComboBox SL_OrderHow_6;
+        private System.Windows.Forms.CheckBox SL_Control_6;
+        private System.Windows.Forms.Button SL_Button_6;
         private System.Windows.Forms.Label label67;
-        private System.Windows.Forms.TextBox StopLose_Lose_6;
+        private System.Windows.Forms.TextBox SL_LowTick_6;
         private System.Windows.Forms.Label label68;
-        private System.Windows.Forms.TextBox StopLose_Profit_6;
+        private System.Windows.Forms.TextBox SL_HighTick_6;
         private System.Windows.Forms.TextBox CountText_1;
         private System.Windows.Forms.TextBox CountText_2;
         private System.Windows.Forms.TextBox CountText_3;

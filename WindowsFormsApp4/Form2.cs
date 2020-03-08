@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace WindowsFormsApp4
 {
@@ -18,7 +19,6 @@ namespace WindowsFormsApp4
         private string[] gFCode = new string[6] { "101Q3", "101Q3", "201Q3267", "101Q3", "101Q3", "101Q3" };
         private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
         private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
-        
 
         string[] tmp_history_1 = File.ReadAllLines(@"..\..\history1.txt");
         string[] tmp_history_2 = File.ReadAllLines(@"..\..\history2.txt");
@@ -26,7 +26,6 @@ namespace WindowsFormsApp4
         string[] tmp_history_4 = File.ReadAllLines(@"..\..\history4.txt");
         string[] tmp_history_5 = File.ReadAllLines(@"..\..\history5.txt");
         string[] tmp_history_6 = File.ReadAllLines(@"..\..\history6.txt");
-        
 
         private int[] control_buy_sell = new int[6] { 0, 0, 0, 0, 0, 0 };
         private int[] control_Enable_Angle = new int[6] { 0, 0, 0, 0, 0, 0 };
@@ -37,7 +36,6 @@ namespace WindowsFormsApp4
         private int[] condition_Delay = new int[6] { 0, 0, 0, 0, 0, 0 }; // 딜레이 몇초 동안
         private int[] buy_sell_Count = new int[6] { 0, 0, 0, 0, 0, 0 }; // 매수 매도가 몇개인지 매수 + 매도 -
 
-        private int[] buy_or_sell = new int[6] { 0, 0, 0, 0, 0, 0 };                    // 0: 없음 , 1: 매도, 2:매수
         private double[] start_price = new double[6] { 0, 0, 0, 0, 0, 0 };              //주문가격
         private bool[] TS_on = new bool[6] { false, false, false, false, false, false };
         private double[] tick = new double[6] { 0, 0, 0, 0, 0, 0 };                     //틱단위
@@ -47,9 +45,6 @@ namespace WindowsFormsApp4
 
         private string[] order_Num = new string[6] { "0", "0", "0", "0", "0", "0" };
         private int order_How = 0;
-
-        private int control_num = 0;
-
 
         private List<string> code_list;
 
@@ -74,7 +69,6 @@ namespace WindowsFormsApp4
             InitializeComponent();
             this.code_list = new List<string>();
         }
-
         
         ~Form2()
         {
@@ -137,7 +131,6 @@ namespace WindowsFormsApp4
 
         public void Load_Data(string Fcode, string time, string distance, int control)
         {
-            control_num = 1;
             gFCode[control-1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -174,8 +167,6 @@ namespace WindowsFormsApp4
         }
         public void Load_Data_2(string Fcode, string time, string distance, int control)
         {
-
-            control_num = 2;
             gFCode[control-1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -215,8 +206,6 @@ namespace WindowsFormsApp4
         }
         public void Load_Data_3(string Fcode, string time, string distance, int control)
         {
-
-            control_num = 3;
             gFCode[control-1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -255,8 +244,6 @@ namespace WindowsFormsApp4
         }
         public void Load_Data_4(string Fcode, string time, string distance, int control)
         {
-
-            control_num = 4;
             gFCode[control-1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -293,8 +280,6 @@ namespace WindowsFormsApp4
         }
         public void Load_Data_5(string Fcode, string time, string distance, int control)
         {
-
-            control_num = 5;
             gFCode[control-1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -332,8 +317,6 @@ namespace WindowsFormsApp4
         }
         public void Load_Data_6(string Fcode, string time, string distance, int control)
         {
-
-            control_num = 6;
             gFCode[control - 1] = Fcode;
 
             if (gFCode[control - 1][0] == '1')
@@ -380,7 +363,6 @@ namespace WindowsFormsApp4
                 this.code_list.Add((string)Comm_Obj_Code_List.GetMultiData(short.Parse(i.ToString()), 1) + "(" + (string)Comm_Obj_Code_List.GetMultiData(short.Parse(i.ToString()), 2) + ")");
             }
         }
-        
         
         private DataTable Proc_TR_FCHART()
         {
@@ -832,8 +814,7 @@ namespace WindowsFormsApp4
                     Remain_datagrid_6.Rows[i].Cells[j].Value = tmp_get_price[j];
                 }
             }
-        }
-        
+        }    
 
         private void Get_GridData(int control)
         {
@@ -1066,233 +1047,6 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void Stop_Lose(int control, string Acc_num, string Acc_pw, string code, string cont, string count)
-        {
-            // int cont 매수/ 매도 상태  01 : 매도  02: 매수 
-            string tmp_Profit = "StopLose_Profit_" + (control).ToString();
-            string tmp_Loss = "StopLose_Loss_" + (control).ToString();
-            string tmp_Combo = "StopLose_Combo_" + (control).ToString();
-            int Profit = Convert.ToInt32((this.Controls.Find(tmp_Profit, true).FirstOrDefault()).Text);
-            int Loss = Convert.ToInt32(this.Controls.Find(tmp_Loss, true).FirstOrDefault().Text);
-            ComboBox Combo =(ComboBox)this.Controls.Find(tmp_Combo, true).FirstOrDefault();
-            int index = Combo.SelectedIndex;
-
-            double End_Price = Convert.ToDouble(FCGrid_sample[control - 1].Rows[1].Cells[5].Value);
-
-            for (int i=0; i<Price_GridView.Rows.Count; i++)
-            {
-                if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
-                {
-                    start_price[control - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value); //평균가
-                }
-            }
-
-            if (End_Price > start_price[control-1] + (Profit * tick[control -1]))
-            { 
-                //익절
-                if(cont == "01") //매도 한 계약 일때
-                {
-                    if(index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        //buy_sell_Count[control - 1] = 0;
-                        //control_Mecro[control - 1] = 3;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if(index >=1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control-1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control-1] + (index*tick[control-1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + (index * tick[control - 1])), "02", "L", "2", order_Num[control-1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        
-                    }
-                    else if(index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index-10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index-10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                    
-                }
-                    
-                else if(cont == "02") //매수한 계약 일떄
-                {
-                    if (index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        //buy_sell_Count[control - 1] = 0;
-                        //control_Mecro[control - 1] = 4;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index-10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index-10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                }
-            }
-            else if(End_Price < start_price[control - 1] - (Loss * tick[control - 1]))
-            {
-                //손절
-                if (cont == "01") //매도한 계약일때
-                {
-                    if (index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        buy_sell_Count[control - 1] = 0;
-                        control_Mecro[control - 1] = 4;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index  * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                }
-                    
-                else if (cont == "02") //매수한 계약일때
-                {
-                    if (index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        buy_sell_Count[control - 1] = 0;
-                        control_Mecro[control - 1] = 3;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index-10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index - 10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-                            
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                }
-            }
-        }
 
         private void Set_Control_Mecro(int control)
         {
@@ -2583,6 +2337,54 @@ namespace WindowsFormsApp4
             Comm_Obj_Price.RequestData();
 
         }
+
+        private void Comm_Obj_Price_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_SABC820Q1();
+        }
+
+        private void Proc_SABC820Q1() //가지고 있는 주식 정보
+        {
+            int nRowSize = Comm_Obj_Price.GetMultiRowCount();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("종목코드");
+            dt.Columns.Add("잔고");
+            dt.Columns.Add("평균가(단)");
+            dt.Columns.Add("평가손익");
+            dt.Columns.Add("매매손익");
+            dt.Columns.Add("평가금액");
+
+            for (int i = 0; i < nRowSize; i++)
+            {
+                DataRow dr = dt.NewRow();
+                dr[0] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 0);
+                dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
+                dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
+                dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
+                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
+                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dt.Rows.Add(dr);
+            }
+            Price_GridView.DataSource = dt;
+        }
+
+
+        private void Get_RealTimeData(string Acc_num, string Acc_pw)
+        {
+            string nowdate = DateTime.Now.ToString("yyyyMMdd");
+            Comm_Obj_RealTimeData.SetQueryName("SABC258Q1");
+            Comm_Obj_RealTimeData.SetSingleData(0, Acc_num);
+            Comm_Obj_RealTimeData.SetSingleData(1, Acc_pw);
+            Comm_Obj_RealTimeData.SetSingleData(2, "0"); // 상품구분 0:전체 1:선물 2:옵션(지수옵션+주식옵션) 3:주식옵션만
+            Comm_Obj_RealTimeData.SetSingleData(3, "000"); //시장ID코드 생략 또는 000
+            Comm_Obj_RealTimeData.SetSingleData(4, nowdate); //매매일자
+            Comm_Obj_RealTimeData.SetSingleData(5, "0"); //조회구분 0:전체 1:체결 2:미체결
+            Comm_Obj_RealTimeData.SetSingleData(6, "0"); //합산구분 0:합산 1:건별
+            Comm_Obj_RealTimeData.SetSingleData(7, "0"); //Sort구분 0:주문번호순 1:주문번호 역순
+            Comm_Obj_RealTimeData.SetSingleData(8, "0"); //종목별합산구분 0:일반 조회 1:종목별합산조회
+            Comm_Obj_RealTimeData.RequestData();
+        }
+
         private void Comm_Obj_RealTime_Lookup(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
             Proc_SABC258Q1();
@@ -2682,20 +2484,6 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void Get_RealTimeData(string Acc_num, string Acc_pw)
-        {
-            Comm_Obj_RealTimeData.SetQueryName("SABC258Q1");
-            Comm_Obj_RealTimeData.SetSingleData(0, Acc_num);
-            Comm_Obj_RealTimeData.SetSingleData(1, Acc_pw);
-            Comm_Obj_RealTimeData.SetSingleData(2, "0"); // 상품구분 0:전체 1:선물 2:옵션(지수옵션+주식옵션) 3:주식옵션만
-            Comm_Obj_RealTimeData.SetSingleData(3, "000"); //시장ID코드 생략 또는 000
-            Comm_Obj_RealTimeData.SetSingleData(4, "20200306"); //매매일자
-            Comm_Obj_RealTimeData.SetSingleData(5, "0"); //조회구분 0:전체 1:체결 2:미체결
-            Comm_Obj_RealTimeData.SetSingleData(6, "0"); //합산구분 0:합산 1:건별
-            Comm_Obj_RealTimeData.SetSingleData(7, "0"); //Sort구분 0:주문번호순 1:주문번호 역순
-            Comm_Obj_RealTimeData.SetSingleData(8, "0"); //종목별합산구분 0:일반 조회 1:종목별합산조회
-            Comm_Obj_RealTimeData.RequestData();
-        }
         private void getDeal(string Acc_num, string Acc_pw, string code, string count, string price, string buyorsell, string type, string newordelete, string ordernumber, string changeCount)
         {
             Comm_Obj_Deal.SetQueryName("SABC100U1");
@@ -2715,37 +2503,6 @@ namespace WindowsFormsApp4
             Comm_Obj_Deal.RequestData();
         }
 
-        private void Comm_Obj_Price_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
-        {
-            Proc_SABC820Q1();
-        }
-
-        private void Proc_SABC820Q1() //가지고 있는 주식 정보
-        {
-            int nRowSize = Comm_Obj_Price.GetMultiRowCount();
-            DataTable dt = new DataTable();
-            dt.Columns.Add("종목코드");
-            dt.Columns.Add("잔고");
-            dt.Columns.Add("평균가(단)");
-            dt.Columns.Add("평가손익");
-            dt.Columns.Add("매매손익");
-            dt.Columns.Add("평가금액");
-
-            for (int i = 0; i < nRowSize; i++)
-            {
-                DataRow dr = dt.NewRow();
-                dr[0] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 0);
-                dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
-                dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
-                dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
-                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
-                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
-                dt.Rows.Add(dr);
-            }
-            Price_GridView.DataSource = dt;
-        }
-        
-        
         private void Comm_Obj_Deal_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
             Proc_SABC100U1();
@@ -2754,17 +2511,11 @@ namespace WindowsFormsApp4
         private void Proc_SABC100U1()
         {
             string aa = (string)Comm_Obj_Deal.GetSingleData(0); //0.주문번호
-            string bb = (string)Comm_Obj_Deal.GetSingleData(1); //1.ORC주문번호
+            //string bb = (string)Comm_Obj_Deal.GetSingleData(1); //1.ORC주문번호
             if (order_How != 0)
             {
                 order_Num[order_How - 1] = aa;
-            }
-            //AutoClosingMessageBox(aa, "", 100);
-            //AutoClosingMessageBox(bb, "", 100);
-            //MessageBox.Show(aa);
-            //MessageBox.Show(bb);
-            //MessageBox.Show((string)axGiExpertControl2.GetErrorMessage());
-            //MessageBox.Show((string)axGiExpertControl2.GetErrorCode());
+            } 
         }
 
         private void Init_Orderlist()  //주문내역 날짜 초기화
@@ -2803,11 +2554,6 @@ namespace WindowsFormsApp4
             Proc_SABC203Q2();
         }
 
-        private void Comm_obj_Code_List_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
-        {
-            Proc_TR_msc();
-        }
-
         private void Proc_SABC203Q2()
         {
             int nRowSize = Comm_Obj_Orderlist.GetMultiRowCount();
@@ -2837,6 +2583,11 @@ namespace WindowsFormsApp4
                 dt.Rows.Add(dr);
             }
             Order_list.DataSource = dt;
+        }
+
+        private void Comm_obj_Code_List_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            Proc_TR_msc();
         }
 
         private void AccountComboChange2(object sender, EventArgs e)
@@ -2873,11 +2624,6 @@ namespace WindowsFormsApp4
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void FCode_1_Click(object sender, EventArgs e)
         {
             TextBox Tmp = sender as TextBox;
@@ -2885,15 +2631,703 @@ namespace WindowsFormsApp4
             sc_form.Show();
         }
 
-        private void Comm_Obj_Tick_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        private void Stop_Lose(int control, string Acc_num, string Acc_pw, string code, string cont, string count)
         {
-            double sell_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(9));        //매도2호가
-            double second = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(3));           //매도1호가
-            double buy_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(4));        //매수1호가
-            tick[tick_control_num - 1] = sell_first - second;
-            sell_first_price[tick_control_num - 1] = sell_first;
-            buy_first_price[tick_control_num - 1] = buy_first;
+            // int cont 매수/ 매도 상태  01 : 매도  02: 매수 
+            string tmp_Profit = "SL_HighTick_" + (control).ToString();
+            string tmp_Loss = "SL_LowTick_" + (control).ToString();
+            string tmp_Combo = "SL_OrderHow_" + (control).ToString();
+            int Profit = Convert.ToInt32((this.Controls.Find(tmp_Profit, true).FirstOrDefault()).Text);
+            int Loss = Convert.ToInt32(this.Controls.Find(tmp_Loss, true).FirstOrDefault().Text);
+            ComboBox Combo = (ComboBox)this.Controls.Find(tmp_Combo, true).FirstOrDefault();
+            int index = Combo.SelectedIndex;
+
+            double End_Price = Convert.ToDouble(FCGrid_sample[control - 1].Rows[1].Cells[5].Value);
+
+            for (int i = 0; i < Price_GridView.Rows.Count; i++)
+            {
+                if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
+                {
+                    start_price[control - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value); //평균가
+                }
+            }
+
+            if (End_Price > start_price[control - 1] + (Profit * tick[control - 1]))
+            {
+                //익절
+                if (cont == "01") //매도 한 계약 일때
+                {
+                    if (index == 0) //시장가
+                    {
+                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
+                        //buy_sell_Count[control - 1] = 0;
+                        //control_Mecro[control - 1] = 3;
+                        Get_RealTimeData(Acc_num, Acc_pw);
+                    }
+                    else if (index >= 1 || index <= 10) //상대 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + (index * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + (index * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+
+                    }
+                    else if (index >= 11 || index <= 20) //우선 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index - 10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index - 10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+
+                }
+
+                else if (cont == "02") //매수한 계약 일떄
+                {
+                    if (index == 0) //시장가
+                    {
+                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
+                        //buy_sell_Count[control - 1] = 0;
+                        //control_Mecro[control - 1] = 4;
+                        Get_RealTimeData(Acc_num, Acc_pw);
+                    }
+                    else if (index >= 1 || index <= 10) //상대 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+                    else if (index >= 11 || index <= 20) //우선 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index - 10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index - 10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+                }
+            }
+            else if (End_Price < start_price[control - 1] - (Loss * tick[control - 1]))
+            {
+                //손절
+                if (cont == "01") //매도한 계약일때
+                {
+                    if (index == 0) //시장가
+                    {
+                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
+                        buy_sell_Count[control - 1] = 0;
+                        control_Mecro[control - 1] = 4;
+                        Get_RealTimeData(Acc_num, Acc_pw);
+                    }
+                    else if (index >= 1 || index <= 10) //상대 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+
+                    }
+                    else if (index >= 11 || index <= 20) //우선 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+                }
+
+                else if (cont == "02") //매수한 계약일때
+                {
+                    if (index == 0) //시장가
+                    {
+                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
+                        buy_sell_Count[control - 1] = 0;
+                        control_Mecro[control - 1] = 3;
+                        Get_RealTimeData(Acc_num, Acc_pw);
+                    }
+                    else if (index >= 1 || index <= 10) //상대 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+                    else if (index >= 11 || index <= 20) //우선 호가
+                    {
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index - 10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index - 10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Acc_num, Acc_pw);
+                            order_How = 0;
+                        }
+                    }
+                }
+            }
         }
+
+
+        private void SL_Button_Click(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp.Name == "SL_Button_1")
+            {
+                if (SL_Control_1.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_1.Text) || string.IsNullOrEmpty(SL_HighTick_1.Text) || string.IsNullOrEmpty(SL_LowTick_1.Text))
+                    {
+                        SL_Control_1.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(1번 종목)\n스탑로스 설정되었습니다.", "", 1);
+                }
+            }
+            else if (tmp.Name == "SL_Button_1")
+            {
+                if (SL_Control_2.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_2.Text) || string.IsNullOrEmpty(SL_HighTick_2.Text) || string.IsNullOrEmpty(SL_LowTick_2.Text))
+                    {
+                        SL_Control_2.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(2번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "SL_Button_3")
+            {
+                if (SL_Control_3.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_3.Text) || string.IsNullOrEmpty(SL_HighTick_3.Text) || string.IsNullOrEmpty(SL_LowTick_3.Text))
+                    {
+                        SL_Control_3.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(3번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "SL_Button_4")
+            {
+                if (SL_Control_4.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_4.Text) || string.IsNullOrEmpty(SL_HighTick_4.Text) || string.IsNullOrEmpty(SL_LowTick_4.Text))
+                    {
+                        SL_Control_4.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(4번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "SL_Button_5")
+            {
+                if (SL_Control_5.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_5.Text) || string.IsNullOrEmpty(SL_HighTick_5.Text) || string.IsNullOrEmpty(SL_LowTick_5.Text))
+                    {
+                        SL_Control_5.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(5번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "SL_Button_6")
+            {
+                if (SL_Control_6.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(SL_OrderHow_6.Text) || string.IsNullOrEmpty(SL_HighTick_6.Text) || string.IsNullOrEmpty(SL_LowTick_6.Text))
+                    {
+                        SL_Control_6.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(6번 종목)\n스탑로스 설정되었습니다.", "", 10);
+                }
+            }
+        }
+
+
+        private void SL_pickone(object sender, EventArgs e)
+        {
+            CheckBox SL_checkbox = sender as CheckBox;
+
+            if (SL_checkbox.Checked == true)
+            {
+                if (SL_checkbox.Name == "SL_Control_1")
+                {
+                    TS_Control_1.Checked = false;
+                }
+                else if (SL_checkbox.Name == "SL_Control_2")
+                {
+                    TS_Control_2.Checked = false;
+                }
+                else if (SL_checkbox.Name == "SL_Control_3")
+                {
+                    TS_Control_3.Checked = false;
+                }
+                else if (SL_checkbox.Name == "SL_Control_4")
+                {
+                    TS_Control_4.Checked = false;
+                }
+                else if (SL_checkbox.Name == "SL_Control_5")
+                {
+                    TS_Control_5.Checked = false;
+                }
+                else if (SL_checkbox.Name == "SL_Control_6")
+                {
+                    TS_Control_6.Checked = false;
+                }
+            }
+        }
+
+
+        private void TrailingStop_start(int control)
+        {
+            string TS_StartTick_name = "TS_StartTick_" + (control).ToString();
+            string TS_EndTick_name = "TS_EndTick_" + (control).ToString();
+            string TS_Final_High_name = "TS_Final_High_" + (control).ToString();
+            string TS_Final_Low_name = "TS_Final_Low_" + (control).ToString();
+            string FCode_name = "FCode_" + (control).ToString();
+            string CountText_name = "CountText_" + (control).ToString();
+
+            var TS_StartTick = this.Controls.Find(TS_StartTick_name, true).FirstOrDefault();
+            var TS_EndTick = this.Controls.Find(TS_EndTick_name, true).FirstOrDefault();
+            var TS_Final_High = this.Controls.Find(TS_Final_High_name, true).FirstOrDefault();
+            var TS_Final_Low = this.Controls.Find(TS_Final_Low_name, true).FirstOrDefault();
+            var FCode = this.Controls.Find(FCode_name, true).FirstOrDefault();
+            var CountText = this.Controls.Find(CountText_name, true).FirstOrDefault();
+
+            double starttick = Convert.ToDouble(TS_StartTick.Text);       //ts시점
+            double endtick = Convert.ToDouble(TS_EndTick.Text);           //ts지점
+            double final_high = Convert.ToDouble(TS_Final_High.Text);     //익절지점
+            double final_low = Convert.ToDouble(TS_Final_Low.Text);       //손절지점
+
+            for (int i = 1; i <= 6; i++)
+            {
+                get_Tick(i);
+            }
+
+            TrailingStop_function(control, FCode.Text, CountText.Text, start_price[control - 1], starttick, endtick, final_high, final_low);
+        }
+
+        private void TrailingStop_function(int control, string code, string count, double price, double starttick, double endtick, double final_high, double final_low)
+        {
+            string TS_OrderHow_name = "TS_OrderHow_" + (control).ToString();
+            ComboBox TS_OrderHow = (ComboBox)this.Controls.Find(TS_OrderHow_name, true).FirstOrDefault();
+
+            double TS_now_endprice = 0;
+            string buyorsell = "";
+            int isremain = 0;
+            int row_number = Price_GridView.Rows.Count;
+
+            for (int i = 0; i < row_number; i++)
+            {
+                if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
+                {
+                    buyorsell = (string)Price_GridView.Rows[i].Cells[1].Value;
+                    isremain = Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value);
+                    start_price[control - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value);         //평균가
+                    TS_now_endprice = Convert.ToDouble(Price_GridView.Rows[i].Cells[4].Value);      //현재가
+                }
+                else
+                {
+                    isremain = 0;
+                    start_price[control - 1] = 0;
+                }
+            }
+            if (isremain != 0)               //주문량이 있을경우
+            {
+                double orderprice = 0;
+                if (TS_now_endprice >= start_price[control - 1] + tick[control - 1] * final_high || TS_now_endprice <= start_price[control - 1] - tick[control - 1] * final_low)
+                {
+                    //익절 or 손절 주문
+
+                    string strTarget = TS_OrderHow.Text;
+                    string ordertype = "L";
+                    string changebuysell = "";
+
+                    if (buyorsell.Equals("1"))          //매도주문이후 매수청산
+                    {
+                        changebuysell = "02";                   //매수
+                    }
+                    else if (buyorsell.Equals("2"))      //매수이후 매도청산
+                    {
+                        changebuysell = "01";                   //매도
+                    }
+
+                    if (strTarget == "시장가")
+                    {
+                        ordertype = "M";    //시장가
+                        orderprice = 0;
+                    }
+                    else
+                    {
+                        string strTmp = Regex.Replace(strTarget, @"\D", "");
+                        int ntmp = int.Parse(strTmp);
+                        ordertype = "L";        //지정가
+
+                        if (strTarget[0].Equals('상'))           //상대호가
+                        {
+                            if (buyorsell == "1")            //매도이후
+                            {
+                                orderprice = buy_first_price[control - 1] + (tick[control - 1] * (ntmp - 1));       //매수n호가
+                            }
+                            else if (buyorsell == "2")       //매수이후
+                            {
+                                orderprice = sell_first_price[control - 1] - (tick[control - 1] * (ntmp - 1));       //매도n호가
+                            }
+                        }
+                        else if (strTarget[0].Equals('우'))      //우선호가
+                        {
+                            if (buyorsell == "1")            //매도이후
+                            {
+                                orderprice = sell_first_price[control - 1] - (tick[control - 1] * (ntmp - 1));         //매도n호가
+                            }
+                            else if (buyorsell == "2")       //매수이후
+                            {
+                                orderprice = buy_first_price[control - 1] + (tick[control - 1] * (ntmp - 1));           //매수n호가
+                            }
+                        }
+                    }
+                    if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                    {
+                        order_How = control;
+                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(orderprice), changebuysell, ordertype, "1", "", "0");   //01 : 매도 02: 매수
+
+                        Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                        order_How = 0;
+                    }
+                    else //이전에 주문을 넣었을때
+                    {
+                        order_How = control;
+                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(orderprice), changebuysell, ordertype, "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                        Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                        order_How = 0;
+                    }
+
+                    TS_on[control - 1] = false;
+
+                }
+                else
+                {
+                    double TS_ing = price + tick[control - 1] * starttick;
+
+                    if (TS_now_endprice >= TS_ing)
+                    {
+                        TS_on[control - 1] = true;
+                        TrailingStop_function(control, code, count, TS_ing, starttick, endtick, final_high, final_low);     //트레일링 상승
+                    }
+                    else if (TS_on[control - 1] == true && TS_now_endprice <= price + tick[control - 1] * endtick)
+                    {
+                        //스탑지점 주문
+                        string strTarget = TS_OrderHow.Text;
+                        string ordertype = "L";
+                        string changebuysell = "";
+                        if (buyorsell.Equals("1"))          //매도주문이후 매수청산
+                        {
+                            changebuysell = "02";                   //매수
+                        }
+                        else if (buyorsell.Equals("2"))      //매수이후 매도청산
+                        {
+                            changebuysell = "01";                   //매도
+                        }
+
+                        if (strTarget == "시장가")
+                        {
+                            ordertype = "M";    //시장가
+                            orderprice = 0;
+                        }
+                        else
+                        {
+                            string strTmp = Regex.Replace(strTarget, @"\D", "");
+                            int ntmp = int.Parse(strTmp);
+                            ordertype = "L";        //지정가
+
+                            if (strTarget[0].Equals('상'))           //상대호가
+                            {
+                                if (buyorsell == "1")            //매도이후
+                                {
+                                    orderprice = buy_first_price[control - 1] + (tick[control - 1] * (ntmp - 1));       //매수n호가 
+                                }
+                                else if (buyorsell == "2")       //매수이후
+                                {
+                                    orderprice = sell_first_price[control - 1] - (tick[control - 1] * (ntmp - 1));       //매도n호가
+                                }
+                            }
+                            else if (strTarget[0].Equals('우'))      //우선호가
+                            {
+                                if (buyorsell == "1")            //매도이후
+                                {
+                                    orderprice = sell_first_price[control - 1] - (tick[control - 1] * (ntmp - 1));         //매도n호가 
+                                }
+                                else if (buyorsell == "2")       //매수이후
+                                {
+                                    orderprice = buy_first_price[control - 1] + (tick[control - 1] * (ntmp - 1));           //매수n호가
+                                }
+                            }
+                        }
+                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        {
+                            order_How = control;
+                            getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(orderprice), changebuysell, ordertype, "1", "", "0");   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                            order_How = 0;
+                        }
+                        else //이전에 주문을 넣었을때
+                        {
+                            order_How = control;
+                            getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(orderprice), changebuysell, ordertype, "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+
+                            Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                            order_How = 0;
+                        }
+                        TS_on[control - 1] = false;
+                    }
+                }
+            }
+        }
+
+
+        private void TS_Button_Click(object sender, EventArgs e)
+        {
+            Button tmp = sender as Button;
+            if (tmp.Name == "TS_Button_1")
+            {
+                if (TS_Control_1.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_1.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_1.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_1.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_1.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_1.Text))
+                    {
+                        TS_Control_1.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(1번 종목)\n트레일링스탑 설정되었습니다.", "", 1);
+                }
+            }
+            else if (tmp.Name == "TS_Button_2")
+            {
+                if (TS_Control_2.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_2.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_2.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_2.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_2.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_2.Text))
+                    {
+                        TS_Control_2.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(2번 종목)\n트레일링스탑 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "TS_Button_3")
+            {
+                if (TS_Control_3.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_3.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_3.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_3.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_3.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_3.Text))
+                    {
+                        TS_Control_3.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(3번 종목)\n트레일링스탑 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "TS_Button_4")
+            {
+                if (TS_Control_4.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_4.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_4.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_4.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_4.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_4.Text))
+                    {
+                        TS_Control_4.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(4번 종목)\n트레일링스탑 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "TS_Button_5")
+            {
+                if (TS_Control_5.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_5.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_5.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_5.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_5.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_5.Text))
+                    {
+                        TS_Control_5.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(5번 종목)\n트레일링스탑 설정되었습니다.", "", 10);
+                }
+            }
+            else if (tmp.Name == "TS_Button_6")
+            {
+                if (TS_Control_6.Checked == true)
+                {
+                    if (string.IsNullOrEmpty(TS_OrderHow_6.Text) ||
+                        string.IsNullOrEmpty(TS_EndTick_6.Text) ||
+                        string.IsNullOrEmpty(TS_StartTick_6.Text) ||
+                        string.IsNullOrEmpty(TS_Final_High_6.Text) ||
+                        string.IsNullOrEmpty(TS_Final_Low_6.Text))
+                    {
+                        TS_Control_6.Checked = false;
+                        MessageBox.Show("입력값 오류입니다.");
+                    }
+                    else
+                        AutoClosingMessageBox("(6번 종목)\n트레일링스탑 설정되었습니다.", "", 10);
+                }
+            }
+
+        }
+
+        private void TS_pickone(object sender, EventArgs e)
+        {
+            CheckBox TS_checkbox = sender as CheckBox;
+
+            if (TS_checkbox.Checked == true)
+            {
+                if (TS_checkbox.Name == "TS_Control_1")
+                {
+                    SL_Control_1.Checked = false;
+                }
+                else if (TS_checkbox.Name == "TS_Control_2")
+                {
+                    SL_Control_2.Checked = false;
+                }
+                else if (TS_checkbox.Name == "TS_Control_3")
+                {
+                    SL_Control_3.Checked = false;
+                }
+                else if (TS_checkbox.Name == "TS_Control_4")
+                {
+                    SL_Control_4.Checked = false;
+                }
+                else if (TS_checkbox.Name == "TS_Control_5")
+                {
+                    SL_Control_5.Checked = false;
+                }
+                else if (TS_checkbox.Name == "TS_Control_6")
+                {
+                    SL_Control_6.Checked = false;
+                }
+            }
+        }
+
         private void get_Tick(int control)
         {
             string FCode_name = "FCode_" + (control).ToString();
@@ -2912,5 +3346,16 @@ namespace WindowsFormsApp4
             tick_control_num = control;
             Comm_Obj_Tick.RequestData();
         }
+
+        private void Comm_Obj_Tick_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
+        {
+            double sell_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(3));    //매도1호가
+            double second = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(9));        //매도2호가  
+            double buy_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(4));     //매수1호가
+            tick[tick_control_num - 1] = sell_first - second;
+            sell_first_price[tick_control_num - 1] = sell_first;
+            buy_first_price[tick_control_num - 1] = buy_first;
+        }
+
     }
 }
