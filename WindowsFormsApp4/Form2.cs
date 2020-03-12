@@ -37,12 +37,12 @@ namespace WindowsFormsApp4
         private int[] buy_sell_Count = new int[6] { 0, 0, 0, 0, 0, 0 }; // 매수 매도가 몇개인지 매수 + 매도 -
 
         private double[] start_price = new double[6] { 0, 0, 0, 0, 0, 0 };              //주문가격
-        private double[] current_price = new double[6] { 0, 0, 0, 0, 0, 0 };                //현재가
         private bool[] TS_on = new bool[6] { false, false, false, false, false, false };
         private double[] tick = new double[6] { 0, 0, 0, 0, 0, 0 };                     //틱단위
         private double[] sell_first_price = new double[6] { 0, 0, 0, 0, 0, 0 };         //매도1호가
         private double[] buy_first_price = new double[6] { 0, 0, 0, 0, 0, 0 };          //매수1호가
         private int tick_control_num = 0;                                               //틱단위 컨트롤
+        private double[] current_price = new double[6] { 0, 0, 0, 0, 0, 0 };                //현재가
 
         private string[] order_Num = new string[6] { "0", "0", "0", "0", "0", "0" };
         private int order_How = 0;
@@ -69,17 +69,6 @@ namespace WindowsFormsApp4
         {
             InitializeComponent();
             this.code_list = new List<string>();
-        }
-        
-        ~Form2()
-        {
-            File.AppendAllText(@"..\..\history1.txt", tmp_history_1[tmp_history_1.Length - 1]);
-            File.AppendAllText(@"..\..\history1.txt", tmp_history_1[tmp_history_1.Length - 1]);
-            File.AppendAllText(@"..\..\history2.txt", tmp_history_2[tmp_history_2.Length - 1]);
-            File.AppendAllText(@"..\..\history3.txt", tmp_history_3[tmp_history_3.Length - 1]);
-            File.AppendAllText(@"..\..\history4.txt", tmp_history_4[tmp_history_4.Length - 1]);
-            File.AppendAllText(@"..\..\history5.txt", tmp_history_5[tmp_history_5.Length - 1]);
-            File.AppendAllText(@"..\..\history6.txt", tmp_history_6[tmp_history_6.Length - 1]);
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -108,13 +97,14 @@ namespace WindowsFormsApp4
             getAccount();
             Init_Orderlist();
 
+            Comm_Obj_RTCount.RequestRTReg("AE", "*");
+            Comm_Obj_RTPrice.RequestRTReg("FC", "101Q3");
 
-            Comm_Obj_RTPrice.RequestRTReg("FC", "101Q3");//테스트용
-            //Account_Num_1.Text = (string)Account_Num_1.Items[0];
             setGridView();
 
 
             // 선물 코드 목록 조회
+
             Comm_Obj_Code_List.SetQueryName("fut_mst");
             Comm_Obj_Code_List.RequestData();
 
@@ -643,7 +633,7 @@ namespace WindowsFormsApp4
         }
         private void Proc_FC_3()
         {
-            FCGrid_sample[2].DataSource = Proc_TR_FCHART_3();
+                FCGrid_sample[2].DataSource = Proc_TR_FCHART_3();
         }
         private void Proc_FC_4()
         {
@@ -678,9 +668,8 @@ namespace WindowsFormsApp4
         private void WMA_input_btn_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            string code = "";
-
             int control = 0;
+            string code = "";
             if (btn.Name == "WMA_input_btn_1")
             {
                 control = 1;
@@ -712,31 +701,33 @@ namespace WindowsFormsApp4
                 code = FCode_6.Text;
             }
 
-            // 선물/옵션 별로 나눠야됨 
             if (code[0] == '1')
                 Comm_Obj_RTPrice.RequestRTReg("FC", code);
             else if (code[0] == '2' || code[0] == '3')
                 Comm_Obj_RTPrice.RequestRTReg("QC", code);
+
             Get_GridData(control);
         }
-
+        
         private void Get_RemainData_1()
         {
             string[] tmp_get_price;
-            int a = Remain_datagrid_1.Rows.Count;
 
-            if(Remain_datagrid_1.Rows.Count > 2 )
-            {
-                ((DataTable)Remain_datagrid_1.DataSource).Rows.Clear();
-            }
-
-            for (int i=0; i<tmp_history_1.Length; i++)
+            //Remain_datagrid_1.Rows.Clear();
+            if (Remain_datagrid_1.Rows.Count < tmp_history_1.Length)
             {
                 Remain_datagrid_1.Rows.Add();
-                tmp_get_price = tmp_history_1[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for(int j=0; j<5; j++)
+                Get_RemainData_1();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_1.Length; i++)
                 {
-                    Remain_datagrid_1.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_1[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_1.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }
@@ -744,90 +735,105 @@ namespace WindowsFormsApp4
         private void Get_RemainData_2()
         {
             string[] tmp_get_price;
-            if (Remain_datagrid_2.Rows.Count > 2)
-            {
-                ((DataTable)Remain_datagrid_2.DataSource).Rows.Clear();
-            }
-
-            for (int i = 0; i < tmp_history_2.Length; i++)
+            //Remain_datagrid_2.Rows.Clear();
+            if (Remain_datagrid_2.Rows.Count < tmp_history_2.Length)
             {
                 Remain_datagrid_2.Rows.Add();
-                tmp_get_price = tmp_history_2[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for (int j = 0; j < 5; j++)
+                Get_RemainData_2();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_2.Length; i++)
                 {
-                    Remain_datagrid_2.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_2[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_2.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }
         private void Get_RemainData_3()
         {
             string[] tmp_get_price;
-            if (Remain_datagrid_3.Rows.Count > 2)
-            {
-                ((DataTable)Remain_datagrid_3.DataSource).Rows.Clear();
-            }
-
-            for (int i = 0; i < tmp_history_3.Length; i++)
+            //Remain_datagrid_3.Rows.Clear();
+            if (Remain_datagrid_3.Rows.Count < tmp_history_3.Length)
             {
                 Remain_datagrid_3.Rows.Add();
-                tmp_get_price = tmp_history_3[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for (int j = 0; j < 5; j++)
+                Get_RemainData_3();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_3.Length; i++)
                 {
-                    Remain_datagrid_3.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_3[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_3.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }
         private void Get_RemainData_4()
         {
             string[] tmp_get_price;
-            if (Remain_datagrid_4.Rows.Count > 2)
-            {
-                ((DataTable)Remain_datagrid_4.DataSource).Rows.Clear();
-            }
-
-            for (int i = 0; i < tmp_history_4.Length; i++)
+            //Remain_datagrid_4.Rows.Clear();
+            if (Remain_datagrid_4.Rows.Count < tmp_history_4.Length)
             {
                 Remain_datagrid_4.Rows.Add();
-                tmp_get_price = tmp_history_4[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for (int j = 0; j < 5; j++)
+                Get_RemainData_4();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_4.Length; i++)
                 {
-                    Remain_datagrid_4.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_4[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_4.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }
         private void Get_RemainData_5()
         {
             string[] tmp_get_price;
-            if (Remain_datagrid_5.Rows.Count > 2)
-            {
-                ((DataTable)Remain_datagrid_5.DataSource).Rows.Clear();
-            }
-
-            for (int i = 0; i < tmp_history_5.Length; i++)
+            //Remain_datagrid_5.Rows.Clear();
+            if (Remain_datagrid_5.Rows.Count < tmp_history_5.Length)
             {
                 Remain_datagrid_5.Rows.Add();
-                tmp_get_price = tmp_history_5[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for (int j = 0; j < 5; j++)
+                Get_RemainData_5();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_5.Length; i++)
                 {
-                    Remain_datagrid_5.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_5[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_5.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }
         private void Get_RemainData_6()
         {
             string[] tmp_get_price;
-            if (Remain_datagrid_6.Rows.Count > 2)
-            {
-                ((DataTable)Remain_datagrid_6.DataSource).Rows.Clear();
-            }
-
-            for (int i = 0; i < tmp_history_6.Length; i++)
+            //Remain_datagrid_6.Rows.Clear();
+            if (Remain_datagrid_6.Rows.Count < tmp_history_6.Length)
             {
                 Remain_datagrid_6.Rows.Add();
-                tmp_get_price = tmp_history_6[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
-                for (int j = 0; j < 5; j++)
+                Get_RemainData_6();
+            }
+            else
+            {
+                for (int i = 0; i < tmp_history_6.Length; i++)
                 {
-                    Remain_datagrid_6.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    tmp_get_price = tmp_history_6[i].Split(new string[] { "\x020" }, StringSplitOptions.None);
+                    for (int j = 0; j < 5; j++)
+                    {
+                        Remain_datagrid_6.Rows[i].Cells[j].Value = tmp_get_price[j];
+                    }
                 }
             }
         }    
@@ -1070,21 +1076,23 @@ namespace WindowsFormsApp4
 
             string tmp_fcode = "FCode_" + (control).ToString();
             string  FCode= this.Controls.Find(tmp_fcode, true).FirstOrDefault().Text;
+            buy_sell_Count[control - 1] = 0;
+
             for (int i = 0; i < Price_GridView.Rows.Count; i++)
             {
                 if (FCode.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
                 {
-                    if (Convert.ToInt32(Price_GridView.Rows[i].Cells[1]) > 0)
+                    if (Convert.ToString(Price_GridView.Rows[i].Cells[1]) == "02" || Convert.ToString(Price_GridView.Rows[i].Cells[1]) == "2")
                     {
                         control_Mecro[control - 1] = 2; //매수
-                        buy_sell_Count[control - 1] += Convert.ToInt32(Price_GridView.Rows[i].Cells[1]);
+                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[2]);
                     }
-                    else if (Convert.ToInt32(Price_GridView.Rows[i].Cells[1]) < 0)
+                    else if (Convert.ToString(Price_GridView.Rows[i].Cells[1]) == "01" || Convert.ToString(Price_GridView.Rows[i].Cells[1]) == "1")
                     {
                         control_Mecro[control - 1] = 1; //매도
-                        buy_sell_Count[control - 1] -= Convert.ToInt32(Price_GridView.Rows[i].Cells[1]);
+                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[2]);
                     }
-                    else if(Convert.ToInt32(Price_GridView.Rows[i].Cells[1]) == 0)
+                    else if(Convert.ToString(Price_GridView.Rows[i].Cells[1]) == "0")
                     {
                         control_Mecro[control - 1] = 3; //청산
                         buy_sell_Count[control - 1] = 0;
@@ -1232,7 +1240,7 @@ namespace WindowsFormsApp4
                             getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type, "1", "", "0");
                             //buy_sell_Count[control - 1] = 0;
                             //control_Mecro[control - 1] = 3;
-                            
+
                             Get_RealTimeData(Acc_num, Acc_pw);
                         }
                     }
@@ -2235,7 +2243,7 @@ namespace WindowsFormsApp4
 
         private void Refresh_Data(object sender, EventArgs e)
         {
-            getPrice();
+            //getPrice();
             Load_Data(gFCode[0], TimeSelected[0], TimeDistance[0],1);
             Load_Data_2(gFCode[1], TimeSelected[1], TimeDistance[1],2);
             Load_Data_3(gFCode[2], TimeSelected[2], TimeDistance[2],3);
@@ -2244,8 +2252,6 @@ namespace WindowsFormsApp4
             Load_Data_6(gFCode[5], TimeSelected[5], TimeDistance[5],6);
 
             Delay(100);
-
-            getPrice();
 
             for (int j = 1; j < 7; j++)
             {
@@ -2342,7 +2348,7 @@ namespace WindowsFormsApp4
         {
             getPrice();
         }
-
+        
         private void getPrice()
         {
             string nowdate = DateTime.Now.ToString("yyyyMMdd");
@@ -2351,9 +2357,8 @@ namespace WindowsFormsApp4
             Comm_Obj_Price.SetSingleData(1, Account_Num_1.Text); //00311155910
             Comm_Obj_Price.SetSingleData(2, Acc_PW_1.Text);
             Comm_Obj_Price.RequestData();
-
         }
-
+        
         private void Comm_Obj_Price_ReceiveData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveDataEvent e)
         {
             Proc_SABC820Q1();
@@ -2364,10 +2369,9 @@ namespace WindowsFormsApp4
             int nRowSize = Comm_Obj_Price.GetMultiRowCount();
             DataTable dt = new DataTable();
             dt.Columns.Add("종목코드");
-            dt.Columns.Add("매도매수");
+            dt.Columns.Add("매수매도구분");  //1 매도 2 매수
             dt.Columns.Add("잔고");
             dt.Columns.Add("평균가(단)");
-            dt.Columns.Add("현재가");
             dt.Columns.Add("평가손익");
             dt.Columns.Add("매매손익");
             dt.Columns.Add("평가금액");
@@ -2379,15 +2383,14 @@ namespace WindowsFormsApp4
                 dr[1] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 2);
                 dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
                 dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
-                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 5);
-                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
-                dr[6] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
-                dr[7] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
+                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
+                dr[6] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
                 dt.Rows.Add(dr);
             }
             Price_GridView.DataSource = dt;
         }
-
+        
 
         private void Get_RealTimeData(string Acc_num, string Acc_pw)
         {
@@ -2398,8 +2401,8 @@ namespace WindowsFormsApp4
             Comm_Obj_RealTimeData.SetSingleData(2, "0"); // 상품구분 0:전체 1:선물 2:옵션(지수옵션+주식옵션) 3:주식옵션만
             Comm_Obj_RealTimeData.SetSingleData(3, "000"); //시장ID코드 생략 또는 000
             Comm_Obj_RealTimeData.SetSingleData(4, nowdate); //매매일자
-            Comm_Obj_RealTimeData.SetSingleData(5, "0"); //조회구분 0:전체 1:체결 2:미체결
-            Comm_Obj_RealTimeData.SetSingleData(6, "0"); //합산구분 0:합산 1:건별
+            Comm_Obj_RealTimeData.SetSingleData(5, "1"); //조회구분 0:전체 1:체결 2:미체결
+            Comm_Obj_RealTimeData.SetSingleData(6, "1"); //합산구분 0:합산 1:건별
             Comm_Obj_RealTimeData.SetSingleData(7, "0"); //Sort구분 0:주문번호순 1:주문번호 역순
             Comm_Obj_RealTimeData.SetSingleData(8, "0"); //종목별합산구분 0:일반 조회 1:종목별합산조회
             Comm_Obj_RealTimeData.RequestData();
@@ -2412,95 +2415,140 @@ namespace WindowsFormsApp4
 
         private void Proc_SABC258Q1()
         {
-            //int nRowSize = Comm_Obj_RealTimeData.GetMultiRowCount();
-            string[] value = new string[27];
-            for (short i = 0; i <= 27; i++) 
+            // 체결시간 매매구분 종목코드 체결단가 체결수량
+            int nRowSize = Comm_Obj_RealTimeData.GetMultiRowCount();
+            string temp ="";
+            string[][] value = new string[nRowSize][];
+            for(short i=0; i<nRowSize; i++)
             {
-                value[i] = (string)Comm_Obj_RealTimeData.GetMultiData(0, i);
+                for(short j=0; j<=27; j++)
+                {
+                    value[i][j] = (string)Comm_Obj_RealTimeData.GetMultiData(i, j);
+                }
             }
 
-            if(value[0] == "1")
+            for(int k=0; k<nRowSize; k++)
             {
-                if(value[1] == FCode_1.Text)
+                if(value[k][1] == FCode_1.Text)
                 {
-                    if(control_Mecro[0] == 1 || control_Mecro[0] == 2)
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for(int a=0; a<tmp_history_1.Length; a++)
                     {
-                        Array.Resize(ref tmp_history_1, tmp_history_1.Length + 1);
-                        tmp_history_1[tmp_history_1.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if(control_Mecro[0] == 3 || control_Mecro[0] == 4)
-                    {
-                        Array.Resize(ref tmp_history_1, 1);
-                        tmp_history_1[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                   
-                }
-                else if (value[1] == FCode_2.Text)
-                {
-                    if (control_Mecro[1] == 1 || control_Mecro[1] == 2)
-                    {
-                        Array.Resize(ref tmp_history_2, tmp_history_2.Length + 1);
-                        tmp_history_2[tmp_history_2.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if (control_Mecro[1] == 3 || control_Mecro[1] == 4)
-                    {
-                        Array.Resize(ref tmp_history_2, 1);
-                        tmp_history_2[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
+                        if(temp.Equals(tmp_history_1[a]) == false)
+                        {
+                            if (control_Mecro[0] == 1 || control_Mecro[0] == 2)
+                            {
+                                Array.Resize(ref tmp_history_1, tmp_history_1.Length + 1);
+                                tmp_history_1[tmp_history_1.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[0] == 3)
+                            {
+                                Array.Resize(ref tmp_history_1, 1);
+                                tmp_history_1[0] = temp;
+                            }
+                        }
                     }
                 }
-                else if (value[1] == FCode_3.Text)
+                else if (value[k][1] == FCode_2.Text)
                 {
-                    if (control_Mecro[2] == 1 || control_Mecro[2] == 2)
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for (int a = 0; a < tmp_history_2.Length; a++)
                     {
-                        Array.Resize(ref tmp_history_3, tmp_history_3.Length + 1);
-                        tmp_history_3[tmp_history_3.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if (control_Mecro[2] == 3 || control_Mecro[2] == 4)
-                    {
-                        Array.Resize(ref tmp_history_3, 1);
-                        tmp_history_3[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
+                        if (temp.Equals(tmp_history_2[a]) == false)
+                        {
+                            if (control_Mecro[1] == 1 || control_Mecro[1] == 2)
+                            {
+                                Array.Resize(ref tmp_history_2, tmp_history_2.Length + 1);
+                                tmp_history_2[tmp_history_2.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[1] == 3)
+                            {
+                                Array.Resize(ref tmp_history_2, 1);
+                                tmp_history_2[0] = temp;
+                            }
+                        }
                     }
                 }
-                else if (value[1] == FCode_4.Text)
+                else if (value[k][1] == FCode_3.Text)
                 {
-                    if (control_Mecro[3] == 1 || control_Mecro[3] == 2)
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for (int a = 0; a < tmp_history_3.Length; a++)
                     {
-                        Array.Resize(ref tmp_history_4, tmp_history_4.Length + 1);
-                        tmp_history_4[tmp_history_4.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if (control_Mecro[3] == 3 || control_Mecro[3] == 4)
-                    {
-                        Array.Resize(ref tmp_history_4, 1);
-                        tmp_history_4[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
+                        if (temp.Equals(tmp_history_3[a]) == false)
+                        {
+                            if (control_Mecro[2] == 1 || control_Mecro[2] == 2)
+                            {
+                                Array.Resize(ref tmp_history_3, tmp_history_3.Length + 1);
+                                tmp_history_3[tmp_history_3.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[2] == 3)
+                            {
+                                Array.Resize(ref tmp_history_3, 1);
+                                tmp_history_3[0] = temp;
+                            }
+                        }
                     }
                 }
-                else if (value[1] == FCode_5.Text)
+                else if (value[k][1] == FCode_4.Text)
                 {
-                    if (control_Mecro[4] == 1 || control_Mecro[4] == 2)
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for (int a = 0; a < tmp_history_4.Length; a++)
                     {
-                        Array.Resize(ref tmp_history_5, tmp_history_5.Length + 1);
-                        tmp_history_5[tmp_history_5.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if (control_Mecro[4] == 3 || control_Mecro[4] == 4)
-                    {
-                        Array.Resize(ref tmp_history_5, 1);
-                        tmp_history_5[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
+                        if (temp.Equals(tmp_history_4[a]) == false)
+                        {
+                            if (control_Mecro[3] == 1 || control_Mecro[3] == 2)
+                            {
+                                Array.Resize(ref tmp_history_4, tmp_history_4.Length + 1);
+                                tmp_history_4[tmp_history_4.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[3] == 3)
+                            {
+                                Array.Resize(ref tmp_history_4, 1);
+                                tmp_history_4[0] = temp;
+                            }
+                        }
                     }
                 }
-                else if (value[1] == FCode_6.Text)
+                else if (value[k][1] == FCode_5.Text)
                 {
-                    if (control_Mecro[5] == 1 || control_Mecro[5] == 2)
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for (int a = 0; a < tmp_history_5.Length; a++)
                     {
-                        Array.Resize(ref tmp_history_6, tmp_history_6.Length + 1);
-                        tmp_history_6[tmp_history_6.Length - 1] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
-                    }
-                    else if (control_Mecro[5] == 3 || control_Mecro[5] == 4)
-                    {
-                        Array.Resize(ref tmp_history_6, 1);
-                        tmp_history_6[0] = value[18] + " " + value[3] + " " + value[1] + " " + value[8] + " " + value[7];
+                        if (temp.Equals(tmp_history_5[a]) == false)
+                        {
+                            if (control_Mecro[4] == 1 || control_Mecro[4] == 2)
+                            {
+                                Array.Resize(ref tmp_history_5, tmp_history_5.Length + 1);
+                                tmp_history_5[tmp_history_5.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[4] == 3)
+                            {
+                                Array.Resize(ref tmp_history_5, 1);
+                                tmp_history_5[0] = temp;
+                            }
+                        }
                     }
                 }
-
+                else if (value[k][1] == FCode_6.Text)
+                {
+                    temp = value[k][18] + " " + value[k][3] + " " + value[k][1] + " " + value[k][8] + " " + value[k][7];
+                    for (int a = 0; a < tmp_history_6.Length; a++)
+                    {
+                        if (temp.Equals(tmp_history_6[a]) == false)
+                        {
+                            if (control_Mecro[5] == 1 || control_Mecro[5] == 2)
+                            {
+                                Array.Resize(ref tmp_history_6, tmp_history_6.Length + 1);
+                                tmp_history_6[tmp_history_6.Length - 1] = temp;
+                            }
+                            else if (control_Mecro[5] == 3)
+                            {
+                                Array.Resize(ref tmp_history_6, 1);
+                                tmp_history_6[0] = temp;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -2535,7 +2583,8 @@ namespace WindowsFormsApp4
             if (order_How != 0)
             {
                 order_Num[order_How - 1] = aa;
-            } 
+            }
+            MessageBox.Show(aa);
         }
 
         private void Init_Orderlist()  //주문내역 날짜 초기화
@@ -2588,7 +2637,6 @@ namespace WindowsFormsApp4
             dt.Columns.Add("손익금액");
             dt.Columns.Add("수수료");
 
-
             for (int i = 0; i < nRowSize; i++)
             {
                 DataRow dr = dt.NewRow();
@@ -2615,32 +2663,13 @@ namespace WindowsFormsApp4
             short index = Convert.ToInt16(Account_Num_1.SelectedIndex);
             Account_Name_1.Text = Convert.ToString(Comm_Obj_Accountinfo.GetMultiData(index, 1));
         }
+
         private void txtInterval_KeyPress(object sender, KeyPressEventArgs e)
         {
             //숫자만 입력되도록 필터링
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
             {
                 e.Handled = true;
-            }
-        }
-
-        private void TimerSet_CheckedChanged(object sender, EventArgs e)
-        {
-            if (SetDelay_1.Checked)
-            {
-                if (string.IsNullOrEmpty(SetDelayText_1.Text))
-                {
-                    MessageBox.Show("시간 입력");
-                }
-                else
-                {
-                    timer.Interval = Convert.ToInt32(SetDelayText_1.Text) * 1000;
-                    timer.Start();
-                }
-            }
-            else
-            {
-                timer.Stop();
             }
         }
 
@@ -2651,232 +2680,146 @@ namespace WindowsFormsApp4
             sc_form.Show();
         }
 
-        private void Stop_Lose(int control, string Acc_num, string Acc_pw, string code, string cont, string count)
+        private void Stop_Loss(double price, int k)
         {
-            // int cont 매수/ 매도 상태  01 : 매도  02: 매수 
-            string tmp_Profit = "SL_HighTick_" + (control).ToString();
-            string tmp_Loss = "SL_LowTick_" + (control).ToString();
-            string tmp_Combo = "SL_OrderHow_" + (control).ToString();
-            int Profit = Convert.ToInt32((this.Controls.Find(tmp_Profit, true).FirstOrDefault()).Text);
-            int Loss = Convert.ToInt32(this.Controls.Find(tmp_Loss, true).FirstOrDefault().Text);
-            ComboBox Combo = (ComboBox)this.Controls.Find(tmp_Combo, true).FirstOrDefault();
-            int index = Combo.SelectedIndex;
-
-            double End_Price = Convert.ToDouble(FCGrid_sample[control - 1].Rows[1].Cells[5].Value);
-
-            for (int i = 0; i < Price_GridView.Rows.Count; i++)
-            {
-                if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
+            
+                string SL_Control_Name = "TS_Control_" + (k).ToString();
+                CheckBox SL_Control = (CheckBox)this.Controls.Find(SL_Control_Name, true).FirstOrDefault();
+                if(SL_Control.Checked == true)
                 {
-                    start_price[control - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value); //평균가
-                }
-            }
+                    string tmp_Profit = "SL_HighTick_" + (k).ToString();
+                    string tmp_Loss = "SL_LowTick_" + (k).ToString();
+                    string tmp_Combo = "SL_OrderHow_" + (k).ToString();
+                    string tmp_fcode = "FCode_" + (k).ToString();
 
-            if (End_Price > start_price[control - 1] + (Profit * tick[control - 1]))
-            {
-                //익절
-                if (cont == "01") //매도 한 계약 일때
-                {
-                    if (index == 0) //시장가
+                    int Profit = Convert.ToInt32((this.Controls.Find(tmp_Profit, true).FirstOrDefault()).Text);
+                    int Loss = Convert.ToInt32(this.Controls.Find(tmp_Loss, true).FirstOrDefault().Text);
+                    ComboBox Combo = (ComboBox)this.Controls.Find(tmp_Combo, true).FirstOrDefault();
+                    string code = this.Controls.Find(tmp_fcode, true).FirstOrDefault().Text;
+                    int index = Combo.SelectedIndex;
+
+                    get_Tick(k);
+
+                    string cont = "";
+                    string count = "";
+
+                    for (int i = 0; i < Price_GridView.Rows.Count; i++)
                     {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        //buy_sell_Count[control - 1] = 0;
-                        //control_Mecro[control - 1] = 3;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
                         {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + (index * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
+                            start_price[k - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[4].Value); //평균가
+                            cont = Convert.ToString(Price_GridView.Rows[i].Cells[2].Value); //매수 매도 구분
+                            count = Convert.ToString(Price_GridView.Rows[i].Cells[3].Value);
                         }
-                        else //이전에 주문을 넣었을때
+                        else
                         {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + (index * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index - 10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + ((index - 10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
+                            start_price[k - 1] = 0;
                         }
                     }
 
-                }
-
-                else if (cont == "02") //매수한 계약 일떄
-                {
-                    if (index == 0) //시장가
+                    if (price > start_price[k - 1] + (Profit * tick[k - 1]) && start_price[k - 1] != 0)
                     {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        //buy_sell_Count[control - 1] = 0;
-                        //control_Mecro[control - 1] = 4;
-                        Get_RealTimeData(Acc_num, Acc_pw);
+                        //익절
+                        if (cont == "2") //매수한 계약 일떄
+                        {
+                            if (index == 0) //시장가
+                            {
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                            }
+                            else if (index >= 1 || index <= 10) //상대 호가
+                            {
+                                if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] + (index * tick[k - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                                else //이전에 주문을 넣었을때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] + (index * tick[k - 1])), "01", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                            }
+                            else if (index >= 11 || index <= 20) //우선 호가
+                            {
+                                if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] + ((index - 10) * tick[k - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                                else //이전에 주문을 넣었을때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] + ((index - 10) * tick[k - 1])), "01", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                            }
+                        }
                     }
-                    else if (index >= 1 || index <= 10) //상대 호가
+                    else if (price < start_price[k - 1] - (Loss * tick[k - 1]) && start_price[k - 1] != 0)
                     {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
+                        //손절
+                        if (cont == "1") //매도한 계약일때
                         {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+                            if (index == 0) //시장가
+                            {
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                            }
+                            else if (index >= 1 || index <= 10) //상대 호가
+                            {
+                                if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] - (index * tick[k - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
 
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] + (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                                else //이전에 주문을 넣었을때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] - (index * tick[k - 1])), "02", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
 
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index - 10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
 
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] + ((index - 10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
+                            }
+                            else if (index >= 11 || index <= 20) //우선 호가
+                            {
+                                if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] - ((index - 10) * tick[k - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
 
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                }
-            }
-            else if (End_Price < start_price[control - 1] - (Loss * tick[control - 1]))
-            {
-                //손절
-                if (cont == "01") //매도한 계약일때
-                {
-                    if (index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        buy_sell_Count[control - 1] = 0;
-                        control_Mecro[control - 1] = 4;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                                else //이전에 주문을 넣었을때
+                                {
+                                    order_How = k;
+                                    getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] - ((index - 10) * tick[k - 1])), "02", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
 
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - (index * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - ((index - 10) * tick[control - 1])), "02", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
+                                    Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                    order_How = 0;
+                                }
+                            }
                         }
                     }
                 }
-
-                else if (cont == "02") //매수한 계약일때
-                {
-                    if (index == 0) //시장가
-                    {
-                        getDeal(Acc_num, Acc_pw, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
-                        buy_sell_Count[control - 1] = 0;
-                        control_Mecro[control - 1] = 3;
-                        Get_RealTimeData(Acc_num, Acc_pw);
-                    }
-                    else if (index >= 1 || index <= 10) //상대 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(sell_first_price[control - 1] - (index * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                    else if (index >= 11 || index <= 20) //우선 호가
-                    {
-                        if (order_Num[control - 1].Equals("0"))  //처음 주문일때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index - 10) * tick[control - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                        else //이전에 주문을 넣었을때
-                        {
-                            order_How = control;
-                            getDeal(Acc_num, Acc_pw, code, count, Convert.ToString(buy_first_price[control - 1] - ((index - 10) * tick[control - 1])), "01", "L", "2", order_Num[control - 1], count);   //01 : 매도 02: 매수
-
-                            Get_RealTimeData(Acc_num, Acc_pw);
-                            order_How = 0;
-                        }
-                    }
-                }
-            }
+            
         }
 
 
@@ -2893,7 +2836,7 @@ namespace WindowsFormsApp4
                         MessageBox.Show("입력값 오류입니다.");
                     }
                     else
-                        AutoClosingMessageBox("(1번 종목)\n스탑로스 설정되었습니다.", "", 1);
+                        AutoClosingMessageBox("(1번 종목)\n스탑로스 설정되었습니다.", "", 10);
                 }
             }
             else if (tmp.Name == "SL_Button_1")
@@ -3106,7 +3049,7 @@ namespace WindowsFormsApp4
                     if (order_Num[control - 1].Equals("0"))  //처음 주문일때
                     {
                         order_How = control;
-                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, isremain.ToString() , Convert.ToString(orderprice), changebuysell, ordertype, "1", "", "0");   //01 : 매도 02: 매수
+                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, isremain.ToString(), Convert.ToString(orderprice), changebuysell, ordertype, "1", "", "0");   //01 : 매도 02: 매수
 
                         Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
                         order_How = 0;
@@ -3114,7 +3057,7 @@ namespace WindowsFormsApp4
                     else //이전에 주문을 넣었을때
                     {
                         order_How = control;
-                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, isremain.ToString() , Convert.ToString(orderprice), changebuysell, ordertype, "2", order_Num[control - 1], "0");   //01 : 매도 02: 매수
+                        getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, isremain.ToString(), Convert.ToString(orderprice), changebuysell, ordertype, "2", order_Num[control - 1], "0");   //01 : 매도 02: 매수
 
                         Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
                         order_How = 0;
@@ -3374,65 +3317,194 @@ namespace WindowsFormsApp4
             buy_first_price[tick_control_num - 1] = buy_first;
         }
 
+        private void Interval_Set_Click(object sender, EventArgs e)
+        {
+            timer.Interval = Convert.ToInt32(Mecro_Inerval.Text);
+            timer.Start();
+        }
+
+        private void Interval_Stop_Click(object sender, EventArgs e)
+        {
+            timer.Stop();
+        }
+
         private void Comm_Obj_Price_ReceiveRTData(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveRTDataEvent e)
         {
             string code = (string)Comm_Obj_RTPrice.GetSingleData(1);
             if (code.Equals(gFCode[0]))
             {
-                current_price[0] = (double)Comm_Obj_RTPrice.GetSingleData(4);
+                current_price[0] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
                 if (TS_Control_1.Checked == true)
                     TrailingStop_start(1);
-                /*else if (SL_Control_1.Checked == true)
-                    Stop_Lose();
-                    */
+                else if (SL_Control_1.Checked == true)
+                    Stop_Loss(current_price[0], 1);
+                if (gFCode[1][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[1]);
+                else if (gFCode[1][0] == '2' || gFCode[1][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[1]);
+
             }
             else if (code.Equals(gFCode[1]))
             {
-                current_price[1] = (double)Comm_Obj_RTPrice.GetSingleData(4);
-                if (TS_Control_2.Checked == true)
-                    TrailingStop_start(2);
-                /*else if (SL_Control_1.Checked == true)
-                    Stop_Lose();
-                    */
+                current_price[1] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
+                if (TS_Control_1.Checked == true)
+                    if (TS_Control_2.Checked == true)
+                        TrailingStop_start(2);
+                    else if (SL_Control_1.Checked == true)
+                        Stop_Loss(current_price[1], 2);
+                if (gFCode[2][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[2]);
+                else if (gFCode[2][0] == '2' || gFCode[2][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[2]);
+
             }
             else if (code.Equals(gFCode[2]))
             {
-                current_price[2] = (double)Comm_Obj_RTPrice.GetSingleData(4);
+                current_price[2] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
                 if (TS_Control_1.Checked == true)
-                    TrailingStop_start(3);
-                /*else if (SL_Control_1.Checked == true)
-                    Stop_Lose();
-                    */
+                    if (TS_Control_1.Checked == true)
+                        TrailingStop_start(3);
+                    else if (SL_Control_1.Checked == true)
+                        Stop_Loss(current_price[2], 3);
+                if (gFCode[3][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[3]);
+                else if (gFCode[3][0] == '2' || gFCode[3][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[3]);
+
             }
             else if (code.Equals(gFCode[3]))
             {
-                current_price[3] = (double)Comm_Obj_RTPrice.GetSingleData(4);
+                current_price[3] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
                 if (TS_Control_1.Checked == true)
-                    TrailingStop_start(4);
-                /*else if (SL_Control_1.Checked == true)
-                     Stop_Lose();
-                     */
+                    if (TS_Control_1.Checked == true)
+                        TrailingStop_start(4);
+                    else if (SL_Control_1.Checked == true)
+                        Stop_Loss(current_price[3], 4);
+                if (gFCode[4][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[4]);
+                else if (gFCode[4][0] == '2' || gFCode[4][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[4]);
+
             }
             else if (code.Equals(gFCode[4]))
             {
-                current_price[4] = (double)Comm_Obj_RTPrice.GetSingleData(4);
+                current_price[4] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
                 if (TS_Control_1.Checked == true)
-                    TrailingStop_start(5);
-                /*else if (SL_Control_1.Checked == true)
-                    Stop_Lose();
-                    */
+                    if (TS_Control_1.Checked == true)
+                        TrailingStop_start(5);
+                    else if (SL_Control_1.Checked == true)
+                        Stop_Loss(current_price[4], 5);
+                if (gFCode[5][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[5]);
+                else if (gFCode[5][0] == '2' || gFCode[5][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[5]);
+
             }
             else if (code.Equals(gFCode[5]))
             {
-                current_price[5] = (double)Comm_Obj_RTPrice.GetSingleData(4);
+                current_price[5] = Convert.ToDouble(Comm_Obj_RTPrice.GetSingleData(4));
                 if (TS_Control_1.Checked == true)
-                    TrailingStop_start(6);
-                /*else if (SL_Control_1.Checked == true)
-                     Stop_Lose();
-                     */
+                    if (TS_Control_1.Checked == true)
+                        TrailingStop_start(6);
+                    else if (SL_Control_1.Checked == true)
+                        Stop_Loss(current_price[5], 6);
+                if (gFCode[0][0] == '1')
+                    Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[0]);
+                else if (gFCode[0][0] == '2' || gFCode[0][0] == '3')
+                    Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[0]);
             }
+            /*
+            DataTable dt = new DataTable();
+            dt.Columns.Add("종목코드");
+            dt.Columns.Add("매수매도구분");  //1 매도 2 매수
+            dt.Columns.Add("잔고");
+            dt.Columns.Add("평균가(단)");
+            dt.Columns.Add("평가금액");
+            dt.Columns.Add("평가손익");
+
+            DataRow dr = dt.NewRow();
+
+            dr[0] = (string)Comm_Obj_RTCount.GetSingleData(2); //종목코드
+            dr[1] = (string)Comm_Obj_RTCount.GetSingleData(5); //매도매수 구분
+            dr[2] = (string)Comm_Obj_RTCount.GetSingleData(9); //청산 가능수량
+            dr[3] = (string)Comm_Obj_RTCount.GetSingleData(7); //평균단가
+            dr[4] = (string)Comm_Obj_RTCount.GetSingleData(11); //평가 금액
+            dr[5] = (string)Comm_Obj_RTCount.GetSingleData(12); // 평가 손익
+            dt.Rows.Add(dr);
+
+            Price_GridView.DataSource = dt;*/
 
         }
 
+        private void Comm_Obj_ReceiveRTCount(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveRTDataEvent e)
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("종목코드");
+            dt.Columns.Add("매수매도구분");  //1 매도 2 매수
+            dt.Columns.Add("잔고");
+            dt.Columns.Add("평균가(단)");
+            dt.Columns.Add("평가금액");
+            dt.Columns.Add("평가손익");
+
+            DataRow dr = dt.NewRow();
+
+            dr[0] = (string)Comm_Obj_RTCount.GetSingleData(2); //종목코드
+            dr[1] = (string)Comm_Obj_RTCount.GetSingleData(5); //매도매수 구분
+            dr[2] = (string)Comm_Obj_RTCount.GetSingleData(9); //청산 가능수량
+            dr[3] = (string)Comm_Obj_RTCount.GetSingleData(7); //평균단가
+            dr[4] = (string)Comm_Obj_RTCount.GetSingleData(11); //평가 금액
+            dr[5] = (string)Comm_Obj_RTCount.GetSingleData(12); // 평가 손익
+            dt.Rows.Add(dr);
+
+            Price_GridView.DataSource = dt;
+        }
+
+        private void Close_Form(object sender, FormClosingEventArgs e)
+        {
+            File.WriteAllLines(@"..\..\history1.txt", tmp_history_1);
+            File.WriteAllLines(@"..\..\history2.txt", tmp_history_2);
+            File.WriteAllLines(@"..\..\history3.txt", tmp_history_3);
+            File.WriteAllLines(@"..\..\history4.txt", tmp_history_4);
+            File.WriteAllLines(@"..\..\history5.txt", tmp_history_5);
+            File.WriteAllLines(@"..\..\history6.txt", tmp_history_6);
+        }
+
+        private void sell_button_Click(object sender, EventArgs e)
+        {
+            Comm_Obj_Deal.SetQueryName("SABC100U1");
+            Comm_Obj_Deal.SetSingleData(0, "00311155910"); // 계좌번호
+            Comm_Obj_Deal.SetSingleData(1, "0000"); //비밀번호
+            Comm_Obj_Deal.SetSingleData(2, "101Q3"); //종목코드
+            Comm_Obj_Deal.SetSingleData(3, "1"); // 주문수량 
+            Comm_Obj_Deal.SetSingleData(4, "0"); //주문단가 -999.99 ~ 999.99
+            Comm_Obj_Deal.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
+            Comm_Obj_Deal.SetSingleData(6, "01"); // 매매구분 01:매도 02:매수
+            Comm_Obj_Deal.SetSingleData(7, "M"); //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
+            Comm_Obj_Deal.SetSingleData(8, "1"); //차익거래구분 1:차익 2:헷지 3:기타
+            Comm_Obj_Deal.SetSingleData(9, "1"); //처리구분 1:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(10, "0"); //정정취소수량구분 0:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(11, ""); //원주문번호 (신규매도/매수시 생략)
+            Comm_Obj_Deal.SetSingleData(12, ""); //예약주문여부 1:예약 (예약주문 어닌경우생략)
+            Comm_Obj_Deal.RequestData();
+        }
+
+        private void buy_button_Click(object sender, EventArgs e)
+        {
+            Comm_Obj_Deal.SetQueryName("SABC100U1");
+            Comm_Obj_Deal.SetSingleData(0, "00311155910"); // 계좌번호
+            Comm_Obj_Deal.SetSingleData(1, "0000"); //비밀번호
+            Comm_Obj_Deal.SetSingleData(2, "101Q3"); //종목코드
+            Comm_Obj_Deal.SetSingleData(3, "1"); // 주문수량 
+            Comm_Obj_Deal.SetSingleData(4, "0"); //주문단가 -999.99 ~ 999.99
+            Comm_Obj_Deal.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
+            Comm_Obj_Deal.SetSingleData(6, "02"); // 매매구분 01:매도 02:매수
+            Comm_Obj_Deal.SetSingleData(7, "M"); //호가유형 L:지정가 M:시장가 C:조건부 B:최유리
+            Comm_Obj_Deal.SetSingleData(8, "1"); //차익거래구분 1:차익 2:헷지 3:기타
+            Comm_Obj_Deal.SetSingleData(9, "1"); //처리구분 1:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(10, "0"); //정정취소수량구분 0:신규 2:정정 3:취소
+            Comm_Obj_Deal.SetSingleData(11, ""); //원주문번호 (신규매도/매수시 생략)
+            Comm_Obj_Deal.SetSingleData(12, ""); //예약주문여부 1:예약 (예약주문 어닌경우생략)
+            Comm_Obj_Deal.RequestData();
+        }
     }
 }
