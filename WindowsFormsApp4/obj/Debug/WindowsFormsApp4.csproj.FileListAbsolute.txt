@@ -253,3 +253,4 @@ C:\Users\YONGBIN\Desktop\489498485498\WindowsFormsApp4\obj\Debug\hi\WindowsForms
 C:\Users\YONGBIN\Desktop\489498485498\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.csproj.CopyComplete
 C:\Users\YONGBIN\Desktop\489498485498\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.exe
 C:\Users\YONGBIN\Desktop\489498485498\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.pdb
+C:\Users\82102\Desktop\SHINHAN_INDI\WindowsFormsApp4\obj\Debug\WindowsFormsApp4.select_code_form.resources

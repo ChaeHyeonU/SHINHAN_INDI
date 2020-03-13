@@ -15,8 +15,8 @@ namespace WindowsFormsApp4
 
     public partial class Form2 : Form
     {
-        private int RowNum = 200;
-        private string[] gFCode = new string[6] { "101Q6", "101Q6", "101Q6", "101Q6", "101Q6", "101Q6" };
+        private int RowNum = 150;
+        private string[] gFCode = new string[6] { "101Q6", "104Q4", "105Q4", "106Q6", "107Q3", "201Q3267" };
         private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
         private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
 
@@ -99,7 +99,8 @@ namespace WindowsFormsApp4
 
             Comm_Obj_RTCount.RequestRTReg("AE", "*");
             Comm_Obj_RTPrice.RequestRTReg("FC", "101Q3");
-            MessageBox.Show((string)Comm_Obj_RTCount.GetErrorMessage());
+
+            
 
             setGridView();
 
@@ -112,7 +113,8 @@ namespace WindowsFormsApp4
             // 옵션 코드 목록 조회
             Comm_Obj_Code_List.SetQueryName("opt_mst");
             Comm_Obj_Code_List.RequestData();
-            
+
+            //MessageBox.Show((string)Comm_Obj_Code_List.GetErrorMessage());
 
             Get_RemainData_1();
             Get_RemainData_2();
@@ -121,14 +123,13 @@ namespace WindowsFormsApp4
             Get_RemainData_5();
             Get_RemainData_6();
 
-
         }
 
         public void Load_Data(string Fcode, string time, string distance, int control)
         {
             gFCode[control-1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_1.SetQueryName("TR_FCHART");
             }
@@ -164,7 +165,7 @@ namespace WindowsFormsApp4
         {
             gFCode[control-1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_2.SetQueryName("TR_FCHART");
             }
@@ -203,7 +204,7 @@ namespace WindowsFormsApp4
         {
             gFCode[control-1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_3.SetQueryName("TR_FCHART");
             }
@@ -241,7 +242,7 @@ namespace WindowsFormsApp4
         {
             gFCode[control-1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_4.SetQueryName("TR_FCHART");
             }
@@ -277,7 +278,7 @@ namespace WindowsFormsApp4
         {
             gFCode[control-1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_5.SetQueryName("TR_FCHART");
             }
@@ -314,7 +315,7 @@ namespace WindowsFormsApp4
         {
             gFCode[control - 1] = Fcode;
 
-            if (gFCode[control - 1][0] == '1')
+            if (gFCode[control - 1][0] == '1' || gFCode[control - 1][0] == '4')
             {
                 Comm_Obj_DATA_6.SetQueryName("TR_FCHART");
             }
@@ -567,7 +568,21 @@ namespace WindowsFormsApp4
 
             if (fcode.Length == 5 || fcode.Length == 8)
             {
-                gFCode[control - 1] = fcode;
+                for(int i = 1; i <= 6; i++)
+                {
+                    if(i != control)
+                    {
+                        if (fcode == gFCode[i - 1])
+                        {
+                            MessageBox.Show("중복되는 코드사용 불가능");
+                            Tmp.Text = gFCode[control - 1];
+                        }
+                        else
+                        {
+                            gFCode[control - 1] = fcode;
+                        }
+                    }
+                }
 
                 if (control == 1)
                 {
@@ -704,7 +719,7 @@ namespace WindowsFormsApp4
                 code = FCode_6.Text;
             }
 
-            if (code[0] == '1')
+            if (code[0] == '1' || code[0] == '4')
                 Comm_Obj_RTPrice.RequestRTReg("FC", code);
             else if (code[0] == '2' || code[0] == '3')
                 Comm_Obj_RTPrice.RequestRTReg("QC", code);
@@ -1073,13 +1088,12 @@ namespace WindowsFormsApp4
             }
         }
 
-
         private void Set_Control_Mecro(int control)
         {
             //control_Mecro 1:매도 2:매수 3:매도(청산) 4:매수(청산)
 
             string tmp_fcode = "FCode_" + (control).ToString();
-            string  FCode= this.Controls.Find(tmp_fcode, true).FirstOrDefault().Text;
+            string FCode = this.Controls.Find(tmp_fcode, true).FirstOrDefault().Text;
             buy_sell_Count[control - 1] = 0;
 
 
@@ -1089,7 +1103,7 @@ namespace WindowsFormsApp4
                 {
                     if (Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "02" || Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "2")
                     {
-                        if(Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value) == 0)
+                        if (Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value) == 0)
                         {
                             control_Mecro[control - 1] = 0;
                         }
@@ -1097,12 +1111,12 @@ namespace WindowsFormsApp4
                         {
                             control_Mecro[control - 1] = 2; //매수
                         }
-                        
+
                         buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value);
                     }
                     else if (Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "01" || Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "1")
                     {
-                        if (Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value) == 0)
+                        if (Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value) == 0)
                         {
                             control_Mecro[control - 1] = 0;
                         }
@@ -1112,7 +1126,7 @@ namespace WindowsFormsApp4
                         }
                         buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value);
                     }
-                    else if(Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "0")
+                    else if (Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "0")
                     {
                         control_Mecro[control - 1] = 3; //청산
                         buy_sell_Count[control - 1] = 0;
@@ -1125,7 +1139,6 @@ namespace WindowsFormsApp4
                 }
             }
         }
-
 
         private void Mecro_Deal(int control)
         {
@@ -2392,7 +2405,7 @@ namespace WindowsFormsApp4
             int nRowSize = Comm_Obj_Price.GetMultiRowCount();
             DataTable dt = new DataTable();
             dt.Columns.Add("단축코드");
-            dt.Columns.Add("매매구분");  //1 매도 2 매수
+            dt.Columns.Add("매매구분\n1:매도2:매수");  //1 매도 2 매수
             dt.Columns.Add("잔고수량");
             dt.Columns.Add("청산가능수량");
             dt.Columns.Add("평균가(단)");
@@ -3528,7 +3541,7 @@ namespace WindowsFormsApp4
                     TrailingStop_start(1);
                 else if (SL_Control_1.Checked == true)
                     Stop_Loss(current_price[0], 1);
-                if (gFCode[1][0] == '1')
+                if (gFCode[1][0] == '1' || gFCode[1][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[1]);
                 else if (gFCode[1][0] == '2' || gFCode[1][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[1]);
@@ -3542,7 +3555,7 @@ namespace WindowsFormsApp4
                         TrailingStop_start(2);
                     else if (SL_Control_1.Checked == true)
                         Stop_Loss(current_price[1], 2);
-                if (gFCode[2][0] == '1')
+                if (gFCode[2][0] == '1' || gFCode[2][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[2]);
                 else if (gFCode[2][0] == '2' || gFCode[2][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[2]);
@@ -3556,7 +3569,7 @@ namespace WindowsFormsApp4
                         TrailingStop_start(3);
                     else if (SL_Control_1.Checked == true)
                         Stop_Loss(current_price[2], 3);
-                if (gFCode[3][0] == '1')
+                if (gFCode[3][0] == '1' || gFCode[3][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[3]);
                 else if (gFCode[3][0] == '2' || gFCode[3][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[3]);
@@ -3570,7 +3583,7 @@ namespace WindowsFormsApp4
                         TrailingStop_start(4);
                     else if (SL_Control_1.Checked == true)
                         Stop_Loss(current_price[3], 4);
-                if (gFCode[4][0] == '1')
+                if (gFCode[4][0] == '1' || gFCode[4][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[4]);
                 else if (gFCode[4][0] == '2' || gFCode[4][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[4]);
@@ -3584,7 +3597,7 @@ namespace WindowsFormsApp4
                         TrailingStop_start(5);
                     else if (SL_Control_1.Checked == true)
                         Stop_Loss(current_price[4], 5);
-                if (gFCode[5][0] == '1')
+                if (gFCode[5][0] == '1' || gFCode[5][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[5]);
                 else if (gFCode[5][0] == '2' || gFCode[5][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[5]);
@@ -3598,7 +3611,7 @@ namespace WindowsFormsApp4
                         TrailingStop_start(6);
                     else if (SL_Control_1.Checked == true)
                         Stop_Loss(current_price[5], 6);
-                if (gFCode[0][0] == '1')
+                if (gFCode[0][0] == '1' || gFCode[0][0] == '4')
                     Comm_Obj_RTPrice.RequestRTReg("FC", gFCode[0]);
                 else if (gFCode[0][0] == '2' || gFCode[0][0] == '3')
                     Comm_Obj_RTPrice.RequestRTReg("QC", gFCode[0]);
