@@ -3451,7 +3451,7 @@
             this.Remain_datagrid_2.Name = "Remain_datagrid_2";
             this.Remain_datagrid_2.RowHeadersVisible = false;
             this.Remain_datagrid_2.RowTemplate.Height = 23;
-            this.Remain_datagrid_2.Size = new System.Drawing.Size(387, 192);
+            this.Remain_datagrid_2.Size = new System.Drawing.Size(387, 151);
             this.Remain_datagrid_2.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -3816,7 +3816,7 @@
             this.Remain_datagrid_3.Name = "Remain_datagrid_3";
             this.Remain_datagrid_3.RowHeadersVisible = false;
             this.Remain_datagrid_3.RowTemplate.Height = 23;
-            this.Remain_datagrid_3.Size = new System.Drawing.Size(387, 191);
+            this.Remain_datagrid_3.Size = new System.Drawing.Size(387, 150);
             this.Remain_datagrid_3.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn6
@@ -4179,7 +4179,7 @@
             this.Remain_datagrid_4.Name = "Remain_datagrid_4";
             this.Remain_datagrid_4.RowHeadersVisible = false;
             this.Remain_datagrid_4.RowTemplate.Height = 23;
-            this.Remain_datagrid_4.Size = new System.Drawing.Size(387, 190);
+            this.Remain_datagrid_4.Size = new System.Drawing.Size(387, 150);
             this.Remain_datagrid_4.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn11
@@ -4544,7 +4544,7 @@
             this.Remain_datagrid_5.Name = "Remain_datagrid_5";
             this.Remain_datagrid_5.RowHeadersVisible = false;
             this.Remain_datagrid_5.RowTemplate.Height = 23;
-            this.Remain_datagrid_5.Size = new System.Drawing.Size(387, 190);
+            this.Remain_datagrid_5.Size = new System.Drawing.Size(387, 150);
             this.Remain_datagrid_5.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn16
@@ -4909,7 +4909,7 @@
             this.Remain_datagrid_6.Name = "Remain_datagrid_6";
             this.Remain_datagrid_6.RowHeadersVisible = false;
             this.Remain_datagrid_6.RowTemplate.Height = 23;
-            this.Remain_datagrid_6.Size = new System.Drawing.Size(387, 192);
+            this.Remain_datagrid_6.Size = new System.Drawing.Size(387, 152);
             this.Remain_datagrid_6.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn21

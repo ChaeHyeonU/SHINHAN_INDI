@@ -112,6 +112,7 @@ namespace WindowsFormsApp4
 
             // 옵션 코드 목록 조회
             Comm_Obj_Code_List.SetQueryName("opt_mst");
+            Comm_Obj_Code_List.SetSingleData(0, "0");
             Comm_Obj_Code_List.RequestData();
 
             //MessageBox.Show((string)Comm_Obj_Code_List.GetErrorMessage());
