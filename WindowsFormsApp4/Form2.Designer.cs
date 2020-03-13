@@ -30,13 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Comm_Obj_DATA_1 = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_DATA_Real = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
             this.Comm_Obj_Code_List = new AxGIEXPERTCONTROLLib.AxGiExpertControl();
@@ -580,14 +580,14 @@
             this.FCGrid_1.AllowUserToResizeRows = false;
             this.FCGrid_1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_1.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.FCGrid_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_1.Location = new System.Drawing.Point(7, 60);
             this.FCGrid_1.Name = "FCGrid_1";
@@ -774,11 +774,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(402, 19);
+            this.label1.Location = new System.Drawing.Point(414, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 13);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 33;
-            this.label1.Text = "WMA 간격설정";
+            this.label1.Text = "WMA 기간";
             // 
             // Distance_input_1
             // 
@@ -806,14 +806,14 @@
             // Price_GridView
             // 
             this.Price_GridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Price_GridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.Price_GridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Price_GridView.Location = new System.Drawing.Point(1192, 36);
             this.Price_GridView.Name = "Price_GridView";
@@ -982,9 +982,9 @@
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(408, 41);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 86;
-            this.label11.Text = "기울기 간격";
+            this.label11.Text = "기울기 기준봉";
             // 
             // Comm_Obj_Accountinfo
             // 
@@ -1001,9 +1001,9 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(998, 38);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(66, 13);
+            this.label12.Size = new System.Drawing.Size(77, 13);
             this.label12.TabIndex = 1024;
-            this.label12.Text = "기울기 간격";
+            this.label12.Text = "기울기 기준봉";
             // 
             // label13
             // 
@@ -1073,11 +1073,11 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(992, 16);
+            this.label15.Location = new System.Drawing.Point(1004, 18);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 13);
+            this.label15.Size = new System.Drawing.Size(60, 13);
             this.label15.TabIndex = 1021;
-            this.label15.Text = "WMA 간격설정";
+            this.label15.Text = "WMA 기간";
             // 
             // Time_ComboBox_4
             // 
@@ -1259,14 +1259,14 @@
             this.FCGrid_4.AllowUserToResizeRows = false;
             this.FCGrid_4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_4.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.FCGrid_4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_4.Location = new System.Drawing.Point(600, 60);
             this.FCGrid_4.Name = "FCGrid_4";
@@ -1294,9 +1294,9 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(408, 365);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(66, 13);
+            this.label16.Size = new System.Drawing.Size(77, 13);
             this.label16.TabIndex = 1049;
-            this.label16.Text = "기울기 간격";
+            this.label16.Text = "기울기 기준봉";
             // 
             // label17
             // 
@@ -1366,11 +1366,11 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(402, 343);
+            this.label19.Location = new System.Drawing.Point(414, 343);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(82, 13);
+            this.label19.Size = new System.Drawing.Size(60, 13);
             this.label19.TabIndex = 1046;
-            this.label19.Text = "WMA 간격설정";
+            this.label19.Text = "WMA 기간";
             // 
             // Time_ComboBox_2
             // 
@@ -1552,14 +1552,14 @@
             this.FCGrid_2.AllowUserToResizeRows = false;
             this.FCGrid_2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_2.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.FCGrid_2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_2.Location = new System.Drawing.Point(7, 384);
             this.FCGrid_2.Name = "FCGrid_2";
@@ -1587,9 +1587,9 @@
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(408, 690);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(66, 13);
+            this.label20.Size = new System.Drawing.Size(77, 13);
             this.label20.TabIndex = 1074;
-            this.label20.Text = "기울기 간격";
+            this.label20.Text = "기울기 기준봉";
             // 
             // label21
             // 
@@ -1659,11 +1659,11 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(402, 668);
+            this.label23.Location = new System.Drawing.Point(414, 668);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(82, 13);
+            this.label23.Size = new System.Drawing.Size(60, 13);
             this.label23.TabIndex = 1071;
-            this.label23.Text = "WMA 간격설정";
+            this.label23.Text = "WMA 기간";
             // 
             // Time_ComboBox_3
             // 
@@ -1845,14 +1845,14 @@
             this.FCGrid_3.AllowUserToResizeRows = false;
             this.FCGrid_3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_3.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.FCGrid_3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_3.Location = new System.Drawing.Point(7, 709);
             this.FCGrid_3.Name = "FCGrid_3";
@@ -1880,9 +1880,9 @@
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(1001, 690);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(66, 13);
+            this.label24.Size = new System.Drawing.Size(77, 13);
             this.label24.TabIndex = 1124;
-            this.label24.Text = "기울기 간격";
+            this.label24.Text = "기울기 기준봉";
             // 
             // label25
             // 
@@ -1952,11 +1952,11 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(995, 668);
+            this.label27.Location = new System.Drawing.Point(1004, 667);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(82, 13);
+            this.label27.Size = new System.Drawing.Size(60, 13);
             this.label27.TabIndex = 1121;
-            this.label27.Text = "WMA 간격설정";
+            this.label27.Text = "WMA 기간";
             // 
             // Time_ComboBox_6
             // 
@@ -2138,14 +2138,14 @@
             this.FCGrid_6.AllowUserToResizeRows = false;
             this.FCGrid_6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_6.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_6.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.FCGrid_6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_6.Location = new System.Drawing.Point(600, 709);
             this.FCGrid_6.Name = "FCGrid_6";
@@ -2173,9 +2173,9 @@
             this.label28.AutoSize = true;
             this.label28.Location = new System.Drawing.Point(1001, 365);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(66, 13);
+            this.label28.Size = new System.Drawing.Size(77, 13);
             this.label28.TabIndex = 1099;
-            this.label28.Text = "기울기 간격";
+            this.label28.Text = "기울기 기준봉";
             // 
             // label29
             // 
@@ -2245,11 +2245,11 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(995, 343);
+            this.label31.Location = new System.Drawing.Point(1007, 343);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(82, 13);
+            this.label31.Size = new System.Drawing.Size(60, 13);
             this.label31.TabIndex = 1096;
-            this.label31.Text = "WMA 간격설정";
+            this.label31.Text = "WMA 기간";
             // 
             // Time_ComboBox_5
             // 
@@ -2431,14 +2431,14 @@
             this.FCGrid_5.AllowUserToResizeRows = false;
             this.FCGrid_5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.FCGrid_5.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 8F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("맑은 고딕", 8F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FCGrid_5.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.FCGrid_5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.FCGrid_5.Location = new System.Drawing.Point(600, 384);
             this.FCGrid_5.Name = "FCGrid_5";

@@ -97,7 +97,7 @@ namespace WindowsFormsApp4
             getAccount();
             Init_Orderlist();
 
-            Comm_Obj_RTCount.RequestRTReg("AE", "*");
+            Comm_Obj_RTCount.RequestRTReg("AE", "00311155910");
             Comm_Obj_RTPrice.RequestRTReg("FC", "101Q3");
 
             
@@ -383,7 +383,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_1.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_1.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_1.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -412,7 +415,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_2.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_2.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_2.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -441,7 +447,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_3.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_3.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_3.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -470,7 +479,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_4.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_4.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_4.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -499,7 +511,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_5.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_5.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_5.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -528,7 +543,10 @@ namespace WindowsFormsApp4
 
                 for (short k = 0; k < 6; k++)
                 {
-                    dr[k] = (string)Comm_Obj_DATA_6.GetMultiData(j, k);
+                    if (k != 1)
+                        dr[k] = (string)Comm_Obj_DATA_6.GetMultiData(j, k);
+                    else
+                        dr[k] = (string)Comm_Obj_DATA_6.GetMultiData(Convert.ToInt16(j + 1), k);
                 }
                 dt.Rows.Add(dr);
             }
@@ -569,14 +587,15 @@ namespace WindowsFormsApp4
 
             if (fcode.Length == 5 || fcode.Length == 8)
             {
-                for(int i = 1; i <= 6; i++)
+                for (int i = 1; i <= 6; i++)
                 {
-                    if(i != control)
+                    if (i != control)
                     {
                         if (fcode == gFCode[i - 1])
                         {
                             MessageBox.Show("중복되는 코드사용 불가능");
-                            Tmp.Text = gFCode[control - 1];
+                            Tmp.Text = "";
+                            gFCode[control - 1] = "";
                         }
                         else
                         {
@@ -1499,7 +1518,7 @@ namespace WindowsFormsApp4
             Array.Reverse(WMA);
             Array.Copy(WMA, cc, WMA.Length);
 
-            //control_buy_sell // 0: 일반 1:역배 2: 정배 3:역배인데 기울기 x 4: 정배인데 기울기 x
+            //control_buy_sell // 0: 일반 1:역배 2: 정배 3:역배인데 기울기 x 4: 정배인데 기울기 x 5: 매도(청산) 6: 매수(청산)
             //control_Enable_Angle // 0:아무것도 없는 상태 1:매도 2:매수
 
 
@@ -1518,7 +1537,7 @@ namespace WindowsFormsApp4
                     control_buy_sell[control - 1] = 3;
                 }
             }
-            if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] != 1 && control_Enable_Angle[control - 1] == 2) //역배 && 전 상태 != 역배 && 매수
+            else if (checkSameArray(aa,cc) == false && control_buy_sell[control - 1] == 2 && control_Enable_Angle[control - 1] == 2) //!정배 && 전 상태 == 정배 && 매수를 한 상태
             {
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매도(청산)";
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = Color.Tomato;
@@ -1526,7 +1545,7 @@ namespace WindowsFormsApp4
                 control_buy_sell[control - 1] = 1;
                 control_Enable_Angle[control - 1] = 0;
             }
-            else if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] == 1)
+            else if (checkSameArray(aa, bb) == true && control_buy_sell[control - 1] == 1) //역배 && 전 상태 == 역배
             {
                 control_buy_sell[control - 1] = 1;
             }
@@ -1545,7 +1564,7 @@ namespace WindowsFormsApp4
                     control_buy_sell[control - 1] = 4;
                 }
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] != 2 && control_Enable_Angle[control - 1] == 1)//정배 && 전 상태 !=정배 && 매도
+            else if (checkSameArray(aa,bb) == false && control_buy_sell[control - 1] == 1 && control_Enable_Angle[control - 1] == 1)// !역배 && 전 상태 == 역배 && 매도를 한 상태
             {
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Value = "매수(청산)";
                 FCGrid_sample[control - 1].Rows[index].Cells[9].Style.BackColor = SystemColors.Highlight;
@@ -1553,7 +1572,7 @@ namespace WindowsFormsApp4
                 control_buy_sell[control - 1] = 2;
                 control_Enable_Angle[control - 1] = 0;
             }
-            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] == 2)
+            else if (checkSameArray(aa, cc) == true && control_buy_sell[control - 1] == 2) //정배 && 전 상태 == 정배
             {
                 control_buy_sell[control - 1] = 2;
             }
