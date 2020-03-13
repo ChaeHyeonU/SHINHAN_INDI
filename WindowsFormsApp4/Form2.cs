@@ -16,7 +16,7 @@ namespace WindowsFormsApp4
     public partial class Form2 : Form
     {
         private int RowNum = 200;
-        private string[] gFCode = new string[6] { "101Q3", "101Q3", "201Q3267", "101Q3", "101Q3", "101Q3" };
+        private string[] gFCode = new string[6] { "101Q6", "101Q6", "101Q6", "101Q6", "101Q6", "101Q6" };
         private string[] TimeSelected = new string[6] { "3", "3", "3", "3", "3", "3" };
         private string[] TimeDistance = new string[6] { "Min", "Min", "Min", "Min", "Min", "Min" };
 
@@ -99,6 +99,7 @@ namespace WindowsFormsApp4
 
             Comm_Obj_RTCount.RequestRTReg("AE", "*");
             Comm_Obj_RTPrice.RequestRTReg("FC", "101Q3");
+            MessageBox.Show((string)Comm_Obj_RTCount.GetErrorMessage());
 
             setGridView();
 
@@ -538,6 +539,7 @@ namespace WindowsFormsApp4
             TextBox Tmp = sender as TextBox;
             string fcode = Tmp.Text;
             int control = 0;
+            
             if (Tmp.Name == "FCode_1")
             {
                 control = 1;
@@ -708,7 +710,6 @@ namespace WindowsFormsApp4
                 Comm_Obj_RTPrice.RequestRTReg("QC", code);
 
             Get_GridData(control);
-            Stop_Loss(400, 1);
             
         }
         
@@ -1088,13 +1089,28 @@ namespace WindowsFormsApp4
                 {
                     if (Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "02" || Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "2")
                     {
-                        control_Mecro[control - 1] = 2; //매수
-                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value);
+                        if(Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value) == 0)
+                        {
+                            control_Mecro[control - 1] = 0;
+                        }
+                        else
+                        {
+                            control_Mecro[control - 1] = 2; //매수
+                        }
+                        
+                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value);
                     }
                     else if (Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "01" || Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "1")
                     {
-                        control_Mecro[control - 1] = 1; //매도
-                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value);
+                        if (Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value) == 0)
+                        {
+                            control_Mecro[control - 1] = 0;
+                        }
+                        else
+                        {
+                            control_Mecro[control - 1] = 1; //매도
+                        }
+                        buy_sell_Count[control - 1] = Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value);
                     }
                     else if(Convert.ToString(Price_GridView.Rows[i].Cells[1].Value) == "0")
                     {
@@ -1250,7 +1266,7 @@ namespace WindowsFormsApp4
                     }
                     else if ((string)FCGrid_sample[control - 1].Rows[1].Cells[9].Value == "매수(청산)")
                     {
-                        if (control_Mecro[control - 1] != 3 && buy_sell_Count[control - 1] < 0)
+                        if (control_Mecro[control - 1] != 3 && buy_sell_Count[control - 1] > 0)
                         {
                             cont = "02";
                             getDeal(Acc_num, Acc_pw, code, Convert.ToString(buy_sell_Count[control - 1]), price, cont, type, "1", "", "0");
@@ -2356,10 +2372,13 @@ namespace WindowsFormsApp4
         private void getPrice()
         {
             string nowdate = DateTime.Now.ToString("yyyyMMdd");
-            Comm_Obj_Price.SetQueryName("SABC820Q1");
-            Comm_Obj_Price.SetSingleData(0, "20200312");
-            Comm_Obj_Price.SetSingleData(1, Account_Num_1.Text); //00311155910
-            Comm_Obj_Price.SetSingleData(2, Acc_PW_1.Text);
+            Comm_Obj_Price.SetQueryName("SABC967Q1");
+            Comm_Obj_Price.SetSingleData(0, Account_Num_1.Text); 
+            Comm_Obj_Price.SetSingleData(1, Acc_PW_1.Text);
+            Comm_Obj_Price.SetSingleData(2, "0");
+            Comm_Obj_Price.SetSingleData(3, "0");
+            Comm_Obj_Price.SetSingleData(4, "1");
+
             Comm_Obj_Price.RequestData();
         }
         
@@ -2372,12 +2391,12 @@ namespace WindowsFormsApp4
         {
             int nRowSize = Comm_Obj_Price.GetMultiRowCount();
             DataTable dt = new DataTable();
-            dt.Columns.Add("종목코드");
-            dt.Columns.Add("매수매도구분");  //1 매도 2 매수
-            dt.Columns.Add("잔고");
+            dt.Columns.Add("단축코드");
+            dt.Columns.Add("매매구분");  //1 매도 2 매수
+            dt.Columns.Add("잔고수량");
+            dt.Columns.Add("청산가능수량");
             dt.Columns.Add("평균가(단)");
             dt.Columns.Add("평가손익");
-            dt.Columns.Add("매매손익");
             dt.Columns.Add("평가금액");
 
             for (int i = 0; i < nRowSize; i++)
@@ -2388,8 +2407,8 @@ namespace WindowsFormsApp4
                 dr[2] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 3);
                 dr[3] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 4);
                 dr[4] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 6);
-                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
-                dr[6] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dr[5] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 12);
+                dr[6] = (string)Comm_Obj_Price.GetMultiData(Convert.ToInt16(i), 11);
                 dt.Rows.Add(dr);
             }
             Price_GridView.DataSource = dt;
@@ -2661,6 +2680,7 @@ namespace WindowsFormsApp4
                 order_Num[order_How - 1] = aa;
             }
             MessageBox.Show(aa);
+            MessageBox.Show((string)Comm_Obj_Deal.GetErrorMessage());
         }
 
         private void Init_Orderlist()  //주문내역 날짜 초기화
@@ -2784,7 +2804,7 @@ namespace WindowsFormsApp4
                     {
                         start_price[k - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value); //평균가
                         cont = Convert.ToString(Price_GridView.Rows[i].Cells[1].Value); //매수 매도 구분
-                        count = Convert.ToString(Price_GridView.Rows[i].Cells[2].Value);
+                        count = Convert.ToString(Price_GridView.Rows[i].Cells[3].Value);
                         break;
                     }
                     else
@@ -2793,7 +2813,7 @@ namespace WindowsFormsApp4
                     }
                 }
 
-                if (price > start_price[k - 1] + (Profit * tick[k - 1]) && start_price[k - 1] != 0)
+                if (price > start_price[k - 1] + (Profit * tick[k - 1]) && start_price[k - 1] != 0 && Convert.ToInt64(count)>0)
                 {
                     //익절
                     if (cont == "2" || cont == "02") //매수한 계약 일떄
@@ -2803,7 +2823,7 @@ namespace WindowsFormsApp4
                             getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
                             Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
                         }
-                        else if (index >= 1 || index <= 10) //상대 호가
+                        else if (index >= 1 && index <= 10) //상대 호가
                         {
                             if (order_Num[k - 1].Equals("0"))  //처음 주문일때
                             {
@@ -2822,7 +2842,7 @@ namespace WindowsFormsApp4
                                 order_How = 0;
                             }
                         }
-                        else if (index >= 11 || index <= 20) //우선 호가
+                        else if (index >= 11 && index <= 20) //우선 호가
                         {
                             if (order_Num[k - 1].Equals("0"))  //처음 주문일때
                             {
@@ -2842,8 +2862,55 @@ namespace WindowsFormsApp4
                             }
                         }
                     }
+                    //손절
+                    else if (cont == "1" || cont == "01") //매도한 계약 일떄
+                    {
+                        if (index == 0) //시장가
+                        {
+                            getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
+                            Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                        }
+                        else if (index >= 1 && index <= 10) //상대 호가
+                        {
+                            if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] + (index * tick[k - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                            else //이전에 주문을 넣었을때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] + (index * tick[k - 1])), "02", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                        }
+                        else if (index >= 11 && index <= 20) //우선 호가
+                        {
+                            if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] + ((index - 10) * tick[k - 1])), "02", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                            else //이전에 주문을 넣었을때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] + ((index - 10) * tick[k - 1])), "02", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                        }
+                    }
                 }
-                else if (price < start_price[k - 1] - (Loss * tick[k - 1]) && start_price[k - 1] != 0)
+                else if (price < start_price[k - 1] - (Loss * tick[k - 1]) && start_price[k - 1] != 0 && Convert.ToInt64(count) > 0)
                 {
                     //손절
                     if (cont == "1" || cont == "01") //매도한 계약일때
@@ -2853,7 +2920,7 @@ namespace WindowsFormsApp4
                             getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "02", "M", "1", "", "0");   //01 : 매도 02: 매수
                             Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
                         }
-                        else if (index >= 1 || index <= 10) //상대 호가
+                        else if (index >= 1 && index <= 10) //상대 호가
                         {
                             if (order_Num[k - 1].Equals("0"))  //처음 주문일때
                             {
@@ -2873,7 +2940,7 @@ namespace WindowsFormsApp4
                             }
 
                         }
-                        else if (index >= 11 || index <= 20) //우선 호가
+                        else if (index >= 11 && index <= 20) //우선 호가
                         {
                             if (order_Num[k - 1].Equals("0"))  //처음 주문일때
                             {
@@ -2893,9 +2960,56 @@ namespace WindowsFormsApp4
                             }
                         }
                     }
+                    //익절
+                    if (cont == "2" || cont == "02") //매도한 계약일때
+                    {
+                        if (index == 0) //시장가
+                        {
+                            getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, "0", "01", "M", "1", "", "0");   //01 : 매도 02: 매수
+                            Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                        }
+                        else if (index >= 1 && index <= 10) //상대 호가
+                        {
+                            if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] - (index * tick[k - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                            else //이전에 주문을 넣었을때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(buy_first_price[k - 1] - (index * tick[k - 1])), "01", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+
+                        }
+                        else if (index >= 11 && index <= 20) //우선 호가
+                        {
+                            if (order_Num[k - 1].Equals("0"))  //처음 주문일때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] - ((index - 10) * tick[k - 1])), "01", "L", "1", "", "0");   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                            else //이전에 주문을 넣었을때
+                            {
+                                order_How = k;
+                                getDeal(Account_Num_1.Text, Acc_PW_1.Text, code, count, Convert.ToString(sell_first_price[k - 1] - ((index - 10) * tick[k - 1])), "01", "L", "2", order_Num[k - 1], count);   //01 : 매도 02: 매수
+
+                                Get_RealTimeData(Account_Num_1.Text, Acc_PW_1.Text);
+                                order_How = 0;
+                            }
+                        }
+                    }
                 }
             }
-
         }
 
 
@@ -2915,7 +3029,7 @@ namespace WindowsFormsApp4
                         AutoClosingMessageBox("(1번 종목)\n스탑로스 설정되었습니다.", "", 10);
                 }
             }
-            else if (tmp.Name == "SL_Button_1")
+            else if (tmp.Name == "SL_Button_2")
             {
                 if (SL_Control_2.Checked == true)
                 {
@@ -3058,7 +3172,7 @@ namespace WindowsFormsApp4
                 if (code.Equals((string)Price_GridView.Rows[i].Cells[0].Value))
                 {
                     buyorsell = (string)Price_GridView.Rows[i].Cells[1].Value;
-                    isremain = Convert.ToInt32(Price_GridView.Rows[i].Cells[2].Value);
+                    isremain = Convert.ToInt32(Price_GridView.Rows[i].Cells[3].Value);
                     start_price[control - 1] = Convert.ToDouble(Price_GridView.Rows[i].Cells[3].Value);         //평균가
                     TS_now_endprice = Convert.ToDouble(Price_GridView.Rows[i].Cells[4].Value);      //현재가
                 }
@@ -3388,7 +3502,7 @@ namespace WindowsFormsApp4
             double sell_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(3));    //매도1호가
             double second = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(9));        //매도2호가  
             double buy_first = Convert.ToDouble(Comm_Obj_Tick.GetSingleData(4));     //매수1호가
-            tick[tick_control_num - 1] = sell_first - second;
+            tick[tick_control_num - 1] = second - sell_first;
             sell_first_price[tick_control_num - 1] = sell_first;
             buy_first_price[tick_control_num - 1] = buy_first;
         }
@@ -3495,9 +3609,10 @@ namespace WindowsFormsApp4
         private void Comm_Obj_ReceiveRTCount(object sender, AxGIEXPERTCONTROLLib._DGiExpertControlEvents_ReceiveRTDataEvent e)
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("종목코드");
-            dt.Columns.Add("매수매도구분");  //1 매도 2 매수
-            dt.Columns.Add("잔고");
+            dt.Columns.Add("단축코드");
+            dt.Columns.Add("매매구분");  //1 매도 2 매수
+            dt.Columns.Add("잔고수량");
+            dt.Columns.Add("청산가능수량");
             dt.Columns.Add("평균가(단)");
             dt.Columns.Add("평가금액");
             dt.Columns.Add("평가손익");
@@ -3506,10 +3621,11 @@ namespace WindowsFormsApp4
 
             dr[0] = (string)Comm_Obj_RTCount.GetSingleData(2); //종목코드
             dr[1] = (string)Comm_Obj_RTCount.GetSingleData(5); //매도매수 구분
-            dr[2] = (string)Comm_Obj_RTCount.GetSingleData(9); //청산 가능수량
-            dr[3] = (string)Comm_Obj_RTCount.GetSingleData(7); //평균단가
-            dr[4] = (string)Comm_Obj_RTCount.GetSingleData(11); //평가 금액
-            dr[5] = (string)Comm_Obj_RTCount.GetSingleData(12); // 평가 손익
+            dr[2] = (string)Comm_Obj_RTCount.GetSingleData(6); //당일 잔고
+            dr[3] = (string)Comm_Obj_RTCount.GetSingleData(9); //청산 가능수량
+            dr[4] = (string)Comm_Obj_RTCount.GetSingleData(7); //평균단가
+            dr[5] = (string)Comm_Obj_RTCount.GetSingleData(11); //평가 금액
+            dr[6] = (string)Comm_Obj_RTCount.GetSingleData(12); // 평가 손익
             dt.Rows.Add(dr);
 
             Price_GridView.DataSource = dt;
@@ -3530,7 +3646,7 @@ namespace WindowsFormsApp4
             Comm_Obj_Deal.SetQueryName("SABC100U1");
             Comm_Obj_Deal.SetSingleData(0, "00311155910"); // 계좌번호
             Comm_Obj_Deal.SetSingleData(1, "0000"); //비밀번호
-            Comm_Obj_Deal.SetSingleData(2, "101Q3"); //종목코드
+            Comm_Obj_Deal.SetSingleData(2, "101Q6"); //종목코드
             Comm_Obj_Deal.SetSingleData(3, "1"); // 주문수량 
             Comm_Obj_Deal.SetSingleData(4, "0"); //주문단가 -999.99 ~ 999.99
             Comm_Obj_Deal.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK
@@ -3549,7 +3665,7 @@ namespace WindowsFormsApp4
             Comm_Obj_Deal.SetQueryName("SABC100U1");
             Comm_Obj_Deal.SetSingleData(0, "00311155910"); // 계좌번호
             Comm_Obj_Deal.SetSingleData(1, "0000"); //비밀번호
-            Comm_Obj_Deal.SetSingleData(2, "101Q3"); //종목코드
+            Comm_Obj_Deal.SetSingleData(2, "101Q6"); //종목코드
             Comm_Obj_Deal.SetSingleData(3, "1"); // 주문수량 
             Comm_Obj_Deal.SetSingleData(4, "0"); //주문단가 -999.99 ~ 999.99
             Comm_Obj_Deal.SetSingleData(5, "0"); // 주문조건 0:일반(FAS) 3:IOC(FAK) 4:FOK

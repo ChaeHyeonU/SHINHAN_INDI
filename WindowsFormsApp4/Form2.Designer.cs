@@ -532,7 +532,7 @@
             // Comm_Obj_DATA_1
             // 
             this.Comm_Obj_DATA_1.Enabled = true;
-            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(10483, 10100);
+            this.Comm_Obj_DATA_1.Location = new System.Drawing.Point(10703, 10239);
             this.Comm_Obj_DATA_1.Name = "Comm_Obj_DATA_1";
             this.Comm_Obj_DATA_1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_1.OcxState")));
             this.Comm_Obj_DATA_1.Size = new System.Drawing.Size(136, 50);
@@ -543,7 +543,7 @@
             // Comm_Obj_DATA_Real
             // 
             this.Comm_Obj_DATA_Real.Enabled = true;
-            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(9867, 9452);
+            this.Comm_Obj_DATA_Real.Location = new System.Drawing.Point(10087, 9591);
             this.Comm_Obj_DATA_Real.Name = "Comm_Obj_DATA_Real";
             this.Comm_Obj_DATA_Real.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_Real.OcxState")));
             this.Comm_Obj_DATA_Real.Size = new System.Drawing.Size(136, 50);
@@ -553,7 +553,7 @@
             // Comm_Obj_Code_List
             // 
             this.Comm_Obj_Code_List.Enabled = true;
-            this.Comm_Obj_Code_List.Location = new System.Drawing.Point(10483, 9200);
+            this.Comm_Obj_Code_List.Location = new System.Drawing.Point(10703, 9339);
             this.Comm_Obj_Code_List.Name = "Comm_Obj_Code_List";
             this.Comm_Obj_Code_List.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Code_List.OcxState")));
             this.Comm_Obj_Code_List.Size = new System.Drawing.Size(136, 50);
@@ -891,7 +891,7 @@
             // Comm_Obj_Account
             // 
             this.Comm_Obj_Account.Enabled = true;
-            this.Comm_Obj_Account.Location = new System.Drawing.Point(8115, 5964);
+            this.Comm_Obj_Account.Location = new System.Drawing.Point(8335, 6103);
             this.Comm_Obj_Account.Name = "Comm_Obj_Account";
             this.Comm_Obj_Account.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Account.OcxState")));
             this.Comm_Obj_Account.Size = new System.Drawing.Size(136, 50);
@@ -903,7 +903,7 @@
             // Comm_Obj_Price
             // 
             this.Comm_Obj_Price.Enabled = true;
-            this.Comm_Obj_Price.Location = new System.Drawing.Point(6582, 6053);
+            this.Comm_Obj_Price.Location = new System.Drawing.Point(6802, 6192);
             this.Comm_Obj_Price.Name = "Comm_Obj_Price";
             this.Comm_Obj_Price.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Price.OcxState")));
             this.Comm_Obj_Price.Size = new System.Drawing.Size(136, 50);
@@ -941,7 +941,7 @@
             // Comm_Obj_Deal
             // 
             this.Comm_Obj_Deal.Enabled = true;
-            this.Comm_Obj_Deal.Location = new System.Drawing.Point(4506, 4362);
+            this.Comm_Obj_Deal.Location = new System.Drawing.Point(4726, 4501);
             this.Comm_Obj_Deal.Name = "Comm_Obj_Deal";
             this.Comm_Obj_Deal.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Deal.OcxState")));
             this.Comm_Obj_Deal.Size = new System.Drawing.Size(136, 50);
@@ -989,7 +989,7 @@
             // Comm_Obj_Accountinfo
             // 
             this.Comm_Obj_Accountinfo.Enabled = true;
-            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(3314, 3998);
+            this.Comm_Obj_Accountinfo.Location = new System.Drawing.Point(3534, 4137);
             this.Comm_Obj_Accountinfo.Name = "Comm_Obj_Accountinfo";
             this.Comm_Obj_Accountinfo.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Accountinfo.OcxState")));
             this.Comm_Obj_Accountinfo.Size = new System.Drawing.Size(136, 50);
@@ -2484,7 +2484,7 @@
             // Comm_Obj_DATA_2
             // 
             this.Comm_Obj_DATA_2.Enabled = true;
-            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(2162, 2763);
+            this.Comm_Obj_DATA_2.Location = new System.Drawing.Point(2382, 2902);
             this.Comm_Obj_DATA_2.Name = "Comm_Obj_DATA_2";
             this.Comm_Obj_DATA_2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_2.OcxState")));
             this.Comm_Obj_DATA_2.Size = new System.Drawing.Size(136, 50);
@@ -2494,7 +2494,7 @@
             // Comm_Obj_DATA_3
             // 
             this.Comm_Obj_DATA_3.Enabled = true;
-            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(2203, 2757);
+            this.Comm_Obj_DATA_3.Location = new System.Drawing.Point(2423, 2896);
             this.Comm_Obj_DATA_3.Name = "Comm_Obj_DATA_3";
             this.Comm_Obj_DATA_3.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_3.OcxState")));
             this.Comm_Obj_DATA_3.Size = new System.Drawing.Size(136, 50);
@@ -2504,7 +2504,7 @@
             // Comm_Obj_DATA_4
             // 
             this.Comm_Obj_DATA_4.Enabled = true;
-            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(2075, 2713);
+            this.Comm_Obj_DATA_4.Location = new System.Drawing.Point(2295, 2852);
             this.Comm_Obj_DATA_4.Name = "Comm_Obj_DATA_4";
             this.Comm_Obj_DATA_4.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_4.OcxState")));
             this.Comm_Obj_DATA_4.Size = new System.Drawing.Size(136, 50);
@@ -2514,7 +2514,7 @@
             // Comm_Obj_DATA_5
             // 
             this.Comm_Obj_DATA_5.Enabled = true;
-            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(2104, 2708);
+            this.Comm_Obj_DATA_5.Location = new System.Drawing.Point(2324, 2847);
             this.Comm_Obj_DATA_5.Name = "Comm_Obj_DATA_5";
             this.Comm_Obj_DATA_5.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_5.OcxState")));
             this.Comm_Obj_DATA_5.Size = new System.Drawing.Size(136, 50);
@@ -2524,7 +2524,7 @@
             // Comm_Obj_DATA_6
             // 
             this.Comm_Obj_DATA_6.Enabled = true;
-            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(2168, 2618);
+            this.Comm_Obj_DATA_6.Location = new System.Drawing.Point(2388, 2757);
             this.Comm_Obj_DATA_6.Name = "Comm_Obj_DATA_6";
             this.Comm_Obj_DATA_6.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_DATA_6.OcxState")));
             this.Comm_Obj_DATA_6.Size = new System.Drawing.Size(136, 50);
@@ -2799,7 +2799,7 @@
             // Comm_Obj_Orderlist
             // 
             this.Comm_Obj_Orderlist.Enabled = true;
-            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(1235, 2380);
+            this.Comm_Obj_Orderlist.Location = new System.Drawing.Point(1455, 2519);
             this.Comm_Obj_Orderlist.Name = "Comm_Obj_Orderlist";
             this.Comm_Obj_Orderlist.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Orderlist.OcxState")));
             this.Comm_Obj_Orderlist.Size = new System.Drawing.Size(136, 50);
@@ -3519,7 +3519,17 @@
             "상대7호가",
             "상대8호가",
             "상대9호가",
-            "상대10호가"});
+            "상대10호가",
+            "우선1호가",
+            "우선2호가",
+            "우선3호가",
+            "우선4호가",
+            "우선5호가",
+            "우선6호가",
+            "우선7호가",
+            "우선8호가",
+            "우선9호가",
+            "우선10호가"});
             this.SL_OrderHow_2.Location = new System.Drawing.Point(160, 73);
             this.SL_OrderHow_2.Name = "SL_OrderHow_2";
             this.SL_OrderHow_2.Size = new System.Drawing.Size(232, 21);
@@ -3874,7 +3884,17 @@
             "상대7호가",
             "상대8호가",
             "상대9호가",
-            "상대10호가"});
+            "상대10호가",
+            "우선1호가",
+            "우선2호가",
+            "우선3호가",
+            "우선4호가",
+            "우선5호가",
+            "우선6호가",
+            "우선7호가",
+            "우선8호가",
+            "우선9호가",
+            "우선10호가"});
             this.SL_OrderHow_3.Location = new System.Drawing.Point(160, 73);
             this.SL_OrderHow_3.Name = "SL_OrderHow_3";
             this.SL_OrderHow_3.Size = new System.Drawing.Size(232, 21);
@@ -4227,7 +4247,17 @@
             "상대7호가",
             "상대8호가",
             "상대9호가",
-            "상대10호가"});
+            "상대10호가",
+            "우선1호가",
+            "우선2호가",
+            "우선3호가",
+            "우선4호가",
+            "우선5호가",
+            "우선6호가",
+            "우선7호가",
+            "우선8호가",
+            "우선9호가",
+            "우선10호가"});
             this.SL_OrderHow_4.Location = new System.Drawing.Point(160, 73);
             this.SL_OrderHow_4.Name = "SL_OrderHow_4";
             this.SL_OrderHow_4.Size = new System.Drawing.Size(232, 21);
@@ -4582,7 +4612,17 @@
             "상대7호가",
             "상대8호가",
             "상대9호가",
-            "상대10호가"});
+            "상대10호가",
+            "우선1호가",
+            "우선2호가",
+            "우선3호가",
+            "우선4호가",
+            "우선5호가",
+            "우선6호가",
+            "우선7호가",
+            "우선8호가",
+            "우선9호가",
+            "우선10호가"});
             this.SL_OrderHow_5.Location = new System.Drawing.Point(160, 73);
             this.SL_OrderHow_5.Name = "SL_OrderHow_5";
             this.SL_OrderHow_5.Size = new System.Drawing.Size(232, 21);
@@ -4937,7 +4977,17 @@
             "상대7호가",
             "상대8호가",
             "상대9호가",
-            "상대10호가"});
+            "상대10호가",
+            "우선1호가",
+            "우선2호가",
+            "우선3호가",
+            "우선4호가",
+            "우선5호가",
+            "우선6호가",
+            "우선7호가",
+            "우선8호가",
+            "우선9호가",
+            "우선10호가"});
             this.SL_OrderHow_6.Location = new System.Drawing.Point(160, 73);
             this.SL_OrderHow_6.Name = "SL_OrderHow_6";
             this.SL_OrderHow_6.Size = new System.Drawing.Size(232, 21);
@@ -5002,7 +5052,7 @@
             // Comm_Obj_RealTimeData
             // 
             this.Comm_Obj_RealTimeData.Enabled = true;
-            this.Comm_Obj_RealTimeData.Location = new System.Drawing.Point(1663, 1308);
+            this.Comm_Obj_RealTimeData.Location = new System.Drawing.Point(1883, 1447);
             this.Comm_Obj_RealTimeData.Name = "Comm_Obj_RealTimeData";
             this.Comm_Obj_RealTimeData.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_RealTimeData.OcxState")));
             this.Comm_Obj_RealTimeData.Size = new System.Drawing.Size(136, 50);
@@ -5012,7 +5062,7 @@
             // Comm_Obj_Tick
             // 
             this.Comm_Obj_Tick.Enabled = true;
-            this.Comm_Obj_Tick.Location = new System.Drawing.Point(1355, 1204);
+            this.Comm_Obj_Tick.Location = new System.Drawing.Point(1575, 1343);
             this.Comm_Obj_Tick.Name = "Comm_Obj_Tick";
             this.Comm_Obj_Tick.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_Tick.OcxState")));
             this.Comm_Obj_Tick.Size = new System.Drawing.Size(136, 50);
@@ -5049,7 +5099,7 @@
             // Comm_Obj_RTPrice
             // 
             this.Comm_Obj_RTPrice.Enabled = true;
-            this.Comm_Obj_RTPrice.Location = new System.Drawing.Point(1320, 928);
+            this.Comm_Obj_RTPrice.Location = new System.Drawing.Point(1540, 1067);
             this.Comm_Obj_RTPrice.Name = "Comm_Obj_RTPrice";
             this.Comm_Obj_RTPrice.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_RTPrice.OcxState")));
             this.Comm_Obj_RTPrice.Size = new System.Drawing.Size(136, 50);
@@ -5059,7 +5109,7 @@
             // Comm_Obj_RTCount
             // 
             this.Comm_Obj_RTCount.Enabled = true;
-            this.Comm_Obj_RTCount.Location = new System.Drawing.Point(787, 638);
+            this.Comm_Obj_RTCount.Location = new System.Drawing.Point(1007, 777);
             this.Comm_Obj_RTCount.Name = "Comm_Obj_RTCount";
             this.Comm_Obj_RTCount.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("Comm_Obj_RTCount.OcxState")));
             this.Comm_Obj_RTCount.Size = new System.Drawing.Size(136, 50);
